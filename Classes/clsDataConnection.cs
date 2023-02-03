@@ -8,7 +8,7 @@ using System.Data;
 //using ClassControlLib; -> class lib 
 
 ///This class uses the ado.net sql classes to provide a connection to an Azure sql server database.
-///it is free for use by anybody so long as you give credit to the original author i.e me
+///it is free for use by anybody so long as you give credit to the original author i.e me 
 ///Matthew Dean mjdean@dmu.ac.uk De Montfort University 2019
 
 public class clsDataConnection
@@ -19,7 +19,7 @@ public class clsDataConnection
     SqlDataAdapter dataChannel = new SqlDataAdapter();
     //ado.net class for building the sql commands    
     SqlCommandBuilder commandBuilder = new SqlCommandBuilder();
-    //stores a list of all of the sql parameters
+    //stores a list of all sql parameters
     List<SqlParameter> SQLParams = new List<SqlParameter>();
     //data table used to store the results of the stored procedure
     DataTable dataTable = new DataTable();
