@@ -17,7 +17,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void ActivityCity()
+        public void ActivityCityOK()
         {
             //instance of the class
             clsActivities AnActivity = new clsActivities();
@@ -30,7 +30,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void ActivityDescription()
+        public void ActivityDescriptionOK()
         {
             //instance of the class
             clsActivities AnActivity = new clsActivities();
@@ -43,7 +43,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void ActivityName()
+        public void ActivityNameOK()
         {
             //instance of the class
             clsActivities AnActivity = new clsActivities();
@@ -56,7 +56,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void ActivityPostCode()
+        public void ActivityPostCodeOK()
         {
             //instance of the class
             clsActivities AnActivity = new clsActivities();
@@ -69,7 +69,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void ActivityPrice()
+        public void ActivityPriceOK()
         {
             //instance of the class
             clsActivities AnActivity = new clsActivities();
