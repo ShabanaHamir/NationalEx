@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ACustomer.aspx" />
+    <Content Include="AnHotel.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Web.config" />
@@ -79,6 +80,13 @@
     </Compile>
     <Compile Include="ACustomer.aspx.designer.cs">
       <DependentUpon>ACustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnHotel.aspx.cs">
+      <DependentUpon>AnHotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnHotel.aspx.designer.cs">
+      <DependentUpon>AnHotel.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerViewer.aspx.cs">
       <DependentUpon>CustomerViewer.aspx</DependentUpon>

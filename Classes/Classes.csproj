@@ -44,6 +44,7 @@
     <Compile Include="clsActivities.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDataConnection.cs" />
+    <Compile Include="clsHotel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
