@@ -52,6 +52,7 @@
     <Compile Include="tstActivities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstCustomer.cs" />
+    <Compile Include="tstHotel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
