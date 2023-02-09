@@ -37,9 +37,9 @@ namespace Testing
             //assign test data
             string TestData = "Shabana";
             //assign data to property
-            ACustomer.CustomerFirstName = TestData;
+            ACustomer.CustomerFName = TestData;
             //test to see the two values are the same
-            Assert.AreEqual(ACustomer.CustomerFirstName, TestData);
+            Assert.AreEqual(ACustomer.CustomerFName, TestData);
         }
 
         [TestMethod]
@@ -50,9 +50,9 @@ namespace Testing
             //assign test data
             string TestData = "Shabana";
             //assign data to property
-            ACustomer.CustomerLastName = TestData;
+            ACustomer.CustomerLName = TestData;
             //test to see the two values are the same
-            Assert.AreEqual(ACustomer.CustomerLastName, TestData);
+            Assert.AreEqual(ACustomer.CustomerLName, TestData);
         }
 
         [TestMethod]
