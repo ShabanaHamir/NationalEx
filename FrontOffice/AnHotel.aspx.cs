@@ -15,7 +15,7 @@ namespace FrontOffice
         }
 
         protected void Button1_Click(object sender, EventArgs e)
-        //{
+        {
         //    //create a new instance of clsHotel
         //    clsHotel AnHotel = new clsHotel();
         //    //capture
