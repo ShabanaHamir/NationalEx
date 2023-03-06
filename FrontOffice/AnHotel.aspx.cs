@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -17,9 +18,13 @@ namespace FrontOffice
         protected void Button1_Click(object sender, EventArgs e)
         {
         //    //create a new instance of clsHotel
-        //    clsHotel AnHotel = new clsHotel();
+         clsHotel AnHotel = new clsHotel();
         //    //capture
-        //    AnHotel.HotelName = txtHotelName.Text;
+          AnHotel.HotelName = txtHotelName.Text;
+            //store the hotel in the session object
+            Session["AnHotel"] = AnHotel;
+            //redirect to the viewer page
+            Response.Redirect("HotelViewer.aspx");
         }
     }
 }

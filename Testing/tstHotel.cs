@@ -8,7 +8,7 @@ namespace Testing
     public class tstHotel
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InstanceOK()
         {
             //create an instance of the class we want to create 
             clsHotel AnHotel = new clsHotel();
@@ -41,6 +41,15 @@ namespace Testing
             AnHotel.HotelPostcode = TestData;
             //test to see that it exists
             Assert.AreEqual(AnHotel.HotelPostcode, TestData);
+        }
+
+        [TestMethod]
+        public void Valid()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //test to see if valid method exists 
+            AnHotel.Valid("Extreme");
         }
 
 
