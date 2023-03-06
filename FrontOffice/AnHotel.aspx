@@ -11,10 +11,10 @@
         <div>
             Hotel ID<asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
             <br />
-            Hotel Name<asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            Hotel Name<asp:TextBox ID="txtHotelName" runat="server"></asp:TextBox>
             <br />
-            Hotel Post Code<asp:TextBox ID="TextBox3" runat="server"></asp:TextBox>
-            <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="OK" />
+            Hotel Post Code<asp:TextBox ID="txtHotelPostCode" runat="server"></asp:TextBox>
+            <asp:Button ID="btnOK" runat="server" OnClick="Button1_Click" Text="OK" />
         </div>
     </form>
 </body>
