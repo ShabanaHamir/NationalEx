@@ -51,9 +51,11 @@
   <ItemGroup>
     <Compile Include="tstActivities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="tstBookingCollection.cs" />
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstHotel.cs" />
     <Compile Include="tstHotelBooking.cs" />
+    <Compile Include="tstHotelCollection.cs" />
     <Compile Include="tstRoom.cs" />
   </ItemGroup>
   <ItemGroup>
