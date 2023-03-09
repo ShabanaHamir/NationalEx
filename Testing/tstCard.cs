@@ -4,7 +4,7 @@ using System;
 namespace Testing
 {
     [TestClass]
-    public class clsCard
+    public class tstCard
     {
         [TestMethod]
         public void TestMethod1()
