@@ -49,10 +49,10 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="clsCard.cs" />
-    <Compile Include="clsCardCollection.cs" />
-    <Compile Include="clsConfirmation.cs" />
-    <Compile Include="clsPayment.cs" />
+    <Compile Include="tstCard.cs" />
+    <Compile Include="tstCardCollection.cs" />
+    <Compile Include="tstConfirmation.cs" />
+    <Compile Include="tstPayment.cs" />
     <Compile Include="tstActivities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstCustomer.cs" />
@@ -61,6 +61,7 @@
     <Compile Include="tstHotelBookingCollection.cs" />
     <Compile Include="tstHotelCollection.cs" />
     <Compile Include="tstRoom.cs" />
+    <Compile Include="tstUsers.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
