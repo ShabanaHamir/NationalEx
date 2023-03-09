@@ -1,4 +1,6 @@
-﻿namespace Classes
+﻿using System;
+
+namespace Classes
 {
     public class clsActivities
     {
@@ -12,5 +14,10 @@
         public string ActivityName { get; set; }
         public string ActivityPostCode { get; set; }
         public decimal ActivityPrice { get; set; }
+
+        public bool Find(int activityID)
+        {
+            return true;
+        }
     }
 }

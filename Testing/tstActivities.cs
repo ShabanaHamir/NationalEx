@@ -80,5 +80,20 @@ namespace Testing
             //test to see the two values are the same
             Assert.AreEqual(AnActivity.ActivityPrice, TestData);
         }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create instance of class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the results of the validation 
+            Boolean Found = false;
+            //test data to use with the method               
+            Int32 ActivityID = 2618936;
+            //invoke the method
+            Found = AnActivity.Find(ActivityID);
+            //test to see if result is true
+            Assert.IsTrue(Found);
+        }
     }   
 }

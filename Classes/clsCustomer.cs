@@ -11,5 +11,10 @@ namespace Classes
         public string CustomerPostCode { get; set; }
         public string CustomerEmail { get; set; }
         public int CustomerID { get; set; }
+
+        public bool Find(int customerID)
+        {
+           return true;
+        }
     }
 }
