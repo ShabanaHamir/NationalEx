@@ -34,7 +34,7 @@ namespace Classes
         {
             //set priv data members to the test data value
             mActivityName = "Kayaking";
-            //always return true
+            //always true
             return true;
         }
         
