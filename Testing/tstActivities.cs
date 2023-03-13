@@ -95,5 +95,27 @@ namespace Testing
             //test to see if result is true
             Assert.IsTrue(Found);
         }
+
+        [TestMethod]
+        public void ActivityNameNotFound()
+        {
+            //isntance of the class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 ActivityID = 14;
+            //invoke the method
+            Found = AnActivity.Find(ActivityID);
+            //check activity name
+            if (AnActivity.ActivityName != "Kayaking")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
     }   
 }
