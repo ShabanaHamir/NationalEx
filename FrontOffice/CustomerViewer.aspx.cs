@@ -12,12 +12,12 @@ namespace FrontOffice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //create new instance of clsCustomer
-            clsCustomer ACustomer = new clsCustomer();
-            //get data from session object
-            ACustomer = (clsCustomer)Session["ACustomer"];
-            //display the customer name for this entry
-            Response.Write(ACustomer.CustomerFName);
+            ////create new instance of clsCustomer
+            //clsCustomer ACustomer = new clsCustomer();
+            ////get data from session object
+            //ACustomer = (clsCustomer)Session["ACustomer"];
+            ////display the customer name for this entry
+            //Response.Write(ACustomer.CustomerFName);
         }
     }
 }

@@ -12,10 +12,10 @@ namespace FrontOffice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //new instance 
-            clsHotel AnHotel = new clsHotel();
-            AnHotel = (clsHotel)Session["AnHotel"];
-            Response.Write(AnHotel.HotelName);
+            ////new instance 
+            //clsHotel AnHotel = new clsHotel();
+            //AnHotel = (clsHotel)Session["AnHotel"];
+            //Response.Write(AnHotel.HotelName);
         }
     }
 }
