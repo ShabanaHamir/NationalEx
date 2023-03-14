@@ -32,12 +32,13 @@
       </div>
     </nav>
   </header>
-  
+    <asp:ContentPlaceHolder id="MainContent" runat="server">
+    
   <div class="container">
     <h1>Welcome to My Website</h1>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus, est sed vestibulum luctus, massa sapien varius eros, vel commodo metus elit eget eros.</p>
   </div>
-  
+  </asp:ContentPlaceHolder>
   <footer class="footer">
     <p>&copy; 2023 My Website. All rights reserved.</p>
 
