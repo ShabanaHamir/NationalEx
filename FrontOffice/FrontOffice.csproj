@@ -71,7 +71,8 @@
     <Content Include="AnHotel.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default.aspx" />
-    <Content Include="Default.css" />
+    <Content Include="Default.Master" />
+    <Content Include="Default1.css" />
     <Content Include="HotelViewer.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -121,7 +122,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Default.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
