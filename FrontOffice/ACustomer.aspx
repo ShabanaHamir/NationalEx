@@ -1,12 +1,11 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ACustomer.aspx.cs" Inherits="FrontOffice.ACustomer" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FrontOffice.Default" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
+
+    <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+ 
+
+
     <form id="form1" runat="server">
         <div>
         </div>
@@ -47,5 +46,6 @@
 &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
     </form>
-</body>
-</html>
+
+    </asp:Content>
+
