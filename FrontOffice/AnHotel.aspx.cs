@@ -26,5 +26,10 @@ namespace FrontOffice
         //    //redirect to the viewer page
         //    Response.Redirect("HotelViewer.aspx");
         }
+
+        protected void btnOK_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

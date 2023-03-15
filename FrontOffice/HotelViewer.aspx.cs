@@ -17,5 +17,10 @@ namespace FrontOffice
             //AnHotel = (clsHotel)Session["AnHotel"];
             //Response.Write(AnHotel.HotelName);
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

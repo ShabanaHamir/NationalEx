@@ -7,14 +7,14 @@ using System.Web.UI.WebControls;
 
 namespace FrontOffice
 {
-    public partial class Default : System.Web.UI.Page
+    public partial class AnActivity : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnOK_Click1(object sender, EventArgs e)
         {
 
         }
