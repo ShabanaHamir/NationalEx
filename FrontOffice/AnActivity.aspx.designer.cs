@@ -123,21 +123,21 @@ namespace FrontOffice
         protected global::System.Web.UI.WebControls.Label lblError;
 
         /// <summary>
-        /// btnOK control.
+        /// btnAOK control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnOK;
+        protected global::System.Web.UI.WebControls.Button btnAOK;
 
         /// <summary>
-        /// btnCancel control.
+        /// btnACancel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnCancel;
+        protected global::System.Web.UI.WebControls.Button btnACancel;
     }
 }
