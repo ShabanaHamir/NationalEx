@@ -27,5 +27,10 @@ namespace FrontOffice
             Response.Redirect("CustomerViewer.aspx");
 
         }
+
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

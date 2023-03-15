@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="FrontOffice.Default" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ACustomer.aspx.cs" Inherits="FrontOffice.ACustomer" %>
 
 
 
@@ -44,7 +44,7 @@
         <br />
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="Let The Journey Begin!" />
 &nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnCancel" runat="server" Text="Cancel" />
+        <asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
     </form>
 
     </asp:Content>
