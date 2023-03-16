@@ -59,6 +59,15 @@ namespace Classes
 
         public Boolean Valid(string Hotel)
         {
+            //var to record any errors found in Hotel name assuming all is OK
+            Boolean OK = true;
+            //test to see if the hotel has zero characters
+            if (Hotel.Length == 0)
+            {
+                //set OK to false
+                OK = false;
+            }
+            //retur results of all tests
             return true;
         }
 

@@ -49,7 +49,7 @@ namespace Testing
             //create an instance of the class we want to create 
             clsHotel AnHotel = new clsHotel();
             //test to see if valid method exists 
-            AnHotel.Valid("Extreme");
+            AnHotel.Valid("Inn");
         }
 
         [TestMethod]
