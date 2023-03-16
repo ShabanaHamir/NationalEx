@@ -31,7 +31,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void HotelPostcodePropertyOK()
+        public void HotelPostCodePropertyOK()
         {
             //create an instance of the class we want to create 
             clsHotel AnHotel = new clsHotel();
@@ -49,7 +49,7 @@ namespace Testing
             //create an instance of the class we want to create 
             clsHotel AnHotel = new clsHotel();
             //test to see if valid method exists 
-            AnHotel.Valid("Extreme");
+            AnHotel.Valid("Inn");
         }
 
         [TestMethod]
@@ -62,7 +62,7 @@ namespace Testing
             //some test data to use with the method
             Int32 HotelID = 21;
             //invoke the method
-           Found = AnHotel.Find(HotelID);                       //hotel id wala hotel name
+           Found = AnHotel.Find(HotelID);                       
             //test to see if valid method exists 
             Assert.IsTrue(Found);
         }
@@ -110,27 +110,29 @@ namespace Testing
             Assert.IsTrue(OK);
         }
 
-        //[TestMethod]
-        //public void TestHotelPostCodeFound()
-        //{
-        //    //create an instance of the class we want to create 
-        //    clsHotel AnHotel = new clsHotel();
-        //    //bool var to store the results of the validation
-        //    Boolean Found = false;
-        //    //Bool var to record if data isOK 
-        //    Boolean OK = true;
-        //    //some test data to use with the method
-        //    Int32 HotelID = 21;
-        //    //invoke the method
-        //    Found = AnHotel.Find(HotelID);
-        //    //check the hotel name 
-        //    if (AnHotel.HotelPostCode != "XXX XXX")
-        //    {
-        //        OK = false;
-        //    }
-        //    //test to see if valid method exists 
-        //    Assert.IsTrue(OK);
-        //}
+        [TestMethod]
+        public void TestHotelPostCodeFound()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //Bool var to record if data isOK 
+            Boolean OK = true;
+            //some test data to use with the method
+            Int32 HotelID = 21;
+            //invoke the method
+            Found = AnHotel.Find(HotelID);
+            //check the hotel name 
+            if (AnHotel.HotelPostCode != "XXX XXX")
+            {
+                OK = false;
+            }
+            //test to see if valid method exists 
+            Assert.IsTrue(OK);
+        }
+
+
 
 
     }
