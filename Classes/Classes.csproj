@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="clsActivities.cs" />
     <Compile Include="clsBooking.cs" />
+    <Compile Include="clsCard.cs" />
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsHotel.cs" />
