@@ -5,13 +5,13 @@ using System;
 namespace Testing
 {
     [TestClass]
-    public class tstHotelBooking
+    public class tstSystemBooking
     {
         [TestMethod]
         public void InstanceOK()
         {
             //create an instance of the class we want to create 
-            clsBooking ABooking = new clsBooking();
+            clsSystemBooking ABooking = new clsSystemBooking();
             //test to see that it exists
             Assert.IsNotNull(ABooking);
         }
@@ -20,7 +20,7 @@ namespace Testing
         public void BookingIDPropertyOK()
         {
             //create an instance of the class we want to create 
-            clsBooking ABooking = new clsBooking();
+            clsSystemBooking ABooking = new clsSystemBooking();
             //create some test data to assign to the property 
             Int32 TestData = 1;
             //assign data to the property
@@ -33,7 +33,7 @@ namespace Testing
         public void BookingDataPropertyOK()
         {
             //create an instance of the class we want to create 
-            clsBooking ABooking = new clsBooking();
+            clsSystemBooking ABooking = new clsSystemBooking();
             //create some test data to assign to the property 
            DateTime TestData = DateTime.Now.Date;
             //assign data to the property
@@ -46,7 +46,7 @@ namespace Testing
         public void BookingPaymentInfoPropertyOK()
         {
             //create an instance of the class we want to create 
-            clsBooking ABooking = new clsBooking();
+            clsSystemBooking ABooking = new clsSystemBooking();
             //create some test data to assign to the property 
             string TestData = "Credit";
             //assign data to the property
@@ -59,7 +59,7 @@ namespace Testing
         public void BookingTypePropertyOK()                                     //can be taken out
         {
             //create an instance of the class we want to create 
-            clsBooking ABooking = new clsBooking();
+            clsSystemBooking ABooking = new clsSystemBooking();
             //create some test data to assign to the property 
             string TestData = "";
             //assign data to the property

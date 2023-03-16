@@ -2,7 +2,7 @@
 
 namespace Classes
 {
-    public class clsBooking
+    public class clsSystemBooking
     {
         public int BookingID { get; set; }
         public DateTime BookingDate { get; set; }
