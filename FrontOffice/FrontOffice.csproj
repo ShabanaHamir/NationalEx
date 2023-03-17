@@ -67,10 +67,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ACard.aspx" />
     <Content Include="ActivityViewer.aspx" />
     <Content Include="ACustomer.aspx" />
     <Content Include="AnActivity.aspx" />
     <Content Include="AnHotel.aspx" />
+    <Content Include="CardViewer.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Default.Master" />
@@ -79,6 +81,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ACard.aspx.cs">
+      <DependentUpon>ACard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ACard.aspx.designer.cs">
+      <DependentUpon>ACard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ActivityViewer.aspx.cs">
       <DependentUpon>ActivityViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -106,6 +115,13 @@
     </Compile>
     <Compile Include="AnHotel.aspx.designer.cs">
       <DependentUpon>AnHotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CardViewer.aspx.cs">
+      <DependentUpon>CardViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CardViewer.aspx.designer.cs">
+      <DependentUpon>CardViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerViewer.aspx.cs">
       <DependentUpon>CustomerViewer.aspx</DependentUpon>

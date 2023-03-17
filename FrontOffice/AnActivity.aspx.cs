@@ -21,7 +21,7 @@ namespace FrontOffice
             clsActivities AnActivity = new clsActivities();
             //capture the activity name
             AnActivity.ActivityName = txtAName.Text;
-            //store the address in the session object
+            //store the activity in the session object
             Session["AnActivity"] = AnActivity;
             //redirect to the viewer page
             Response.Redirect("ActivityViewer.aspx");
