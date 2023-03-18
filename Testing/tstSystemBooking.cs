@@ -2,7 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
-namespace Testing
+namespace Testing       //sql changes 
 {
     [TestClass]
     public class tstSystemBooking
