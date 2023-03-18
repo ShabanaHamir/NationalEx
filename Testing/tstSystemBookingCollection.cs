@@ -4,7 +4,7 @@ using System;
 namespace Testing
 {
     [TestClass]
-    public class tstHotelBookingCollection
+    public class tstSystemBookingCollection
     {
         [TestMethod]
         public void TestMethod1()
