@@ -5,7 +5,7 @@ using System;
 namespace Testing
 {
     [TestClass]
-    public class tstHotelBooking
+    public class tstSystemBooking
     {
         [TestMethod]
         public void InstanceOK()
