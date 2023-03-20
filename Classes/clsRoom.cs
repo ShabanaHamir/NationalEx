@@ -101,14 +101,7 @@ namespace Classes
                 //return false indicating a problem
                 return false;
             }
-            ////set private data members to the test data value
-            //mRoomID = 3;
-            //mRoomNumber = 31;
-            //mRoomType = "Suite";
-            //mHotelID = 4;
-
-            ////return true always
-            //return true;
+         
         }
     }
 }
