@@ -72,16 +72,43 @@ namespace Classes
             }
         }
 
-        public bool Find(int roomID)
+        public bool Find(int RoomID)
         {
-            //set private data members to the test data value
-            mRoomID = 1;
-            mRoomNumber = 10;
-            mRoomType = "Single";
-            mHotelID = 134;
 
-            //return true always
-            return true;
+
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add parametetr for the HotelId to search for 
+            DB.AddParameter("@RoomID", RoomID);
+            //execute stored proc
+            DB.Execute("[sproc_tblRoom_FilterByRoomId]");
+            //if one record is found (either one or zero)
+            if (DB.Count == 1)
+            {
+                //copy data from the db to the private data memebers
+
+                mRoomID = Convert.ToInt32(DB.DataTable.Rows[0]["RoomID"]);
+                mRoomNumber = Convert.ToInt32(DB.DataTable.Rows[0]["RoomNumber"]);
+                mRoomType = Convert.ToString(DB.DataTable.Rows[0]["RoomType"]);
+                mHotelID = Convert.ToInt32(DB.DataTable.Rows[0]["HotelID"]);
+                //return everything worked fine
+                return true;
+            }
+
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+            }
+            ////set private data members to the test data value
+            //mRoomID = 3;
+            //mRoomNumber = 31;
+            //mRoomType = "Suite";
+            //mHotelID = 4;
+
+            ////return true always
+            //return true;
         }
     }
 }
