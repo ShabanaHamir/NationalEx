@@ -16,6 +16,18 @@ namespace Testing
             Assert.IsNotNull(AnHotel);
         }
 
+        [TestMethod]
+        public void HotelIDPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //create some test data to assign to the property 
+            Int32 TestData = 3;
+            //assign the data to the property
+            AnHotel.HotelID = TestData;
+            //test to see that it exists
+            Assert.AreEqual(AnHotel.HotelID, TestData);
+        }
 
         [TestMethod]
         public void HotelNamePropertyOK()
@@ -23,7 +35,7 @@ namespace Testing
             //create an instance of the class we want to create 
             clsHotel AnHotel = new clsHotel();
             //create some test data to assign to the property 
-            string TestData = "shahd";
+            string TestData = "TestHotelName";
             //assign the data to the property
             AnHotel.HotelName = TestData;
             //test to see that it exists
@@ -36,11 +48,24 @@ namespace Testing
             //create an instance of the class we want to create 
             clsHotel AnHotel = new clsHotel();
             //create some test data to assign to the property 
-            string TestData = "LE1 4TY";
+            string TestData = "XXX XXX";
             //assign the data to the property
             AnHotel.HotelPostCode = TestData;
             //test to see that it exists
             Assert.AreEqual(AnHotel.HotelPostCode, TestData);
+        }
+
+        [TestMethod]
+        public void HotelPhoneNumberPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //create some test data to assign to the property 
+            Int32 TestData = 1234567891;
+            //assign the data to the property
+            AnHotel.HotelPhoneNumber = TestData;
+            //test to see that it exists
+            Assert.AreEqual(AnHotel.HotelPhoneNumber, TestData);
         }
 
         [TestMethod]
@@ -60,7 +85,7 @@ namespace Testing
             //bool var to store the results of the validation
             Boolean Found = false;
             //some test data to use with the method
-            Int32 HotelID = 21;
+            Int32 HotelID = 2;
             //invoke the method
            Found = AnHotel.Find(HotelID);                       
             //test to see if valid method exists 
@@ -76,11 +101,11 @@ namespace Testing
             //Bool var to record if data isOK 
             Boolean OK = true;
             //some test data to use with the method
-            Int32 HotelID = 21;                                       
+            Int32 HotelID = 2;                                       
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
-            if (AnHotel.HotelID != 21)
+            if (AnHotel.HotelID != 3)
             {
                 OK = false;
             }
@@ -102,7 +127,7 @@ namespace Testing
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
-            if (AnHotel.HotelName != "Inn")
+            if (AnHotel.HotelName != "TestHotelName")
             {
                 OK = false;
             }
@@ -133,7 +158,27 @@ namespace Testing
         }
 
 
-
+        [TestMethod]
+        public void TestHotelPhoneNumberFound()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //Bool var to record if data isOK 
+            Boolean OK = true;
+            //some test data to use with the method
+            Int32 HotelID = 21;
+            //invoke the method
+            Found = AnHotel.Find(HotelID);
+            //check the hotel name 
+            if (AnHotel.HotelPhoneNumber != 1234567891)
+            {
+                OK = false;
+            }
+            //test to see if valid method exists 
+            Assert.IsTrue(OK);
+        }
 
     }
 }
