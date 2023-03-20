@@ -85,7 +85,7 @@ namespace Testing
             //bool var to store the results of the validation
             Boolean Found = false;
             //some test data to use with the method
-            Int32 HotelID = 2;
+            Int32 HotelID = 3;
             //invoke the method
            Found = AnHotel.Find(HotelID);                       
             //test to see if valid method exists 
@@ -101,7 +101,7 @@ namespace Testing
             //Bool var to record if data isOK 
             Boolean OK = true;
             //some test data to use with the method
-            Int32 HotelID = 2;                                       
+            Int32 HotelID = 3;                                       
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
@@ -123,7 +123,7 @@ namespace Testing
             //Bool var to record if data isOK 
             Boolean OK = true;
             //some test data to use with the method
-            Int32 HotelID = 21;
+            Int32 HotelID = 3;
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
@@ -145,7 +145,7 @@ namespace Testing
             //Bool var to record if data isOK 
             Boolean OK = true;
             //some test data to use with the method
-            Int32 HotelID = 21;
+            Int32 HotelID = 3;
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
@@ -168,7 +168,7 @@ namespace Testing
             //Bool var to record if data isOK 
             Boolean OK = true;
             //some test data to use with the method
-            Int32 HotelID = 21;
+            Int32 HotelID = 3;
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 

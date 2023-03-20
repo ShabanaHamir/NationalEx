@@ -89,39 +89,39 @@ namespace Classes
         public bool Find(int HotelID)
         {
 
-            ////create an instance of the data connection
-            //clsDataConnection DB = new clsDataConnection();
-            ////add parametetr for the HotelId to search for 
-            //DB.AddParameter("@HotelID", HotelID);
-            ////execute stored proc
-            //DB.Execute("[sproc_tblHotel_FilterByHotelId]");
-            ////if one record is found (either one or zero)
-            //if (DB.Count == 1)
-            //{
-            //    //copy data from the db to the private data memebers
+            //create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add parametetr for the HotelId to search for 
+            DB.AddParameter("@HotelID", HotelID);
+            //execute stored proc
+            DB.Execute("[sproc_tblHotel_FilterByHotelId]");
+            //if one record is found (either one or zero)
+            if (DB.Count == 1)
+            {
+                //copy data from the db to the private data memebers
 
-            //    mHotelID = Convert.ToInt32(DB.DataTable.Rows[0]["HotelID"]);
-            //    mHotelName = Convert.ToString(DB.DataTable.Rows[0]["HotelName"]);
-            //    mHotelPostCode = Convert.ToString(DB.DataTable.Rows[0]["HotelPostCode"]);
-            //    mHotelPhoneNumber = Convert.ToInt32(DB.DataTable.Rows[0]["HotelPhoneNumber"]);
-            //    //return everything worked fine
-            //    return true;
-            //}
+                mHotelID = Convert.ToInt32(DB.DataTable.Rows[0]["HotelID"]);
+                mHotelName = Convert.ToString(DB.DataTable.Rows[0]["HotelName"]);
+                mHotelPostCode = Convert.ToString(DB.DataTable.Rows[0]["HotelPostCode"]);
+                mHotelPhoneNumber = Convert.ToInt32(DB.DataTable.Rows[0]["HotelPhoneNumber"]);
+                //return everything worked fine
+                return true;
+            }
 
-            ////if no record was found
-            //else
-            //{
-            //    //return false indicating a problem
-            //    return false;
-            //}
+            //if no record was found
+            else
+            {
+                //return false indicating a problem
+                return false;
+                }
 
-            //set private data memebers to the test data value
-            mHotelID = 3;
-            mHotelName = "TestHotelName";
-            mHotelPostCode = "XXX XXX";
-            mHotelPhoneNumber = 1234567891;
-            //always true
-            return true;
+            //    //set private data memebers to the test data value
+            //    mHotelID = 3;
+            //mHotelName = "TestHotelName";
+            //mHotelPostCode = "XXX XXX";
+            //mHotelPhoneNumber = 1234567891;
+            ////always true
+            //return true;
 
 
 
