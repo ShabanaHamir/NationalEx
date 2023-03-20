@@ -14,18 +14,18 @@ namespace Testing
             clsRoom ARoom = new clsRoom();
             Assert.IsNotNull(ARoom);
         }
-        //[TestMethod]
-        //public void RoomIDPropertyOK()
-        //{
-        //    //create instance
-        //    clsRoom ARoom = new clsRoom();
-        //    //create tests data to assign to property
-        //    Int32 TestData = 22;
-        //    //assign data to property
-        //    ARoom.RoomID = TestData;
-        //    //test to see that too values are the same
-        //    Assert.AreEqual(ARoom.RoomID, TestData);
-        //}
+        [TestMethod]
+        public void RoomIDPropertyOK()
+        {
+            //create instance
+            clsRoom ARoom = new clsRoom();
+            //create tests data to assign to property
+            Int32 TestData = 2;
+            //assign data to property
+            ARoom.RoomID = TestData;
+            //test to see that too values are the same
+            Assert.AreEqual(ARoom.RoomID, TestData);
+        }
         [TestMethod]
         public void HotelIDPropertyOK()                         //Do I need this?
         {
@@ -45,7 +45,7 @@ namespace Testing
             //create instance
             clsRoom ARoom = new clsRoom();
             //create tests data to assign to property
-            Int32 TestData = 22;
+            Int32 TestData = 21;
             //assign data to property
             ARoom.RoomNumber = TestData;
             //test to see that too values are the same
@@ -57,7 +57,7 @@ namespace Testing
             //create instance
             clsRoom ARoom = new clsRoom();
             //create tests data to assign to property
-            string TestData = "Single";
+            string TestData = "Double";
             //assign data to property
             ARoom.RoomType = TestData;
             //test to see that too values are the same
@@ -80,7 +80,7 @@ namespace Testing
             //bool var to store the result of the validation
             Boolean Found = false;
             //create some test data to use with the method
-            Int32 RoomID = 1;
+            Int32 RoomID = 3;
             //invoke the method
             Found = ARoom.Find(RoomID);
             //test to see that the result is correct
@@ -98,11 +98,11 @@ namespace Testing
             //bool var to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with this method
-            Int32 RoomID = 1;
+            Int32 RoomID = 3;
             //invoke the method
             Found = ARoom.Find(RoomID);
             //check the room id
-            if (ARoom.RoomID != 1)
+            if (ARoom.RoomID != 3)
             {
                 OK = false;
             }
@@ -121,11 +121,11 @@ namespace Testing
             //bool var to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with this method
-            Int32 RoomID = 1;
+            Int32 RoomID = 3;
             //invoke the method
             Found = ARoom.Find(RoomID);
             //check the room id
-            if (ARoom.RoomNumber != 10)
+            if (ARoom.RoomNumber != 31)
             {
                 OK = false;
             }
@@ -144,11 +144,11 @@ namespace Testing
             //bool var to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with this method
-            Int32 RoomID = 1;
+            Int32 RoomID = 3;
             //invoke the method
             Found = ARoom.Find(RoomID);
             //check the room id
-            if (ARoom.RoomType != "Single")
+            if (ARoom.RoomType != "Suite")
             {
                 OK = false;
             }
@@ -167,11 +167,11 @@ namespace Testing
             //bool var to record if data is ok (assume it is)
             Boolean OK = true;
             //create some test data to use with this method
-            Int32 RoomID = 1;
+            Int32 RoomID = 3;
             //invoke the method
             Found = ARoom.Find(RoomID);
             //check the room id
-            if (ARoom.HotelID != 134)
+            if (ARoom.HotelID != 4)
             {
                 OK = false;
             }
