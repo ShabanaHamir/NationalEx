@@ -97,7 +97,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void ActivityNameNotFound()
+        public void ActivityNameFound()
         {
             //isntance of the class
             clsActivities AnActivity = new clsActivities();
@@ -111,6 +111,28 @@ namespace Testing
             Found = AnActivity.Find(ActivityID);
             //check activity name
             if (AnActivity.ActivityName != "Kayaking")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ActivityCityFound()
+        {
+            //instance of the class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 ActivityID = 14;
+            //invoke method
+            Found = AnActivity.Find(ActivityID);
+            //check city
+            if (AnActivity.ActivityCity != "Birmingham")
             {
                 OK = false;
             }
