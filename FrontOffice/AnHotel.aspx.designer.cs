@@ -42,6 +42,15 @@ namespace FrontOffice
         protected global::System.Web.UI.WebControls.TextBox txtHotelName;
 
         /// <summary>
+        /// txtHotelPhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtHotelPhoneNumber;
+
+        /// <summary>
         /// txtHotelPostCode control.
         /// </summary>
         /// <remarks>

@@ -7,6 +7,8 @@
             <br />
             Hotel Name<asp:TextBox ID="txtHotelName" runat="server"></asp:TextBox>
             <br />
+            Hotel Phone Number<asp:TextBox ID="txtHotelPhoneNumber" runat="server"></asp:TextBox>
+            <br />
             Hotel Post Code<asp:TextBox ID="txtHotelPostCode" runat="server"></asp:TextBox>
             <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
         </div>
