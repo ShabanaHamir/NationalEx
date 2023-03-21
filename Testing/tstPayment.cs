@@ -1,14 +1,82 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Classes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-                                //this class is shared among the system
+//this class is shared among the system
 namespace Testing
 {
     [TestClass]
     public class tstPayment
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InstanceOK()
         {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //test to see that it exists
+            Assert.IsNotNull(APayment);
+        }
+        [TestMethod]
+        public void PaymentIDPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //create some test data to assign to the property 
+            Int32 TestData = 1;
+            //assign the data to the property
+            APayment.PaymentID = TestData;
+            //test to see that it exists
+            Assert.AreEqual(APayment.PaymentID, TestData);
+        }
+        [TestMethod]
+        public void CustomerIDPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //create some test data to assign to the property 
+            Int32 TestData = 2;
+            //assign the data to the property
+            APayment.CustomerID = TestData;
+            //test to see that it exists
+            Assert.AreEqual(APayment.CustomerID, TestData);
+        }
+
+        [TestMethod]
+        public void PaymentAmountPropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //create some test data to assign to the property 
+            Int32 TestData = 160;
+            //assign the data to the property
+            APayment.PaymentAmount = TestData;
+            //test to see that it exists
+            Assert.AreEqual(APayment.PaymentAmount, TestData);
+        }
+
+        [TestMethod]
+        public void PaymentDatePropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //create some test data to assign to the property 
+            DateTime TestData = DateTime.Now.Date;
+            //assign the data to the property
+            APayment.PaymentDate = TestData;
+            //test to see that it exists
+            Assert.AreEqual(APayment.PaymentDate, TestData);
+        }
+
+        [TestMethod]
+        public void PaymentTypePropertyOK()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //create some test data to assign to the property 
+            string TestData = "SS";
+            //assign the data to the property
+            APayment.PaymentType = TestData;
+            //test to see that it exists
+            Assert.AreEqual(APayment.PaymentType, TestData);
         }
     }
 }
