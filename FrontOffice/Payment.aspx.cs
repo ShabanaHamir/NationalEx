@@ -17,7 +17,7 @@ namespace FrontOffice
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
-            //create a new instance of clsHotel
+            //create a new instance of clsPayemnt
             clsPayment APayment = new clsPayment();
             //capture
             APayment.CustomerID = Convert.ToInt32(txtCustomerID.Text);
