@@ -17,7 +17,7 @@
         <br />
         Payment Date:<asp:TextBox ID="txtPaymentDate" runat="server"></asp:TextBox>
         <br />
-        Payment Type:<asp:TextBox ID="txtPaymentType" runat="server"></asp:TextBox>
+        Payment Type:<asp:TextBox ID="txtPaymentType" runat="server" OnTextChanged="txtPaymentType_TextChanged"></asp:TextBox>
         <asp:Button ID="btnOK" runat="server" Text="OK" OnClick="btnOK_Click" />
     </form>
 </asp:Content>
