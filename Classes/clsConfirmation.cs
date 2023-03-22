@@ -2,7 +2,7 @@
 
 namespace Classes
 {
-    public class clsConfirmation
+    public class clsConfirmation                        //no changes
     {
         public int CustomerID { get; set; }
         public string Email { get; set; }
