@@ -74,6 +74,8 @@
     <Content Include="AnHotel.aspx" />
     <Content Include="ARoom.aspx" />
     <Content Include="CardViewer.aspx" />
+    <Content Include="Confirmation.aspx" />
+    <Content Include="ConfirmationViewer.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="Default.Master" />
@@ -133,6 +135,20 @@
     </Compile>
     <Compile Include="CardViewer.aspx.designer.cs">
       <DependentUpon>CardViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Confirmation.aspx.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Confirmation.aspx.designer.cs">
+      <DependentUpon>Confirmation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfirmationViewer.aspx.cs">
+      <DependentUpon>ConfirmationViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfirmationViewer.aspx.designer.cs">
+      <DependentUpon>ConfirmationViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerViewer.aspx.cs">
       <DependentUpon>CustomerViewer.aspx</DependentUpon>
