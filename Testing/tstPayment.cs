@@ -78,5 +78,136 @@ namespace Testing
             //test to see that it exists
             Assert.AreEqual(APayment.PaymentType, TestData);
         }
+        //[TestMethod]                  //not working
+        //public void Valid()
+        //{
+        //    //create an instance of the class we want to create 
+        //    clsPayment APayment = new clsPayment();
+        //    //test to see if valid method exists 
+        //    APayment.Valid("s");
+        //}
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment(); 
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //some test data to use with the method
+            Int32 PaymentID = 2;
+            //invoke the method
+            Found = APayment.Find(PaymentID);
+            //test to see if valid method exists 
+            Assert.IsTrue(Found);
+        }
+        [TestMethod]
+        public void TestPaymentIDFound()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //Bool var to record if data isOK 
+            Boolean OK = true;
+            //some test data to use with the method
+            Int32 PaymentID = 2;
+            //invoke the method
+            Found = APayment.Find(PaymentID);
+            //check the hotel name 
+            if (APayment.PaymentID != 2)
+            {
+                OK = false;
+            }
+            //test to see if valid method exists 
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestCustomerIDFound()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //Bool var to record if data isOK 
+            Boolean OK = true;
+            //some test data to use with the method
+            Int32 PaymentID = 2;
+            //invoke the method
+            Found = APayment.Find(PaymentID);
+            //check the hotel name 
+            if (APayment.CustomerID != 1)
+            {
+                OK = false;
+            }
+            //test to see if valid method exists 
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPaymentAmountFound()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //Bool var to record if data isOK 
+            Boolean OK = true;
+            //some test data to use with the method
+            Int32 PaymentID = 2;
+            //invoke the method
+            Found = APayment.Find(PaymentID);
+            //check the hotel name 
+            if (APayment.PaymentAmount != 160)
+            {
+                OK = false;
+            }
+            //test to see if valid method exists 
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPaymentDateFound()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //Bool var to record if data isOK 
+            Boolean OK = true;
+            //some test data to use with the method
+            Int32 PaymentID = 2;
+            //invoke the method
+            Found = APayment.Find(PaymentID);
+            //check the hotel name 
+            if (APayment.PaymentDate != Convert.ToDateTime("04/03/2021"))
+            {
+                OK = false;
+            }
+            //test to see if valid method exists 
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestPaymentTypeFound()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //Bool var to record if data isOK 
+            Boolean OK = true;
+            //some test data to use with the method
+            Int32 PaymentID = 2;
+            //invoke the method
+            Found = APayment.Find(PaymentID);
+            //check the hotel name 
+            if (APayment.PaymentType != "Card")
+            {
+                OK = false;
+            }
+            //test to see if valid method exists 
+            Assert.IsTrue(OK);
+        }
     }
 }
