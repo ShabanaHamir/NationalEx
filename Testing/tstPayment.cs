@@ -78,14 +78,14 @@ namespace Testing
             //test to see that it exists
             Assert.AreEqual(APayment.PaymentType, TestData);
         }
-        //[TestMethod]                  //not working
-        //public void Valid()
-        //{
-        //    //create an instance of the class we want to create 
-        //    clsPayment APayment = new clsPayment();
-        //    //test to see if valid method exists 
-        //    APayment.Valid("s");
-        //}
+        [TestMethod]                 
+        public void Valid()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //test to see if valid method exists 
+            APayment.Valid("s");
+        }
         [TestMethod]
         public void FindMethodOK()
         {

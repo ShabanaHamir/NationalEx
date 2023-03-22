@@ -26,5 +26,10 @@ namespace FrontOffice
             //redirect to the viewer page
             Response.Redirect("PaymentViewer.aspx");
         }
+
+        protected void txtPaymentType_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

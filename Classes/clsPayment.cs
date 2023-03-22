@@ -89,9 +89,14 @@ namespace Classes
             }
         }
 
-        public void Valid(string v)
+        public Boolean Valid(string PaymentType)
         {
-            throw new NotImplementedException();
+            Boolean OK = true;
+            if(PaymentType.Length == 0)
+            {
+                OK = false;
+            }
+            return OK;
         }
 
         public bool Find(int paymentID)
