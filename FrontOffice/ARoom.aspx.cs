@@ -25,7 +25,7 @@ namespace FrontOffice
             Session["ARoom"] = ARoom;
             //redirect to the viewer page
             Response.Redirect("RoomViewer.aspx");
-          ;
+       
         }
     }
 }
