@@ -79,6 +79,7 @@
     <Content Include="Default.Master" />
     <Content Include="Default1.css" />
     <Content Include="HotelViewer.aspx" />
+    <Content Include="PaymentViewer.aspx" />
     <Content Include="RoomViewer.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -159,6 +160,13 @@
     </Compile>
     <Compile Include="HotelViewer.aspx.designer.cs">
       <DependentUpon>HotelViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentViewer.aspx.cs">
+      <DependentUpon>PaymentViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PaymentViewer.aspx.designer.cs">
+      <DependentUpon>PaymentViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RoomViewer.aspx.cs">
