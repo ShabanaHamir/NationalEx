@@ -30,7 +30,7 @@ namespace Testing       //sql changes
         }
 
         [TestMethod]
-        public void BookingDataPropertyOK()
+        public void BookingDatePropertyOK()
         {
             //create an instance of the class we want to create 
             clsBooking ABooking = new clsBooking();
@@ -43,7 +43,7 @@ namespace Testing       //sql changes
         }
 
         [TestMethod]
-        public void BookingPaymentInfoPropertyOK()
+        public void PaymentTypePropertyOK()
         {
             //create an instance of the class we want to create 
             clsBooking ABooking = new clsBooking();
