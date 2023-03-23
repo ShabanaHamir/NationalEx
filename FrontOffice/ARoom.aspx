@@ -10,5 +10,6 @@
         <br />
         Room Type:<asp:TextBox ID="txtRoomType" runat="server"></asp:TextBox>
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
     </form>
 </asp:Content>

@@ -27,5 +27,27 @@ namespace FrontOffice
             Response.Redirect("RoomViewer.aspx");
        
         }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            //create a new instance of clsHotel
+            clsRoom ARoom = new clsRoom();
+            //var to store the PK
+            Int32 RoomID;
+            //var to store the result of the find operation
+            Boolean Found = false;
+            //get the PK entered by the user
+            RoomID = Convert.ToInt32(txtRoomID.Text);
+            //find record
+            Found = ARoom.Find(RoomID);
+            //if found
+            if (Found == true)
+            {
+                //display values of the properties in the form
+                txtHotelID.Text = ARoom.HotelID.ToString();
+                txtRoomNumber.Text = ARoom.RoomNumber.ToString();
+                txtRoomType.Text = ARoom.RoomType;
+            }
+        }
     }
 }
