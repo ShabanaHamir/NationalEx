@@ -51,7 +51,7 @@ namespace FrontOffice
                 txtCustomerID.Text = APayment.CustomerID.ToString();
                 txtPaymentAmount.Text = APayment.PaymentAmount.ToString();
                 txtPaymentDate.Text = APayment.PaymentDate.ToString();
-                txtPaymentType.Text = APayment.PaymentType;
+                txtPaymentType.Text = APayment.PaymentType; //hello
 
 
             }
