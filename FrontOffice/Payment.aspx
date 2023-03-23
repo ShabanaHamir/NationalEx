@@ -9,7 +9,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         Payment ID:
-        <asp:TextBox ID="txtPaymenID" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtPaymentID" runat="server"></asp:TextBox>
         <br />
         Customer ID:<asp:TextBox ID="txtCustomerID" runat="server"></asp:TextBox>
         <br />
@@ -19,5 +19,6 @@
         <br />
         Payment Type:<asp:TextBox ID="txtPaymentType" runat="server" OnTextChanged="txtPaymentType_TextChanged"></asp:TextBox>
         <asp:Button ID="btnOK" runat="server" Text="OK" OnClick="btnOK_Click" />
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
     </form>
 </asp:Content>
