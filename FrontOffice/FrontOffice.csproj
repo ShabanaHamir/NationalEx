@@ -67,12 +67,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ABooking.aspx" />
     <Content Include="ACard.aspx" />
     <Content Include="ActivityViewer.aspx" />
     <Content Include="ACustomer.aspx" />
     <Content Include="AnActivity.aspx" />
     <Content Include="AnHotel.aspx" />
     <Content Include="ARoom.aspx" />
+    <Content Include="BookingViewer.aspx" />
     <Content Include="CardViewer.aspx" />
     <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
@@ -87,6 +89,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ABooking.aspx.cs">
+      <DependentUpon>ABooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ABooking.aspx.designer.cs">
+      <DependentUpon>ABooking.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ACard.aspx.cs">
       <DependentUpon>ACard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -128,6 +137,13 @@
     </Compile>
     <Compile Include="ARoom.aspx.designer.cs">
       <DependentUpon>ARoom.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookingViewer.aspx.cs">
+      <DependentUpon>BookingViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookingViewer.aspx.designer.cs">
+      <DependentUpon>BookingViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="CardViewer.aspx.cs">
       <DependentUpon>CardViewer.aspx</DependentUpon>
