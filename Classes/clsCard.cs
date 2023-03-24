@@ -6,7 +6,6 @@ namespace Classes
     {
         //private memebr
         private Int32 mCardID;
-        private string mNameOnCard;
         private string mCardName;
         private string mCardNo;
 
