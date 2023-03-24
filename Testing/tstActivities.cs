@@ -74,7 +74,7 @@ namespace Testing
             //instance of the class
             clsActivities AnActivity = new clsActivities();
             //test data to assign to property
-            decimal TestData = 59.99M;
+            decimal TestData = 59.99m;
             //assign data
             AnActivity.ActivityPrice = TestData;
             //test to see the two values are the same
@@ -97,7 +97,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void ActivityNameFound()
+        public void TestActivityNameFound()
         {
             //isntance of the class
             clsActivities AnActivity = new clsActivities();
@@ -119,7 +119,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void ActivityCityFound()
+        public void TestActivityCityFound()
         {
             //instance of the class
             clsActivities AnActivity = new clsActivities();
@@ -133,6 +133,48 @@ namespace Testing
             Found = AnActivity.Find(ActivityID);
             //check city
             if (AnActivity.ActivityCity != "Birmingham")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        public void TestActivityPriceFound()
+        {
+            //instance of the class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 ActivityID = 14;
+            //invoke method
+            Found = AnActivity.Find(ActivityID);
+            //check city
+            if (AnActivity.ActivityPrice != 59.99m)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        public void TestActivityPostCodeFound()
+        {
+            //instance of the class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 ActivityID = 14;
+            //invoke method
+            Found = AnActivity.Find(ActivityID);
+            //check city
+            if (AnActivity.ActivityPostCode != "LE3 4EQ")
             {
                 OK = false;
             }
