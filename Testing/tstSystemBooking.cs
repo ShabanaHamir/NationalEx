@@ -48,7 +48,7 @@ namespace Testing       //sql changes
             //create an instance of the class we want to create 
             clsBooking ABooking = new clsBooking();
             //create some test data to assign to the property 
-            string TestData = "MasterCard";
+            string TestData = "Mastercard";
             //assign data to the property
             ABooking.PaymentType = TestData;
             //test to see that it exists
@@ -61,7 +61,7 @@ namespace Testing       //sql changes
             //create an instance of the class we want to create 
             clsBooking ABooking = new clsBooking();
             //create some test data to assign to the property 
-            string TestData = "Hotel: Transylvania x2. Activity: Kayaking x2. Time: 10:30";
+            string TestData = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
             //assign data to the property
             ABooking.BookingDetails = TestData;
             //test to see that it exists
@@ -74,7 +74,7 @@ namespace Testing       //sql changes
             //create an instance of the class we want to create 
             clsBooking ABooking = new clsBooking();
             //create some test data to assign to the property 
-            string TestData = "Sara";
+            string TestData = "Shannon";
             //assign data to the property
             ABooking.UserFName = TestData;
             //test to see that it exists
@@ -87,7 +87,7 @@ namespace Testing       //sql changes
             //create an instance of the class we want to create 
             clsBooking ABooking = new clsBooking();
             //create some test data to assign to the property 
-            decimal TestData = 25.50m;
+            decimal TestData = 80.00m;
             //assign data to the property
             ABooking.TotalCost = TestData;
             //test to see that it exists
@@ -102,7 +102,7 @@ namespace Testing       //sql changes
             //boolean variable to store the results of the validation 
             Boolean Found = false;
             //test data to use with the method               
-            Int32 BookingID = 2618936;
+            Int32 BookingID = 1;
             //invoke the method
             Found = ABooking.Find(BookingID);
             //test to see if result is true
@@ -119,11 +119,11 @@ namespace Testing       //sql changes
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 BookingID = 17;
+            Int32 BookingID = 1;
             //invoke the method
             Found = ABooking.Find(BookingID);
             //check Booking name
-            if (ABooking.BookingID != 17)
+            if (ABooking.BookingID != 1)
             {
                 OK = false;
             }
@@ -140,11 +140,11 @@ namespace Testing       //sql changes
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 BookingID = 17;
+            Int32 BookingID = 1;
             //invoke the method
             Found = ABooking.Find(BookingID);
             //check the property
-            if (ABooking.BookingDate != Convert.ToDateTime("18/06/2022"))
+            if (ABooking.BookingDate != Convert.ToDateTime("10/09/2018"))
             {
                 OK = false;
             }
@@ -161,11 +161,11 @@ namespace Testing       //sql changes
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 BookingID = 17;
+            Int32 BookingID = 1;
             //invoke the method
             Found = ABooking.Find(BookingID);
             //check the property
-            if (ABooking.UserFName != "Sara")
+            if (ABooking.UserFName != "Shannon")
             {
                 OK = false;
             }
@@ -182,11 +182,11 @@ namespace Testing       //sql changes
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 BookingID = 17;
+            Int32 BookingID = 1;
             //invoke the method
             Found = ABooking.Find(BookingID);
             //check the property
-            if (ABooking.BookingDetails != "Hotel: Transylvania x2. Activity: Kayaking x2. Time: 10:30")
+            if (ABooking.BookingDetails != "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30")
             {
                 OK = false;
             }
@@ -203,11 +203,11 @@ namespace Testing       //sql changes
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 BookingID = 17;
+            Int32 BookingID = 1;
             //invoke the method
             Found = ABooking.Find(BookingID);
             //check the property
-            if (ABooking.PaymentType != "MasterCard")
+            if (ABooking.PaymentType != "Mastercard")
             {
                 OK = false;
             }
@@ -223,11 +223,11 @@ namespace Testing       //sql changes
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 BookingID = 17;
+            Int32 BookingID = 1;
             //invoke the method
             Found = ABooking.Find(BookingID);
             //check the property
-            if (ABooking.TotalCost != 25.50m)
+            if (ABooking.TotalCost != 80.00m)
             {
                 OK = false;
             }

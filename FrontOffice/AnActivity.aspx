@@ -3,46 +3,57 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 
-    <form id="form1" runat="server" style="height: 411px">
+    <form id="form1" runat="server" style="height: 947px">
         <p>
             &nbsp;</p>
-        &nbsp;&nbsp;&nbsp;&nbsp;
+        <p style="height: 791px; margin-left: 40px">
+        &nbsp;&nbsp;<asp:Label ID="lblActivityID" runat="server" Enabled="False" Font-Bold="True" Text="Activity ID:"></asp:Label>
+&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtActivityID" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
+            <br />
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
         <asp:Label ID="lblAName" runat="server" Font-Bold="True" Text="Activity:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtAName" runat="server" ></asp:TextBox>
-        <br />
-        <br />
         &nbsp;&nbsp;&nbsp;
+        <br style="margin-left: 40px" />
+        <br style="margin-left: 40px" />
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
         <asp:Label ID="lblACity" runat="server" Font-Bold="True" Font-Overline="False" Text="City:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtACity" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        &nbsp;&nbsp;&nbsp;
+        <br style="margin-left: 40px" />
+        <br style="margin-left: 40px" />
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
         <asp:Label ID="lblADescription" runat="server" Font-Bold="True" Text="Description:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtADescription" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        &nbsp;&nbsp;&nbsp;
+        <br style="margin-left: 40px" />
+        <br style="margin-left: 40px" />
+        &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
         <asp:Label ID="lblAPrice" runat="server" Font-Bold="True" Text="Price:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtAPrice" runat="server"></asp:TextBox>
-        <br />
-        <br />
-        &nbsp;&nbsp;&nbsp;
+        <br style="margin-left: 40px" />
+        <br style="margin-left: 40px" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;
         <asp:Label ID="lblAPostcode" runat="server" Font-Bold="True" Text="Postcode:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtAPostcode" runat="server"></asp:TextBox>
-        <br />
-        <br />
+        <br style="margin-left: 40px" />
+        <br style="margin-left: 40px" />
         &nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblError" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
-        <br />
-        <br />
-        <asp:Button ID="btnAOK" runat="server" Height="22px" OnClick="btnAOK_Click" Text="OK" />
+        <br style="margin-left: 40px" />
+        <br style="margin-left: 40px" />
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnAOK" runat="server" Height="51px" OnClick="btnAOK_Click" Text="OK" Width="103px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnACancel" runat="server" Height="23px" Text="Cancel" />
+        <asp:Button ID="btnACancel" runat="server" Height="51px" Text="Cancel" Width="183px" />
+        </p>
     </form>
 
 

@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ABooking.aspx.cs" Inherits="FrontOffice.ABooking" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server" style="height: 507px">
+    <form id="form1" runat="server" style="height: 984px">
         <br />
         <br />
         <br />
@@ -9,6 +9,8 @@
         <asp:Label ID="lblBookingID" runat="server" Font-Bold="True" Text="BookingID:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtBookingID" runat="server"></asp:TextBox>
+        &nbsp;&nbsp;&nbsp;
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
         <br />
 &nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblBookingDate" runat="server" Font-Bold="True" Text="Booking Date:"></asp:Label>
@@ -23,10 +25,11 @@
         <br />
 &nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblBookingDetails" runat="server" Font-Bold="True" Text="Booking Details:"></asp:Label>
+        &nbsp;&nbsp;&nbsp;
+        <asp:TextBox ID="txtBookingDetails" runat="server"></asp:TextBox>
         <br />
 &nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="txtBookingDetails" runat="server"></asp:TextBox>
-&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;

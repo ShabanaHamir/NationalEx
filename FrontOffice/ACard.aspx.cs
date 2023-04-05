@@ -26,5 +26,28 @@ namespace FrontOffice
             //redirect to the viewer page
             Response.Redirect("CardViewer.aspx");
         }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            //create a new instance of clsactivity
+            clsCard ACard = new clsCard();
+            //var to store the PK
+            Int32 CardID;
+            //var to store the result of the find operation
+            Boolean Found = false;
+            //get the PK entered by the user
+            CardID = Convert.ToInt32(txtCardID.Text);
+            //find record
+            Found = ACard.Find(CardID);
+            //if found
+            if (Found == true)
+            {
+                //display values of the properties in the form
+                txtCardNo.Text = ACard.CardNo;
+                txtCardName.Text = ACard.CardName;
+                txtCardExpiry.Text = ACard.ExpiryDate;
+
+            }
+        }
     }
 }
