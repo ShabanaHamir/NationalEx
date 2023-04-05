@@ -26,5 +26,30 @@ namespace FrontOffice
             //redirect to the viewer page
             Response.Redirect("ActivityViewer.aspx");
         }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            //create a new instance of clsactivity
+            clsActivities AnActivity = new clsActivities();
+            //var to store the PK
+            Int32 ActivityID;
+            //var to store the result of the find operation
+            Boolean Found = false;
+            //get the PK entered by the user
+            ActivityID = Convert.ToInt32(txtActivityID.Text);
+            //find record
+            Found = AnActivity.Find(ActivityID);
+            //if found
+            if (Found == true)
+            {
+                //display values of the properties in the form
+                txtAName.Text = AnActivity.ActivityName;
+                txtACity.Text = AnActivity.ActivityCity;
+                txtADescription.Text = AnActivity.ActivityDescription;
+                txtAPrice.Text = AnActivity.ActivityPrice.ToString();
+                txtAPostcode.Text = AnActivity.ActivityPostCode;
+
+            }
+        }
     }
 }

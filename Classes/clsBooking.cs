@@ -75,17 +75,31 @@ namespace Classes
             }
         }
 
-        public bool Find(int bookingID)
+        public bool Find(int BookingID)
         {
-            //data memebers to the test data value
-            mBookingID = 17;
-            mBookingDate = Convert.ToDateTime("18/06/2022");
-            mUserFName = "Sara";
-            mPaymentType = "MasterCard";
-            mBookingDetails = "Hotel: Transylvania x2. Activity: Kayaking x2. Time: 10:30";
-            mTotalCost = 25.50m;
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection db = new clsDataConnection();
+            //add parameter
+            db.AddParameter("@BookingID", BookingID);
+            //execute sproc
+            db.Execute("sproc_tblBooking_FilterByBookingID");
+            if (db.Count == 1)
+            {
+                //data memebers to the test data value
+                mBookingID = Convert.ToInt32(db.DataTable.Rows[0]["BookingID"]);
+                mBookingDate = Convert.ToDateTime("18/06/2022");
+                mUserFName = Convert.ToString(db.DataTable.Rows[0]["UserFName"]);
+                mPaymentType = Convert.ToString(db.DataTable.Rows[0]["PaymentType"]);
+                mBookingDetails = Convert.ToString(db.DataTable.Rows[0]["BookingDetails"]); ;
+                mTotalCost = Convert.ToDecimal(db.DataTable.Rows[0]["TotalCost"]); ;
+                //always return true
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                return false;
+            }
         }
     }
 }

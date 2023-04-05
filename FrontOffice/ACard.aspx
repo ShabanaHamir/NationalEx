@@ -6,7 +6,13 @@
     <form id="form1" runat="server" style="height: 901px">
         <p>
             &nbsp;</p>
-        &nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblCardNo" runat="server" Font-Bold="True" Text="Card No:"></asp:Label>
+        &nbsp;&nbsp;<asp:Label ID="lblCardID" runat="server" Text="CardID:"></asp:Label>
+        <asp:TextBox ID="txtCardID" runat="server"></asp:TextBox>
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
+        <br />
+        <br />
+        <br />
+        &nbsp;&nbsp;&nbsp; <asp:Label ID="lblCardNo" runat="server" Font-Bold="True" Text="Card No:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtCardNo" runat="server" ></asp:TextBox>
         <br />

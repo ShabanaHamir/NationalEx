@@ -26,5 +26,30 @@ namespace FrontOffice
             //redirect to viewer page
             Response.Redirect("BookingViewer.aspx");
         }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            //create a new instance of clsactivity
+            clsBooking ABooking = new clsBooking();
+            //var to store the PK
+            Int32 BookingID;
+            //var to store the result of the find operation
+            Boolean Found = false;
+            //get the PK entered by the user
+            BookingID = Convert.ToInt32(txtBookingID.Text);
+            //find record
+            Found = ABooking.Find(BookingID);
+            //if found
+            if (Found == true)
+            {
+                //display values of the properties in the form
+                txtBookingDate.Text = ABooking.BookingDate.ToString();
+                txtUserFName.Text = ABooking.UserFName;
+                txtBookingDetails.Text = ABooking.BookingDetails;
+                txtTotalCost.Text = ABooking.TotalCost.ToString();
+                txtPaymentType.Text = ABooking.PaymentType;
+                
+            }
+        }
     }
 }
