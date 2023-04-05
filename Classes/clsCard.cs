@@ -53,7 +53,7 @@ namespace Classes
         }
         
 
-        public bool Find(int CardID)
+        public bool Find(int CardID) 
         {
             //create an instance of the data connection
             clsDataConnection db = new clsDataConnection();
