@@ -10,6 +10,8 @@ namespace Classes
         private decimal mActivityPrice;
         private string mActivityPostCode;
         private Int32 mActivityID;
+        private string mActivityAddress;
+        private string mActivityDescription;
         public clsActivities()
         {
         }   
@@ -29,7 +31,18 @@ namespace Classes
                 mActivityCity = value;
             }
         }
-        public string ActivityDescription { get; set; }
+        public string ActivityDescription {
+            get
+            {
+                //return priv data
+                return mActivityDescription;
+            }
+            set
+            {
+                //set priv data
+                mActivityDescription = value;
+            }
+        }
         public string ActivityName
         {
             get
@@ -82,6 +95,19 @@ namespace Classes
             }
         }
 
+        public string ActivityAddress {
+            get
+            {
+                //return priv data
+                return mActivityAddress;
+            }
+            set
+            {
+                //set priv data
+                mActivityAddress = value;
+            }
+        }
+
         public bool Find(int ActivityID)
         {
             //create an instance of the data connection
@@ -94,10 +120,12 @@ namespace Classes
             {
                 //copy the data from the db tp the private data members
                 mActivityName = Convert.ToString(db.DataTable.Rows [0] ["ActivityName"]);
+                mActivityAddress = Convert.ToString(db.DataTable.Rows[0]["ActivityAddress"]);
                 mActivityCity = Convert.ToString(db.DataTable.Rows[0]["ActivityCity"]);
                 mActivityPrice = Convert.ToDecimal(db.DataTable.Rows[0] ["ActivityPrice"]);
                 mActivityPostCode = Convert.ToString(db.DataTable.Rows[0]["ActivityPostCode"]);
                 mActivityID = Convert.ToInt32(db.DataTable.Rows[0]["ActivityID"]);
+                mActivityDescription = Convert.ToString(db.DataTable.Rows[0]["ActivityDescription"]);
                 //return true
                 return true;
             }
@@ -106,6 +134,11 @@ namespace Classes
             {
                 return false;
             }
+        }
+
+        public string Valid(Action activityNameOK, Action activityCityOK, Action activityAddressOK, Action activityDescriptionOK, Action activityPostCodeOK, Action activityPriceOK)
+        {
+            return "";
         }
     }
 }

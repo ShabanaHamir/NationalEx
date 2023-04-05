@@ -37,9 +37,22 @@ namespace Testing
             //test data to assign to property
             string TestData = "London";
             //assign data
-            AnActivity.ActivityCity = TestData;  
+            AnActivity.ActivityCity = TestData;
             //test to see the two values are the same
             Assert.AreEqual(AnActivity.ActivityCity, TestData);
+        }
+
+        [TestMethod]
+        public void ActivityAddressOK()
+        {
+            //instance of the class
+            clsActivities AnActivity = new clsActivities();
+            //test data to assign to property
+            string TestData = "45 crosshedge close";
+            //assign data
+            AnActivity.ActivityAddress = TestData;
+            //test to see the two values are the same
+            Assert.AreEqual(AnActivity.ActivityAddress, TestData);
         }
 
         [TestMethod]
@@ -154,6 +167,28 @@ namespace Testing
         }
 
         [TestMethod]
+        public void TestActivityAddressFound()
+        {
+            //isntance of the class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 ActivityID = 1;
+            //invoke the method
+            Found = AnActivity.Find(ActivityID);
+            //check activity name
+            if (AnActivity.ActivityAddress != "45 crosshedge close")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
         public void TestActivityCityFound()
         {
             //instance of the class
@@ -175,6 +210,7 @@ namespace Testing
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestActivityPriceFound()
         {
             //instance of the class
@@ -196,6 +232,7 @@ namespace Testing
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestActivityPostCodeFound()
         {
             //instance of the class
@@ -215,6 +252,41 @@ namespace Testing
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestActivityDescriptionFound()
+        {
+            //instance of the class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 ActivityID = 1;
+            //invoke method
+            Found = AnActivity.Find(ActivityID);
+            //check city
+            if (AnActivity.ActivityDescription != "options of paddle boards and kayaks")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an sintance of the class
+            clsActivities AnActivity = new clsActivities();
+            //string variable to store error message
+            String Error = "";
+            //invoke the method
+            Error = AnActivity.Valid(ActivityNameOK, ActivityCityOK, ActivityAddressOK, ActivityDescriptionOK, ActivityPostCodeOK, ActivityPriceOK);
+            //test to see the results are correct
+            Assert.AreEqual(Error, "");
         }
     }   
 }

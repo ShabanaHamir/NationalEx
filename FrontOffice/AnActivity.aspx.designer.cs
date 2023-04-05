@@ -123,6 +123,24 @@ namespace FrontOffice
         protected global::System.Web.UI.WebControls.TextBox txtAPrice;
 
         /// <summary>
+        /// lblAAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblAAddress;
+
+        /// <summary>
+        /// txtAAddress control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtAAddress;
+
+        /// <summary>
         /// lblAPostcode control.
         /// </summary>
         /// <remarks>
