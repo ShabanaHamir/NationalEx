@@ -48,6 +48,7 @@ namespace FrontOffice
                 txtADescription.Text = AnActivity.ActivityDescription;
                 txtAPrice.Text = AnActivity.ActivityPrice.ToString();
                 txtAPostcode.Text = AnActivity.ActivityPostCode;
+                txtAAddress.Text = AnActivity.ActivityAddress;
 
             }
         }
