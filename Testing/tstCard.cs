@@ -21,7 +21,7 @@ namespace Testing
             //create an instance of the class
             clsCard ACard = new clsCard();
             //create some test data to assign to the property
-            Int32 TestData = 1;
+            Int32 TestData = 3;
             //assign data
             ACard.CardID = TestData;
             //test to see the two values are the same
@@ -34,7 +34,7 @@ namespace Testing
             //create an instance of the class
             clsCard ACard = new clsCard();
             //create some test data to assign to the property
-            string TestData = "0863 1673 7238 1637";
+            string TestData = "1092109210921092";
             //assign data
             ACard.CardNo = TestData;
             //test to see the two values are the same
@@ -47,7 +47,7 @@ namespace Testing
             //create an instance of the class
             clsCard ACard = new clsCard();
             //create some test data to assign to the property
-            string TestData = "08/27";
+            string TestData = "12/2020";
             //assign data
             ACard.ExpiryDate = TestData;
             //test to see the two values are the same
@@ -60,7 +60,7 @@ namespace Testing
             //create an instance of the class
             clsCard ACard = new clsCard();
             //create some test data to assign to the property
-            string TestData = "Richard Branson";
+            string TestData = "S KAYLEE";
             //assign data
             ACard.CardName = TestData;
             //test to see the two values are the same
@@ -74,7 +74,7 @@ namespace Testing
             //boolean variable to store the results of the validation 
             Boolean Found = false;
             //test data to use with the method               
-            Int32 CardID = 1;
+            Int32 CardID = 3;
             //invoke the method
             Found = ACard.Find(CardID);
             //test to see if result is true
@@ -91,11 +91,11 @@ namespace Testing
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 CardID = 1;
+            Int32 CardID = 3;
             //invoke the method
             Found = ACard.Find(CardID);
             //check Booking name
-            if (ACard.CardID != 1)
+            if (ACard.CardID != 3)
             {
                 OK = false;
             }
@@ -113,11 +113,11 @@ namespace Testing
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 CardID = 1;
+            Int32 CardID = 3;
             //invoke the method
             Found = ACard.Find(CardID);
             //check card name
-            if (ACard.CardName != "Sara")
+            if (ACard.CardName != "S KAYLEE")
             {
                 OK = false;
             }
@@ -135,11 +135,11 @@ namespace Testing
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 CardID = 1;
+            Int32 CardID = 3;
             //invoke the method
             Found = ACard.Find(CardID);
             //check Booking name
-            if (ACard.CardNo != "0863 1673 7238 1637")
+            if (ACard.CardNo != "1092109210921092")
             {
                 OK = false;
             }

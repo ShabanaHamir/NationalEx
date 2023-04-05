@@ -8,6 +8,7 @@ namespace Classes
         private Int32 mCardID;
         private string mCardName;
         private string mCardNo;
+        private string mExpiryDate;
 
         public string CardNo {
             get
@@ -19,7 +20,16 @@ namespace Classes
                 mCardNo = value;
             }
         }
-        public string ExpiryDate { get; set; }
+        public string ExpiryDate {
+            get
+            {
+                return mExpiryDate;
+            }
+            set
+            {
+                mExpiryDate = value;
+            }
+        }
         public string CardName
         {
             get
@@ -43,14 +53,29 @@ namespace Classes
         }
         
 
-        public bool Find(int cardID)
+        public bool Find(int CardID) 
         {
-            //data memebers to the test data value
-            mCardID = 1;
-            mCardName = "Sara";
-            mCardNo = "0863 1673 7238 1637";
-            //always return true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection db = new clsDataConnection();
+            //add parameter
+            db.AddParameter("@CardID", CardID);
+            //execute sproc
+            db.Execute("sproc_tblCard_FilterByCardID");
+            if (db.Count == 1)
+            {
+                //data memebers to the test data value
+                mCardID = Convert.ToInt32(db.DataTable.Rows[0]["CardID"]);
+                mCardName = Convert.ToString(db.DataTable.Rows[0]["CardName"]); 
+                mCardNo = Convert.ToString(db.DataTable.Rows[0]["CardNo"]); 
+                mExpiryDate= Convert.ToString(db.DataTable.Rows[0]["ExpiryDate"]);
+                //always return true
+                return true;
+            }
+            //if no record was found
+            else
+            {
+                return false;
+            }
         }
     }
 }

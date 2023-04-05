@@ -17,6 +17,19 @@ namespace Testing
         }
 
         [TestMethod]
+        public void ActivityIDOK()
+        {
+            //instance of the class
+            clsActivities AnActivity = new clsActivities();
+            //test data to assign to property
+            Int32 TestData = 1;
+            //assign data
+            AnActivity.ActivityID = TestData;
+            //test to see the two values are the same
+            Assert.AreEqual(AnActivity.ActivityID, TestData);
+        }
+
+        [TestMethod]
         public void ActivityCityOK()
         {
             //instance of the class
@@ -89,11 +102,33 @@ namespace Testing
             //boolean variable to store the results of the validation 
             Boolean Found = false;
             //test data to use with the method               
-            Int32 ActivityID = 2618936;
+            Int32 ActivityID = 1;
             //invoke the method
             Found = AnActivity.Find(ActivityID);
             //test to see if result is true
             Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void TestActivityIDFound()
+        {
+            //isntance of the class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 ActivityID = 1;
+            //invoke the method
+            Found = AnActivity.Find(ActivityID);
+            //check activity name
+            if (AnActivity.ActivityID != 1)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
         }
 
         [TestMethod]
@@ -106,7 +141,7 @@ namespace Testing
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 ActivityID = 14;
+            Int32 ActivityID = 1;
             //invoke the method
             Found = AnActivity.Find(ActivityID);
             //check activity name
@@ -128,11 +163,11 @@ namespace Testing
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 ActivityID = 14;
+            Int32 ActivityID = 1;
             //invoke method
             Found = AnActivity.Find(ActivityID);
             //check city
-            if (AnActivity.ActivityCity != "Birmingham")
+            if (AnActivity.ActivityCity != "London, Birmingham, Leeds")
             {
                 OK = false;
             }
@@ -149,11 +184,11 @@ namespace Testing
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 ActivityID = 14;
+            Int32 ActivityID = 1;
             //invoke method
             Found = AnActivity.Find(ActivityID);
             //check city
-            if (AnActivity.ActivityPrice != 59.99m)
+            if (AnActivity.ActivityPrice != 21.50m)
             {
                 OK = false;
             }
@@ -170,11 +205,11 @@ namespace Testing
             //boolean to record if data is OK
             Boolean OK = true;
             //test data
-            Int32 ActivityID = 14;
+            Int32 ActivityID = 1;
             //invoke method
             Found = AnActivity.Find(ActivityID);
             //check city
-            if (AnActivity.ActivityPostCode != "LE3 4EQ")
+            if (AnActivity.ActivityPostCode != "LE5 0UE")
             {
                 OK = false;
             }
