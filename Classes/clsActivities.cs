@@ -9,6 +9,7 @@ namespace Classes
         private string mActivityCity;
         private decimal mActivityPrice;
         private string mActivityPostCode;
+        private Int32 mActivityID;
         public clsActivities()
         {
         }   
@@ -67,16 +68,44 @@ namespace Classes
             }
         }
 
+        public int ActivityID
+        {
+            get
+            {
+                //return priv data
+                return mActivityID;
+            }
+            set
+            {
+                //set priv data
+                mActivityID = value;
+            }
+        }
+
         public bool Find(int ActivityID)
         {
-            //set priv data members to the test data value
-            mActivityName = "Kayaking";
-            mActivityCity = "Birmingham";
-            mActivityPrice = 59.99m;
-            mActivityPostCode = "LE3 4EQ";
-            //always true
-            return true;
+            //create an instance of the data connection
+            clsDataConnection db = new clsDataConnection();
+            //add parameter
+            db.AddParameter("@ActivityID", ActivityID);
+            //execute sproc
+            db.Execute("sproc_tblActivities_FilterByActivityID");
+             if (db.Count == 1)
+            {
+                //copy the data from the db tp the private data members
+                mActivityName = Convert.ToString(db.DataTable.Rows [0] ["ActivityName"]);
+                mActivityCity = Convert.ToString(db.DataTable.Rows[0]["ActivityCity"]);
+                mActivityPrice = Convert.ToDecimal(db.DataTable.Rows[0] ["ActivityPrice"]);
+                mActivityPostCode = Convert.ToString(db.DataTable.Rows[0]["ActivityPostCode"]);
+                mActivityID = Convert.ToInt32(db.DataTable.Rows[0]["ActivityID"]);
+                //return true
+                return true;
+            }
+             //if no record was found
+             else
+            {
+                return false;
+            }
         }
-        
     }
 }
