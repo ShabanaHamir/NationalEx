@@ -2,11 +2,21 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
+
 namespace Testing
 {
+
     [TestClass]
     public class tstHotel
     {
+        //good test data
+        //create some test data to pass to the method
+
+        //string HotelID = "";
+        string HotelName = "Inn";
+        string HotelPhoneNumber = "01234567891";
+        string HotelPostCode = "XXX XXX";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -69,13 +79,18 @@ namespace Testing
         }
 
         [TestMethod]
-        public void Valid()
+        public void ValidMethodOK()
         {
             //create an instance of the class we want to create 
             clsHotel AnHotel = new clsHotel();
+            //string var to store any error message
+            String Error = "";
+            //invoke method
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
             //test to see if valid method exists 
-            AnHotel.Valid("Inn");
+            Assert.AreEqual(Error, "");
         }
+
 
         [TestMethod]
         public void FindMethodOK()
