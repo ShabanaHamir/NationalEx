@@ -4,9 +4,14 @@ using System;
 //this class is shared among the system
 namespace Testing
 {
+   
     [TestClass]
     public class tstCard
     {
+        string CardName = "S KAYLEE";
+        string ExpiryDate = "12/2020";
+        string CardNo = "1092109210921092";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -145,6 +150,17 @@ namespace Testing
             }
             //test to see result is correct
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //instance of class
+            clsCard ACard = new clsCard();
+            //string variable to store error message
+            String Error = "";
+            //invoke method
+            Error = ACard.Valid(CardName, CardNo, ExpiryDate);
         }
     }
 }

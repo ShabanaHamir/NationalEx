@@ -8,6 +8,14 @@ namespace Testing
     [TestClass]
     public class tstActivities
     {
+        //good test data
+        string ActivityName = "Kayaking";
+        string ActivityCity = "London";
+        Decimal ActivityPrice = 21.50m;
+        string ActivityPostCode = "LE5 0UE";
+        string ActivityAddress = "45 crosshedge close";
+        string mActivityDescription = "options of paddle boards and kayaks";
+
         [TestMethod]
         public void InstanceOK()
         {

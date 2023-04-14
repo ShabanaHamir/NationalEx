@@ -77,5 +77,10 @@ namespace Classes
                 return false;
             }
         }
+
+        public string Valid(string cardName, string cardNo, string expiryDate)
+        {
+            return "";
+        }
     }
 }

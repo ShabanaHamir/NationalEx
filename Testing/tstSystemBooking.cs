@@ -7,6 +7,13 @@ namespace Testing       //sql changes
     [TestClass]
     public class tstSystemBooking
     {
+        //create good test data
+        string BookingDate = DateTime.Now.Date.ToString();
+        string UserFName = "Shannon";
+        string BookingDetails = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
+        string PaymentType = "MasterCard";
+        decimal TotalCost = 80.00m;                                                                          
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -131,6 +138,7 @@ namespace Testing       //sql changes
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestBookingDateFound()
         {
             //isntance of the class
@@ -152,6 +160,7 @@ namespace Testing       //sql changes
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestUserFNameFound()
         {
             //isntance of the class
@@ -173,6 +182,7 @@ namespace Testing       //sql changes
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestBookingDetailsFound()
         {
             //isntance of the class
@@ -194,6 +204,7 @@ namespace Testing       //sql changes
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
         public void TestPaymentTypeFound()
         {
             //isntance of the class
@@ -214,6 +225,8 @@ namespace Testing       //sql changes
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
         public void TestTotalCostFound()
         {
             //isntance of the class
@@ -233,6 +246,19 @@ namespace Testing       //sql changes
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //instance of class
+            clsBooking ABooking = new clsBooking();
+            //string variable to store error message
+            String Error = "";
+            //invoke method
+            Error = ABooking.Valid(BookingDate, UserFName, PaymentType, BookingDetails, PaymentType);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
         }
     }
 }

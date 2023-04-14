@@ -87,7 +87,7 @@ namespace Classes
             {
                 //data memebers to the test data value
                 mBookingID = Convert.ToInt32(db.DataTable.Rows[0]["BookingID"]);
-                mBookingDate = Convert.ToDateTime("18/06/2022");
+                mBookingDate = Convert.ToDateTime(db.DataTable.Rows[0]["BookingDate"]); 
                 mUserFName = Convert.ToString(db.DataTable.Rows[0]["UserFName"]);
                 mPaymentType = Convert.ToString(db.DataTable.Rows[0]["PaymentType"]);
                 mBookingDetails = Convert.ToString(db.DataTable.Rows[0]["BookingDetails"]); ;
@@ -100,6 +100,11 @@ namespace Classes
             {
                 return false;
             }
+        }
+
+        public string Valid(string bookingDate, string userFName, string paymentType1, string bookingDetails, string paymentType)
+        {
+            return "";
         }
     }
 }
