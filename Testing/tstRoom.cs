@@ -7,6 +7,16 @@ namespace Testing
     [TestClass]
     public class tstRoom
     {
+
+        //good test data
+        //create some test data to pass to the method
+
+        string HotelID = "22";
+        string RoomNumber = "34";
+        string RoomType = "Double";
+
+
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -63,15 +73,18 @@ namespace Testing
             //test to see that too values are the same
             Assert.AreEqual(ARoom.RoomType, TestData);
         }
-        //[TestMethod]                                              // do i need this
-        //public void Valid()
-        //{
-        //    //create an instance of the class we want to create 
-        //    clsHotel ARoom = new clsHotel();
-        //    //test to see if valid method exists 
-        //    ARoom.Valid("Single");
-        //}
-
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
         [TestMethod]
         public void FindMethodOK()
         {
@@ -179,5 +192,7 @@ namespace Testing
             Assert.IsTrue(OK);
 
         }
+
+       
     }
 }

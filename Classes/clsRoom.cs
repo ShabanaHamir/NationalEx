@@ -103,5 +103,10 @@ namespace Classes
             }
          
         }
+
+        public string Valid(string hotelID, string roomNumber, string roomType)
+        {
+            return "";
+        }
     }
 }
