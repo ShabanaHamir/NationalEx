@@ -128,9 +128,9 @@ namespace Classes
 
         }
 
-        public string Valid(object hotelName, object hotelPhoneNumber, object hotelPostCode)
+        public string Valid(string hotelName, string hotelPhoneNumber, string hotelPostCode)
         {
-            throw new NotImplementedException();
+            return"";
         }
     }
 }
