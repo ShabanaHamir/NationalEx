@@ -78,21 +78,21 @@ namespace Testing
             Assert.AreEqual(AnHotel.HotelPhoneNumber, TestData);
         }
 
-        //[TestMethod]
-        //public void ValidMethodOK()
-        //{
-        //    //create an instance of the class we want to create 
-        //    clsHotel AnHotel = new clsHotel();
-        //    //string var to store any error message
-        //    String Error = "";
-        //    //invoke method
-        //    Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
-        //    //test to see if valid method exists 
-        //    Assert.AreEqual(Error, "");
-        //}
-
-
         [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //string var to store any error message
+            String Error = "";
+            //invoke method
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+            }
+
+
+            [TestMethod]
         public void FindMethodOK()
         {
             //create an instance of the class we want to create 
