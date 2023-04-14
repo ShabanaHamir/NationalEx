@@ -99,7 +99,7 @@ namespace Testing
             Int32 CardID = 3;
             //invoke the method
             Found = ACard.Find(CardID);
-            //check Booking name
+            //check card name
             if (ACard.CardID != 3)
             {
                 OK = false;
