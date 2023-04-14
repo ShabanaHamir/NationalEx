@@ -157,7 +157,7 @@ namespace Testing
         {
             //instance of class
             clsCard ACard = new clsCard();
-            //string variable to store error message
+            //string variable to store error messages
             String Error = "";
             //invoke method
             Error = ACard.Valid(CardName, CardNo, ExpiryDate);
