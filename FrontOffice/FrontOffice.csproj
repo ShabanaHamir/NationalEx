@@ -74,6 +74,8 @@
     <Content Include="ACustomer.aspx" />
     <Content Include="AnActivity.aspx" />
     <Content Include="AnHotel.aspx" />
+    <Content Include="AnPassenger.aspx" />
+    <Content Include="AnTripaspx.aspx" />
     <Content Include="ARoom.aspx" />
     <Content Include="BookingViewer.aspx" />
     <Content Include="CardViewer.aspx" />
@@ -88,6 +90,7 @@
     <Content Include="Payment.aspx" />
     <Content Include="PaymentViewer.aspx" />
     <Content Include="RoomViewer.aspx" />
+    <Content Include="TripViewer.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -139,6 +142,20 @@
     </Compile>
     <Compile Include="AnHotel.aspx.designer.cs">
       <DependentUpon>AnHotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnPassenger.aspx.cs">
+      <DependentUpon>AnPassenger.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnPassenger.aspx.designer.cs">
+      <DependentUpon>AnPassenger.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AnTripaspx.aspx.cs">
+      <DependentUpon>AnTripaspx.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AnTripaspx.aspx.designer.cs">
+      <DependentUpon>AnTripaspx.aspx</DependentUpon>
     </Compile>
     <Compile Include="ARoom.aspx.cs">
       <DependentUpon>ARoom.aspx</DependentUpon>
@@ -231,6 +248,13 @@
     </Compile>
     <Compile Include="RoomViewer.aspx.designer.cs">
       <DependentUpon>RoomViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TripViewer.aspx.cs">
+      <DependentUpon>TripViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TripViewer.aspx.designer.cs">
+      <DependentUpon>TripViewer.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
