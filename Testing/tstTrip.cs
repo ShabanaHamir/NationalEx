@@ -18,6 +18,7 @@ namespace Testing
         }
 
         [TestMethod]
+
         public void TripIdPropertyOK()
         {
             //create an instance of the class we want to create 
@@ -72,6 +73,113 @@ namespace Testing
             //test to see the two values are the same
             Assert.AreEqual(AnTrip.VehicleType, TestData);
         }
+
+        [TestMethod]
+        public void FindMethodOK()
+        {
+            //create an instance of the class
+            clsTrip AnTrip = new clsTrip();
+            //assign test data
+            Boolean Found = false;
+            //create test data to test the method
+            Int32 TripID = 11;
+            // execute the method 
+            Found = AnTrip.Find(TripID);
+            //test to see the result
+            Assert.IsTrue(Found);
+        }
+
+
+        [TestMethod]
+        public void TestTripIDFound()
+        {
+            //create an instance of the class
+            clsTrip AnTrip = new clsTrip();
+            //assign test data
+            Boolean Found = false;
+            //record the data if it is ok 
+            Boolean OK = true;
+            //create test data to test the method
+            Int32 TripID = 11;
+            // execute the method 
+            Found = AnTrip.Find(TripID);
+            //check the trip ID 
+            if (AnTrip.TripID != 11)
+            {
+                OK = false;
+            }
+            //test to see the result
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestTripDateFound()
+        {
+            //create an instance of the class
+            clsTrip AnTrip = new clsTrip();
+            //assign test data
+            Boolean Found = false;
+            //record the data if it is ok 
+            Boolean OK = true;
+            //create test data to test the method
+            Int32 TripID = 11;
+            // execute the method 
+            Found = AnTrip.Find(TripID);
+            //check the trip ID 
+            if (AnTrip.TripDate != Convert.ToDateTime("04/04/2023"))
+            {
+                OK = false;
+            }
+            //test to see the result
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestTripDestinationFound()
+        {
+            //create an instance of the class
+            clsTrip AnTrip = new clsTrip();
+            //assign test data
+            Boolean Found = false;
+            //record the data if it is ok 
+            Boolean OK = true;
+            //create test data to test the method
+            Int32 TripID = 11;
+            // execute the method 
+            Found = AnTrip.Find(TripID);
+            //check the trip ID 
+            if (AnTrip.TripDestination != "London")
+            {
+                OK = false;
+            }
+            //test to see the result
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestVehicleTypeFound()
+        {
+            //create an instance of the class
+            clsTrip AnTrip = new clsTrip();
+            //assign test data
+            Boolean Found = false;
+            //record the data if it is ok 
+            Boolean OK = true;
+            //create test data to test the method
+            Int32 TripID = 11;
+            // execute the method 
+            Found = AnTrip.Find(TripID);
+            //check the trip ID 
+            if (AnTrip.VehicleType != "Bus")
+            {
+                OK = false;
+            }
+            //test to see the result
+            Assert.IsTrue(OK); //
+        }
+
+
+
 
 
 
