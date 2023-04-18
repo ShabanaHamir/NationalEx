@@ -22,5 +22,10 @@ namespace Classes
         {
             return true;
         }
+
+        public string Valid(object customerID, object email)
+        {
+            return "";
+        }
     }
 }
