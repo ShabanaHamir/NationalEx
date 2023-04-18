@@ -136,9 +136,79 @@ namespace Classes
             }
         }
 
-        public string Valid(Action activityNameOK, Action activityCityOK, Action activityAddressOK, Action activityDescriptionOK, Action activityPostCodeOK, Action activityPriceOK)
+
+        public string Valid(string activityName, string activityCity, string activityAddress, string activityDescription, string activityPostCode, decimal activityPrice)
         {
-            return "";
+            String Error = "";
+            //if the AName is blank
+            if (activityName.Length == 0)
+            {
+                //record error
+                Error = Error + "Activity name may not be blank: ";
+            }
+            //if AName is over max
+            if (activityName.Length > 50)
+            {
+                Error = Error + "Activity name is too long: ";
+            }
+
+         
+            //if the AName is blank
+            if (activityCity.Length == 0)
+            {
+                //record error
+                Error = Error + "Activity city may not be blank: ";
+            }
+            //if AName is over max
+            if (activityCity.Length > 50)
+            {
+                Error = Error + "Activity city is too long: ";
+            }
+
+            //if the AName is blank
+            if (activityPostCode.Length == 0)
+            {
+                //record error
+                Error = Error + "Activity city may not be blank: ";
+            }
+            //if AName is over max
+            if (activityPostCode.Length > 15)
+            {
+                Error = Error + "Activity city is too long: ";
+            }
+
+            //if the AName is blank
+            if (activityAddress.Length == 0)
+            {
+                //record error
+                Error = Error + "Activity address may not be blank: ";
+            }
+            //if AName is over max
+            if (activityAddress.Length > 100)
+            {
+                Error = Error + "Activity address is too long: ";
+            }
+
+            //if the AName is blank
+            if (activityDescription.Length == 0)
+            {
+                //record error
+                Error = Error + "Activity description may not be blank: ";
+            }
+            //if AName is over max
+            if (activityDescription.Length > 500)
+            {
+                Error = Error + "Activity description is too long: ";
+            }
+
+            ////if AName is over max
+            //if (activityPrice == 0)
+            //{
+            //    throw new ArgumentException("Price cannot be zero! We aren't free: ", nameof(activityPrice));
+            //    //Error = Error + "Activity price cant be empty! We aren't free: ";
+            //}
+            return Error;
         }
+        
     }
 }

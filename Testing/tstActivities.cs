@@ -14,7 +14,7 @@ namespace Testing
         Decimal ActivityPrice = 21.50m;
         string ActivityPostCode = "LE5 0UE";
         string ActivityAddress = "45 crosshedge close";
-        string mActivityDescription = "options of paddle boards and kayaks";
+        string ActivityDescription = "options of paddle boards and kayaks";
 
         [TestMethod]
         public void InstanceOK()
@@ -292,9 +292,325 @@ namespace Testing
             //string variable to store error message
             String Error = "";
             //invoke the method
-            Error = AnActivity.Valid(ActivityNameOK, ActivityCityOK, ActivityAddressOK, ActivityDescriptionOK, ActivityPostCodeOK, ActivityPriceOK);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
             //test to see the results are correct
             Assert.AreEqual(Error, "");
         }
-    }   
+
+        [TestMethod]
+        public void ActivityNameMinusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityName = "";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityNameMin()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityName = "a";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityNameMax()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityName = "pppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityNamePlusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityName = "ppppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityCityMinusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityCity = "";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityCityMin()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityCity = "a";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityCityMax()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityCity = "pppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityCityPlusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityCity = "ppppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityPostCodeMinusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityPostCode = "";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityPostCodeMin()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityPostCode = "a";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityPostcodeMax()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityPostCode = "ppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityPostCodePlusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityPostCode = "pppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityAddressMinusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityAddress = "";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityAddressMin()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityAddress = "a";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityAddressMax()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityAddress = "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityAddressPlusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityAddress = "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
+
+        [TestMethod]
+        public void ActivityDescriptionMinusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityDescription = "";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityDescriptionMin()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityDescription = "a";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityDescriptionMax()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityDescription = "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void ActivityDescriptionPlusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string ActivityDescription = "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        //[TestMethod]
+        //public void ActivityPriceMinusOne()
+        //{
+        //    //instance of class
+        //    clsActivities AnActivity = new clsActivities();
+        //    //string variable for error message
+        //    String Error = "";
+        //    //create some test data to pass to message
+        //    decimal ActivityPrice = 0;
+        //    //invoke method
+        //    Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+        //    //test to see the result is correct
+        //    Assert.AreNotEqual(Error, "");
+        //}
+    }
 }
