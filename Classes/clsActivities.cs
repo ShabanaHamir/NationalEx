@@ -207,6 +207,14 @@ namespace Classes
             //    throw new ArgumentException("Price cannot be zero! We aren't free: ", nameof(activityPrice));
             //    //Error = Error + "Activity price cant be empty! We aren't free: ";
             //}
+
+            //if price is less than or equal to zero
+            if (activityPrice <= 0)
+            {
+                //error
+                Error = Error + " Room Price cannot be less than or equal to zero! ";
+            }
+
             return Error;
         }
         

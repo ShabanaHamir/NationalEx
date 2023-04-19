@@ -598,19 +598,19 @@ namespace Testing
             Assert.AreNotEqual(Error, "");
         }
 
-        //[TestMethod]
-        //public void ActivityPriceMinusOne()
-        //{
-        //    //instance of class
-        //    clsActivities AnActivity = new clsActivities();
-        //    //string variable for error message
-        //    String Error = "";
-        //    //create some test data to pass to message
-        //    decimal ActivityPrice = 0;
-        //    //invoke method
-        //    Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
-        //    //test to see the result is correct
-        //    Assert.AreNotEqual(Error, "");
-        //}
+        [TestMethod]
+        public void ActivityPriceMinusOne()
+        {
+            //instance of class
+            clsActivities AnActivity = new clsActivities();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            decimal ActivityPrice = 0;
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
