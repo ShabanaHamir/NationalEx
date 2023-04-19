@@ -252,7 +252,7 @@ namespace Testing
             //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
-        [TestMethod]
+        [TestMethod] //
         public void HotelNameMaxPlusOne()
         {
             //create an instance of the class we want to create 
