@@ -164,7 +164,7 @@ namespace Classes
                 Error = Error + " Room Type cannot be left blank ! ";
             }
             //room type more than 10 characters
-            if (roomType.Length > 50)
+            if (roomType.Length > 30)
             {
                 //error
                 Error = Error + "Room Price cannot be more than 50 characters ! ";
