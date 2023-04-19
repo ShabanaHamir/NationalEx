@@ -81,6 +81,27 @@ namespace Testing
             Assert.IsTrue(Found);
         }
 
+        //[TestMethod]
+        //public void TestCustomerIDFound()
+        //{
+        //    //create an instance of the class we want to create 
+        //    clsConfirmation AConfirmation = new clsConfirmation();
+        //    //bool var to store the results of the validation
+        //    Boolean Found = false;
+        //    Boolean OK = true;
+        //    //some test data to use with the method
+        //    Int32 ConfirmationID = 2;
+        //    //invoke the method
+        //    Found = AConfirmation.Find(ConfirmationID);
+        //    //check the hotel name 
+        //    if (AConfirmation.ConfirmationID != 2)
+        //    {
+        //        OK = false;
+        //    }
+        //    //test to see if valid method exists 
+        //    Assert.IsTrue(Found);
+        //}
+
         [TestMethod]
         public void ValidMethodOK()
         {
