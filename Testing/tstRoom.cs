@@ -14,8 +14,7 @@ namespace Testing
         string HotelID = "22";
         string RoomNumber = "34";
         string RoomType = "Double";
-
-
+        decimal RoomPrice = 111.1m;
 
         [TestMethod]
         public void InstanceOK()
@@ -72,6 +71,19 @@ namespace Testing
             ARoom.RoomType = TestData;
             //test to see that too values are the same
             Assert.AreEqual(ARoom.RoomType, TestData);
+        }
+
+        [TestMethod]
+        public void RoomPricePropertyOK()
+        {
+            //create instance
+            clsRoom ARoom = new clsRoom();
+            //create tests data to assign to property
+            decimal TestData = 100.75m;
+            //assign data to property
+            ARoom.RoomPrice = TestData;
+            //test to see that too values are the same
+            Assert.AreEqual(ARoom.RoomPrice, TestData);
         }
         [TestMethod]
         public void ValidMethodOK()

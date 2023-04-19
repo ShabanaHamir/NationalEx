@@ -71,7 +71,21 @@ namespace Classes
                 mHotelID = value;
             }
         }
-
+        //private data membber 
+        private Decimal mRoomPrice;
+        public decimal RoomPrice
+        {
+            get
+            {
+                //sends data out of the property
+                return mRoomPrice;
+            }
+            set
+            {
+                //allows data into the property
+                mRoomPrice = value;
+            }
+        }
         public bool Find(int RoomID)
         {
 

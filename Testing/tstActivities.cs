@@ -11,7 +11,7 @@ namespace Testing
         //good test data
         string ActivityName = "Kayaking";
         string ActivityCity = "London";
-        Decimal ActivityPrice = 21.50m;
+        Decimal ActivityPrice = 21.50m;   //try decimal instead of Decimal -Shahd
         string ActivityPostCode = "LE5 0UE";
         string ActivityAddress = "45 crosshedge close";
         string ActivityDescription = "options of paddle boards and kayaks";
