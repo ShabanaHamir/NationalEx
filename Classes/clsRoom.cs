@@ -105,6 +105,7 @@ namespace Classes
                 mRoomNumber = Convert.ToInt32(DB.DataTable.Rows[0]["RoomNumber"]);
                 mRoomType = Convert.ToString(DB.DataTable.Rows[0]["RoomType"]);
                 mHotelID = Convert.ToInt32(DB.DataTable.Rows[0]["HotelID"]);
+                mRoomPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["RoomPrice"]);
                 //return everything worked fine
                 return true;
             }
@@ -118,7 +119,7 @@ namespace Classes
          
         }
 
-        public string Valid(string hotelID, string roomNumber, string roomType)
+        public string Valid(string hotelID, string roomNumber, string roomType, decimal roomPrice)
         {
             return "";
         }
