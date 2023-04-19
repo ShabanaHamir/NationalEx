@@ -47,6 +47,7 @@ namespace FrontOffice
                 txtHotelID.Text = ARoom.HotelID.ToString();
                 txtRoomNumber.Text = ARoom.RoomNumber.ToString();
                 txtRoomType.Text = ARoom.RoomType;
+                txtRoomPrice.Text = ARoom.RoomPrice.ToString();
             }
         }
     }
