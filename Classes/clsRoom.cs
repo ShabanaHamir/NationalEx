@@ -121,7 +121,57 @@ namespace Classes
 
         public string Valid(string hotelID, string roomNumber, string roomType, decimal roomPrice)
         {
-            return "";
+            //variable to store error
+            String Error = "";
+            //if room no is blank 
+            if (roomNumber.Length == 0)
+            {
+                //error
+                Error = Error + " Room Number cannot be left blank ! ";
+            }
+            //room number more than 10 characters
+            if(roomNumber.Length > 10)
+            {
+                //error
+                Error = Error + "Room Number cannot be more than 10 characters ! ";
+            }
+
+
+            ////if price is blank 
+            //if (roomPrice.ToString().Length == 0)
+            //{
+            //    //error
+            //    Error = Error + " Room Price cannot be left blank ! ";
+            //}
+            ////room price more than 10 characters
+            //if (roomPrice.ToString().Length > 10)
+            //{
+            //    //error
+            //    Error = Error + "Room Price cannot be more than 10 characters ! ";
+            //}
+
+            //if price is less than or equal to zero
+            if (roomPrice <= 0)
+            {
+                //error
+                Error = Error + " Room Price cannot be less than or equal to zero! ";
+            }
+
+            //if room type is blank 
+            if (roomType.Length == 0)
+            {
+                //error
+                Error = Error + " Room Type cannot be left blank ! ";
+            }
+            //room type more than 10 characters
+            if (roomType.Length > 50)
+            {
+                //error
+                Error = Error + "Room Price cannot be more than 50 characters ! ";
+            }
+
+
+                return Error;
         }
     }
 }

@@ -228,5 +228,96 @@ namespace Testing
 
         }
 
+                                                                        //RoomNumber
+        [TestMethod]
+        public void RoomNumberMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomNumber = "";
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RoomNumberMin()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomNumber = "1"; //pass
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void RoomNumberMax()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomNumber = "1234567891"; //pass
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void RoomNumberMaxPlusOne()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomNumber = "12345678911"; //fail
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+                                                                                        //RoomPrice
+        [TestMethod]
+        public void RoomPriceMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            decimal RoomPrice = 0; //fail
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+                                                                                //RoomType
+        [TestMethod]
+        public void RoomTypeMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomType = ""; //fail
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+
     }
 }
