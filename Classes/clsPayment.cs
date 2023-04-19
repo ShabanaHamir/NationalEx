@@ -110,5 +110,10 @@ namespace Classes
             //ALWAYS RETURN TRUE
             return true;
         }
+
+        public string Valid(object paymentType, object paymentDate, object paymentAmoun, object customerID)
+        {
+            return "";
+        }
     }
 }

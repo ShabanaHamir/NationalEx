@@ -37,7 +37,7 @@ namespace Testing
             Assert.AreEqual(ARoom.RoomID, TestData);
         }
         [TestMethod]
-        public void HotelIDPropertyOK()                         //Do I need this?
+        public void HotelIDPropertyOK()                         //mehtagaha
         {
             //create instance
             clsRoom ARoom = new clsRoom();

@@ -7,6 +7,16 @@ namespace Testing
     [TestClass]
     public class tstPayment
     {
+
+        //good test data
+        //create some test data to pass to the method
+        string CustomerID = "23";
+        string PaymentAmount = "100£";
+        string PaymentDate = DateTime.Now.Date.ToString();
+        string PaymentType = "Card";
+
+
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -208,6 +218,19 @@ namespace Testing
             }
             //test to see if valid method exists 
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            //invoke method
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, CustomerID);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
         }
     }
 }

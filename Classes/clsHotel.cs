@@ -72,19 +72,19 @@ namespace Classes
             }
         }
 
-        public Boolean Valid(string Hotel)
-        {
-            //var to record any errors found in Hotel name assuming all is OK
-            Boolean OK = true;
-            //test to see if the hotel has zero characters
-            if (Hotel.Length == 0)
-            {
-                //set OK to false
-                OK = false;
-            }
-            //retur results of all tests
-            return true;
-        }
+        //public Boolean Valid(string Hotel)
+        //{
+        //    //var to record any errors found in Hotel name assuming all is OK
+        //    Boolean OK = true;
+        //    //test to see if the hotel has zero characters
+        //    if (Hotel.Length == 0)
+        //    {
+        //        //set OK to false
+        //        OK = false;
+        //    }
+        //    //retur results of all tests
+        //    return true;
+        //}
 
         public bool Find(int HotelID)
         {
@@ -130,7 +130,24 @@ namespace Classes
 
         public string Valid(string hotelName, string hotelPhoneNumber, string hotelPostCode)
         {
-            return"";
+            //create a string var to store error
+            String Error = "";
+            //if Hotel name is empty
+            if (hotelName.Length == 0)
+            {
+                //record error
+                Error = Error + "Hotel Name cannot be empty ! ";
+            }
+            //if hotel name is greater than 50 characters
+            if (hotelName.Length > 50)
+            {
+                //record error
+                Error = Error + "Something went wrong. Please re-enter the Hotel Name ! ";
+            }
+
+
+            //return error message
+            return Error;
         }
     }
 }

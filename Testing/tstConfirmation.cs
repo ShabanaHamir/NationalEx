@@ -7,6 +7,13 @@ namespace Testing
     [TestClass]
     public class tstConfirmation
     {
+
+        //good test data
+        //data to test that pass method
+        string CustomerID = "2";
+        string Email = "XXX@hotmail.com";
+
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -72,6 +79,19 @@ namespace Testing
             Found = AConfirmation.Find(ConfirmationID);
             //test to see if valid method exists 
             Assert.IsTrue(Found);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create 
+            clsConfirmation AConfirmation = new clsConfirmation();
+            //string var to store any error message
+            String Error = "";
+            //invoke method
+            Error = AConfirmation.Valid(CustomerID, Email);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
         }
 
     }
