@@ -317,7 +317,63 @@ namespace Testing
             //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }
+        [TestMethod]
+        public void RoomTypeMin()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomType = "S"; //Pass
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void RoomTypeMax()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomType = "Ocean View Penthouse Apartment"; //Pass
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
 
+        [TestMethod]
+        public void RoomTypeMaxPlusOne()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomType = "Ocean View Penthouse Apartment1"; //Pass
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
 
+        [TestMethod]
+        public void RoomTypeMid()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string RoomType = "Executive Suite"; //Pass
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
     }
 }
