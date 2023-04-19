@@ -14,7 +14,7 @@ namespace Testing
         string HotelID = "22";
         string RoomNumber = "34";
         string RoomType = "Double";
-        decimal RoomPrice = 111.1m;
+        decimal RoomPrice = 210.57m;
 
         [TestMethod]
         public void InstanceOK()
@@ -93,7 +93,7 @@ namespace Testing
             //string var to store any error message
             String Error = "";
             //invoke method
-            Error = ARoom.Valid(HotelID, RoomNumber, RoomType);
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
             //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
@@ -205,6 +205,28 @@ namespace Testing
 
         }
 
-       
+        [TestMethod]
+        public void TestRoomPriceFound()                                      
+        {
+            //create instance
+            clsRoom ARoom = new clsRoom();
+            //bool var to store the result of the validation
+            Boolean Found = false;
+            //bool var to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with this method
+            Int32 RoomID = 3;
+            //invoke the method
+            Found = ARoom.Find(RoomID);
+            //check the room id
+            if (ARoom.RoomPrice != 210.57m)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
+
     }
 }
