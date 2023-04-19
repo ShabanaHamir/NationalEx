@@ -136,13 +136,42 @@ namespace Classes
             if (hotelName.Length == 0)
             {
                 //record error
-                Error = Error + "Hotel Name cannot be empty ! ";
+                Error = Error + "Hotel Name cannot be left empty ! ";
             }
             //if hotel name is greater than 50 characters
             if (hotelName.Length > 50)
             {
                 //record error
                 Error = Error + "Something went wrong. Please re-enter the Hotel Name ! ";
+            }
+
+
+            // if postcode is empty
+            if (hotelPostCode.Length == 0)
+            {
+                //error
+                Error = Error + "Post Code cannot be left empty ! ";
+            }
+            //if postcode is greater than 50 characters
+            if (hotelPostCode.Length > 9)
+            {
+                //record error
+                Error = Error + "Post code cannot be this long ! ";
+            }
+
+
+
+            // if phonenumber is empty
+            if (hotelPhoneNumber.Length == 0)
+            {
+                //error
+                Error = Error + "Phone Number cannot be left empty ! ";
+            }
+            //if phonenumber is greater than 50 characters
+            if (hotelPhoneNumber.Length > 11)
+            {
+                //record error
+                Error = Error + "Phone Number cannot be this long ! ";
             }
 
 
