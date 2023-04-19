@@ -14,8 +14,7 @@ namespace Testing
         string HotelID = "22";
         string RoomNumber = "34";
         string RoomType = "Double";
-
-
+        decimal RoomPrice = "";
 
         [TestMethod]
         public void InstanceOK()
