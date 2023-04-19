@@ -78,20 +78,6 @@ namespace Testing
             Assert.AreEqual(AnHotel.HotelPhoneNumber, TestData);
         }
 
-        [TestMethod]
-        public void ValidMethodOK()
-        {
-            //create an instance of the class we want to create 
-            clsHotel AnHotel = new clsHotel();
-            //string var to store any error message
-            String Error = "";
-            //invoke method
-            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
-            //test to see if valid method exists 
-            Assert.AreEqual(Error, "");
-            }
-
-
             [TestMethod]
         public void FindMethodOK()
         {
@@ -195,5 +181,90 @@ namespace Testing
             Assert.IsTrue(OK);
         }
 
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //string var to store any error message
+            String Error = "";
+            //invoke method
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HotelNameMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //string var to store any error message
+            String Error = "";
+            //some tests data to pass to the method
+            string HotelName = ""; //error
+            //invoke method
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HotelNameMin()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //string var to store any error message
+            String Error = "";
+            //some tests data to pass to the method
+            string HotelName = "aaa"; //error
+            //invoke method
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HotelNameMax()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //string var to store any error message
+            String Error = "";
+            //some tests data to pass to the method
+            string HotelName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"; //no error
+            //invoke method
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void HotelNameMid()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //string var to store any error message
+            String Error = "";
+            //some tests data to pass to the method
+            string HotelName = "aaaaaaaaaaaaaaaaaaaaaaaaa"; //no error
+            //invoke method
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void HotelNameMaxPlusOne()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //string var to store any error message
+            String Error = "";
+            //some tests data to pass to the method
+            string HotelName = "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"; //fail
+            //invoke method
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
