@@ -21,26 +21,26 @@ namespace Classes
             }
         }
         //private member
-        private Int32 mCustomerID;
+        private Int32 mUserID;
         //public property
-        public int CustomerID 
+        public int UserID 
         {
             get
             {
                 //sends data out of the property
-                return mCustomerID;
+                return mUserID;
             }
             set
             {
                 //allows data into the property
-                mCustomerID = value;
+                mUserID = value;
             }
         }
 
         //private member
-        private Int32 mPaymentAmount;
+        private Decimal mPaymentAmount;
         //public property
-        public int PaymentAmount
+        public decimal PaymentAmount
         {
             get
             {
@@ -99,19 +99,37 @@ namespace Classes
             return OK;
         }
 
-        public bool Find(int paymentID)
+        public bool Find(int PaymentID)
         {
-            mPaymentID = 2;
-            mCustomerID = 1;
-            mPaymentAmount = 160;
-            mPaymentDate = Convert.ToDateTime ("04/ 03/2021");
-            mPaymentType = "Card";
 
-            //ALWAYS RETURN TRUE
-            return true;
+            // create an instance of the data connection
+            clsDataConnection DB = new clsDataConnection();
+            //add parametetr for the HotelId to search for 
+            DB.AddParameter("@PaymentID", PaymentID);
+            //execute stored proc
+            DB.Execute("[sproc_tblPayment_FilterByPaymentId]");
+            //if one record is found (either one or zero)
+            if (DB.Count == 1)
+            {
+
+                //copy data from database to the private data members
+
+                mPaymentID = Convert.ToInt32(DB.DataTable.Rows[0]["PaymentID"]);
+                mUserID = Convert.ToInt32(DB.DataTable.Rows[0]["UserID"]); 
+                mPaymentAmount = Convert.ToDecimal(DB.DataTable.Rows[0]["PaymentAmount"]);
+                mPaymentDate = Convert.ToDateTime(DB.DataTable.Rows[0]["PaymentDate"]);
+                mPaymentType = Convert.ToString(DB.DataTable.Rows[0]["PaymentType"]);
+
+                //ALWAYS RETURN TRUE
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
-        public string Valid(object paymentType, object paymentDate, object paymentAmoun, object customerID)
+        public string Valid(object paymentType, object paymentDate, object paymentAmount, object userID)
         {
             return "";
         }
