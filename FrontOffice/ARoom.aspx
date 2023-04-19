@@ -9,6 +9,10 @@
         <asp:TextBox ID="txtRoomNumber" runat="server"></asp:TextBox>
         <br />
         Room Type:<asp:TextBox ID="txtRoomType" runat="server"></asp:TextBox>
+        <br />
+        Room Price:
+        <asp:TextBox ID="txtRoomPrice" runat="server"></asp:TextBox>
+        <br />
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
         <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
     </form>
