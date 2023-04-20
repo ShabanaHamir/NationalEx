@@ -38,7 +38,7 @@ namespace Testing
             Assert.AreEqual(APayment.PaymentID, TestData);
         }
         [TestMethod]
-        public void CustomerIDPropertyOK()
+        public void UserIDPropertyOK()
         {
             //create an instance of the class we want to create 
             clsPayment APayment = new clsPayment();
@@ -212,7 +212,7 @@ namespace Testing
             //invoke the method
             Found = APayment.Find(PaymentID);
             //check the hotel name 
-            if (APayment.PaymentType != "Card")
+            if (APayment.PaymentType != "Paypal")
             {
                 OK = false;
             }
