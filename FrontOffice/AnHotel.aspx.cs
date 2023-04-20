@@ -25,7 +25,8 @@ namespace FrontOffice
             //capture
             AnHotel.HotelName = txtHotelName.Text;
             AnHotel.HotelPostCode = txtHotelPostCode.Text;
-            // AnHotel.HotelPhoneNumber = Convert.ToString(txtHotelPhoneNumber.Text);
+        //   AnHotel.HotelPhoneNumber = txtHotelPhoneNumber.Text;
+
             ////////////////////int hotelPhoneNumber;
             ////////////////////if (int.TryParse(txtHotelPhoneNumber.Text, out hotelPhoneNumber))
             ////////////////////{
@@ -36,10 +37,29 @@ namespace FrontOffice
             ////////////////////    // handle the case where the user input is not a valid integer
             ////////////////////}
 
-            //store the hotel in the session object
-            Session["AnHotel"] = AnHotel;
-            //redirect to the viewer page
-            Response.Write("HotelViewer.aspx");
+            string HotelName = txtHotelName.Text;
+            string HotelPhoneNumber = txtHotelPhoneNumber.Text;
+            string HotelPostCode = txtHotelPostCode.Text;
+            //var to store any error messages
+            string Error = "";
+            //validate data
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            if (Error == "")
+            {
+                AnHotel.HotelName = HotelName;
+             //   AnHotel.HotelPhoneNumber = HotelPhoneNumber;
+                AnHotel.HotelPostCode = HotelPostCode;
+
+                //store the hotel in the session object
+                Session["AnHotel"] = AnHotel;
+                //redirect to the viewer page
+                Response.Write("HotelViewer.aspx");
+            }
+            else
+            {
+                //error
+                lblError.Text = Error;
+            }
 
 
         }
