@@ -15,5 +15,6 @@
         <br />
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
         <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
+        <asp:Label ID="lblError" runat="server"></asp:Label>
     </form>
 </asp:Content>

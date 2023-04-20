@@ -19,6 +19,13 @@ namespace FrontOffice
         {
             //create a new instance of clsHotel
             clsRoom ARoom = new clsRoom();
+            //string HotelID = txtHotelID.Text;
+            //string RoomNumber = txtRoomNumber.Text;
+            //string RoomType = txtRoomType.Text;
+            //string RoomPrice = txtRoomPrice.Text;
+            //string Error = "";
+            ////validate data
+            //Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
             //capture
             ARoom.HotelID = Convert.ToInt32(txtHotelID.Text);
             //store the hotel in the session object
