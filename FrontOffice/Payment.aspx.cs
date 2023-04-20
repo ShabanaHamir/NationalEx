@@ -20,7 +20,7 @@ namespace FrontOffice
             //create a new instance of clsPayemnt
             clsPayment APayment = new clsPayment();
             //capture
-            APayment.CustomerID = Convert.ToInt32(txtCustomerID.Text);
+            APayment.UserID = Convert.ToInt32(txtUserID.Text);
             //store the hotel in the session object
             Session["APayment"] = APayment;
             //redirect to the viewer page
@@ -48,10 +48,10 @@ namespace FrontOffice
             if (Found == true)
             {
                 //display values of the properties in the form
-                txtCustomerID.Text = APayment.CustomerID.ToString();
+                txtUserID.Text = APayment.UserID.ToString();
                 txtPaymentAmount.Text = APayment.PaymentAmount.ToString();
                 txtPaymentDate.Text = APayment.PaymentDate.ToString();
-                txtPaymentType.Text = APayment.PaymentType; //hello
+                txtPaymentType.Text = APayment.PaymentType; //dropdown list
 
 
             }
