@@ -24,10 +24,22 @@ namespace FrontOffice
             clsHotel AnHotel = new clsHotel();
             //capture
             AnHotel.HotelName = txtHotelName.Text;
+            AnHotel.HotelPostCode = txtHotelPostCode.Text;
+            // AnHotel.HotelPhoneNumber = Convert.ToString(txtHotelPhoneNumber.Text);
+            ////////////////////int hotelPhoneNumber;
+            ////////////////////if (int.TryParse(txtHotelPhoneNumber.Text, out hotelPhoneNumber))
+            ////////////////////{
+            ////////////////////    AnHotel.HotelPhoneNumber = hotelPhoneNumber;
+            ////////////////////}
+            ////////////////////else
+            ////////////////////{
+            ////////////////////    // handle the case where the user input is not a valid integer
+            ////////////////////}
+
             //store the hotel in the session object
             Session["AnHotel"] = AnHotel;
             //redirect to the viewer page
-            Response.Redirect("HotelViewer.aspx");
+            Response.Write("HotelViewer.aspx");
 
 
         }
