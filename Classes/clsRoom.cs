@@ -157,6 +157,12 @@ namespace Classes
                 Error = Error + " Room Price cannot be less than or equal to zero! ";
             }
 
+            //if hotel id is blank 
+            if (hotelID.Length == 0)
+            {
+                //error
+                Error = Error + " Hotel ID cannot be left blank ! ";
+            }
             //if room type is blank 
             if (roomType.Length == 0)
             {

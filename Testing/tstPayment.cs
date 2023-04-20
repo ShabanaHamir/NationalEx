@@ -276,6 +276,20 @@ namespace Testing
             Assert.AreEqual(Error, "");
         }
 
-                                                                                    //UserID
+        //UserID
+
+        [TestMethod]
+        public void UserIDMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            string UserID = "";
+            //invoke method
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
     }
 }
