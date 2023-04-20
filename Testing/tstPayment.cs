@@ -10,8 +10,8 @@ namespace Testing
 
         //good test data
         //create some test data to pass to the method
-        string CustomerID = "23";
-        string PaymentAmount = "100£";
+        string UserID = "23";
+        decimal PaymentAmount = 100.00m;
         string PaymentDate = DateTime.Now.Date.ToString();
         string PaymentType = "Card";
 
@@ -38,16 +38,16 @@ namespace Testing
             Assert.AreEqual(APayment.PaymentID, TestData);
         }
         [TestMethod]
-        public void CustomerIDPropertyOK()
+        public void UserIDPropertyOK()
         {
             //create an instance of the class we want to create 
             clsPayment APayment = new clsPayment();
             //create some test data to assign to the property 
             Int32 TestData = 2;
             //assign the data to the property
-            APayment.CustomerID = TestData;
+            APayment.UserID = TestData;
             //test to see that it exists
-            Assert.AreEqual(APayment.CustomerID, TestData);
+            Assert.AreEqual(APayment.UserID, TestData);
         }
 
         [TestMethod]
@@ -56,7 +56,7 @@ namespace Testing
             //create an instance of the class we want to create 
             clsPayment APayment = new clsPayment();
             //create some test data to assign to the property 
-            Int32 TestData = 160;
+            Decimal TestData = 160;
             //assign the data to the property
             APayment.PaymentAmount = TestData;
             //test to see that it exists
@@ -133,7 +133,7 @@ namespace Testing
         }
 
         [TestMethod]
-        public void TestCustomerIDFound()
+        public void TestUserIDFound()
         {
             //create an instance of the class we want to create 
             clsPayment APayment = new clsPayment();
@@ -146,7 +146,7 @@ namespace Testing
             //invoke the method
             Found = APayment.Find(PaymentID);
             //check the hotel name 
-            if (APayment.CustomerID != 1)
+            if (APayment.UserID != 5)
             {
                 OK = false;
             }
@@ -168,7 +168,7 @@ namespace Testing
             //invoke the method
             Found = APayment.Find(PaymentID);
             //check the hotel name 
-            if (APayment.PaymentAmount != 160)
+            if (APayment.PaymentAmount != 500m)
             {
                 OK = false;
             }
@@ -212,7 +212,7 @@ namespace Testing
             //invoke the method
             Found = APayment.Find(PaymentID);
             //check the hotel name 
-            if (APayment.PaymentType != "Card")
+            if (APayment.PaymentType != "Paypal")
             {
                 OK = false;
             }
@@ -228,7 +228,7 @@ namespace Testing
             //string var to store any error message
             String Error = "";
             //invoke method
-            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, CustomerID);
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
             //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
