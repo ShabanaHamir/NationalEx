@@ -133,6 +133,8 @@ namespace Classes
         {
             //string to store error
             String Error = "";
+            // atemporary var to store data values
+            DateTime DateTemp;
             //if payment type is empty
             if(paymentType.Length == 0)
             {
@@ -146,6 +148,30 @@ namespace Classes
                 Error = Error + "Re-enter Payment Type ! ";
             }
 
+            //if User id is empty
+            if (userID.Length == 0)
+            {
+                //error
+                Error = Error + "User ID cannot be left empty ! ";
+            }
+
+            //if payment amount empty
+            if (paymentAmount <= 0)
+            {
+                //error
+                Error = Error + " Payment Amount cannot be less than or equal to zero! ";
+            }
+            //copy  paymentDate value to the dateTempvar
+            DateTemp = Convert.ToDateTime(paymentDate);
+            if (DateTemp < DateTime.Now.Date)
+            {
+                Error = Error + "Something went wrong. Re-enter the correct date";
+            }
+            //date greater than today's date
+            if (DateTemp > DateTime.Now)
+            {
+                Error = Error + "Something went wriong. Date cannot be added in the future"; 
+            }
 
             //return error
             return Error;

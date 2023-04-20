@@ -375,5 +375,35 @@ namespace Testing
             //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
+                                                                                    //HotelID
+        [TestMethod]
+        public void HotelIDMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string HotelID = ""; //fail
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HotelIDMin()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string HotelID = "1"; 
+            //invoke method
+            Error = ARoom.Valid(HotelID, RoomNumber, RoomType, RoomPrice);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
     }
 }
