@@ -8,7 +8,7 @@ namespace Testing
 
     [TestClass]
     public class tstHotel
-    {
+    { //test
         //good test data
         //create some test data to pass to the method
 
