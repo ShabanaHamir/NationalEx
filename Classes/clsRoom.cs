@@ -37,6 +37,16 @@ namespace Classes
             }
         }
 
+        public string Valid(string hotelID, string roomNumber, string roomType, string roomPrice)
+        {
+            throw new NotImplementedException();
+        }
+
+        //public string Valid(string hotelID, string roomNumber, string roomType, string roomPrice)
+        //{
+        //    throw new NotImplementedException();
+        //}
+
 
         //private data membber 
         private Int32 mRoomID;

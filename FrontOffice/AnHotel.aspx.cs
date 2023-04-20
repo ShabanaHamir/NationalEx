@@ -22,10 +22,6 @@ namespace FrontOffice
         {
             //create a new instance of clsHotel
             clsHotel AnHotel = new clsHotel();
-            //capture
-            AnHotel.HotelName = txtHotelName.Text;
-            AnHotel.HotelPostCode = txtHotelPostCode.Text;
-        //   AnHotel.HotelPhoneNumber = txtHotelPhoneNumber.Text;
 
             ////////////////////int hotelPhoneNumber;
             ////////////////////if (int.TryParse(txtHotelPhoneNumber.Text, out hotelPhoneNumber))
@@ -47,7 +43,7 @@ namespace FrontOffice
             if (Error == "")
             {
                 AnHotel.HotelName = HotelName;
-             //   AnHotel.HotelPhoneNumber = HotelPhoneNumber;
+            // AnHotel.HotelPhoneNumber = HotelPhoneNumber;                         ERROR
                 AnHotel.HotelPostCode = HotelPostCode;
 
                 //store the hotel in the session object
