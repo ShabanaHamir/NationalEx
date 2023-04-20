@@ -33,13 +33,13 @@ namespace FrontOffice
         protected global::System.Web.UI.WebControls.TextBox txtPaymentID;
 
         /// <summary>
-        /// txtCustomerID control.
+        /// txtUserID control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCustomerID;
+        protected global::System.Web.UI.WebControls.TextBox txtUserID;
 
         /// <summary>
         /// txtPaymentAmount control.
@@ -66,7 +66,7 @@ namespace FrontOffice
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtPaymentType;
+        protected global::System.Web.UI.WebControls.DropDownList txtPaymentType;
 
         /// <summary>
         /// btnOK control.

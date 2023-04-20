@@ -6,7 +6,7 @@ namespace Testing
 {
     [TestClass]
     public class tstPayment
-    {
+    { 
 
         //good test data
         //create some test data to pass to the method
@@ -232,5 +232,50 @@ namespace Testing
             //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
+                                                                                      //paymentType
+        [TestMethod]
+        public void PaymentTypeMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            string PaymentType = "";
+            //invoke method
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PaymentTypeMin()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            string PaymentType = "card";
+            //invoke method
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+
+        [TestMethod]
+        public void PaymentTypeMax()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            string PaymentType = "HSBC Bank Transfer";
+            //invoke method
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+                                                                                    //UserID
     }
 }

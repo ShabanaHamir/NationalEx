@@ -129,9 +129,26 @@ namespace Classes
             }
         }
 
-        public string Valid(object paymentType, object paymentDate, object paymentAmount, object userID)
+        public string Valid(string paymentType, string paymentDate, decimal paymentAmount, string userID)
         {
-            return "";
+            //string to store error
+            String Error = "";
+            //if payment type is empty
+            if(paymentType.Length == 0)
+            {
+                //error
+                Error = Error + "Payment Type cannot be left empty ! ";
+            }
+
+            if (paymentType.Length > 35)
+            {
+                //error
+                Error = Error + "Re-enter Payment Type ! ";
+            }
+
+
+            //return error
+            return Error;
         }
     }
 }
