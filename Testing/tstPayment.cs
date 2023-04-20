@@ -276,7 +276,7 @@ namespace Testing
             Assert.AreEqual(Error, "");
         }
 
-        //UserID
+                                                             //UserID
 
         [TestMethod]
         public void UserIDMinLessOne()
@@ -287,6 +287,134 @@ namespace Testing
             String Error = "";
             string UserID = "";
             //invoke method
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void UserIDMin()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            string UserID = "1";
+            //invoke method
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+                                                                       //paymentamount
+
+        [TestMethod]
+        public void PaymentAmountMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            decimal PaymentAmount = 0; //fail
+            //invoke method
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+                                                    //paymentdate
+        [TestMethod]
+        public void PaymentDateExtremeMin()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddYears(-100);
+            //convert date variable ro a string ar
+            string PaymentDate = TestDate.ToString();
+            //convert date variable to a string variable
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PaymentDateMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddDays(-1);
+            //convert date variable ro a string ar
+            string PaymentDate = TestDate.ToString();
+            //convert date variable to a string variable
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PaymentDateMin()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            
+            //convert date variable ro a string ar
+            string PaymentDate = TestDate.ToString();
+            //convert date variable to a string variable
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PaymentDateMinPlusOne()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            DateTime TestDate;
+            //set the date to todays date
+            TestDate = DateTime.Now.Date;
+            TestDate = TestDate.AddDays(1);
+            //convert date variable ro a string ar
+            string PaymentDate = TestDate.ToString();
+            //convert date variable to a string variable
+            Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
+            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void PaymentDateExtremeMax()
+        {
+            //create an instance of the class we want to create 
+            clsPayment APayment = new clsPayment();
+            //string var to store any error message
+            String Error = "";
+            //create a variable to store the test date data
+            DateTime TestDate;
+            //set the date totodays date
+            TestDate = DateTime.Now.Date;
+            //change the date to whatever the date is plus 100 years
+            TestDate = TestDate.AddYears(100);
+            //convert date variable ro a string ar
+            string PaymentDate = TestDate.ToString();
+            //convert date variable to a string variable
             Error = APayment.Valid(PaymentType, PaymentDate, PaymentAmount, UserID);
             //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
