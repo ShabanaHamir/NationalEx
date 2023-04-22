@@ -1,0 +1,12 @@
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\bin\FrontOffice.dll.config
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\bin\FrontOffice.dll
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\bin\FrontOffice.pdb
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\bin\Classes.dll
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\bin\Classes.pdb
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\obj\Debug\FrontOffice.csproj.AssemblyReference.cache
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\obj\Debug\FrontOffice.csproj.CoreCompileInputs.cache
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\obj\Debug\FrontOffice.csproj.CopyComplete
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\obj\Debug\FrontOffice.dll
+H:\Final year\IMAT3903 Team Development Project\TRIAL2204\FrontOffice\obj\Debug\FrontOffice.pdb
