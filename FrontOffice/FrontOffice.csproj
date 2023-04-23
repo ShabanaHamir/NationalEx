@@ -93,6 +93,7 @@
     <Content Include="RoomViewer.aspx" />
     <Content Include="TripViewer.aspx" />
     <Content Include="Web.config" />
+    <Content Include="SignIn.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ABooking.aspx.cs">
@@ -263,6 +264,13 @@
     </Compile>
     <Compile Include="TripViewer.aspx.designer.cs">
       <DependentUpon>TripViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
