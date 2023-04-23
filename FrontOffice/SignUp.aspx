@@ -8,7 +8,11 @@
         <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
         <br />
         Confirm Password: <asp:TextBox ID="txtConfirmPassword" runat="server"></asp:TextBox>
+        <asp:Label ID="lblError" runat="server" Text="Label"></asp:Label>
         <br />
-        <asp:Button ID="btnSignup" runat="server" Text="Sign Up" />
+        <asp:Button ID="btnSignup" runat="server" OnClick="btnSignup_Click" Text="Sign Up" />
+        <asp:Button ID="Button1" runat="server" Text="Done " />
+        <asp:Button ID="Button2" runat="server" Text="Re-set Password" />
+        <asp:Button ID="Button3" runat="server" Text="View Email" />
     </form>
 </asp:Content>
