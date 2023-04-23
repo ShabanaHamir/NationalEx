@@ -53,5 +53,12 @@ namespace FrontOffice
         {
             throw new NotImplementedException();
         }
+
+        protected void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+            //ENCYRPTION 
+            txtPassword.TextMode = TextBoxMode.Password;
+
+        }
     }
 }
