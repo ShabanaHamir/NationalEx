@@ -5,7 +5,7 @@
         <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
         <br />
         Password:
-        <asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtPassword" runat="server" OnTextChanged="txtPassword_TextChanged"></asp:TextBox>
         <br />
         Confirm Password: <asp:TextBox ID="txtConfirmPassword" runat="server"></asp:TextBox>
         <asp:Label ID="lblError" runat="server"></asp:Label>
