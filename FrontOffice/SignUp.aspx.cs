@@ -11,7 +11,7 @@ namespace FrontOffice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.Redirect("AccountActivation.aspx");
         }
 
         protected void btnSignup_Click(object sender, EventArgs e)
@@ -42,11 +42,16 @@ namespace FrontOffice
 
             // send an email to the user
             // replace the placeholders with your actual email sending code
-            //string subject = "Welcome to our website";
-            //string body = "Thank you for signing up on our website. Your account has been successfully created.";
-            //SendEmail(email, subject, body);
+            string subject = "Welcome to our website";
+            string body = "Thank you for signing up on our website. Your account has been successfully created.";
+            SendEmail(email, subject, body);
 
             lblError.Text = "An email has been sent to your account";
+        }
+
+        private void SendEmail(string email, string subject, string body)
+        {
+            throw new NotImplementedException();
         }
     }
 }

@@ -5,6 +5,6 @@
     <br />
     Password:<asp:TextBox ID="txtPassword" runat="server"></asp:TextBox>
     <asp:Button ID="btnLogin" runat="server" Text="Login" OnClick="btnLogin_Click" />
-        <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="lblError"></asp:Label>
+    <asp:Label ID="Label1" runat="server" ForeColor="Red" Text="lblError"></asp:Label>
 </form>
 </asp:Content>
