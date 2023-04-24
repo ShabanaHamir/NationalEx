@@ -82,7 +82,7 @@ namespace Testing
             //assign test data
             Boolean Found = false;
             //create test data to test the method
-            Int32 TripID = 11;
+            Int32 TripID = 1;
             // execute the method 
             Found = AnTrip.Find(TripID);
             //test to see the result
@@ -100,11 +100,11 @@ namespace Testing
             //record the data if it is ok 
             Boolean OK = true;
             //create test data to test the method
-            Int32 TripID = 11;
+            Int32 TripID = 1;
             // execute the method 
             Found = AnTrip.Find(TripID);
             //check the trip ID 
-            if (AnTrip.TripID != 11)
+            if (AnTrip.TripID != 1)
             {
                 OK = false;
             }
@@ -122,7 +122,7 @@ namespace Testing
             //record the data if it is ok 
             Boolean OK = true;
             //create test data to test the method
-            Int32 TripID = 11;
+            Int32 TripID = 1;
             // execute the method 
             Found = AnTrip.Find(TripID);
             //check the trip ID 
@@ -144,7 +144,7 @@ namespace Testing
             //record the data if it is ok 
             Boolean OK = true;
             //create test data to test the method
-            Int32 TripID = 11;
+            Int32 TripID = 1;
             // execute the method 
             Found = AnTrip.Find(TripID);
             //check the trip ID 
@@ -166,7 +166,7 @@ namespace Testing
             //record the data if it is ok 
             Boolean OK = true;
             //create test data to test the method
-            Int32 TripID = 11;
+            Int32 TripID = 1;
             // execute the method 
             Found = AnTrip.Find(TripID);
             //check the trip ID 
