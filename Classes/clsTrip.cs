@@ -67,15 +67,31 @@ namespace Classes
             }
         }
 
-        public bool Find(int tripID)
+        public bool Find(int TripID)
         {
-            //set the private variable to test the value 
-            aTripID = 11;
-            aTripDate = Convert.ToDateTime("04/04/2023");
-            aTripDestination = "London";
-            aVehicleType = "Bus";
-            // return the value true 
-            return true;
+            //create an instance of the data connection 
+            clsDataConnection DB = new clsDataConnection();
+            //add the parameter for the trip id to retrieve it 
+            DB.AddParameter("@TripID", TripID);
+            //execute the procedure that was created previously 
+            DB.Execute("sproc_tblTrip_FilterByTripID");
+            if(DB.Count == 1)
+            {
+                aTripID = Convert.ToInt32(DB.DataTable.Rows[0]["TripID"]);
+                aTripDate = Convert.ToDateTime(DB.DataTable.Rows[0]["TripDate"]);
+                aTripDestination = Convert.ToString(DB.DataTable.Rows[0]["TripDestination"]);
+                aVehicleType = Convert.ToString(DB.DataTable.Rows[0]["VehicleType"]);
+                //return that everything was ok
+                return true;
+
+
+            }
+            // otherwise no record was found
+            else
+            {
+                return false;
+            }
         }
+        
     }
 }
