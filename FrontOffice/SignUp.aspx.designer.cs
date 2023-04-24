@@ -11,7 +11,7 @@ namespace FrontOffice
 {
 
 
-    public partial class WebForm2
+    public partial class SignUp
     {
 
         /// <summary>

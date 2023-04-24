@@ -9,7 +9,7 @@
   <link href="Default1.css" rel="stylesheet">
 </head>
 <body>
-    <form id="form1" runat="server">
+ <%--   <form id="form1" runat="server">--%>
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
@@ -32,7 +32,7 @@
               <a class="nav-link" href="#">Sign in</a>
             </li>
                <li class="nav-item">
-              <a class="nav-link" href="SignUp.aspx">Create an account</a>
+              <a class="nav-link" href="#">Create an account</a>
             </li>
           </ul>
         </div>
@@ -54,6 +54,6 @@
   <footer class="footer">
     <p>&copy; 2023 National Experience. All rights reserved.</p>
 
-    </form>
+<%--    </form>--%>
 
 

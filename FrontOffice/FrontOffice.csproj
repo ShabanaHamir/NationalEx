@@ -92,10 +92,10 @@
     <Content Include="Payment.aspx" />
     <Content Include="PaymentViewer.aspx" />
     <Content Include="RoomViewer.aspx" />
+    <Content Include="SignUp.aspx" />
     <Content Include="TripViewer.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogIn.aspx" />
-    <Content Include="SignUp.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ABooking.aspx.cs">
@@ -267,6 +267,13 @@
     <Compile Include="RoomViewer.aspx.designer.cs">
       <DependentUpon>RoomViewer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SignUp.aspx.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignUp.aspx.designer.cs">
+      <DependentUpon>SignUp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="TripViewer.aspx.cs">
       <DependentUpon>TripViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -276,17 +283,9 @@
     </Compile>
     <Compile Include="LogIn.aspx.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="LogIn.aspx.designer.cs">
       <DependentUpon>LogIn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SignUp.aspx.cs">
-      <DependentUpon>SignUp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SignUp.aspx.designer.cs">
-      <DependentUpon>SignUp.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
