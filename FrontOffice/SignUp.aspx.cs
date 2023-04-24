@@ -7,11 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace FrontOffice
 {
-    public partial class WebForm2 : System.Web.UI.Page
+    public partial class SignUp : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("AccountActivation.aspx");
+            //Response.Redirect("AccountActivation.aspx");
         }
 
         protected void btnSignup_Click(object sender, EventArgs e)
