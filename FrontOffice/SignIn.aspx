@@ -1,6 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SignIn.aspx.cs" Inherits="SignIn" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="FrontOffice.SignIn" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
@@ -44,3 +44,5 @@
     </form>
 </body>
 </html>
+        
+    </asp:Content>

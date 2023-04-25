@@ -95,9 +95,9 @@
     <Content Include="HotelViewer.aspx" />
     <Content Include="Payment.aspx" />
     <Content Include="PaymentViewer.aspx" />
-    <Content Include="ReSet.aspx" />
     <Content Include="RoomViewer.aspx" />
     <Content Include="SignIn.aspx" />
+    <Content Include="SignInTrial.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="TripViewer.aspx" />
@@ -285,9 +285,6 @@
       <DependentUpon>PaymentViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReSet.aspx.cs">
-      <DependentUpon>ReSet.aspx</DependentUpon>
-    </Compile>
     <Compile Include="RoomViewer.aspx.cs">
       <DependentUpon>RoomViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -297,6 +294,12 @@
     </Compile>
     <Compile Include="SignIn.aspx.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignInTrial.aspx.cs">
+      <DependentUpon>SignInTrial.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignInTrial.aspx.designer.cs">
+      <DependentUpon>SignInTrial.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
