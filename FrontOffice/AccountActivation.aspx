@@ -1,4 +1,4 @@
-﻿<%--<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="AccountActivation.aspx.cs" Inherits="FrontOffice.AccountActivation" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="AccountActivation.aspx.cs" Inherits="FrontOffice.AccountActivation" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
 <asp:Label ID="lblTo" runat="server"></asp:Label>
@@ -19,4 +19,4 @@
         lblSubject.Text = "Subject: Account Activation";
     }
 </script>
-</asp:Content>--%>
+</asp:Content>
