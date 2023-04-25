@@ -193,3 +193,7 @@ H:\24th\FrontOffice\obj\Debug\FrontOffice.pdb
 \\vfiler1.lec-admin.dmu.ac.uk\Home6\P2625596\Final year\IMAT3903 Team Development Project\Todays2504\FrontOffice\obj\Debug\FrontOffice.csproj.CopyComplete
 \\vfiler1.lec-admin.dmu.ac.uk\Home6\P2625596\Final year\IMAT3903 Team Development Project\Todays2504\FrontOffice\obj\Debug\FrontOffice.dll
 \\vfiler1.lec-admin.dmu.ac.uk\Home6\P2625596\Final year\IMAT3903 Team Development Project\Todays2504\FrontOffice\obj\Debug\FrontOffice.pdb
+H:\team development\todayswork2\FrontOffice\obj\Debug\FrontOffice.csproj.AssemblyReference.cache
+H:\team development\todayswork2\FrontOffice\obj\Debug\FrontOffice.csproj.CoreCompileInputs.cache
+H:\team development\todayswork2\FrontOffice\obj\Debug\FrontOffice.dll
+H:\team development\todayswork2\FrontOffice\obj\Debug\FrontOffice.pdb
