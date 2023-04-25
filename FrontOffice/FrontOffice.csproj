@@ -88,6 +88,7 @@
     <Content Include="Default.aspx" />
     <Content Include="Default.Master" />
     <Content Include="Default1.css" />
+    <Content Include="DefaultSecurity.aspx" />
     <Content Include="EMailViewer.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="HotelDetails.aspx" />
@@ -134,7 +135,6 @@
     </Compile>
     <Compile Include="ActivateAccount.aspx.cs">
       <DependentUpon>ActivateAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ActivityViewer.aspx.cs">
       <DependentUpon>ActivityViewer.aspx</DependentUpon>
@@ -178,6 +178,8 @@
     <Compile Include="AnTripaspx.aspx.designer.cs">
       <DependentUpon>AnTripaspx.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\clsDataConnection.cs" />
+    <Content Include="App_Code\clsSecurity.cs" />
     <Compile Include="ARoom.aspx.cs">
       <DependentUpon>ARoom.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -201,7 +203,6 @@
     </Compile>
     <Compile Include="ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Confirmation.aspx.cs">
       <DependentUpon>Confirmation.aspx</DependentUpon>
@@ -238,9 +239,15 @@
     <Compile Include="Default.Master.designer.cs">
       <DependentUpon>Default.Master</DependentUpon>
     </Compile>
+    <Compile Include="DefaultSecurity.aspx.cs">
+      <DependentUpon>DefaultSecurity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DefaultSecurity.aspx.designer.cs">
+      <DependentUpon>DefaultSecurity.aspx</DependentUpon>
+    </Compile>
     <Compile Include="EMailViewer.aspx.cs">
       <DependentUpon>EMailViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -280,7 +287,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReSet.aspx.cs">
       <DependentUpon>ReSet.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="RoomViewer.aspx.cs">
       <DependentUpon>RoomViewer.aspx</DependentUpon>
@@ -291,15 +297,12 @@
     </Compile>
     <Compile Include="SignIn.aspx.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
@@ -332,6 +335,9 @@
       <Project>{CD1BD3BD-C704-4310-AE57-EE922820288A}</Project>
       <Name>Classes</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

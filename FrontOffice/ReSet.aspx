@@ -1,6 +1,14 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ReSet.aspx.cs" Inherits="ReSet" %>
 
 <!DOCTYPE html>
+<script runat="server">
+
+    protected void btnReSet_Click(object sender, EventArgs e)
+    {
+
+    }
+</script>
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">

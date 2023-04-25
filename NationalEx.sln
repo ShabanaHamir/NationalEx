@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.33214.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BackOffice", "BackOffice\BackOffice.csproj", "{E70B147C-F042-4871-BDB5-B821A56A944E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BackOffice", "BackOffice\BackOffice.csproj", "{E70B147C-F042-4871-BDB5-B821A56A944E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontOffice", "FrontOffice\FrontOffice.csproj", "{DC0A16F2-3A08-4F19-A41A-DAB7D06CEC41}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Classes", "Classes\Classes.csproj", "{CD1BD3BD-C704-4310-AE57-EE922820288A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Testing", "Testing\Testing.csproj", "{EE11F6B1-2B0E-4A16-B99F-0181F997BD03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security Demo", "Security Demo\Security Demo.csproj", "{DC6D750D-A12B-40D2-8598-D7C42B354D5C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{EE11F6B1-2B0E-4A16-B99F-0181F997BD03}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE11F6B1-2B0E-4A16-B99F-0181F997BD03}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE11F6B1-2B0E-4A16-B99F-0181F997BD03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC6D750D-A12B-40D2-8598-D7C42B354D5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC6D750D-A12B-40D2-8598-D7C42B354D5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC6D750D-A12B-40D2-8598-D7C42B354D5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC6D750D-A12B-40D2-8598-D7C42B354D5C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
