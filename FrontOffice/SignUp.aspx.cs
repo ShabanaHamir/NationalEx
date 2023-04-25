@@ -5,60 +5,40 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace FrontOffice
+public partial class SignUp : System.Web.UI.Page
 {
-    public partial class SignUp : System.Web.UI.Page
+    protected void Page_Load(object sender, EventArgs e)
     {
-        protected void Page_Load(object sender, EventArgs e)
-        {
-            //Response.Redirect("AccountActivation.aspx");
-        }
 
-        protected void btnSignup_Click(object sender, EventArgs e)
-        {
-            string email = txtEmail.Text;
-            string password = txtPassword.Text;
-            string confirmPassword = txtConfirmPassword.Text;
+    }
 
-            if (string.IsNullOrEmpty(email))
-            {
-                lblError.Text = "Email cannot be left empty";
-                return;
-            }
+    protected void btnSignUp_Click(object sender, EventArgs e)
+    {
+        //create a new instance of the security class
+        clsSecurity Sec = new clsSecurity();
+        //try to sign up using the supplied credentials
+        string Outcome = Sec.SignUp(txtEMail.Text, txtPassword1.Text, txtPassword2.Text, false);
+        //report the outcome of the operation
+        lblError.Text = Outcome;
+        //store the object in the session objec for other pages to access
+        Session["Sec"] = Sec;
+    }
 
-            if (password.Length < 8)
-            {
-                lblError.Text = "Password must be at least 8 characters";
-                return;
-            }
+    protected void btnDone_Click(object sender, EventArgs e)
+    {
+        //if done redirect to main page
+        Response.Redirect("Default.aspx");
+    }
 
-            if (password != confirmPassword)
-            {
-                lblError.Text = "Password does not match";
-                return;
-            }
+    protected void btnView_Click(object sender, EventArgs e)
+    {
+        //view the email
+        Response.Redirect("EMailViewer.aspx");
+    }
 
-            // Add code to register the new user account here
-
-            // send an email to the user
-            // replace the placeholders with your actual email sending code
-            string subject = "Welcome to our website";
-            string body = "Thank you for signing up on our website. Your account has been successfully created.";
-            SendEmail(email, subject, body);
-
-            lblError.Text = "An email has been sent to your account";
-        }
-
-        private void SendEmail(string email, string subject, string body)
-        {
-            throw new NotImplementedException();
-        }
-
-        protected void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-            //ENCYRPTION 
-            txtPassword.TextMode = TextBoxMode.Password;
-
-        }
+    protected void btnReSend_Click(object sender, EventArgs e)
+    {
+        //display re-set password form
+        Response.Redirect("ReSet.aspx");
     }
 }
