@@ -1,5 +1,7 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="FrontOfice.SignUp" %>
+﻿<%@ Page Language="C#"  MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="FrontOfice.SignUp" %>
 
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <!DOCTYPE html>
 <script runat="server">
 
@@ -51,3 +53,4 @@
     </form>
 </body>
 </html>
+    </asp:Content>
