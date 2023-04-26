@@ -1,9 +1,18 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SignUp.aspx.cs" Inherits="SignUp" %>
+﻿<%--<%@ Page Language="C#"  MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="SignUp" %>--%>
+<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="SignUp" %>
 
+
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 <!DOCTYPE html>
+<script runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+  
+</script>
+
+
+<html>
+<head>
     <title></title>
 </head>
 <body>
@@ -46,3 +55,4 @@
     </form>
 </body>
 </html>
+    </asp:Content>
