@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Classes\Classes.csproj" />
+    <ProjectReference Include="..\FrontOffice\FrontOffice.csproj" />
   </ItemGroup>
 
 </Project>
