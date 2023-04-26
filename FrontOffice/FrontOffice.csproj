@@ -178,6 +178,8 @@
     <Compile Include="AnTripaspx.aspx.designer.cs">
       <DependentUpon>AnTripaspx.aspx</DependentUpon>
     </Compile>
+    <Content Include="App_Code\clsDataConnection.cs" />
+    <Content Include="App_Code\clsSecurity.cs" />
     <Compile Include="ARoom.aspx.cs">
       <DependentUpon>ARoom.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
