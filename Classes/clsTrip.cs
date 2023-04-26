@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace Classes
 {
     public class clsTrip
@@ -75,7 +76,7 @@ namespace Classes
             DB.AddParameter("@TripID", TripID);
             //execute the procedure that was created previously 
             DB.Execute("sproc_tblTrip_FilterByTripID");
-            if(DB.Count == 1)
+            if (DB.Count == 1)
             {
                 aTripID = Convert.ToInt32(DB.DataTable.Rows[0]["TripID"]);
                 aTripDate = Convert.ToDateTime(DB.DataTable.Rows[0]["TripDate"]);
@@ -92,6 +93,20 @@ namespace Classes
                 return false;
             }
         }
-        
+
+        //public string Valid
+
+        //    (string TripID,
+        //    DateTime TripDate,
+        //    string TripDestination,
+        //    string VehicleType)
+        //{
+
+        //}
+
+        public string Valid(string tripID, string tripDate, string tripDestination, string vehicleType)
+        {
+            return "" ;
+        }
     }
 }

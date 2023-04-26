@@ -33,6 +33,15 @@ namespace FrontOffice
         protected global::System.Web.UI.WebControls.TextBox txtTripID;
 
         /// <summary>
+        /// btnFind control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnFind;
+
+        /// <summary>
         /// txtTripDestination control.
         /// </summary>
         /// <remarks>
@@ -51,13 +60,13 @@ namespace FrontOffice
         protected global::System.Web.UI.WebControls.TextBox txtVehicleType;
 
         /// <summary>
-        /// clnTripDate control.
+        /// txtDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar clnTripDate;
+        protected global::System.Web.UI.WebControls.TextBox txtDate;
 
         /// <summary>
         /// btnOK control.
