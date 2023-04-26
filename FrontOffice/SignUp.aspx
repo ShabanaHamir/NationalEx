@@ -1,5 +1,5 @@
 ﻿<%--<%@ Page Language="C#"  MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="SignUp" %>--%>
-<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="FrontOffice.SignUp" %>
+<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignUp.aspx.cs" Inherits="SignUp" %>
 
 
 

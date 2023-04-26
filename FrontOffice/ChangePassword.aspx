@@ -1,9 +1,6 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="FrontOffice.ChangePassword" %>
-
-
-
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="FrontOffice.ChangePassword" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
 </head>
@@ -46,3 +43,4 @@
     </form>
 </body>
 </html>
+</asp:Content>
