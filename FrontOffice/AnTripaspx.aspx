@@ -4,6 +4,7 @@
         TripID:&nbsp;
         <asp:TextBox ID="txtTripID" runat="server" BackColor="White" BorderColor="#0066FF" ForeColor="#66CCFF"></asp:TextBox>
 &nbsp;&nbsp;
+        <asp:Button ID="btnFind" runat="server" Text="Find" OnClick="btnFind_Click" />
         <br />
         <br />
         Trip Destination :
@@ -15,7 +16,8 @@
         <br />
         <br />
         Trip Date :
-        <asp:Calendar ID="clnTripDate" runat="server"></asp:Calendar>
+        <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
+        <br />
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
         <asp:Button ID="btnCancel" runat="server" Text="Cancel " />
         <br />

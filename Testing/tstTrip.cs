@@ -2,11 +2,21 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 
+
 namespace Testing
 {
+
+
     [TestClass]
     public class tstTrip
     {
+        //good test data 
+        //some test data to pass the method 
+        string TripID = "2";
+        string TripDate = DateTime.Now.Date.ToString();
+        string TripDestination = "Paris";
+        string VehicleType = "Coach";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -32,7 +42,7 @@ namespace Testing
 
         }
 
-         [TestMethod]
+        [TestMethod]
         public void TripDatePropertyOK()
         {
             //create an instance of the class we want to create 
@@ -177,6 +187,24 @@ namespace Testing
             //test to see the result
             Assert.IsTrue(OK); //
         }
+
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class
+            clsTrip AnTrip = new clsTrip();
+            //string variable to store any error message 
+            String Error = "";
+            //invoke the method 
+            Error = AnTrip.Valid(TripID, TripDate, TripDestination, VehicleType);
+            //test to see that the result is correct 
+            Assert.AreEqual(Error, "");
+        }
+
+
+
+
 
 
 
