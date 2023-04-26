@@ -7,6 +7,11 @@
   <title>My Bootstrap Page</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
   <link href="Default1.css" rel="stylesheet">
+    <style type="text/css">
+        .nav-item {
+            color: #000066;
+        }
+    </style>
 </head>
 <body>
  <%--   <form id="form1" runat="server">--%>
@@ -32,7 +37,10 @@
               <a class="nav-link" href="#">Sign in</a>
             </li>
                <li class="nav-item">
-              <a class="nav-link" href="#">Create an account</a>
+              &nbsp;<a class="nav-link" href="#">Create an account</a>
+            </li>
+               <li class="nav-item">
+              <a class="nav-link" href="StaffLogIn.aspx">Portal</a>
             </li>
           </ul>
         </div>
