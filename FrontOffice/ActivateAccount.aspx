@@ -1,8 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ActivateAccount.aspx.cs" Inherits="ActivateAccount" %>
-
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ActivateAccount.aspx.cs" Inherits="FrontOffice.ActivateAccount" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
 </head>
@@ -16,3 +14,4 @@
     </form>
 </body>
 </html>
+</asp:Content>
