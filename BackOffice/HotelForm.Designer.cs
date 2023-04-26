@@ -114,6 +114,7 @@ namespace BackOffice
             this.btnFind.TabIndex = 8;
             this.btnFind.Text = "Find";
             this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
             // 
             // btnOK
             // 

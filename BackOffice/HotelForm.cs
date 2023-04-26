@@ -7,10 +7,12 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Windows.Forms;
 
 namespace BackOffice
 {
+ 
     public partial class HotelForm : Form
     {
         private TextBox txtHotelID;
@@ -27,6 +29,45 @@ namespace BackOffice
         }
 
         private void btnOK_Click(object sender, EventArgs e)
+        {
+            // create a new instance of clsHotel
+            clsHotel AnHotel = new clsHotel();
+
+            string HotelName = txtHotelName.Text;
+            string HotelPhoneNumber = txtHotelPhoneNumber.Text;
+            string HotelPostCode = txtHotelPostCode.Text;
+
+            // var to store any error messages
+            string Error = "";
+
+            // validate data
+            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+
+            if (Error == "")
+            {
+                AnHotel.HotelName = HotelName;
+                //    AnHotel.HotelPhoneNumber = HotelPhoneNumber;                      ERROR
+                AnHotel.HotelPostCode = HotelPostCode;
+
+                // store the hotel in the session object
+            //   Session["AnHotel"] = AnHotel;
+                // create an instance of the HotelViewer form
+                HotelViewer hotelViewer = new HotelViewer();
+
+                // show the form
+                hotelViewer.Show();
+
+                // hide the current form
+                this.Hide();
+            }
+            else
+            {
+                // error
+                lblError.Text = Error;
+            }
+        }
+
+        private void btnFind_Click(object sender, EventArgs e)
         {
 
         }
