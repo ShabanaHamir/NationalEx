@@ -13,16 +13,16 @@ public partial class SignUp : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-        string connectionString = GetConnectionString();
+       // string connectionString = GetConnectionString();
         // Use the connectionString variable to connect to the database
 
 
 
     }
-    private string GetConnectionString()
-    {
-        return ConfigurationManager.ConnectionStrings["IMAT3903ConnectionString"].ConnectionString;
-    }
+   // private string GetConnectionString()
+    //{
+       // return ConfigurationManager.ConnectionStrings["IMAT3903ConnectionString"].ConnectionString;
+    //}
 
 
     protected void btnSignUp_Click(object sender, EventArgs e)

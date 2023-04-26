@@ -95,6 +95,7 @@
     <Content Include="HotelViewer.aspx" />
     <Content Include="Payment.aspx" />
     <Content Include="PaymentViewer.aspx" />
+    <Content Include="ReSet.aspx" />
     <Content Include="RoomViewer.aspx" />
     <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
@@ -133,6 +134,10 @@
       <DependentUpon>AccountActivation.aspx</DependentUpon>
     </Compile>
     <Compile Include="ActivateAccount.aspx.cs">
+      <DependentUpon>ActivateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivateAccount.aspx.designer.cs">
       <DependentUpon>ActivateAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="ActivityViewer.aspx.cs">
@@ -201,6 +206,10 @@
       <DependentUpon>CardViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Confirmation.aspx.cs">
@@ -284,6 +293,13 @@
       <DependentUpon>PaymentViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReSet.aspx.cs">
+      <DependentUpon>ReSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReSet.aspx.designer.cs">
+      <DependentUpon>ReSet.aspx</DependentUpon>
+    </Compile>
     <Compile Include="RoomViewer.aspx.cs">
       <DependentUpon>RoomViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -292,6 +308,10 @@
       <DependentUpon>RoomViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.designer.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignOut.aspx.cs">
