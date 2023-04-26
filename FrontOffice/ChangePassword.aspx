@@ -1,6 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ChangePassword.aspx.cs" Inherits="ChangePassword" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ChangePassword.aspx.cs" Inherits="FrontOffice.ChangePassword" %>
 
-<!DOCTYPE html>
+
+
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
