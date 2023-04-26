@@ -50,6 +50,7 @@
     <Compile Include="clsHotel.cs" />
     <Compile Include="clsPayment.cs" />
     <Compile Include="clsRoom.cs" />
+    <Compile Include="clsSecurity.cs" />
     <Compile Include="clsTrip.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
