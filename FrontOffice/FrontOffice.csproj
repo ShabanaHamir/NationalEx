@@ -70,7 +70,6 @@
     <Content Include="ABooking.aspx" />
     <Content Include="About.aspx" />
     <Content Include="ACard.aspx" />
-    <Content Include="ActivateAccount.aspx" />
     <Content Include="ActivityViewer.aspx" />
     <Content Include="ACustomer.aspx" />
     <Content Include="AnActivity.aspx" />
@@ -125,7 +124,6 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="BookingViewer.aspx" />
     <Content Include="CardViewer.aspx" />
-    <Content Include="ChangePassword.aspx" />
     <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
     <Content Include="CustomerViewer.aspx" />
@@ -133,7 +131,6 @@
     <Content Include="Default.Master" />
     <Content Include="Default1.css" />
     <Content Include="DefaultSecurity.aspx" />
-    <Content Include="EMailViewer.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="HotelDetails.aspx" />
     <Content Include="HotelViewer.aspx" />
@@ -144,7 +141,6 @@
     <Content Include="PaymentViewer.aspx" />
     <Content Include="ReSet.aspx" />
     <Content Include="RoomViewer.aspx" />
-    <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="StaffLogIn.aspx" />
@@ -173,13 +169,6 @@
     </Compile>
     <Compile Include="ACard.aspx.designer.cs">
       <DependentUpon>ACard.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ActivateAccount.aspx.cs">
-      <DependentUpon>ActivateAccount.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ActivateAccount.aspx.designer.cs">
-      <DependentUpon>ActivateAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="ActivityViewer.aspx.cs">
       <DependentUpon>ActivityViewer.aspx</DependentUpon>
@@ -246,13 +235,6 @@
     <Compile Include="CardViewer.aspx.designer.cs">
       <DependentUpon>CardViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="ChangePassword.aspx.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ChangePassword.aspx.designer.cs">
-      <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Confirmation.aspx.cs">
       <DependentUpon>Confirmation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -294,9 +276,6 @@
     </Compile>
     <Compile Include="DefaultSecurity.aspx.designer.cs">
       <DependentUpon>DefaultSecurity.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="EMailViewer.aspx.cs">
-      <DependentUpon>EMailViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -348,13 +327,6 @@
     </Compile>
     <Compile Include="RoomViewer.aspx.designer.cs">
       <DependentUpon>RoomViewer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="SignIn.aspx.cs">
-      <DependentUpon>SignIn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="SignIn.aspx.designer.cs">
-      <DependentUpon>SignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
