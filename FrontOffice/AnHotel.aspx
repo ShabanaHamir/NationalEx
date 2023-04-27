@@ -12,7 +12,7 @@
             Hotel Post Code<asp:TextBox ID="txtHotelPostCode" runat="server"></asp:TextBox>
             <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
             <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
-            <asp:Label ID="lblError" runat="server" style="color: #FF0000"></asp:Label>
+            <asp:Label ID="lblError" runat="server"></asp:Label>
         </div>
     </form>
     

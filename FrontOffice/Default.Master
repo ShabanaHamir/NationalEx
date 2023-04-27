@@ -11,21 +11,18 @@
         .nav-item {
             color: #000066;
         }
-        .slogan {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
-    <form id="form1" runat="server">
  <%--   <form id="form1" runat="server">--%>
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">National Experience</a><div class="collapse navbar-collapse" id="navbarNav">
+        <a class="navbar-brand" href="#">National Experience</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
               <a class="nav-link" href="HomePage.aspx">Home</a>
@@ -50,7 +47,6 @@
       </div>
     </nav>
   </header>
-    <div class="slogan">Let the Journey Begin!</div>
     <asp:ContentPlaceHolder id="MainContent" runat="server">
     
   <div class="container">
@@ -66,7 +62,6 @@
   <footer class="footer">
     <p>&copy; 2023 National Experience. All rights reserved.</p>
 
-    </form>
-
-
 <%--    </form>--%>
+
+

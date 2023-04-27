@@ -11,7 +11,7 @@ namespace FrontOffice
 {
 
 
-    public partial class Default
+    public partial class Default2
     {
     }
 }
