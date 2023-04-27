@@ -141,6 +141,7 @@
     <Content Include="PaymentViewer.aspx" />
     <Content Include="ReSet.aspx" />
     <Content Include="RoomViewer.aspx" />
+    <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="StaffLogIn.aspx" />
@@ -327,6 +328,13 @@
     </Compile>
     <Compile Include="RoomViewer.aspx.designer.cs">
       <DependentUpon>RoomViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
