@@ -11,7 +11,7 @@ namespace FrontOffice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Response.Redirect("SignUp.aspx");
+           
         }
     }
 }
