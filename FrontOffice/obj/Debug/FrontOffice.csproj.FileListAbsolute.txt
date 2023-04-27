@@ -436,3 +436,7 @@ H:\Final year\IMAT3903 Team Development Project\TDW2704\FrontOffice\bin\Classes.
 H:\Final year\IMAT3903 Team Development Project\TDW2704\FrontOffice\bin\Classes.pdb
 H:\Final year\IMAT3903 Team Development Project\TDW2704\FrontOffice\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 H:\Final year\IMAT3903 Team Development Project\TDW2704\FrontOffice\obj\Debug\FrontOffice.csproj.CopyComplete
+H:\tryagain\FrontOffice\obj\Debug\FrontOffice.csproj.AssemblyReference.cache
+H:\tryagain\FrontOffice\obj\Debug\FrontOffice.csproj.CoreCompileInputs.cache
+H:\tryagain\FrontOffice\obj\Debug\FrontOffice.dll
+H:\tryagain\FrontOffice\obj\Debug\FrontOffice.pdb
