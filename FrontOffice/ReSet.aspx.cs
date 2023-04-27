@@ -30,7 +30,7 @@ namespace FrontOffice
         protected void btnDone_Click(object sender, EventArgs e)
         {
             //go back to the main page
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Default2.aspx");
         }
 
         protected void btnView_Click(object sender, EventArgs e)
