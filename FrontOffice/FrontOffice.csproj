@@ -124,6 +124,7 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="BookingViewer.aspx" />
     <Content Include="CardViewer.aspx" />
+    <Content Include="ChangePassword.aspx" />
     <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
     <Content Include="CustomerViewer.aspx" />
@@ -235,6 +236,13 @@
     </Compile>
     <Compile Include="CardViewer.aspx.designer.cs">
       <DependentUpon>CardViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Confirmation.aspx.cs">
       <DependentUpon>Confirmation.aspx</DependentUpon>
