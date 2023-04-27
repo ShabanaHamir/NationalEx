@@ -1,4 +1,5 @@
 ﻿using System;
+using Classes;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -19,6 +20,11 @@ namespace FrontOffice
             clsSecurity Sec = new clsSecurity();
             //activate the account
             lblError.Text = Sec.ActivateAccount(EMail, TempPW);
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Default.aspx");
         }
     }
 }

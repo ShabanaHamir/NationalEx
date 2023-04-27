@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="FrontOffice.SignIn" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+    <html>
+<head>
     <title></title>
 </head>
 <body>
@@ -13,14 +13,14 @@
             <table style="width: 100%;">
                 <tr>
                     <td style="width: 192px">
-            <asp:Label ID="lblEMail" runat="server" Text="E Mail Address"></asp:Label>
+            <asp:Label ID="lblEMail" runat="server" Text="E Mail Address:"></asp:Label>
                     </td>
-                    <td><asp:TextBox ID="txtEMail" runat="server" Width="283px"></asp:TextBox>
+                    <td><asp:TextBox ID="txtEMail" runat="server" Width="283px" OnTextChanged="txtEMail_TextChanged"></asp:TextBox>
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 192px">
-            <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
+            <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
                     </td>
                     <td><asp:TextBox ID="txtPassword" runat="server" TextMode="Password" Width="283px"></asp:TextBox>
                     </td>

@@ -28,7 +28,7 @@ public partial class SignUp : System.Web.UI.Page
     protected void btnSignUp_Click(object sender, EventArgs e)
     {
 
-        clsDataConnection dataConnection = new clsDataConnection();
+        //clsDataConnection dataConnection = new clsDataConnection();
         // Use dataConnection.ConnectionString to connect to the database and save the user's information
 
 
@@ -49,15 +49,15 @@ public partial class SignUp : System.Web.UI.Page
         //report the outcome of the operation
         lblError.Text = Outcome;
 
-        if (Outcome == "Account Created")
-        {
-            //create a new instance of the data connection class
-            clsDataConnection SignUp = new clsDataConnection();
-            //pass the connection string to the data connection class
-            //    dataConnection.ConnectionString = GetConnectionString();
-            //use the data connection class to insert a new user into the database
-            dataConnection.Execute("INSERT INTO Users (Email, Password) VALUES ('" + txtEMail.Text + "', '" + txtPassword1.Text + "')");
-        }
+        //if (Outcome == "Account Created")
+        //{
+        //    //create a new instance of the data connection class
+        //    clsDataConnection SignUp = new clsDataConnection();
+        //    //pass the connection string to the data connection class
+        //    //    dataConnection.ConnectionString = GetConnectionString();
+        //    //use the data connection class to insert a new user into the database
+        //    dataConnection.Execute("INSERT INTO Users (Email, Password) VALUES ('" + txtEMail.Text + "', '" + txtPassword1.Text + "')");
+        //}
 
         //store the object in the session object for other pages to access
         Session["Sec"] = Sec;
@@ -90,13 +90,13 @@ public partial class SignUp : System.Web.UI.Page
     protected void btnView_Click(object sender, EventArgs e)
     {
         //view the email
-        Response.Redirect("Default.aspx");
+        Response.Redirect("EMailViewer.aspx");
     }
 
     protected void btnReSend_Click(object sender, EventArgs e)
     {
         //display re-set password form
-        Response.Redirect("Default.aspx");
+        Response.Redirect("ReSet.aspx");
     }
 
 

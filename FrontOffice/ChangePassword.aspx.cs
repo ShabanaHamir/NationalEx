@@ -1,4 +1,5 @@
 ﻿using System;
+using Classes;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +9,12 @@ using System.Web.UI.WebControls;
 namespace FrontOffice
 {
     public partial class ChangePassword : System.Web.UI.Page
-    {      //create an instance of the security class
-    clsSecurity Sec;
-    //vars to store temp password and email address
-    string TempPW;
-    string EMail;
-    
+    {
+        //create an instance of the security class
+        clsSecurity Sec;
+        //vars to store temp password and email address
+        string TempPW;
+        string EMail;
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the temp pw from the query string
@@ -76,26 +77,26 @@ namespace FrontOffice
         protected void btnChange_Click(object sender, EventArgs e)
         {
             ///changes the current password 
-        ///if there is no temp passsword supplied then treat it as a typical user 
-        ///wanting to change their password
-        ///if there is a temp password then treat it as a user who 
-        ///has forgotten their password
+            ///if there is no temp passsword supplied then treat it as a typical user 
+            ///wanting to change their password
+            ///if there is a temp password then treat it as a user who 
+            ///has forgotten their password
 
-        //var to store any errors
-        string Error;
-        //if there is no temp password
-        if (TempPW == null)
-        {
-            //change the password as a typical user
-            Error = Sec.ChangePassword(Sec.UserEMail, txtCurrentPassword.Text, txtPassword1.Text, txtPassword2.Text);
-        }
-        else
-        {
-            //change the password based on a forgotten password
-            Error = Sec.ChangePasswordWithTempPW(EMail, TempPW, txtPassword1.Text, txtPassword2.Text);
-        }
-        //display any errors
-        lblError.Text = Error;
+            //var to store any errors
+            string Error;
+            //if there is no temp password
+            if (TempPW == null)
+            {
+                //change the password as a typical user
+                Error = Sec.ChangePassword(Sec.UserEMail, txtCurrentPassword.Text, txtPassword1.Text, txtPassword2.Text);
+            }
+            else
+            {
+                //change the password based on a forgotten password
+                Error = Sec.ChangePasswordWithTempPW(EMail, TempPW, txtPassword1.Text, txtPassword2.Text);
+            }
+            //display any errors
+            lblError.Text = Error;
         }
     }
 }

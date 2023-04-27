@@ -70,7 +70,6 @@
     <Content Include="ABooking.aspx" />
     <Content Include="About.aspx" />
     <Content Include="ACard.aspx" />
-    <Content Include="AccountActivation.aspx" />
     <Content Include="ActivateAccount.aspx" />
     <Content Include="ActivityViewer.aspx" />
     <Content Include="ACustomer.aspx" />
@@ -126,14 +125,11 @@
     <Compile Include="ACard.aspx.designer.cs">
       <DependentUpon>ACard.aspx</DependentUpon>
     </Compile>
-    <Compile Include="AccountActivation.aspx.cs">
-      <DependentUpon>AccountActivation.aspx</DependentUpon>
+    <Compile Include="ActivateAccount.aspx.cs">
+      <DependentUpon>ActivateAccount.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="AccountActivation.aspx.designer.cs">
-      <DependentUpon>AccountActivation.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ActivateAccount.aspx.cs">
+    <Compile Include="ActivateAccount.aspx.designer.cs">
       <DependentUpon>ActivateAccount.aspx</DependentUpon>
     </Compile>
     <Compile Include="ActivityViewer.aspx.cs">
@@ -178,8 +174,6 @@
     <Compile Include="AnTripaspx.aspx.designer.cs">
       <DependentUpon>AnTripaspx.aspx</DependentUpon>
     </Compile>
-    <Content Include="App_Code\clsDataConnection.cs" />
-    <Content Include="App_Code\clsSecurity.cs" />
     <Compile Include="ARoom.aspx.cs">
       <DependentUpon>ARoom.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -202,6 +196,10 @@
       <DependentUpon>CardViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Confirmation.aspx.cs">
@@ -248,6 +246,7 @@
     </Compile>
     <Compile Include="EMailViewer.aspx.cs">
       <DependentUpon>EMailViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="HomePage.aspx.cs">
       <DependentUpon>HomePage.aspx</DependentUpon>
@@ -294,6 +293,10 @@
     </Compile>
     <Compile Include="SignIn.aspx.cs">
       <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
@@ -301,6 +304,7 @@
     </Compile>
     <Compile Include="SignUp.aspx.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="SignUp.aspx.designer.cs">
       <DependentUpon>SignUp.aspx</DependentUpon>
