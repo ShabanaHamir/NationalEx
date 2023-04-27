@@ -70,6 +70,7 @@
     <Content Include="ABooking.aspx" />
     <Content Include="About.aspx" />
     <Content Include="ACard.aspx" />
+    <Content Include="ActivateAccount.aspx" />
     <Content Include="ActivityViewer.aspx" />
     <Content Include="ACustomer.aspx" />
     <Content Include="AnActivity.aspx" />
@@ -132,6 +133,7 @@
     <Content Include="Default.Master" />
     <Content Include="Default1.css" />
     <Content Include="DefaultSecurity.aspx" />
+    <Content Include="EMailViewer.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="HotelDetails.aspx" />
     <Content Include="HotelViewer.aspx" />
@@ -174,6 +176,13 @@
     <Compile Include="ACard.aspx.designer.cs">
       <DependentUpon>ACard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ActivateAccount.aspx.cs">
+      <DependentUpon>ActivateAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivateAccount.aspx.designer.cs">
+      <DependentUpon>ActivateAccount.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ActivityViewer.aspx.cs">
       <DependentUpon>ActivityViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -215,6 +224,13 @@
     </Compile>
     <Compile Include="AnTripaspx.aspx.designer.cs">
       <DependentUpon>AnTripaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EMailViewer.aspx.cs">
+      <DependentUpon>EMailViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EMailViewer.aspx.designer.cs">
+      <DependentUpon>EMailViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="ReSet.aspx.cs">
