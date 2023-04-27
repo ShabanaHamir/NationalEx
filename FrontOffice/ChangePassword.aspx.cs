@@ -38,7 +38,7 @@ namespace FrontOffice
                 if (IsAuthenticated(Sec) == false)
                 {
                     //redirect back to the main page as the user hasn't got permission to use this page
-                    Response.Redirect("Default.aspx");
+                    Response.Redirect("Default2.aspx");
                 }
             }
         }

@@ -31,7 +31,7 @@ namespace FrontOffice
             if (Error == "")
             {
                 //redirect to the main page
-                Response.Redirect("Default.aspx");
+                Response.Redirect("Default2.aspx");
             }
             else
             {
@@ -49,7 +49,7 @@ namespace FrontOffice
         protected void btnCancel_Click(object sender, EventArgs e)
         {
             //navigate back to default
-            Response.Redirect("Default.aspx");
+            Response.Redirect("Default2.aspx");
         }
     }
 }

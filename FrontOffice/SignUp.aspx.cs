@@ -84,19 +84,19 @@ public partial class SignUp : System.Web.UI.Page
     {
         //if done redirect to main page
 
-        Response.Redirect("Default.aspx");
+        Response.Redirect("Default2.aspx");
     }
 
     protected void btnView_Click(object sender, EventArgs e)
     {
         //view the email
-        Response.Redirect("Default.aspx");
+        Response.Redirect("Default2.aspx");
     }
 
     protected void btnReSend_Click(object sender, EventArgs e)
     {
         //display re-set password form
-        Response.Redirect("Default.aspx");
+        Response.Redirect("Default2.aspx");
     }
 
 
