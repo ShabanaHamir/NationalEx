@@ -232,7 +232,6 @@
     <Compile Include="EMailViewer.aspx.designer.cs">
       <DependentUpon>EMailViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="ReSet.aspx.cs">
       <DependentUpon>ReSet.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -442,6 +441,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
