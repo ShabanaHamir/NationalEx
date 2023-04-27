@@ -140,13 +140,17 @@
     <Content Include="obj\Debug\FrontOffice.pdb" />
     <Content Include="Payment.aspx" />
     <Content Include="PaymentViewer.aspx" />
+    <Content Include="ReSet.aspx" />
     <Content Include="RoomViewer.aspx" />
+    <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="StaffLogIn.aspx" />
     <Content Include="TripViewer.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogIn.aspx" />
+    <Content Include="WebForm1.aspx" />
+    <Content Include="WithoutMaster.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ABooking.aspx.cs">
@@ -211,6 +215,28 @@
     </Compile>
     <Compile Include="AnTripaspx.aspx.designer.cs">
       <DependentUpon>AnTripaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Release\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="ReSet.aspx.cs">
+      <DependentUpon>ReSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ReSet.aspx.designer.cs">
+      <DependentUpon>ReSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WithoutMaster.aspx.cs">
+      <DependentUpon>WithoutMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WithoutMaster.aspx.designer.cs">
+      <DependentUpon>WithoutMaster.aspx</DependentUpon>
     </Compile>
     <Content Include="App_Code\clsDataConnection.cs" />
     <Content Include="App_Code\clsSecurity.cs" />
@@ -328,6 +354,13 @@
     <Compile Include="RoomViewer.aspx.designer.cs">
       <DependentUpon>RoomViewer.aspx</DependentUpon>
     </Compile>
+    <Compile Include="SignIn.aspx.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignIn.aspx.designer.cs">
+      <DependentUpon>SignIn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="SignOut.aspx.cs">
       <DependentUpon>SignOut.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -373,7 +406,6 @@
     <Content Include="bin\roslyn\vbc.exe.config" />
     <Content Include="bin\roslyn\vbc.rsp" />
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
-    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\FrontOffice.csproj.AssemblyReference.cache" />
     <Content Include="obj\Debug\FrontOffice.csproj.CopyComplete" />
