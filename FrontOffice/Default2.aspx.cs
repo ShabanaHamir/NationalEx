@@ -18,5 +18,20 @@ namespace FrontOffice
         {
 
         }
+
+        protected void btnTrips_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AnTripaspx.aspx");
+        }
+
+        protected void btnHotels_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AnHotel.aspx");
+        }
+
+        protected void btnActivities_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("AnActivity.aspx");
+        }
     }
 }

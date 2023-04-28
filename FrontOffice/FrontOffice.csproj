@@ -128,6 +128,7 @@
     <Content Include="ChangePassword.aspx" />
     <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
+    <Content Include="CustomerSignIn.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default2.aspx" />
     <Content Include="Default.Master" />
@@ -224,6 +225,13 @@
     </Compile>
     <Compile Include="AnTripaspx.aspx.designer.cs">
       <DependentUpon>AnTripaspx.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerSignIn.aspx.cs">
+      <DependentUpon>CustomerSignIn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerSignIn.aspx.designer.cs">
+      <DependentUpon>CustomerSignIn.aspx</DependentUpon>
     </Compile>
     <Compile Include="EMailViewer.aspx.cs">
       <DependentUpon>EMailViewer.aspx</DependentUpon>
