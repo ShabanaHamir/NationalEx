@@ -555,7 +555,7 @@ namespace Classes
                 else
                 {
                     //generate an error
-                    Message = "The was a problem activating the account";
+                    Message = "There was a problem activating the account";
                 }
             }
             else
