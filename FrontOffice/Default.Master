@@ -28,16 +28,16 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="HomePage.aspx">Home</a>
+              <a class="nav-link" href="Default2.aspx">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="About.aspx">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
+              <a class="nav-link" href="About.aspx">Contact</a>
             </li>
                <li class="nav-item">
-              <a class="nav-link" href="#">Sign in</a>
+              <a class="nav-link" href="CustomerSignIn.aspx">Sign in</a>
             </li>
                <li class="nav-item">
               &nbsp;<a class="nav-link" href="SignUp.aspx">Create an account</a>
@@ -53,13 +53,13 @@
     <asp:ContentPlaceHolder id="MainContent" runat="server">
     
   <div class="container">
-    <h1 class="auto-style1">Let the journey begin!</h1>
+    <%--<h1 class="auto-style1">Let the journey begin!</h1>
     <p>your ultimate destination for hassle-free travel planning in England! We understand that planning a trip can be overwhelming,
         and that's why we offer a comprehensive range of services to make your travel experience as smooth and enjoyable as possible.
         Whether you're looking for a cozy hotel room, exciting excursions, or reliable transportation options, we've got you covered.
         Our team of travel experts has carefully curated a selection of top-rated hotels, activities, and transport providers across 
         England, so you can easily find and book the best options for your budget and preferences. So sit back, relax, and let us take c
-        are of all your travel needs!</p>
+        are of all your travel needs!</p>--%>
      <%--         <form class="form-inline my-2 my-lg-0 ml-auto">
           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
