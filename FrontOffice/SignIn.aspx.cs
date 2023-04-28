@@ -26,8 +26,9 @@ namespace FrontOffice
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
 
-            clsDataConnection dataConnection = new clsDataConnection();
+            //clsDataConnection dataConnection = new clsDataConnection();
             //try to sign in and record any errors
+            clsSecurity Sec = new clsSecurity();
             String Error = Sec.SignIn(txtEMail.Text, txtPassword.Text);
             //if there were no errors
             if (Error == "")
