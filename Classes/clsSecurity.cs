@@ -168,6 +168,8 @@ namespace Classes
 
         public string SignIn(string EMail, string Password)
         {
+            
+            //clsDataConnection dataConnection = new clsDataConnection();
             //signs in a user based on their email and password
             //ver to store any error messages
             string Error = "";

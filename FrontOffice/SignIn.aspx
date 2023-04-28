@@ -1,13 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="SignIn.aspx.cs" Inherits="FrontOffice.SignIn" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <html>
-<head>
-    <title></title>
-</head>
-<body>
+ 
     <form id="form1" runat="server">
-            <div>
-            <br />
+           
+      
             <h1>Sign-in<br />
             </h1>
             <table style="width: 100%;">
@@ -40,6 +36,5 @@
 &nbsp;<asp:Button ID="btnCancel" runat="server" Text="Cancel" OnClick="btnCancel_Click" />
 &nbsp;<asp:Button ID="btnReSend" runat="server" Text="Re-set Password" OnClick="btnReSend_Click" />
     </form>
-</body>
-</html>
+
 </asp:Content>

@@ -25,6 +25,8 @@ namespace FrontOffice
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
+
+            clsDataConnection dataConnection = new clsDataConnection();
             //try to sign in and record any errors
             String Error = Sec.SignIn(txtEMail.Text, txtPassword.Text);
             //if there were no errors
@@ -50,6 +52,11 @@ namespace FrontOffice
         {
             //navigate back to default
             Response.Redirect("Default2.aspx");
+        }
+
+        protected void txtEMail_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
