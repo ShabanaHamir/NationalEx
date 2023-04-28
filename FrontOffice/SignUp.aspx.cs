@@ -90,7 +90,7 @@ public partial class SignUp : System.Web.UI.Page
     protected void btnView_Click(object sender, EventArgs e)
     {
         //view the email
-        Response.Redirect("Default2.aspx");
+        Response.Redirect("EMailViewer.aspx");
     }
 
     protected void btnReSend_Click(object sender, EventArgs e)
