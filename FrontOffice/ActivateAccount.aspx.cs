@@ -24,7 +24,7 @@ namespace FrontOffice
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Default2.aspx");
+            Response.Redirect("SignIn.aspx");
         }
     }
 }

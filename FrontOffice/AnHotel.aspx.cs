@@ -49,7 +49,7 @@ namespace FrontOffice
                 //store the hotel in the session object
                 Session["AnHotel"] = AnHotel;
                 //redirect to the viewer page
-                Response.Write("HotelViewer.aspx");
+                Response.Redirect("HotelViewer.aspx");
             }
             else
             {

@@ -4,6 +4,6 @@
         <asp:Label ID="lblError" runat="server"></asp:Label>
 &nbsp;<br />
         <br />
-        <asp:Button ID="btnBack" runat="server" OnClick="Button1_Click" Text="Back" />
+        <asp:Button ID="btnBack" runat="server" OnClick="Button1_Click" Text="Ok" />
     </form>
 </asp:Content>
