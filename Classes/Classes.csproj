@@ -48,6 +48,7 @@
     <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsHotel.cs" />
+    <Compile Include="clsHotelCollection.cs" />
     <Compile Include="clsPayment.cs" />
     <Compile Include="clsRoom.cs" />
     <Compile Include="clsSecurity.cs" />
