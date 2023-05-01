@@ -1,5 +1,7 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Classes;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 
 namespace Testing
 {
@@ -7,8 +9,17 @@ namespace Testing
     public class tstHotelCollection
     {
         [TestMethod]
-        public void TestMethod1()
+        public void InstanceOK()
         {
+            //instance of the class I want to create
+            clsHotelCollection AllHotels = new clsHotelCollection();
+            Assert.IsNotNull(AllHotels);
         }
+        [TestMethod]
+        public void HotelListOK()
+        { 
+
+        }
+
     }
 }
