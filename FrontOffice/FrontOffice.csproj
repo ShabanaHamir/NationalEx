@@ -138,12 +138,16 @@
     <Content Include="HomePage.aspx" />
     <Content Include="HotelDetails.aspx" />
     <Content Include="HotelViewer.aspx" />
+    <Content Include="Images\Hotel1.jfif" />
+    <Content Include="Images\Hotel2.jfif" />
+    <Content Include="Images\Hotel3.jfif" />
     <Content Include="obj\Debug\FrontOffice.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\FrontOffice.dll" />
     <Content Include="obj\Debug\FrontOffice.pdb" />
     <Content Include="Payment.aspx" />
     <Content Include="PaymentViewer.aspx" />
     <Content Include="ReSet.aspx" />
+    <Content Include="RoomBooking.aspx" />
     <Content Include="RoomViewer.aspx" />
     <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
@@ -246,6 +250,13 @@
     </Compile>
     <Compile Include="ReSet.aspx.designer.cs">
       <DependentUpon>ReSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoomBooking.aspx.cs">
+      <DependentUpon>RoomBooking.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoomBooking.aspx.designer.cs">
+      <DependentUpon>RoomBooking.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
