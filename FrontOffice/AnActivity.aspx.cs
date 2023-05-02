@@ -20,18 +20,46 @@ namespace FrontOffice
             //Create an instance of clsActivity
             clsActivities AnActivity = new clsActivities();
             //capture the activity fields
-            AnActivity.ActivityName = txtAName.Text;
-            AnActivity.ActivityCity = txtACity.Text;
-            AnActivity.ActivityDescription = txtADescription.Text;
-            AnActivity.ActivityPrice = Convert.ToDecimal(txtAPrice.Text);
-            AnActivity.ActivityPostCode = txtAPostcode.Text;
-            AnActivity.ActivityAddress = txtAAddress.Text;
+            string ActivityName = txtAName.Text;
+            string ActivityCity = txtACity.Text;
+            string ActivityDescription = txtADescription.Text;
+            string ActivityPrice = txtAPrice.Text;
+            string ActivityPostCode = txtAPostcode.Text;
+            string ActivityAddress= txtAAddress.Text;
+            //variable to store error messages
+            string Error = "";
+            //validating the data
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode,  ActivityPrice);
+            AnActivity.ActivityName = ActivityName;
+            AnActivity.ActivityCity = ActivityCity;
+            AnActivity.ActivityAddress = ActivityAddress;
+            AnActivity.ActivityDescription = ActivityDescription;
+            AnActivity.ActivityPostCode = ActivityPostCode;
+            AnActivity.ActivityPrice = Convert.ToDecimal(ActivityPrice);
+            
+            
             //store the activity in the session object
             Session["AnActivity"] = AnActivity;
             //redirect to the viewer page
             Response.Redirect("ActivityViewer.aspx");
         }
 
+        //protected void btnAOK_Click(object sender, EventArgs e)
+        //{
+        //    //Create an instance of clsActivity
+        //    clsActivities AnActivity = new clsActivities();
+        //    //capture the activity fields
+        //    AnActivity.ActivityName = txtAName.Text;
+        //    AnActivity.ActivityCity = txtACity.Text;
+        //    AnActivity.ActivityDescription = txtADescription.Text;
+        //    AnActivity.ActivityPrice = Convert.ToDecimal(txtAPrice.Text);
+        //    AnActivity.ActivityPostCode = txtAPostcode.Text;
+        //    AnActivity.ActivityAddress = txtAAddress.Text;
+        //    //store the activity in the session object
+        //    Session["AnActivity"] = AnActivity;
+        //    //redirect to the viewer page
+        //    Response.Redirect("ActivityViewer.aspx");
+        //}
         protected void btnFind_Click(object sender, EventArgs e)
         {
             //create a new instance of clsactivity

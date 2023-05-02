@@ -43,7 +43,7 @@ namespace FrontOffice
             if (Error == "")
             {
                 AnHotel.HotelName = HotelName;
-            // AnHotel.HotelPhoneNumber = HotelPhoneNumber;                         ERROR
+             AnHotel.HotelPhoneNumber = Convert.ToInt32(HotelPhoneNumber);                        
                 AnHotel.HotelPostCode = HotelPostCode;
 
                 //store the hotel in the session object

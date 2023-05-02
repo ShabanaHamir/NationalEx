@@ -43,6 +43,12 @@ namespace Classes
                 mActivityDescription = value;
             }
         }
+
+        public string Valid(string activityName, string activityCity, string activityAddress, string activityDescription, string activityPostCode, string activityPrice)
+        {
+            throw new NotImplementedException();
+        }
+
         public string ActivityName
         {
             get
