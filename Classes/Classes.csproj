@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsActivities.cs" />
+    <Compile Include="clsActivitiesCollection.cs" />
     <Compile Include="clsBooking.cs" />
     <Compile Include="clsCard.cs" />
     <Compile Include="clsConfirmation.cs" />
