@@ -23,25 +23,33 @@ namespace FrontOffice
             string ActivityName = txtAName.Text;
             string ActivityCity = txtACity.Text;
             string ActivityDescription = txtADescription.Text;
-            string ActivityPrice = txtAPrice.Text;
+            decimal ActivityPrice = Convert.ToDecimal(txtAPrice.Text);
             string ActivityPostCode = txtAPostcode.Text;
-            string ActivityAddress= txtAAddress.Text;
+            string ActivityAddress = txtAAddress.Text;
             //variable to store error messages
             string Error = "";
             //validating the data
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode,  ActivityPrice);
-            AnActivity.ActivityName = ActivityName;
-            AnActivity.ActivityCity = ActivityCity;
-            AnActivity.ActivityAddress = ActivityAddress;
-            AnActivity.ActivityDescription = ActivityDescription;
-            AnActivity.ActivityPostCode = ActivityPostCode;
-            AnActivity.ActivityPrice = Convert.ToDecimal(ActivityPrice);
-            
-            
-            //store the activity in the session object
-            Session["AnActivity"] = AnActivity;
-            //redirect to the viewer page
-            Response.Redirect("ActivityViewer.aspx");
+
+            if (Error == "")
+            {
+                Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+                AnActivity.ActivityName = ActivityName;
+                AnActivity.ActivityCity = ActivityCity;
+                AnActivity.ActivityAddress = ActivityAddress;
+                AnActivity.ActivityDescription = ActivityDescription;
+                AnActivity.ActivityPostCode = ActivityPostCode;
+                AnActivity.ActivityPrice = ActivityPrice;
+                //store the activity in the session object
+                Session["AnActivity"] = AnActivity;
+                //redirect to the viewer page
+                Response.Redirect("ActivityViewer.aspx");
+            }
+
+            else
+            {
+                //display the error message
+                lblError.Text = Error;
+            }
         }
 
         //protected void btnAOK_Click(object sender, EventArgs e)
