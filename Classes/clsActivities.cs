@@ -189,6 +189,8 @@ namespace Classes
             }
         }
 
+        public int Count { get; set; }
+
         public bool Find(int ActivityID)
         {
             //create an instance of the data connection
