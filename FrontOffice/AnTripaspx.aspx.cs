@@ -21,12 +21,33 @@ namespace FrontOffice
         {
             //create a new instance of cls trip 
             clsTrip AnTrip = new clsTrip();
-            // capture the trip ID 
-            txtTripID.Text = AnTrip.TripID.ToString();
-            //store the ID in the session object 
-            Session["AnTrip"] = AnTrip;
-            //redirect to the passenger page
-            Response.Redirect("AnPassenger.aspx");
+            // retrieve the trip date
+            string TripDate = txtDate.Text;
+            //retrieve the trip destination 
+            string TripDestination = txtTripDestination.Text;
+            //retrieve the vehicle trip 
+            string VehicleType = txtVehicleType.Text;
+            // create a variable to save erro messages 
+            string Error = "";
+            //create validation for presentation layer 
+            if (Error =="")
+            {
+                //caputure the trip date 
+                AnTrip.TripDate = Convert.ToDateTime(TripDate);
+                //capture the trip destination 
+                AnTrip.TripDestination = TripDate;
+                //capture the vehicle type 
+                AnTrip.VehicleType = VehicleType;
+                //save the trip in the session object 
+                Session["AnTrip"] = AnTrip;
+                //redirect to the viewer page 
+                Response.Redirect("TripViewer.aspx");
+            }
+            else
+            {
+                //pop up message says error
+                lblError.Text = Error;
+            }
         }
 
         protected void btnFind_Click(object sender, EventArgs e)

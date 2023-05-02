@@ -17,6 +17,7 @@
         <br />
         Trip Date :
         <asp:TextBox ID="txtDate" runat="server"></asp:TextBox>
+        <asp:Label ID="lblError" runat="server" Text=""></asp:Label>
         <br />
         <asp:Button ID="btnOK" runat="server" OnClick="btnOK_Click" Text="OK" />
         <asp:Button ID="btnCancel" runat="server" Text="Cancel " />
