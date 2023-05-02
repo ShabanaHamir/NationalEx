@@ -19,8 +19,13 @@ namespace FrontOffice
         {
             //Create an instance of clsActivity
             clsActivities AnActivity = new clsActivities();
-            //capture the activity name
+            //capture the activity fields
             AnActivity.ActivityName = txtAName.Text;
+            AnActivity.ActivityCity = txtACity.Text;
+            AnActivity.ActivityDescription = txtADescription.Text;
+            AnActivity.ActivityPrice = Convert.ToDecimal(txtAPrice.Text);
+            AnActivity.ActivityPostCode = txtAPostcode.Text;
+            AnActivity.ActivityAddress = txtAAddress.Text;
             //store the activity in the session object
             Session["AnActivity"] = AnActivity;
             //redirect to the viewer page
