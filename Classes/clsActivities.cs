@@ -151,7 +151,6 @@ namespace Classes
             {
                 Error = Error + "Activity name is too long: ";
             }
-
          
             //if the AName is blank
             if (activityCity.Length == 0)
@@ -212,7 +211,7 @@ namespace Classes
             if (activityPrice <= 0)
             {
                 //error
-                Error = Error + " Room Price cannot be less than or equal to zero! ";
+                Error = Error + " Activity price cannot be less than or equal to zero... We aren't free!";
             }
 
             return Error;
