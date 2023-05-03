@@ -188,10 +188,21 @@ namespace Classes
                 //If there is only one record found then return true
                 if (UserAccount.Count >= 1)
                 {
+                 
                     //get the state of admin
-                    mAdmin = Convert.ToBoolean(UserAccount.DataTable.Rows[0]["IsAdmin"]);
+                   bool isAdmin = Convert.ToBoolean(UserAccount.DataTable.Rows[0]["IsAdmin"]);
                     //store the users email address in the data member
                     mEMail = EMail;
+                    //set security state based on user type
+                    if (isAdmin && EMail.EndsWith("@ne.uk"))
+                    {
+                        mAdmin = true;
+                    }
+                    else
+                    {
+                        mAdmin = false;
+                    }
+
                 }
                 else //otherwise return false
                 {

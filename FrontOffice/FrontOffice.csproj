@@ -73,6 +73,7 @@
     <Content Include="ActivateAccount.aspx" />
     <Content Include="ActivityViewer.aspx" />
     <Content Include="ACustomer.aspx" />
+    <Content Include="AddStaff.aspx" />
     <Content Include="AnActivity.aspx" />
     <Content Include="AnHotel.aspx" />
     <Content Include="AnPassenger.aspx" />
@@ -153,6 +154,7 @@
     <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="StaffDashboard.aspx" />
     <Content Include="StaffHome.aspx" />
     <Content Include="StaffLogIn.aspx" />
     <Content Include="TripViewer.aspx" />
@@ -203,6 +205,13 @@
     </Compile>
     <Compile Include="ACustomer.aspx.designer.cs">
       <DependentUpon>ACustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddStaff.aspx.cs">
+      <DependentUpon>AddStaff.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddStaff.aspx.designer.cs">
+      <DependentUpon>AddStaff.aspx</DependentUpon>
     </Compile>
     <Compile Include="AnActivity.aspx.cs">
       <DependentUpon>AnActivity.aspx</DependentUpon>
@@ -259,6 +268,13 @@
     </Compile>
     <Compile Include="RoomBooking.aspx.designer.cs">
       <DependentUpon>RoomBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffDashboard.aspx.cs">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffDashboard.aspx.designer.cs">
+      <DependentUpon>StaffDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="StaffHome.aspx.cs">
       <DependentUpon>StaffHome.aspx</DependentUpon>
