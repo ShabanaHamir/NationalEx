@@ -149,11 +149,50 @@ public class clsDataConnection
         SQLParams.Add(AParam);
     }
 
-    public Int32 Execute(string SProcName)
+    //public Int32 Execute(string SProcName)
+    //{
+    //    ///public method used to execute the named stored procedure
+    //    ///accepts one parameter which is the name of the stored procedure to use
+    //    //open the stored procedure
+    //    //initialise the connection to the database
+    //    connectionToDB = new SqlConnection(connectionString);
+    //    //open the database
+    //    connectionToDB.Open();
+    //    //initialise the command builder for this connection
+    //    SqlCommand dataCommand = new SqlCommand(SProcName, connectionToDB);
+    //    //add the parameters to the command builder
+    //    //loop through each parameter
+    //    for (int Counter = 0; Counter < SQLParams.Count; Counter += 1)
+    //    {
+    //        //add it to the command builder
+    //        dataCommand.Parameters.Add(SQLParams[Counter]);
+    //    }
+    //    //create an instance of the SqlParameter class
+    //    SqlParameter returnValue = new SqlParameter();
+    //    //set the direction as the return value
+    //    returnValue.Direction = ParameterDirection.ReturnValue;
+    //    //add this parameter to the Command builder
+    //    dataCommand.Parameters.Add(returnValue);
+    //    //set the command type as stored procedure
+    //    dataCommand.CommandType = CommandType.StoredProcedure;
+    //    //initialise the data adapter
+    //    dataChannel = new SqlDataAdapter(SProcName, connectionToDB);
+    //    //set the select command property for the data adapter
+    //    dataChannel.SelectCommand = dataCommand;
+    //    //use the copmmand builder to generate the sql insert delete etc
+    //    commandBuilder = new SqlCommandBuilder(dataChannel);
+    //    //fill the data adapter
+    //    dataChannel.Fill(dataTable);
+    //    //close the connection
+    //    connectionToDB.Close();
+    //    //return the result of the stored procedure
+    //    return Convert.ToInt32(returnValue.Value);
+    //}
+
+
+
+    public DataTable Execute(string SProcName)
     {
-        ///public method used to execute the named stored procedure
-        ///accepts one parameter which is the name of the stored procedure to use
-        //open the stored procedure
         //initialise the connection to the database
         connectionToDB = new SqlConnection(connectionString);
         //open the database
@@ -175,19 +214,18 @@ public class clsDataConnection
         dataCommand.Parameters.Add(returnValue);
         //set the command type as stored procedure
         dataCommand.CommandType = CommandType.StoredProcedure;
-        //initialise the data adapter
-        dataChannel = new SqlDataAdapter(SProcName, connectionToDB);
-        //set the select command property for the data adapter
-        dataChannel.SelectCommand = dataCommand;
-        //use the copmmand builder to generate the sql insert delete etc
-        commandBuilder = new SqlCommandBuilder(dataChannel);
-        //fill the data adapter
-        dataChannel.Fill(dataTable);
+        //create the data table
+        DataTable dataTable = new DataTable();
+        //create the data adapter
+        SqlDataAdapter dataAdapter = new SqlDataAdapter(dataCommand);
+        //fill the data table
+        dataAdapter.Fill(dataTable);
         //close the connection
         connectionToDB.Close();
-        //return the result of the stored procedure
-        return Convert.ToInt32(returnValue.Value);
+        //return the data table
+        return dataTable;
     }
+
 
     public Int32 Count
     //property that returns the count of records in the query results
