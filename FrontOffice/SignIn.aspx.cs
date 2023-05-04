@@ -51,18 +51,7 @@ namespace FrontOffice
                 lblError.Text = Error;
             }
         }
-        ////if there were no errors
-        //if (Error == "")
-        //{
-        //    //redirect to the main page
-        //    Response.Redirect("Default2.aspx");
-        //}
-        //else
-        //{
-        //    //otherwise display any errors
-        //    lblError.Text = Error;
-        //}
-    
+   
 
         protected void btnReSend_Click(object sender, EventArgs e)
         {
