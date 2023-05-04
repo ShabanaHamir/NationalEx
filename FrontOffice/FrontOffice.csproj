@@ -71,6 +71,7 @@
     <Content Include="About.aspx" />
     <Content Include="ACard.aspx" />
     <Content Include="ActivateAccount.aspx" />
+    <Content Include="ActivityDefault.aspx" />
     <Content Include="ActivityViewer.aspx" />
     <Content Include="ACustomer.aspx" />
     <Content Include="AddStaff.aspx" />
@@ -191,6 +192,13 @@
     </Compile>
     <Compile Include="ActivateAccount.aspx.designer.cs">
       <DependentUpon>ActivateAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ActivityDefault.aspx.cs">
+      <DependentUpon>ActivityDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActivityDefault.aspx.designer.cs">
+      <DependentUpon>ActivityDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="ActivityViewer.aspx.cs">
       <DependentUpon>ActivityViewer.aspx</DependentUpon>
