@@ -27,21 +27,42 @@ namespace FrontOffice
         {
 
             //clsDataConnection dataConnection = new clsDataConnection();
-            //try to sign in and record any errors
+            //try to sign in and record any errors there are
             clsSecurity Sec = new clsSecurity();
             String Error = Sec.SignIn(txtEMail.Text, txtPassword.Text);
-            //if there were no errors
+
             if (Error == "")
             {
-                //redirect to the main page
-                Response.Redirect("Default2.aspx");
+                // Check if the user is an admin
+                if (Sec.Admin)
+                {
+                    // Redirect to the admin page
+                    Response.Redirect("StaffDashboard.aspx");
+                }
+                else
+                {
+                    // Redirect to the main page for non-admin users
+                    Response.Redirect("Default2.aspx");
+                }
             }
             else
             {
-                //otherwise display any errors
+                // Otherwise display any errors
                 lblError.Text = Error;
             }
         }
+        ////if there were no errors
+        //if (Error == "")
+        //{
+        //    //redirect to the main page
+        //    Response.Redirect("Default2.aspx");
+        //}
+        //else
+        //{
+        //    //otherwise display any errors
+        //    lblError.Text = Error;
+        //}
+    
 
         protected void btnReSend_Click(object sender, EventArgs e)
         {
