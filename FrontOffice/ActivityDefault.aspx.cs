@@ -21,9 +21,9 @@ namespace FrontOffice
 
         void DisplayActivities()
         {
-            //create an imstance of the county collection
+            //create an imstance of the activities
             Classes.clsActivitiesCollection Activities = new Classes.clsActivitiesCollection();
-            //set the data source to the list of counties in the collection
+            //set the data source to the list of activities in the collection
             lstActivities.DataSource = Activities.ActivitiesList;
             //set the name of the PK
             lstActivities.DataValueField = "ActivityID";
