@@ -202,12 +202,12 @@ namespace Classes
              if (db.Count == 1)
             {
                 //copy the data from the db tp the private data members
+                mActivityID = Convert.ToInt32(db.DataTable.Rows[0]["ActivityID"]);
                 mActivityName = Convert.ToString(db.DataTable.Rows [0] ["ActivityName"]);
                 mActivityAddress = Convert.ToString(db.DataTable.Rows[0]["ActivityAddress"]);
                 mActivityCity = Convert.ToString(db.DataTable.Rows[0]["ActivityCity"]);
                 mActivityPrice = Convert.ToDecimal(db.DataTable.Rows[0] ["ActivityPrice"]);
                 mActivityPostCode = Convert.ToString(db.DataTable.Rows[0]["ActivityPostCode"]);
-                mActivityID = Convert.ToInt32(db.DataTable.Rows[0]["ActivityID"]);
                 mActivityDescription = Convert.ToString(db.DataTable.Rows[0]["ActivityDescription"]);
                 //return true
                 return true;

@@ -10,8 +10,11 @@ namespace FrontOffice
 {
     public partial class ActivityDefault : System.Web.UI.Page
     {
+        //variable to store PK with page levelscope
+        Int32 ActivityID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            ActivityID = Convert.ToInt32(Session["StaffID"]);
             if (IsPostBack == false)
             {
                 //update list box
@@ -35,15 +38,15 @@ namespace FrontOffice
             }
         }
 
-        Int32 DisplayActivities(string ActivityNameFilter)
+        Int32 DisplayActivities(string ActivitiesNameFilter)
         {
             //create an imstance of the activities
             clsActivitiesCollection MyActivities = new clsActivitiesCollection();
             //call the filter by activity name 
-            MyActivities.FilterByActivityName(ActivityNameFilter);
+            MyActivities.FilterByActivitiesName(ActivitiesNameFilter);
             
             //point the list box at the activitylist collection
-            lstActivities.DataSource = MyActivities.ActivityList;
+            lstActivities.DataSource = MyActivities.ActivitiesList;
             //tell it what field to display to user
             lstActivities.DataTextField = "ActivitiyName";
             //set pk value
@@ -52,6 +55,31 @@ namespace FrontOffice
             lstActivities.DataBind();
             //return no of records found
             return MyActivities.Count;
+        }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnDisplayAll_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
