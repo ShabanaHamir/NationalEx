@@ -5,6 +5,10 @@ namespace Classes
 {
     public class clsHotelCollection
     {
+        //private data memeber for the list 
+        List<clsHotel> mHotelList = new List<clsHotel>();
+        //private data member thisHotel
+        clsHotel mThisHotel = new clsHotel();
         //constructor
         public clsHotelCollection()
         {
@@ -65,8 +69,7 @@ namespace Classes
 
 
 
-        //private data memeber for the list 
-        List<clsHotel> mHotelList = new List<clsHotel>();
+       
         //public property for the hotel list 
         public List<clsHotel> HotelList
         {
@@ -102,7 +105,44 @@ namespace Classes
             }
         }
 
-        public clsHotel ThisHotel { get; set; }
+        //public property for ThisHotel
+        public clsHotel ThisHotel
+        {
+            get 
+            {
+                //return priv data
+                return mThisHotel;
+            }
+
+            set 
+            {
+                //set priv data
+                mThisHotel = value;
+            } 
+        }
+
+
+
+        public int Add()
+        {
+            //add new record to the db based on the values of mThisHotel & set pk value of new record
+            mThisHotel.HotelID = 123;
+            ////return pk of the new record
+            return mThisHotel.HotelID;
+
+            //    clsDataConnection DB = new clsDataConnection();
+            //    //set the parameters for the sproc
+            //    DB.AddParameter("@HotelName", mThisHotel.HotelName);
+            //    DB.AddParameter("@HotelCity", mThisHotel.HotelCity);
+            //    DB.AddParameter("@HotelPostCode", mThisHotel.HotelPostCode);
+            //    DB.AddParameter("@HotelPhoneNumber", mThisHotel.HotelPhoneNumber);
+            //    //execute query returning pk value
+            //    //return DB.Execute("sproc_tblHotel_Insert");
+
+        }
+
+
+
+        }
     }
-}
 

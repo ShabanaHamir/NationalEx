@@ -149,27 +149,27 @@ namespace Testing
         }
 
 
-        //[TestMethod]
-        //public void TestHotelCityFound()
-        //{
-        //    //create an instance of the class we want to create 
-        //    clsHotel AnHotel = new clsHotel();
-        //    //bool var to store the results of the validation
-        //    Boolean Found = false;
-        //    //Bool var to record if data isOK 
-        //    Boolean OK = true;
-        //    //some test data to use with the method
-        //    Int32 HotelID = 3;
-        //    //invoke the method
-        //    Found = AnHotel.Find(HotelID);
-        //    //check the hotel name 
-        //    if (AnHotel.HotelCity != "TestHotelCity")
-        //    {
-        //        OK = false;
-        //    }
-        //    //test to see if valid method exists 
-        //    Assert.IsTrue(OK);
-        //}
+        [TestMethod]
+        public void TestHotelCityFound()
+        {
+            //create an instance of the class we want to create 
+            clsHotel AnHotel = new clsHotel();
+            //bool var to store the results of the validation
+            Boolean Found = false;
+            //Bool var to record if data isOK 
+            Boolean OK = true;
+            //some test data to use with the method
+            Int32 HotelID = 3;
+            //invoke the method
+            Found = AnHotel.Find(HotelID);
+            //check the hotel name 
+            if (AnHotel.HotelCity != "TestHotelCity")
+            {
+                OK = false;
+            }
+            //test to see if valid method exists 
+            Assert.IsTrue(OK);
+        }
 
 
 
