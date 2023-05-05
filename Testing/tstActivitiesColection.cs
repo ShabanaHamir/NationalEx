@@ -6,7 +6,7 @@ using System.Collections.Generic;
 namespace Testing
 {
     [TestClass]
-    public class tstActivitiesColection
+    public class tstActivitiesCollection
     {
         [TestMethod]
         public void InstanceOK()
@@ -102,13 +102,104 @@ namespace Testing
             Assert.AreEqual(AllActivities.ActivitiesList, TestList);
         }
 
-        //[TestMethod]
-        //public void TwoRecordsPresent()
-        //{
-        //    //create instance of the class
-        //    clsActivitiesCollection AllActivities = new clsActivitiesCollection();
-        //    //test to see that the two values are the same 
-        //    Assert.AreEqual(AllActivities.Count, 2);
-        //}
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            //create instance of the class
+            clsActivitiesCollection AllActivities = new clsActivitiesCollection();
+            //create item of test data
+            clsActivities TestItem = new clsActivities();
+            //var to store pk
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.ActivityID = 1;
+            TestItem.ActivityName = "Kayaking";
+            TestItem.ActivityCity = "London";
+            TestItem.ActivityAddress = "8 Crewbridge Drive";
+            TestItem.ActivityDescription = "go kayaking with ...";
+            TestItem.ActivityPostCode = "LE6 0UE";
+            TestItem.ActivityPrice = 54.99m;
+            //set ThisActivity to test data
+            AllActivities.ThisActivity = TestItem;
+            //add record
+            PrimaryKey = AllActivities.Add();
+            //set pk of test data
+            TestItem.ActivityID = PrimaryKey;
+            //find record
+            AllActivities.ThisActivity.Find(PrimaryKey);
+            //test to see that the two values are the same
+            Assert.AreEqual(AllActivities.ThisActivity, TestItem);
+
+        }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsActivitiesCollection AllActivities = new clsActivitiesCollection();
+            //create item of test data
+            clsActivities TestItem = new clsActivities();
+            //var to store pk
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.ActivityID = 1;
+            TestItem.ActivityName = "Kayaking";
+            TestItem.ActivityCity = "London";
+            TestItem.ActivityAddress = "8 Crewbridge Drive";
+            TestItem.ActivityDescription = "go kayaking with ...";
+            TestItem.ActivityPostCode = "LE6 0UE";
+            TestItem.ActivityPrice = 54.99m;
+            //set ThisActivity to test data
+            AllActivities.ThisActivity = TestItem;
+            //add record
+            PrimaryKey = AllActivities.Add();
+            //find record
+            AllActivities.ThisActivity.Find(PrimaryKey);
+            //de;ete
+            AllActivities.Delete();
+            //find the record
+            Boolean Found = AllActivities.ThisActivity.Find(PrimaryKey);
+            //test to see that the record wasnt found
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsActivitiesCollection AllActivities = new clsActivitiesCollection();
+            //create item of test data
+            clsActivities TestItem = new clsActivities();
+            //var to store pk
+            Int32 PrimaryKey = 0;
+            //set its properties
+            TestItem.ActivityName = "Kayaking";
+            TestItem.ActivityCity = "London";
+            TestItem.ActivityAddress = "8 Crewbridge Drive";
+            TestItem.ActivityDescription = "go kayaking with ...";
+            TestItem.ActivityPostCode = "LE6 0UE";
+            TestItem.ActivityPrice = 54.99m;
+            //set ThisActivity to test data
+            AllActivities.ThisActivity = TestItem;
+            //add record
+            PrimaryKey = AllActivities.Add();
+            //set the pk of the testdata
+            TestItem.ActivityID = PrimaryKey;
+            //modify test data
+            TestItem.ActivityName = "Kayaking Yay";
+            TestItem.ActivityCity = "Luton";
+            TestItem.ActivityAddress = "8 Crewbridge Road";
+            TestItem.ActivityDescription = "go kayaking with your friends ...";
+            TestItem.ActivityPostCode = "LU6 0UE";
+            TestItem.ActivityPrice = 53.99m;
+            //set record based on new test data
+            AllActivities.ThisActivity = TestItem;
+            //update record
+            AllActivities.Update();
+            //find record
+            AllActivities.ThisActivity.Find(PrimaryKey);
+            //test to see that this activity matches the test data
+            Assert.AreEqual(AllActivities.ThisActivity, TestItem);
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 
 namespace Classes
 {
@@ -33,7 +34,7 @@ namespace Classes
                 mActivitiesList = value;
             }
         }
-        
+
 
         public int Count
         {
@@ -47,7 +48,7 @@ namespace Classes
                 //
             }
         }
-        public clsActivities ThisActivity 
+        public clsActivities ThisActivity
         {
             get
             {
@@ -61,18 +62,43 @@ namespace Classes
             }
         }
 
+        public int Add()
+        {
+            clsDataConnection db = new clsDataConnection();
+            //set thee parameters for sproc
+            db.AddParameter("@ActivityName", mThisActivity.ActivityName);
+            db.AddParameter("@ActivityCity", mThisActivity.ActivityCity);
+            db.AddParameter("@ActivityAddress", mThisActivity.ActivityAddress);
+            db.AddParameter("@ActivityPostCode", mThisActivity.ActivityPostCode);
+            db.AddParameter("@ActivityDescription", mThisActivity.ActivityDescription);
+            db.AddParameter("@ActivityPrice", mThisActivity.ActivityPrice);
+            //execute sproc returning the pk value
+            return db.Execute("sproc_tblActivities_Insert");
+        }
+
         //public int Add()
         //{
         //    clsDataConnection db = new clsDataConnection();
-        //    //set thee parameters for sproc
+        //    //set the parameters for sproc
         //    db.AddParameter("@ActivityName", mThisActivity.ActivityName);
         //    db.AddParameter("@ActivityCity", mThisActivity.ActivityCity);
         //    db.AddParameter("@ActivityAddress", mThisActivity.ActivityAddress);
         //    db.AddParameter("@ActivityPostCode", mThisActivity.ActivityPostCode);
         //    db.AddParameter("@ActivityDescription", mThisActivity.ActivityDescription);
         //    db.AddParameter("@ActivityPrice", mThisActivity.ActivityPrice);
-        //    //execute sproc returning the pk value
-        //    return db.Execute("sproc_tblActivities_Insert");
+        //    //execute sproc
+        //    DataTable dt = db.Execute("sproc_tblActivities_Insert");
+
+        //    // If the returned DataTable has rows, extract the first row's first column value as the primary key (assuming it's an int)
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        return Convert.ToInt32(dt.Rows[0][0]);
+        //    }
+        //    else
+        //    {
+        //        // Return an appropriate value (e.g., -1) to indicate that something went wrong
+        //        return -1;
+        //    }
         //}
 
         public void Delete()
@@ -143,5 +169,7 @@ namespace Classes
             }
 
         }
+
+
     }
 }

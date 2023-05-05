@@ -73,7 +73,7 @@ namespace FrontOffice
             }
             ////call the filter by activity name 
             //MyActivities.FilterByActivitiesName(ActivitiesNameFilter);
-            
+
             ////point the list box at the activitylist collection
             //lstActivities.DataSource = MyActivities.ActivitiesList;
             ////tell it what field to display to user
@@ -122,7 +122,7 @@ namespace FrontOffice
             //var to store pk for deleted record
             Int32 ActivityID;
             //if record has been selected
-            if(lstActivities.SelectedIndex != -1)
+            if (lstActivities.SelectedIndex != -1)
             {
                 //get pk value of the record to delete
                 ActivityID = Convert.ToInt32(lstActivities.SelectedValue);

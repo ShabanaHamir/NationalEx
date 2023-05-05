@@ -14,7 +14,7 @@ namespace Classes
         private string mActivityDescription;
         public clsActivities()
         {
-        }   
+        }
 
 
         public bool Active { get; set; }
@@ -31,7 +31,8 @@ namespace Classes
                 mActivityCity = value;
             }
         }
-        public string ActivityDescription {
+        public string ActivityDescription
+        {
             get
             {
                 //return priv data
@@ -137,7 +138,8 @@ namespace Classes
                 mActivityName = value;
             }
         }
-        public string ActivityPostCode {
+        public string ActivityPostCode
+        {
             get
             {
                 //return priv data
@@ -149,7 +151,8 @@ namespace Classes
                 mActivityPostCode = value;
             }
         }
-        public decimal ActivityPrice {
+        public decimal ActivityPrice
+        {
             get
             {
                 //return priv data
@@ -176,7 +179,8 @@ namespace Classes
             }
         }
 
-        public string ActivityAddress {
+        public string ActivityAddress
+        {
             get
             {
                 //return priv data
@@ -199,28 +203,28 @@ namespace Classes
             db.AddParameter("@ActivityID", ActivityID);
             //execute sproc
             db.Execute("sproc_tblActivities_FilterByActivityID");
-             if (db.Count == 1)
+            if (db.Count == 1)
             {
                 //copy the data from the db tp the private data members
                 mActivityID = Convert.ToInt32(db.DataTable.Rows[0]["ActivityID"]);
-                mActivityName = Convert.ToString(db.DataTable.Rows [0] ["ActivityName"]);
+                mActivityName = Convert.ToString(db.DataTable.Rows[0]["ActivityName"]);
                 mActivityAddress = Convert.ToString(db.DataTable.Rows[0]["ActivityAddress"]);
                 mActivityCity = Convert.ToString(db.DataTable.Rows[0]["ActivityCity"]);
-                mActivityPrice = Convert.ToDecimal(db.DataTable.Rows[0] ["ActivityPrice"]);
+                mActivityPrice = Convert.ToDecimal(db.DataTable.Rows[0]["ActivityPrice"]);
                 mActivityPostCode = Convert.ToString(db.DataTable.Rows[0]["ActivityPostCode"]);
                 mActivityDescription = Convert.ToString(db.DataTable.Rows[0]["ActivityDescription"]);
                 //return true
                 return true;
             }
-             //if no record was found
-             else
+            //if no record was found
+            else
             {
                 return false;
             }
         }
 
 
-        
-        
+
+
     }
 }
