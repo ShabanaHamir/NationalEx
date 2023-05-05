@@ -138,6 +138,7 @@
     <Content Include="DefaultSecurity.aspx" />
     <Content Include="EMailViewer.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="HotelDefault.aspx" />
     <Content Include="HotelDetails.aspx" />
     <Content Include="HotelViewer.aspx" />
     <Content Include="Images\Hotel1.jfif" />
@@ -262,6 +263,13 @@
     </Compile>
     <Compile Include="EMailViewer.aspx.designer.cs">
       <DependentUpon>EMailViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDefault.aspx.cs">
+      <DependentUpon>HotelDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelDefault.aspx.designer.cs">
+      <DependentUpon>HotelDefault.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReSet.aspx.cs">
       <DependentUpon>ReSet.aspx</DependentUpon>
