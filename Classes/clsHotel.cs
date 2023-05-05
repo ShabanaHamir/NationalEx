@@ -11,18 +11,35 @@ namespace Classes
         //private member
         private string mHotelName;
         //public property 
-        public string HotelName 
+        public string HotelName
         {
-             get
+            get
             {
                 return mHotelName;
             }
-                set
+            set
             {
                 mHotelName = value;
-            } 
+            }
         }
-       
+
+
+        //private member
+        private string mHotelCity;
+        //public property 
+        public string HotelCity
+        {
+            get
+            {
+                return mHotelCity;
+            }
+            set
+            {
+                mHotelCity = value;
+            }
+        }
+
+
 
         //private data member for the hotel id
         private Int32 mHotelID;
@@ -58,7 +75,7 @@ namespace Classes
         }
         //private data member 
         private Int32 mHotelPhoneNumber;
-        public int HotelPhoneNumber 
+        public int HotelPhoneNumber
         {
             get
             {
@@ -102,6 +119,7 @@ namespace Classes
 
                 mHotelID = Convert.ToInt32(DB.DataTable.Rows[0]["HotelID"]);
                 mHotelName = Convert.ToString(DB.DataTable.Rows[0]["HotelName"]);
+                mHotelCity = Convert.ToString(DB.DataTable.Rows[0]["HotelCity"]);
                 mHotelPostCode = Convert.ToString(DB.DataTable.Rows[0]["HotelPostCode"]);
                 mHotelPhoneNumber = Convert.ToInt32(DB.DataTable.Rows[0]["HotelPhoneNumber"]);
                 //return everything worked fine
@@ -113,7 +131,7 @@ namespace Classes
             {
                 //return false indicating a problem
                 return false;
-                }
+            }
 
             //    //set private data memebers to the test data value
             //    mHotelID = 3;
@@ -128,7 +146,7 @@ namespace Classes
 
         }
 
-        public string Valid(string hotelName, string hotelPhoneNumber, string hotelPostCode)
+        public string Valid(string hotelName, string hotelCity, string hotelPhoneNumber, string hotelPostCode)
         {
             //create a string var to store error
             String Error = "";
@@ -144,6 +162,24 @@ namespace Classes
                 //record error
                 Error = Error + "Something went wrong. Please re-enter the Hotel Name ! ";
             }
+
+
+            //if Hotel city is empty
+            if (hotelCity.Length == 0)
+            {
+                //record error
+                Error = Error + "Hotel City cannot be left empty ! ";
+            }
+            //if hotel city is greater than 50 characters
+            if (hotelCity.Length > 50)
+            {
+                //record error
+                Error = Error + "Something went wrong. Please re-enter the Hotel City ! ";
+            }
+
+
+
+
 
 
             // if postcode is empty
