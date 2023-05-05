@@ -71,6 +71,7 @@ namespace Classes
             db.AddParameter("@ActivityAddress", mThisActivity.ActivityAddress);
             db.AddParameter("@ActivityPostCode", mThisActivity.ActivityPostCode);
             db.AddParameter("@ActivityDescription", mThisActivity.ActivityDescription);
+            db.AddParameter("@NoOfPeople", mThisActivity.NoOfPeople); // Add this line
             db.AddParameter("@ActivityPrice", mThisActivity.ActivityPrice);
             //execute sproc returning the pk value
             return db.Execute("sproc_tblActivities_Insert");

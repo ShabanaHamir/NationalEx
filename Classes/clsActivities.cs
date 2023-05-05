@@ -11,6 +11,7 @@ namespace Classes
         private string mActivityPostCode;
         private Int32 mActivityID;
         private string mActivityAddress;
+        private int mNoOfPeople;
         private string mActivityDescription;
         public clsActivities()
         {
@@ -44,7 +45,7 @@ namespace Classes
                 mActivityDescription = value;
             }
         }
-        public string Valid(string activityName, string activityCity, string activityAddress, string activityDescription, string activityPostCode, decimal activityPrice)
+        public string Valid(string activityName, string activityCity, string activityAddress, string activityDescription, string activityPostCode, decimal activityPrice, int noOfPeople)
         {
             String Error = "";
             //if the AName is blank
@@ -193,6 +194,19 @@ namespace Classes
             }
         }
 
+       
+        public int NoOfPeople
+        {
+            get
+            {
+                return mNoOfPeople;
+            }
+            set
+            {
+                mNoOfPeople = value;
+            }
+        }
+
         public int Count { get; set; }
 
         public bool Find(int ActivityID)
@@ -208,11 +222,13 @@ namespace Classes
                 //copy the data from the db tp the private data members
                 mActivityID = Convert.ToInt32(db.DataTable.Rows[0]["ActivityID"]);
                 mActivityName = Convert.ToString(db.DataTable.Rows[0]["ActivityName"]);
-                mActivityAddress = Convert.ToString(db.DataTable.Rows[0]["ActivityAddress"]);
                 mActivityCity = Convert.ToString(db.DataTable.Rows[0]["ActivityCity"]);
-                mActivityPrice = Convert.ToDecimal(db.DataTable.Rows[0]["ActivityPrice"]);
+                mActivityAddress = Convert.ToString(db.DataTable.Rows[0]["ActivityAddress"]);
                 mActivityPostCode = Convert.ToString(db.DataTable.Rows[0]["ActivityPostCode"]);
                 mActivityDescription = Convert.ToString(db.DataTable.Rows[0]["ActivityDescription"]);
+                mNoOfPeople = Convert.ToInt32(db.DataTable.Rows[0]["NoOfPeople"]);
+                mActivityPrice = Convert.ToDecimal(db.DataTable.Rows[0]["ActivityPrice"]);
+    
                 //return true
                 return true;
             }

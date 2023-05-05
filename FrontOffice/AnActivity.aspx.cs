@@ -26,13 +26,14 @@ namespace FrontOffice
             decimal ActivityPrice = Convert.ToDecimal(txtAPrice.Text);
             string ActivityPostCode = txtAPostcode.Text;
             string ActivityAddress = txtAAddress.Text;
+            int NoOfPeople = Convert.ToInt32(txtNoOfPeople.Text);
             //variable to store error messages
             string Error = "";
             //validating the data
 
             if (Error == "")
             {
-                Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+                Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
                 AnActivity.ActivityName = ActivityName;
                 AnActivity.ActivityCity = ActivityCity;
                 AnActivity.ActivityAddress = ActivityAddress;
