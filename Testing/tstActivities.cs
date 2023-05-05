@@ -11,11 +11,12 @@ namespace Testing
         //good test data
         string ActivityName = "Kayaking";
         string ActivityCity = "London";
-        decimal ActivityPrice = 21.50m;   //try decimal instead of Decimal -Shahd
-        string ActivityPostCode = "LE5 0UE";
         string ActivityAddress = "45 crosshedge close";
+        string ActivityPostCode = "LE5 0UE";
         string ActivityDescription = "options of paddle boards and kayaks";
+        int NoOfPeople = 2;
 
+        decimal ActivityPrice = 21.50m;   //try decimal instead of Decimal -Shahd
         [TestMethod]
         public void InstanceOK()
         {
@@ -103,6 +104,19 @@ namespace Testing
         }
 
         [TestMethod]
+        public void NoOfPeopleOK()
+        {
+            //instance of the class
+            clsActivities AnActivity = new clsActivities();
+            //test data to assign to property
+            int TestData = 5;
+            //assign data
+            AnActivity.NoOfPeople = TestData;
+            //test to see the two values are the same
+            Assert.AreEqual(AnActivity.NoOfPeople, TestData);
+        }
+
+        [TestMethod]
         public void ActivityPriceOK()
         {
             //instance of the class
@@ -167,6 +181,28 @@ namespace Testing
             Found = AnActivity.Find(ActivityID);
             //check activity name
             if (AnActivity.ActivityName != "Kayaking")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void TestNoOfPeopleFound()
+        {
+            //isntance of the class
+            clsActivities AnActivity = new clsActivities();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 ActivityID = 1;
+            //invoke the method
+            Found = AnActivity.Find(ActivityID);
+            //check activity name
+            if (AnActivity.NoOfPeople != 2)
             {
                 OK = false;
             }
@@ -292,7 +328,7 @@ namespace Testing
             //string variable to store error message
             String Error = "";
             //invoke the method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the results are correct
             Assert.AreEqual(Error, "");
         }
@@ -307,7 +343,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityName = "";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -322,7 +358,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityName = "a";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -337,7 +373,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityName = "pppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -352,7 +388,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityName = "ppppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -367,7 +403,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityCity = "";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -382,7 +418,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityCity = "a";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -397,7 +433,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityCity = "pppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -412,7 +448,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityCity = "ppppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -427,7 +463,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityPostCode = "";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -442,7 +478,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityPostCode = "a";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -457,7 +493,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityPostCode = "ppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -472,7 +508,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityPostCode = "pppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -487,7 +523,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityAddress = "";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -502,7 +538,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityAddress = "a";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -517,7 +553,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityAddress = "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -532,11 +568,27 @@ namespace Testing
             //create some test data to pass to message
             string ActivityAddress = "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
 
         }
+
+        [TestMethod]
+        public void NoOfPeopleMaxPlusOne()
+        {
+            // Instance of the class
+            clsActivities AnActivity = new clsActivities();
+            // String variable for error message
+            String Error = "";
+            // Create some test data to pass to the method
+            int NoOfPeople = 101; // Value greater than the maximum allowed (100)
+                                  // Invoke the method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
+            // Test to see if the result is correct (expecting an error)
+            Assert.AreNotEqual(Error, "");
+        }
+
 
         [TestMethod]
         public void ActivityDescriptionMinusOne()
@@ -548,7 +600,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityDescription = "";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -563,7 +615,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityDescription = "a";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -578,7 +630,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityDescription = "pppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -593,7 +645,7 @@ namespace Testing
             //create some test data to pass to message
             string ActivityDescription = "ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -608,7 +660,7 @@ namespace Testing
             //create some test data to pass to message
             decimal ActivityPrice = 0;
             //invoke method
-            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice);
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }

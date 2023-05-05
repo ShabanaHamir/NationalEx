@@ -47,6 +47,9 @@
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtAPostcode" runat="server"></asp:TextBox>
         <br style="margin-left: 40px" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Label ID="lblNoOfPeople" runat="server" Text="Spaces Available: "></asp:Label>
+            <asp:TextBox ID="txtNoOfPeople" runat="server"></asp:TextBox>
         <br style="margin-left: 40px" />
         &nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblError" runat="server" Font-Bold="True" ForeColor="Red"></asp:Label>
