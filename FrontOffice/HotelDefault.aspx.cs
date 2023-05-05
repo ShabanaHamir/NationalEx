@@ -32,5 +32,10 @@ namespace FrontOffice
             //bind the data to the list
             lstHotels.DataBind();
         }
+
+        protected void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
