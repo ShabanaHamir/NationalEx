@@ -7,6 +7,9 @@
             <br />
             Hotel Name<asp:TextBox ID="txtHotelName" runat="server"></asp:TextBox>
             <br />
+            <asp:Label ID="Label1" runat="server" Text="Hotel City"></asp:Label>
+            <asp:TextBox ID="txtHotelCity" runat="server"></asp:TextBox>
+            <br />
             Hotel Phone Number<asp:TextBox ID="txtHotelPhoneNumber" runat="server"></asp:TextBox>
             <br />
             Hotel Post Code<asp:TextBox ID="txtHotelPostCode" runat="server"></asp:TextBox>

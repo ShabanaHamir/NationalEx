@@ -15,8 +15,8 @@ namespace FrontOffice
 
         }
 
-        
-    
+
+
 
         protected void btnOK_Click(object sender, EventArgs e)
         {
@@ -34,16 +34,18 @@ namespace FrontOffice
             ////////////////////}
 
             string HotelName = txtHotelName.Text;
+            string HotelCity = txtHotelCity.Text;
             string HotelPhoneNumber = txtHotelPhoneNumber.Text;
             string HotelPostCode = txtHotelPostCode.Text;
             //var to store any error messages
             string Error = "";
             //validate data
-            Error = AnHotel.Valid(HotelName, HotelPhoneNumber, HotelPostCode);
+            Error = AnHotel.Valid(HotelName, HotelCity, HotelPhoneNumber, HotelPostCode);
             if (Error == "")
             {
                 AnHotel.HotelName = HotelName;
-             AnHotel.HotelPhoneNumber = Convert.ToInt32(HotelPhoneNumber);                        
+                AnHotel.HotelCity = HotelCity;
+                AnHotel.HotelPhoneNumber = Convert.ToInt32(HotelPhoneNumber);
                 AnHotel.HotelPostCode = HotelPostCode;
 
                 //store the hotel in the session object
@@ -77,6 +79,7 @@ namespace FrontOffice
             {
                 //display values of the properties in the form
                 txtHotelName.Text = AnHotel.HotelName;
+                txtHotelCity.Text = AnHotel.HotelCity;
                 txtHotelPhoneNumber.Text = AnHotel.HotelPhoneNumber.ToString();
                 txtHotelPostCode.Text = AnHotel.HotelPostCode;
             }
