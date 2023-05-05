@@ -97,6 +97,24 @@ namespace Testing
         //    Assert.AreEqual(AllHotels.Count, 2);
         //}
 
-
+        [TestMethod]
+        public void AddMethodOK()
+        {
+            clsHotelCollection AllHotels = new clsHotelCollection();
+            clsHotel TestItem = new clsHotel();
+            Int32 PrimaryKey = 0;
+            //set properties
+            TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
+            TestItem.HotelCity = "Leicester";
+            TestItem.HotelPhoneNumber = 23092002;
+            TestItem.HotelPostCode = "LE4 8UE";
+            //set thisHotel to test data
+            PrimaryKey = AllHotels.Add();
+            //set pk of the test data
+            TestItem.HotelID = PrimaryKey;
+            AllHotels.ThisHotel.Find(PrimaryKey);
+            Assert.AreEqual(AllHotels.ThisHotel, TestItem);
+        }
     }
 }
