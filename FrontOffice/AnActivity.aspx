@@ -58,7 +58,7 @@
         &nbsp;&nbsp;&nbsp;
         <asp:Button ID="btnAOK" runat="server" Height="51px" OnClick="btnAOK_Click" Text="OK" Width="103px" />
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:Button ID="btnACancel" runat="server" Height="51px" Text="Cancel" Width="183px" />
+        <asp:Button ID="btnACancel" runat="server" Height="51px" Text="Cancel" Width="183px" OnClick="btnACancel_Click" />
         &nbsp;</p>
     </form>
 

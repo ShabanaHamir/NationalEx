@@ -32,7 +32,7 @@ namespace FrontOffice
                 //set the name of the PK
                 lstActivities.DataValueField = "ActivityID";
                 //set data field to display 
-                lstActivities.DataTextField = "Activity Name";
+                lstActivities.DataTextField = "ActivityName";
                 //bind the data to the list
                 lstActivities.DataBind();
             }
