@@ -140,6 +140,7 @@
     <Content Include="HomePage.aspx" />
     <Content Include="HotelDefault.aspx" />
     <Content Include="HotelDetails.aspx" />
+    <Content Include="HotelsDelete.aspx" />
     <Content Include="HotelViewer.aspx" />
     <Content Include="Images\Hotel1.jfif" />
     <Content Include="Images\Hotel2.jfif" />
@@ -270,6 +271,13 @@
     </Compile>
     <Compile Include="HotelDefault.aspx.designer.cs">
       <DependentUpon>HotelDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelsDelete.aspx.cs">
+      <DependentUpon>HotelsDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelsDelete.aspx.designer.cs">
+      <DependentUpon>HotelsDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="ReSet.aspx.cs">
       <DependentUpon>ReSet.aspx</DependentUpon>

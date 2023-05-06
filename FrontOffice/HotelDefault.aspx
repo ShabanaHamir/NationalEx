@@ -12,10 +12,11 @@
 &nbsp;
         <asp:Button ID="btnDisplay" runat="server" Text="Show All" />
         <br />
-        <asp:Button ID="btnAdd" runat="server" Text="Add" Width="144px" />
+        <asp:Button ID="btnAdd" runat="server" Text="Add" Width="144px" OnClick="btnAdd_Click" />
 &nbsp;
-        <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="160px" />
+        <asp:Button ID="btnEdit" runat="server" Text="Edit" Width="160px" OnClick="btnEdit_Click" />
 &nbsp;
-        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="176px" />
+        <asp:Button ID="btnDelete" runat="server" Text="Delete" Width="176px" OnClick="btnDelete_Click" />
+        <asp:Label ID="lblError" runat="server"></asp:Label>
     </form>
 </asp:Content>
