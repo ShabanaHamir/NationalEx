@@ -45,7 +45,7 @@ namespace Classes
                 mActivityDescription = value;
             }
         }
-        public string Valid(string activityName, string activityCity, string activityAddress, string activityDescription, string activityPostCode, decimal activityPrice, int noOfPeople)
+        public string Valid(string activityName, string activityCity, string activityAddress, string activityDescription, string activityPostCode, int noOfPeople, decimal activityPrice)
         {
             String Error = "";
             //if the AName is blank
