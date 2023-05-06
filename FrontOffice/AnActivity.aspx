@@ -46,9 +46,9 @@
         <asp:Label ID="lblAPostcode" runat="server" Font-Bold="True" Text="Postcode:"></asp:Label>
 &nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="txtAPostcode" runat="server"></asp:TextBox>
-        <br style="margin-left: 40px" />
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="lblNoOfPeople" runat="server" Text="Spaces Available: "></asp:Label>
+        &nbsp;<br style="margin-left: 40px" />
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:Label ID="lblNoOfPeople" runat="server" Text="Spaces Available: " Font-Bold="True"></asp:Label>
+            &nbsp;&nbsp;&nbsp;
             <asp:TextBox ID="txtNoOfPeople" runat="server"></asp:TextBox>
         <br style="margin-left: 40px" />
         &nbsp;&nbsp;&nbsp;

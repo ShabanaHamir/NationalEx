@@ -77,6 +77,7 @@ namespace Classes
             return db.Execute("sproc_tblActivities_Insert");
         }
 
+
         //public int Add()
         //{
         //    clsDataConnection db = new clsDataConnection();
@@ -130,7 +131,8 @@ namespace Classes
             db.Execute("sproc_tblActivities_Update");
         }
 
-        public void FilterByActivitiesName(string ActivityName)
+        
+        public void ReportByActivityName(string ActivityName)
         {
             //connect to db
             clsDataConnection db = new clsDataConnection();
@@ -173,6 +175,15 @@ namespace Classes
 
         }
 
-
+        public void ReportByActivityCity(string ActivityCity)
+        {
+            clsDataConnection db = new clsDataConnection();
+            //send postcode param to the db
+            db.AddParameter("@ActivityCity", ActivityCity);
+            //execute sproc
+            db.Execute("sproc_tblActivities_FilterByActivityCity");
+            //populate array list
+            PopulateArray(db);
+        }
     }
 }

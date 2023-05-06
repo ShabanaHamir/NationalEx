@@ -63,7 +63,7 @@
     <Compile Include="tstRoom.cs" />
     <Compile Include="tstTrip.cs" />
     <Compile Include="tstUsers.cs" />
-    <Compile Include="tstActivitiesColection.cs" />
+    <Compile Include="tstActivitiesCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

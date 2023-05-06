@@ -14,11 +14,16 @@ namespace FrontOffice
         Int32 ActivityID;
         protected void Page_Load(object sender, EventArgs e)
         {
-            ActivityID = Convert.ToInt32(Session["StaffID"]);
+            ActivityID = Convert.ToInt32(Session["ActivityID"]);
             if (IsPostBack == false)
             {
                 //update list box
                 DisplayActivityNames();
+                //IF this is a new record 
+                if (ActivityID != -1)
+                {
+                    DisplayActivityNames();
+                }
             }
         }
 
@@ -38,7 +43,7 @@ namespace FrontOffice
             }
         }
 
-        Int32 DisplayActivities(string ActivitiesNameFilter)
+        Int32 DisplayActivities(string ActivityNameFilter)
         {
             //declare variables
             Int32 ActivityID;
@@ -50,6 +55,7 @@ namespace FrontOffice
             decimal ActivityPrice;
             //create an imstance of the activities
             clsActivitiesCollection MyActivities = new clsActivitiesCollection();
+            MyActivities.ReportByActivityName(ActivityNameFilter);
             //var to store record count
             Int32 RecordCount;
             Int32 Index = 0;
@@ -142,7 +148,7 @@ namespace FrontOffice
         {
             Int32 RecordCount;
             RecordCount = DisplayActivities(txtAName.Text);
-            lblError.Text = RecordCount + " staff members found";
+            lblError.Text = RecordCount + " activities found";
         }
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
