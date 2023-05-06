@@ -575,6 +575,21 @@ namespace Testing
         }
 
         [TestMethod]
+        public void NoOfPeopleMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsActivities AnActivity = new clsActivities();
+            //string var to store any error message
+            String Error = "";
+            //some tests data to pass to the method
+            int NoOfPeople = -1;
+            //invoke method
+            Error = AnActivity.Valid(ActivityName, ActivityCity, ActivityAddress, ActivityDescription, ActivityPostCode, ActivityPrice, NoOfPeople);
+            // Test to see if the result is correct (expecting an error)
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
         public void NoOfPeopleMaxPlusOne()
         {
             // Instance of the class
