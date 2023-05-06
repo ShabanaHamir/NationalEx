@@ -31,8 +31,9 @@ namespace Testing
             TestItem.ActivityName = "Kayaking";
             TestItem.ActivityCity = "London";
             TestItem.ActivityAddress = "8 Crewbridge Drive";
-            TestItem.ActivityDescription = "go kayaking with ...";
             TestItem.ActivityPostCode = "LE6 0UE";
+            TestItem.ActivityDescription = "go kayaking with ...";
+            TestItem.NoOfPeople = 2;
             TestItem.ActivityPrice = 54.99m;
             //add item to the test list
             TestList.Add(TestItem);
@@ -67,8 +68,9 @@ namespace Testing
             TestActivity.ActivityName = "Kayaking";
             TestActivity.ActivityCity = "London";
             TestActivity.ActivityAddress = "8 Crewbridge Drive";
-            TestActivity.ActivityDescription = "go kayaking with ...";
             TestActivity.ActivityPostCode = "LE6 0UE";
+            TestActivity.ActivityDescription = "go kayaking with ...";
+            TestActivity.NoOfPeople = 2;
             TestActivity.ActivityPrice = 54.99m;
             //assign the data to the property
             AllActivities.ThisActivity = TestActivity;
@@ -91,8 +93,9 @@ namespace Testing
             TestItem.ActivityName = "Kayaking";
             TestItem.ActivityCity = "London";
             TestItem.ActivityAddress = "8 Crewbridge Drive";
-            TestItem.ActivityDescription = "go kayaking with ...";
             TestItem.ActivityPostCode = "LE6 0UE";
+            TestItem.ActivityDescription = "go kayaking with ...";
+            TestItem.NoOfPeople = 2;
             TestItem.ActivityPrice = 54.99m;
             //add item to the test list
             TestList.Add(TestItem);
@@ -116,8 +119,9 @@ namespace Testing
             TestItem.ActivityName = "Kayaking";
             TestItem.ActivityCity = "London";
             TestItem.ActivityAddress = "8 Crewbridge Drive";
-            TestItem.ActivityDescription = "go kayaking with ...";
             TestItem.ActivityPostCode = "LE6 0UE";
+            TestItem.ActivityDescription = "go kayaking with ...";
+            TestItem.NoOfPeople = 2;
             TestItem.ActivityPrice = 54.99m;
             //set ThisActivity to test data
             AllActivities.ThisActivity = TestItem;
@@ -146,8 +150,9 @@ namespace Testing
             TestItem.ActivityName = "Kayaking";
             TestItem.ActivityCity = "London";
             TestItem.ActivityAddress = "8 Crewbridge Drive";
-            TestItem.ActivityDescription = "go kayaking with ...";
             TestItem.ActivityPostCode = "LE6 0UE";
+            TestItem.ActivityDescription = "go kayaking with ...";
+            TestItem.NoOfPeople = 2;
             TestItem.ActivityPrice = 54.99m;
             //set ThisActivity to test data
             AllActivities.ThisActivity = TestItem;
@@ -173,11 +178,13 @@ namespace Testing
             //var to store pk
             Int32 PrimaryKey = 0;
             //set its properties
+            TestItem.ActivityID = 1;
             TestItem.ActivityName = "Kayaking";
             TestItem.ActivityCity = "London";
             TestItem.ActivityAddress = "8 Crewbridge Drive";
-            TestItem.ActivityDescription = "go kayaking with ...";
             TestItem.ActivityPostCode = "LE6 0UE";
+            TestItem.ActivityDescription = "go kayaking with ...";
+            TestItem.NoOfPeople = 2;
             TestItem.ActivityPrice = 54.99m;
             //set ThisActivity to test data
             AllActivities.ThisActivity = TestItem;
@@ -191,6 +198,7 @@ namespace Testing
             TestItem.ActivityAddress = "8 Crewbridge Road";
             TestItem.ActivityDescription = "go kayaking with your friends ...";
             TestItem.ActivityPostCode = "LU6 0UE";
+            TestItem.NoOfPeople = 5;
             TestItem.ActivityPrice = 53.99m;
             //set record based on new test data
             AllActivities.ThisActivity = TestItem;
