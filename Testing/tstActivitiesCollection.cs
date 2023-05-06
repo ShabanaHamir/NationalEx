@@ -209,5 +209,59 @@ namespace Testing
             //test to see that this activity matches the test data
             Assert.AreEqual(AllActivities.ThisActivity, TestItem);
         }
+
+        [TestMethod]
+        public void ReportByActivityCityMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsActivitiesCollection AllActivities = new clsActivitiesCollection();
+            //create an instance of filtered data
+            clsActivitiesCollection FilteredActivity = new clsActivitiesCollection();
+            //apply blank string (should return all records)
+            FilteredActivity.ReportByActivityCity("");
+            //test to see that 2 values are the same
+            Assert.AreEqual(AllActivities.Count, FilteredActivity.Count);
+
+        }
+
+        [TestMethod]
+        public void ReportByActivityCityNoneFound()
+        {
+            //create an instance of the class we want to create
+            clsActivitiesCollection FilteredActivity = new clsActivitiesCollection();
+            //apply blank string that doesnt exist
+            FilteredActivity.ReportByActivityCity("xxxxxxx");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredActivity.Count);
+        }
+
+        [TestMethod]
+        public void ReportByActivityCityTestDataFound()
+        {
+            //create an instance of the class we want to create
+            clsActivitiesCollection FilteredActivity = new clsActivitiesCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a city that doesnt exist
+            FilteredActivity.ReportByActivityCity("Bath");
+            //check that the correct number of records found
+            if (FilteredActivity.Count == 2)
+            {
+                if (FilteredActivity.ActivitiesList[0].ActivityID != 3)
+                {
+                    OK = false;
+                }
+                if (FilteredActivity.ActivitiesList[1].ActivityID != 18)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see there are no records
+            Assert.IsTrue(OK);
+        }
     }
 }
