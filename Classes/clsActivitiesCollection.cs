@@ -124,6 +124,7 @@ namespace Classes
             db.AddParameter("@ActivityAddress", mThisActivity.ActivityAddress);
             db.AddParameter("@ActivityPostCode", mThisActivity.ActivityPostCode);
             db.AddParameter("@ActivityDescription", mThisActivity.ActivityDescription);
+            db.AddParameter("@NoOfPeople", mThisActivity.NoOfPeople);
             db.AddParameter("@ActivityPrice", mThisActivity.ActivityPrice);
             //execute sproc
             db.Execute("sproc_tblActivities_Update");
@@ -159,9 +160,10 @@ namespace Classes
                 AnActivity.ActivityID = Convert.ToInt32(db.DataTable.Rows[Index]["ActivityID"]);
                 AnActivity.ActivityName = Convert.ToString(db.DataTable.Rows[Index]["ActivityName"]);
                 AnActivity.ActivityCity = Convert.ToString(db.DataTable.Rows[Index]["ActivityCity"]);
-                AnActivity.ActivityAddress = Convert.ToString(db.DataTable.Rows[Index]["ActivityAddress"]); ;
-                AnActivity.ActivityDescription = Convert.ToString(db.DataTable.Rows[Index]["ActivityDescription"]);
+                AnActivity.ActivityAddress = Convert.ToString(db.DataTable.Rows[Index]["ActivityAddress"]);
                 AnActivity.ActivityPostCode = Convert.ToString(db.DataTable.Rows[Index]["ActivityPostCode"]);
+                AnActivity.ActivityDescription = Convert.ToString(db.DataTable.Rows[Index]["ActivityDescription"]);
+                AnActivity.NoOfPeople = Convert.ToInt32(db.DataTable.Rows[Index]["NoOfPeople"]);
                 AnActivity.ActivityPrice = Convert.ToDecimal(db.DataTable.Rows[Index]["ActivityPrice"]);
                 //add the record to the private member
                 mActivitiesList.Add(AnActivity);
