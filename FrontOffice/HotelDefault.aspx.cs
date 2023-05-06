@@ -37,5 +37,55 @@ namespace FrontOffice
         {
 
         }
+
+        protected void btnAdd_Click(object sender, EventArgs e)
+        {
+            //store -1 intothe session object to indicate this is a new record
+            Session["HotelID"] = -1;
+            //redirect to data entry page
+            Response.Redirect("AnHotel.aspx");
+        }
+
+        protected void btnDelete_Click(object sender, EventArgs e)
+        {
+            //var to store the pk value of the record deleted
+            Int32 HotelID;
+            //if a record has been selected from the list
+            if (lstHotels.SelectedIndex != -1)
+            {
+                //get pk value of the record to delete
+                HotelID = Convert.ToInt32(lstHotels.SelectedValue);
+                //store data in the session object
+                Session["HotelID"] = HotelID;
+                //REDIRECT
+                Response.Redirect("HotelsDelete.aspx");
+            }
+            else //no record has been selected
+            {
+                lblError.Text = "Please Select a record to delete from the list";
+            }
+        }
+
+        protected void btnEdit_Click(object sender, EventArgs e)
+        {
+            //var to store the pk of the record to be edited
+            Int32 HotelID;
+            if (lstHotels.SelectedIndex != -1)
+            {
+                //get pk value of record to edit
+                HotelID = Convert.ToInt32(lstHotels.SelectedValue);
+                //store data in the session object
+                Session["HotelID"] = HotelID;
+                //redirect
+                Response.Redirect("AnHotel.aspx");
+            }
+            else //if no record has been selected
+            {
+                //error
+                lblError.Text = "Please select a record to delete from the list";
+            }
+
+
+        }
     }
 }
