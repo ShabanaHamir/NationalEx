@@ -83,7 +83,7 @@ namespace Testing
             //create an instance of the class we want to create 
             clsHotel AnHotel = new clsHotel();
             //create some test data to assign to the property 
-            Int32 TestData = 1234567891;
+            string TestData = "1234567891";
             //assign the data to the property
             AnHotel.HotelPhoneNumber = TestData;
             //test to see that it exists
@@ -210,7 +210,7 @@ namespace Testing
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
-            if (AnHotel.HotelPhoneNumber != 1234567891)
+            if (AnHotel.HotelPhoneNumber != "1234567891")
             {
                 OK = false;
             }
@@ -409,7 +409,7 @@ namespace Testing
             //string var to store any error message
             String Error = "";
             //some tests data to pass to the method
-            string HotelPhoneNumber = "1";
+            string HotelPhoneNumber = "123456";
             //invoke method
             Error = AnHotel.Valid(HotelName, HotelCity, HotelPhoneNumber, HotelPostCode);
             //test to see if valid method exists 
@@ -425,7 +425,7 @@ namespace Testing
             //some tests data to pass to the method
             string HotelPhoneNumber = "123456789111";
             //invoke method
-            //Error = AnHotel.Valid(HotelName, HotelCity, HotelPhoneNumber, HotelPostCode);
+            Error = AnHotel.Valid(HotelName, HotelCity, HotelPhoneNumber, HotelPostCode);
             //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }

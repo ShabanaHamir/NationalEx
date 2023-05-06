@@ -74,8 +74,8 @@ namespace Classes
             }
         }
         //private data member 
-        private Int32 mHotelPhoneNumber;
-        public int HotelPhoneNumber
+        private string mHotelPhoneNumber;
+        public string HotelPhoneNumber
         {
             get
             {
@@ -121,7 +121,7 @@ namespace Classes
                 mHotelName = Convert.ToString(DB.DataTable.Rows[0]["HotelName"]);
                 mHotelCity = Convert.ToString(DB.DataTable.Rows[0]["HotelCity"]);
                 mHotelPostCode = Convert.ToString(DB.DataTable.Rows[0]["HotelPostCode"]);
-                mHotelPhoneNumber = Convert.ToInt32(DB.DataTable.Rows[0]["HotelPhoneNumber"]);
+                mHotelPhoneNumber = Convert.ToString(DB.DataTable.Rows[0]["HotelPhoneNumber"]);
                 //return everything worked fine
                 return true;
             }
@@ -201,7 +201,7 @@ namespace Classes
                 //error
                 Error = Error + "Phone Number cannot be left empty ! ";
             }
-            //if phonenumber is greater than 50 characters
+            //if phonenumber is greater than 11 characters
             if (hotelPhoneNumber.Length > 11)
             {
                 //record error
