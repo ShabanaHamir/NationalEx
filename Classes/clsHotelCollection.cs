@@ -9,62 +9,44 @@ namespace Classes
         List<clsHotel> mHotelList = new List<clsHotel>();
         //private data member thisHotel
         clsHotel mThisHotel = new clsHotel();
+
         //constructor
         public clsHotelCollection()
         {
-            //var for index]
-            Int32 Index = 0;
-            //var to store record
-            Int32 RecordCount = 0;
             //object for data connection
             clsDataConnection DB = new clsDataConnection();
+            //execute sproc
             DB.Execute("sporc_tblHotel_SelectAll");
-            //get count of records
-            RecordCount = DB.Count;
-            //while there r records ro perocess
-            while (Index < RecordCount)
-            {
-                //blank hotel
-                clsHotel AnHotel = new clsHotel();
-                //read in the fields from the curent record
-                AnHotel.HotelID = Convert.ToInt32(DB.DataTable.Rows[Index]["HotelID"]);
-                AnHotel.HotelName = Convert.ToString(DB.DataTable.Rows[Index]["HotelName"]);
-                AnHotel.HotelCity = Convert.ToString(DB.DataTable.Rows[Index]["HotelCity"]);
-                AnHotel.HotelPhoneNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["HotelPhoneNumber"]);
-                AnHotel.HotelPostCode = Convert.ToString(DB.DataTable.Rows[Index]["HotelPostCode"]);
-                //add record to private data memebr
-                mHotelList.Add(AnHotel);
-                //point at next record
-                Index++;
-            }
+            //populate array list with data table
+            PopulateArray(DB);
 
 
+            ////var for index]
+            //Int32 Index = 0;
+            ////var to store record
+            //Int32 RecordCount = 0;
+            ////object for data connection
+            //clsDataConnection DB = new clsDataConnection();
+            //DB.Execute("sporc_tblHotel_SelectAll");
+            ////get count of records
+            //RecordCount = DB.Count;
+            ////while there r records ro perocess
+            //while (Index < RecordCount)
+            //{
+            //    //blank hotel
+            //    clsHotel AnHotel = new clsHotel();
+            //    //read in the fields from the curent record
+            //    AnHotel.HotelID = Convert.ToInt32(DB.DataTable.Rows[Index]["HotelID"]);
+            //    AnHotel.HotelName = Convert.ToString(DB.DataTable.Rows[Index]["HotelName"]);
+            //    AnHotel.HotelCity = Convert.ToString(DB.DataTable.Rows[Index]["HotelCity"]);
+            //    AnHotel.HotelPhoneNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["HotelPhoneNumber"]);
+            //    AnHotel.HotelPostCode = Convert.ToString(DB.DataTable.Rows[Index]["HotelPostCode"]);
+            //    //add record to private data memebr
+            //    mHotelList.Add(AnHotel);
+            //    //point at next record
+            //    Index++;
+            //}
 
-
-
-
-
-
-
-
-
-
-            ////items of test data
-            //clsHotel TestItem = new clsHotel();
-            //TestItem.HotelID = 1;
-            //TestItem.HotelName = "Inn";
-            //TestItem.HotelPhoneNumber = 01234567891;
-            //TestItem.HotelPostCode = "XXX XXX";
-            //mHotelList.Add(TestItem);
-            ////add item to lis
-            //TestItem = new clsHotel();
-            ////set its properties
-            //TestItem.HotelID = 2;
-            //TestItem.HotelName = "Skyline";
-            //TestItem.HotelPhoneNumber = 01004567891;
-            //TestItem.HotelPostCode = "XE1 7XX";
-            ////add item to list
-            //mHotelList.Add(TestItem);
         }
 
 
@@ -101,7 +83,7 @@ namespace Classes
 
             set
             {
-
+                //later
             }
         }
 
@@ -154,6 +136,7 @@ namespace Classes
             //update ec=xisting record and connect to db
             clsDataConnection DB = new clsDataConnection();
             //set parametersfor sproc
+            DB.AddParameter("@HotelID", mThisHotel.HotelID);
             DB.AddParameter("@HotelName", mThisHotel.HotelName);
             DB.AddParameter("@HotelCity", mThisHotel.HotelCity);
             DB.AddParameter("@HotelPostCode", mThisHotel.HotelPostCode);
@@ -162,6 +145,47 @@ namespace Classes
             DB.Execute("sproc_tblHotel_Update");
         }
 
+        public void ReportByHotelName(string HotelName)
+        {
+            //filters records based on a full or partial hotel name
+            //connect to db
+            clsDataConnection DB = new clsDataConnection();
+            //send hotel name parameter to the fb
+            DB.AddParameter("@HotelName", HotelName);
+            //execute sproc
+            DB.Execute("sproc_tblHotel_FilterByHotelName");
+            //populate array list with data table
+            PopulateArray(DB);
+        }
+
+        void PopulateArray(clsDataConnection DB)
+        {
+            //populates the array list based on the data table in the param DB
+            //var for the index
+            Int32 Index = 0;
+            //var to store the record count
+            Int32 RecordCount;
+            //get the count of records
+            RecordCount = DB.Count;
+            //clear the private array list
+            mHotelList = new List<clsHotel>();
+            //while there r records to process
+            while (Index < RecordCount)
+            {
+                //create a blank address
+                clsHotel AnHotel = new clsHotel();
+                AnHotel.HotelID = Convert.ToInt32(DB.DataTable.Rows[Index]["HotelID"]);
+                AnHotel.HotelName = Convert.ToString(DB.DataTable.Rows[Index]["HotelName"]);
+                AnHotel.HotelCity = Convert.ToString(DB.DataTable.Rows[Index]["HotelCity"]);
+                AnHotel.HotelPhoneNumber = Convert.ToString(DB.DataTable.Rows[Index]["HotelPhoneNumber"]);
+                AnHotel.HotelPostCode = Convert.ToString(DB.DataTable.Rows[Index]["HotelPostCode"]);
+
+                //add record to the private data member 
+                mHotelList.Add(AnHotel);
+                //point at the next record 
+                Index++;
+            }
+        }
     }
 }
 

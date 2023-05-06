@@ -30,7 +30,7 @@ namespace Testing
             TestItem.HotelID = 1;
             TestItem.HotelName = "Holiday Inn";
             TestItem.HotelCity = "Leicester";
-            TestItem.HotelPhoneNumber = 23092002;
+            TestItem.HotelPhoneNumber = "23092002";
             TestItem.HotelPostCode = "LE4 8UE";
             //add item to the test list
             TestList.Add(TestItem);
@@ -57,7 +57,7 @@ namespace Testing
             TestHotel.HotelID = 1;
             TestHotel.HotelName = "Holiday Inn";
             TestHotel.HotelCity = "Leicester";
-            TestHotel.HotelPhoneNumber = 23092002;
+            TestHotel.HotelPhoneNumber = "23092002";
             TestHotel.HotelPostCode = "LE4 8UE";
             //assign data to the property
             AllHotels.ThisHotel = TestHotel;
@@ -79,7 +79,7 @@ namespace Testing
             TestItem.HotelID = 1;
             TestItem.HotelName = "Holiday Inn";
             TestItem.HotelCity = "Leicester";
-            TestItem.HotelPhoneNumber = 23092002;
+            TestItem.HotelPhoneNumber = "23092002";
             TestItem.HotelPostCode = "LE4 8UE";
             //add the item to test list
             TestList.Add(TestItem);
@@ -96,7 +96,6 @@ namespace Testing
         //    clsHotelCollection AllHotels = new clsHotelCollection();
         //    Assert.AreEqual(AllHotels.Count, 2);
         //}
-
         [TestMethod]
         public void AddMethodOK()
         {
@@ -107,15 +106,17 @@ namespace Testing
             TestItem.HotelID = 1;
             TestItem.HotelName = "Holiday Inn";
             TestItem.HotelCity = "Leicester";
-            TestItem.HotelPhoneNumber = 23092002;
+            TestItem.HotelPhoneNumber = "23092002";
             TestItem.HotelPostCode = "LE4 8UE";
             //set thisHotel to test data
+            AllHotels.ThisHotel = TestItem;
             PrimaryKey = AllHotels.Add();
             //set pk of the test data
             TestItem.HotelID = PrimaryKey;
             AllHotels.ThisHotel.Find(PrimaryKey);
             Assert.AreEqual(AllHotels.ThisHotel, TestItem);
         }
+
 
         [TestMethod]
         public void DeleteMethodOK()
@@ -129,7 +130,7 @@ namespace Testing
             TestItem.HotelID = 1;
             TestItem.HotelName = "Holiday Inn";
             TestItem.HotelCity = "Leicester";
-            TestItem.HotelPhoneNumber = 23092002;
+            TestItem.HotelPhoneNumber = "23092002";
             TestItem.HotelPostCode = "LE4 8UE";
             //set this hotel to test data
             AllHotels.ThisHotel = TestItem;
@@ -158,7 +159,7 @@ namespace Testing
             TestItem.HotelID = 1;
             TestItem.HotelName = "Holiday Inn";
             TestItem.HotelCity = "Leicester";
-            TestItem.HotelPhoneNumber = 23092002;
+            TestItem.HotelPhoneNumber = "23092002";
             TestItem.HotelPostCode = "LE4 8UE";
             //set thisHotel to test data
             AllHotels.ThisHotel = TestItem;
@@ -170,7 +171,7 @@ namespace Testing
             TestItem.HotelID = 2;
             TestItem.HotelName = "Inn";
             TestItem.HotelCity = "Trial";
-            TestItem.HotelPhoneNumber = 234555556;
+            TestItem.HotelPhoneNumber = "234555556";
             TestItem.HotelPostCode = "P36 7UG";
             //set record based on the new test data
             AllHotels.ThisHotel = TestItem;
@@ -183,5 +184,75 @@ namespace Testing
 
         }
 
+        [TestMethod]
+        public void ReportByHotelName() //filter for the staff
+        {
+            //instance of the class
+            clsHotelCollection AllHotels = new clsHotelCollection();
+            //an instance of filtered data
+            clsHotelCollection FilteredHotels = new clsHotelCollection();
+            //apply a blank string (returns all records)
+            FilteredHotels.ReportByHotelName("");
+            //test that two values are the same
+            Assert.AreEqual(AllHotels.Count, FilteredHotels.Count);
+        }
+
+        [TestMethod]
+        public void ReportByHotelNameMethodOK() //filter for the staff
+        {
+            //instance of the class
+            clsHotelCollection AllHotels = new clsHotelCollection();
+            //an instance of filtered data
+            clsHotelCollection FilteredHotels = new clsHotelCollection();
+            //apply a blank string (returns all records)
+            FilteredHotels.ReportByHotelName("");
+            //test that two values are the same
+            Assert.AreEqual(AllHotels.Count, FilteredHotels.Count);
+        }
+
+        [TestMethod]
+        public void ReportByHotelNameNoneFound() //filter for the staff
+        {
+
+            //an instance of filtered data
+            clsHotelCollection FilteredHotels = new clsHotelCollection();
+            //apply a blank string (returns all records)
+            FilteredHotels.ReportByHotelName("Hotel Name");
+            //test that two values are the same
+            Assert.AreEqual(0, FilteredHotels.Count);
+        }
+
+        [TestMethod]
+        public void ReportByHotelNameTestDataFound() //filter for the staff
+        {
+
+            //an instance of filtered data
+            clsHotelCollection FilteredHotels = new clsHotelCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a name that doesnt exist
+            FilteredHotels.ReportByHotelName("Buckingham");
+            //check that the correct no of records are found
+            if (FilteredHotels.Count == 2)
+            {
+                //check that the first record ID is 10
+                if (FilteredHotels.HotelList[0].HotelID != 10)
+                {
+                    OK = false;
+                }
+                //check that the first record is 11
+                if (FilteredHotels.HotelList[1].HotelID != 11)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test see that there are no records
+            Assert.IsTrue(OK);
+        }
     }
 }
+
