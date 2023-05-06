@@ -69,7 +69,7 @@ namespace Classes
 
 
 
-       
+
         //public property for the hotel list 
         public List<clsHotel> HotelList
         {
@@ -108,41 +108,60 @@ namespace Classes
         //public property for ThisHotel
         public clsHotel ThisHotel
         {
-            get 
+            get
             {
                 //return priv data
                 return mThisHotel;
             }
 
-            set 
+            set
             {
                 //set priv data
                 mThisHotel = value;
-            } 
+            }
         }
 
 
 
         public int Add()
         {
-            //add new record to the db based on the values of mThisHotel & set pk value of new record
-            mThisHotel.HotelID = 123;
-            ////return pk of the new record
-            return mThisHotel.HotelID;
+            ////add new record to the db based on the values of mThisHotel & set pk value of new record
+            //mThisHotel.HotelID = 123;
+            //////return pk of the new record
+            //return mThisHotel.HotelID;
 
-            //    clsDataConnection DB = new clsDataConnection();
-            //    //set the parameters for the sproc
-            //    DB.AddParameter("@HotelName", mThisHotel.HotelName);
-            //    DB.AddParameter("@HotelCity", mThisHotel.HotelCity);
-            //    DB.AddParameter("@HotelPostCode", mThisHotel.HotelPostCode);
-            //    DB.AddParameter("@HotelPhoneNumber", mThisHotel.HotelPhoneNumber);
-            //    //execute query returning pk value
-            //    //return DB.Execute("sproc_tblHotel_Insert");
-
-        }
-
-
+            clsDataConnection DB = new clsDataConnection();
+            //set the parameters for the sproc
+            DB.AddParameter("@HotelName", mThisHotel.HotelName);
+            DB.AddParameter("@HotelCity", mThisHotel.HotelCity);
+            DB.AddParameter("@HotelPostCode", mThisHotel.HotelPostCode);
+            DB.AddParameter("@HotelPhoneNumber", mThisHotel.HotelPhoneNumber);
+            //execute query returning pk value
+            return DB.Execute("sproc_tblHotel_Insert");
 
         }
+
+        public void Delete()
+        {
+            //connect to db
+            clsDataConnection DB = new clsDataConnection();
+            DB.AddParameter("@HotelID", mThisHotel.HotelID);
+            DB.Execute("sproc_tblHotel_Delete");
+        }
+
+        public void Update()
+        {
+            //update ec=xisting record and connect to db
+            clsDataConnection DB = new clsDataConnection();
+            //set parametersfor sproc
+            DB.AddParameter("@HotelName", mThisHotel.HotelName);
+            DB.AddParameter("@HotelCity", mThisHotel.HotelCity);
+            DB.AddParameter("@HotelPostCode", mThisHotel.HotelPostCode);
+            DB.AddParameter("@HotelPhoneNumber", mThisHotel.HotelPhoneNumber);
+            //execute
+            DB.Execute("sproc_tblHotel_Update");
+        }
+
     }
+}
 

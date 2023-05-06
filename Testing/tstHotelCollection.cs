@@ -116,5 +116,72 @@ namespace Testing
             AllHotels.ThisHotel.Find(PrimaryKey);
             Assert.AreEqual(AllHotels.ThisHotel, TestItem);
         }
+
+        [TestMethod]
+        public void DeleteMethodOK()
+        {
+            //instance
+            clsHotelCollection AllHotels = new clsHotelCollection();
+            //data to assign to properties
+            clsHotel TestItem = new clsHotel();
+            Int32 PrimaryKey = 0;
+            //set properties
+            TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
+            TestItem.HotelCity = "Leicester";
+            TestItem.HotelPhoneNumber = 23092002;
+            TestItem.HotelPostCode = "LE4 8UE";
+            //set this hotel to test data
+            AllHotels.ThisHotel = TestItem;
+            //set thisHotel to test data
+            PrimaryKey = AllHotels.Add();
+            //set pk of the test data
+            TestItem.HotelID = PrimaryKey;
+            //find record
+            AllHotels.ThisHotel.Find(PrimaryKey);
+            //delete record
+            AllHotels.Delete();
+            //find record
+            Boolean Found = AllHotels.ThisHotel.Find(PrimaryKey);
+            //TEST TO SEE THAT THE RECORD WAS NOT FOUND
+            Assert.IsFalse(Found);
+        }
+
+        [TestMethod]
+        public void UpdateMethodOK()
+        {
+            clsHotelCollection AllHotels = new clsHotelCollection();
+            //create item of test data 
+            clsHotel TestItem = new clsHotel();
+            Int32 PrimaryKey = 0;
+            //set properties
+            TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
+            TestItem.HotelCity = "Leicester";
+            TestItem.HotelPhoneNumber = 23092002;
+            TestItem.HotelPostCode = "LE4 8UE";
+            //set thisHotel to test data
+            AllHotels.ThisHotel = TestItem;
+            //add record
+            PrimaryKey = AllHotels.Add();
+            //set pk of the test data
+            TestItem.HotelID = PrimaryKey;
+            //modify test data
+            TestItem.HotelID = 2;
+            TestItem.HotelName = "Inn";
+            TestItem.HotelCity = "Trial";
+            TestItem.HotelPhoneNumber = 234555556;
+            TestItem.HotelPostCode = "P36 7UG";
+            //set record based on the new test data
+            AllHotels.ThisHotel = TestItem;
+            //update
+            AllHotels.Update();
+            //find record
+            AllHotels.ThisHotel.Find(PrimaryKey);
+            //test to see thisHotel matched test data
+            Assert.AreEqual(AllHotels.ThisHotel, TestItem);
+
+        }
+
     }
 }
