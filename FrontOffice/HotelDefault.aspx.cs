@@ -10,13 +10,23 @@ namespace FrontOffice
 {
     public partial class HotelDefault : System.Web.UI.Page
     {
+
+        //var to store the pk with the page level scope
+        Int32 HotelID;
         protected void Page_Load(object sender, EventArgs e)
         {
+            HotelID = Convert.ToInt32(Session["HotelID"]);
             //if this is the first time the page is displayed
             if (IsPostBack == false)
             {
                 //update list box
                 DisplayHotels();
+                //if this is not a new record
+                if (HotelID != -1)
+                {
+                    //display current data for thr record
+                    DisplayHotels();
+                }
             }
         }
 
@@ -31,6 +41,38 @@ namespace FrontOffice
             lstHotels.DataTextField = "HotelName";
             //bind the data to the list
             lstHotels.DataBind();
+        }
+
+        Int32 DisplayHotel(string hotelName)
+        {
+            //var
+            Int32 HotelID;
+            string HotelName;
+            string HotelCity;
+            string HotelPhoneNumber;
+            string HotelPostCode;
+
+            //instance
+            clsHotelCollection Hotel = new clsHotelCollection();
+            Hotel.ReportByHotelName(hotelName);
+            //var to store record count
+            Int32 RecordCount;
+            Int32 Index = 0;
+            RecordCount = Hotel.Count; //records from tblHotel
+            lstHotels.Items.Clear();
+            while (Index < RecordCount) //while records are to process
+            {
+                HotelID = Hotel.HotelList[Index].HotelID;
+                HotelName = Hotel.HotelList[Index].HotelName;
+                HotelCity = Hotel.HotelList[Index].HotelCity;
+                HotelPhoneNumber = Hotel.HotelList[Index].HotelPhoneNumber;
+                HotelPostCode = Hotel.HotelList[Index].HotelPostCode;
+                //create the new entry for the list box
+                ListItem NewEntry = new ListItem(HotelName + " " + HotelCity + " " + HotelPhoneNumber + " " + HotelPostCode, HotelID.ToString());
+                lstHotels.Items.Add(NewEntry); //add new hotel to the list
+                Index++; //index next record
+            }
+            return RecordCount;
         }
 
         protected void TextBox1_TextChanged(object sender, EventArgs e)
@@ -86,6 +128,21 @@ namespace FrontOffice
             }
 
 
+        }
+
+        protected void btnDisplay_Click(object sender, EventArgs e)
+        {
+            Int32 RecordCount;
+            RecordCount = DisplayHotel("");
+            lblError.Text = RecordCount + "Records of Hotels ";
+            txtHotelName.Text = "";
+        }
+
+        protected void btnApply_Click(object sender, EventArgs e)
+        {
+            Int32 RecordCount;
+            RecordCount = DisplayHotel(txtHotelName.Text);
+            lblError.Text = RecordCount + "Hotel Name are displayed";
         }
     }
 }

@@ -113,7 +113,7 @@ namespace FrontOffice
                 //get data entered by user
                 Hotels.ThisHotel.HotelName = txtHotelName.Text;
                 Hotels.ThisHotel.HotelCity = txtHotelCity.Text;
-                Hotels.ThisHotel.HotelPhoneNumber = Convert.ToInt32(txtHotelPhoneNumber.Text);
+                Hotels.ThisHotel.HotelPhoneNumber = txtHotelPhoneNumber.Text;
                 Hotels.ThisHotel.HotelPostCode = txtHotelPostCode.Text;
                 //ADD RECORD
                 Hotels.Add();
@@ -142,7 +142,7 @@ namespace FrontOffice
                 //get data entered by the user
                 Hotels.ThisHotel.HotelName = txtHotelName.Text;
                 Hotels.ThisHotel.HotelCity = txtHotelCity.Text;
-                Hotels.ThisHotel.HotelPhoneNumber = Convert.ToInt32(txtHotelPhoneNumber.Text);
+                Hotels.ThisHotel.HotelPhoneNumber = txtHotelPhoneNumber.Text;
                 Hotels.ThisHotel.HotelPostCode = txtHotelPostCode.Text;
                 //update record
                 Hotels.Update();

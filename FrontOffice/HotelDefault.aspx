@@ -5,12 +5,12 @@
         <br />
         <asp:Label ID="Label1" runat="server" Text="Enter a Hotel Post Code"></asp:Label>
         <br />
-        <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtHotelName" runat="server"></asp:TextBox>
         <br />
         <br />
-        <asp:Button ID="btnApply" runat="server" Text="Apply" />
+        <asp:Button ID="btnApply" runat="server" Text="Apply" OnClick="btnApply_Click" />
 &nbsp;
-        <asp:Button ID="btnDisplay" runat="server" Text="Show All" />
+        <asp:Button ID="btnDisplay" runat="server" Text="Show All" OnClick="btnDisplay_Click" />
         <br />
         <asp:Button ID="btnAdd" runat="server" Text="Add" Width="144px" OnClick="btnAdd_Click" />
 &nbsp;
