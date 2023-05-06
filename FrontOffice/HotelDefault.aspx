@@ -3,7 +3,7 @@
     <form id="form1" runat="server">
         <asp:ListBox ID="lstHotels" runat="server" Width="421px"></asp:ListBox>
         <br />
-        <asp:Label ID="Label1" runat="server" Text="Enter a Hotel Post Code"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Enter a Hotel Name"></asp:Label>
         <br />
         <asp:TextBox ID="txtHotelName" runat="server"></asp:TextBox>
         <br />
