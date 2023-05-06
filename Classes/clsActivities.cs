@@ -122,13 +122,21 @@ namespace Classes
                 Error = Error + " Activity price cannot be less than or equal to zero... We aren't free!";
             }
 
-            // If noOfPeople is greater than the maximum allowed
-            if (noOfPeople > 100)
+            // If noOfPeople is null
+            if (noOfPeople == -1)
             {
                 // Record error
-                Error = Error + "Number of people cannot be more than 100: ";
+                Error = Error + "Number of people cannot be null: ";
             }
-
+            else
+            {
+                // If noOfPeople is greater than the maximum allowed
+                if (noOfPeople > 100)
+                {
+                    // Record error
+                    Error = Error + "Number of people cannot be more than 100: ";
+                }
+            }
 
             return Error;
         }
