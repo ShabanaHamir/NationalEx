@@ -52,6 +52,7 @@ namespace FrontOffice
             string ActivityAddress;
             string ActivityPostCode;
             string ActivityDescription;
+            int NoOfPeople;
             decimal ActivityPrice;
             //create an imstance of the activities
             clsActivitiesCollection MyActivities = new clsActivitiesCollection();
@@ -71,9 +72,10 @@ namespace FrontOffice
                 ActivityAddress = MyActivities.ActivitiesList[Index].ActivityAddress;
                 ActivityPostCode = MyActivities.ActivitiesList[Index].ActivityPostCode;
                 ActivityDescription = MyActivities.ActivitiesList[Index].ActivityDescription;
+                NoOfPeople = MyActivities.ActivitiesList[Index].NoOfPeople;
                 ActivityPrice = Convert.ToDecimal(MyActivities.ActivitiesList[Index].ActivityPrice);
                 //create the new entry for the list box
-                ListItem NewEntry = new ListItem(ActivityName + "" + ActivityCity + "" + ActivityAddress + "" + ActivityPostCode + "" + ActivityDescription + "" + ActivityPrice + "", ActivityID.ToString());
+                ListItem NewEntry = new ListItem(ActivityID.ToString() + ActivityName + " " + ActivityCity + " " + ActivityAddress + " " + ActivityPostCode + " " + ActivityDescription + " " + NoOfPeople + " " + ActivityPrice + " " );
                 lstActivities.Items.Add(NewEntry); //add activities to the list
                 Index++;
             }
@@ -153,10 +155,21 @@ namespace FrontOffice
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
         {
-            Int32 RecordCount;
-            RecordCount = DisplayActivities("");
-            lblError.Text = "There are " + RecordCount + " records in this database";
-            txtAName.Text = "";
+            //Int32 RecordCount;
+            //RecordCount = DisplayActivities("");
+            //lblError.Text = "There are " + RecordCount + " records in this database";
+            //txtAName.Text = "";
+            // Create an instance of the ActivitiesCollection class
+            clsActivitiesCollection activitiesCollection = new clsActivitiesCollection();
+
+            // Get all activities from the database
+            List<clsActivities> activitiesList = activitiesCollection.GetAllActivities();
+
+            // Bind the activities list to the ListBox control
+            lstActivities.DataSource = activitiesList;
+            lstActivities.DataTextField = "ActivityName"; // You can change this to display other properties if needed
+            lstActivities.DataValueField = "ActivityID"; // This will help you to identify the selected activity later
+            lstActivities.DataBind();
         }
     }
 }
