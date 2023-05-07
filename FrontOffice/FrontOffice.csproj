@@ -84,6 +84,7 @@
     <Content Include="AnPassenger.aspx" />
     <Content Include="AnTripaspx.aspx" />
     <Content Include="ARoom.aspx" />
+    <Content Include="AUser.aspx" />
     <Content Include="bin\Classes.dll" />
     <Content Include="bin\Classes.pdb" />
     <Content Include="bin\FrontOffice.dll" />
@@ -166,6 +167,7 @@
     <Content Include="StaffHome.aspx" />
     <Content Include="StaffLogIn.aspx" />
     <Content Include="TripViewer.aspx" />
+    <Content Include="UserViewer.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogIn.aspx" />
     <Content Include="WebForm1.aspx" />
@@ -277,6 +279,13 @@
     <Compile Include="AnTripaspx.aspx.designer.cs">
       <DependentUpon>AnTripaspx.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AUser.aspx.cs">
+      <DependentUpon>AUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AUser.aspx.designer.cs">
+      <DependentUpon>AUser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Checkout.aspx.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -339,6 +348,13 @@
     </Compile>
     <Compile Include="StaffHome.aspx.designer.cs">
       <DependentUpon>StaffHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserViewer.aspx.cs">
+      <DependentUpon>UserViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserViewer.aspx.designer.cs">
+      <DependentUpon>UserViewer.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
