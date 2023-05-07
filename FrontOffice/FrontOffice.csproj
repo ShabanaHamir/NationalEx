@@ -72,6 +72,7 @@
     <Content Include="ACard.aspx" />
     <Content Include="ActivateAccount.aspx" />
     <Content Include="ActivitiesCustomer.aspx" />
+    <Content Include="ActivitiesCustomer.js" />
     <Content Include="ActivityDefault.aspx" />
     <Content Include="ActivityDelete.aspx" />
     <Content Include="ActivityViewer.aspx" />

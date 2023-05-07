@@ -1,5 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ActivitiesCustomer.aspx.cs" Inherits="FrontOffice.ActivitiesCustomer" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <form id="form1" runat="server">
+    <head>
+    <script src="activitiesCustomer.js"></script>
+</head>
     <div class="container">
 
         <h1>Activities</h1>
@@ -23,6 +27,8 @@
                             <label for="quantity-<%= activity.ActivityID %>">Quantity:</label>
 <input type="number" id="quantity-<%= activity.ActivityID %>" name="quantity" min="1" max="<%= activity.NoOfPeople %>" value="1">
 <button class="btn btn-primary add-to-cart" data-activity-id="<%= activity.ActivityID %>" data-activity-name="<%= activity.ActivityName %>" data-activity-price="<%= activity.ActivityPrice %>" aria-sort="none">Add to Cart</button>
+
+                            <asp:Button ID="Button2" runat="server" OnClick="Button2_Click" Text="Button" />
 
                             <p class="card-text">
                                 <%= activity.ActivityAddress %><br>
@@ -65,4 +71,6 @@
             });
         });
     </script>
+        <asp:Button ID="Button1" runat="server" Text="Button" />
+    </form>
 </asp:Content>
