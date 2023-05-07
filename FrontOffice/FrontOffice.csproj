@@ -77,6 +77,7 @@
     <Content Include="ActivityViewer.aspx" />
     <Content Include="ACustomer.aspx" />
     <Content Include="AddStaff.aspx" />
+    <Content Include="AddToCart.aspx" />
     <Content Include="AnActivity.aspx" />
     <Content Include="AnHotel.aspx" />
     <Content Include="AnPassenger.aspx" />
@@ -239,6 +240,13 @@
     </Compile>
     <Compile Include="AddStaff.aspx.designer.cs">
       <DependentUpon>AddStaff.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddToCart.aspx.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddToCart.aspx.designer.cs">
+      <DependentUpon>AddToCart.aspx</DependentUpon>
     </Compile>
     <Compile Include="AnActivity.aspx.cs">
       <DependentUpon>AnActivity.aspx</DependentUpon>

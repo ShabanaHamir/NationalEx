@@ -15,26 +15,16 @@ namespace FrontOffice
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //// Retrieve the cart from the session (you may need to adjust this depending on how you store the cart)
-            //clsCart cart = Session["Cart"] as clsCart;
 
-            //if (cart != null)
-            //{
-            //    CartItems = cart.CartItems;
-            //    TotalPrice = cart.GetTotalPrice();
-            //}
-            //else
-            //{
-            //    CartItems = new List<clsCartItem>();
-            //    TotalPrice = 0;
-            //}
-            // Retrieve the cart from the session (you may need to adjust this depending on how you store the cart)
             clsCart cart = Session["Cart"] as clsCart;
 
             if (cart != null)
             {
                 CartItems = cart.CartItems;
                 TotalPrice = cart.GetTotalPrice();
+
+                gvCartItems.DataSource = CartItems;
+                gvCartItems.DataBind();
             }
             else
             {
@@ -44,6 +34,31 @@ namespace FrontOffice
 
             // Set the text of the Total Price label control
             lblTotalPrice.Text = TotalPrice.ToString("C");
+        }
+
+        protected void LoadCart()
+        {
+            // Retrieve the cart from the session (you may need to adjust this depending on how you store the cart)
+            clsCart cart = Session["Cart"] as clsCart;
+
+            if (cart != null)
+            {
+                CartItems = cart.CartItems;
+                TotalPrice = cart.GetTotalPrice();
+
+                // Bind the cart items to the gridview
+                gvCartItems.DataSource = CartItems;
+                gvCartItems.DataBind();
+            }
+            else
+            {
+                CartItems = new List<clsCartItem>();
+                TotalPrice = 0;
+            }
+
+            // Set the text of the Total Price label control
+            lblTotalPrice.Text = TotalPrice.ToString("C");
+
         }
     }
 }

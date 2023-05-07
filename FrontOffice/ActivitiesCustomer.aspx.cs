@@ -29,4 +29,6 @@ namespace FrontOffice
             ActivitiesList = activitiesCollection.GetAllActivities();
         }
     }
+
+
 }
