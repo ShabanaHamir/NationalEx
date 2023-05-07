@@ -10,7 +10,7 @@ namespace FrontOffice
 {
     public partial class ActivitiesCustomer : System.Web.UI.Page
     {
-        // Property to store the list of activities
+        // Property to store the list of activities y
         public List<clsActivities> ActivitiesList { get; set; }
         protected void Page_Load(object sender, EventArgs e)
         {
