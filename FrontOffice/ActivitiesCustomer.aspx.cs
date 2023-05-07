@@ -16,8 +16,17 @@ namespace FrontOffice
         {
             if (!IsPostBack)
             {
-//                LoadActivities();
+                LoadActivities();
             }
+        }
+
+        private void LoadActivities()
+        {
+            // Create an instance of the ActivitiesCollection class
+            clsActivitiesCollection activitiesCollection = new clsActivitiesCollection();
+
+            // Get all activities from the database
+            ActivitiesList = activitiesCollection.GetAllActivities();
         }
     }
 }
