@@ -15,7 +15,7 @@ namespace Classes
             CartItems = new List<clsCartItem>();
         }
 
-        public void AddToCart(int activityId, string activityName, decimal activityPrice, int quantity)
+        public void AddItemToCart(int activityId, string activityName, decimal activityPrice, int quantity)
         {
             var existingItem = CartItems.FirstOrDefault(item => item.ActivityId == activityId);
 
