@@ -98,6 +98,7 @@ namespace FrontOffice
             {
                 //display values of the properties in the form
                 txtHotelID.Text = ARoom.HotelID.ToString();
+                txtHotelName.Text = ARoom.HotelName;
                 txtFloorNumber.Text = ARoom.FloorNumber.ToString();
                 FacilitiesCheckBoxList.SelectedValue = ARoom.RoomFacilities;
                 txtRoomNumber.Text = ARoom.RoomNumber.ToString();
@@ -111,10 +112,11 @@ namespace FrontOffice
         void Add()
         {
             Classes.clsRoomCollection Rooms = new Classes.clsRoomCollection();
-            String Error = Rooms.ThisRoom.Valid(txtHotelID.Text, txtFloorNumber.Text, txtNumberOfBeds.Text, txtRoomNumber.Text, txtRoomType.Text, Convert.ToDecimal(txtRoomPrice.Text), txtRoomDescription.Text, FacilitiesCheckBoxList.SelectedValue);
+            String Error = Rooms.ThisRoom.Valid(txtHotelID.Text, txtHotelName.Text, txtFloorNumber.Text, txtNumberOfBeds.Text, txtRoomNumber.Text, txtRoomType.Text, Convert.ToDecimal(txtRoomPrice.Text), txtRoomDescription.Text, FacilitiesCheckBoxList.SelectedValue);
             if (Error == "")
             {
                 Rooms.ThisRoom.HotelID = Convert.ToInt32(txtHotelID.Text);
+                Rooms.ThisRoom.HotelName = txtHotelName.Text;
                 Rooms.ThisRoom.FloorNumber = Convert.ToInt32(txtFloorNumber.Text);
                 Rooms.ThisRoom.RoomFacilities = FacilitiesCheckBoxList.SelectedValue;
                 Rooms.ThisRoom.RoomNumber = Convert.ToInt32(txtRoomNumber.Text);
@@ -137,12 +139,13 @@ namespace FrontOffice
         void Update()
         {
             clsRoomCollection Rooms = new clsRoomCollection();
-            String Error = Rooms.ThisRoom.Valid(txtHotelID.Text, txtFloorNumber.Text, txtNumberOfBeds.Text, txtRoomNumber.Text, txtRoomType.Text, Convert.ToDecimal(txtRoomPrice.Text), txtRoomDescription.Text, FacilitiesCheckBoxList.SelectedValue);
+            String Error = Rooms.ThisRoom.Valid(txtHotelID.Text, txtHotelName.Text, txtFloorNumber.Text, txtNumberOfBeds.Text, txtRoomNumber.Text, txtRoomType.Text, Convert.ToDecimal(txtRoomPrice.Text), txtRoomDescription.Text, FacilitiesCheckBoxList.SelectedValue);
             if (Error == "")
             {
                 Rooms.ThisRoom.Find(RoomID);
                 //get data entered by user
                 Rooms.ThisRoom.HotelID = Convert.ToInt32(txtHotelID.Text);
+                Rooms.ThisRoom.HotelName = txtHotelName.Text;
                 Rooms.ThisRoom.FloorNumber = Convert.ToInt32(txtFloorNumber.Text);
                 Rooms.ThisRoom.RoomFacilities = FacilitiesCheckBoxList.SelectedValue;
                 Rooms.ThisRoom.RoomNumber = Convert.ToInt32(txtRoomNumber.Text);
@@ -169,6 +172,7 @@ namespace FrontOffice
             Room.ThisRoom.Find(RoomID);
             //display data
             txtHotelID.Text = Room.ThisRoom.HotelID.ToString();
+            txtHotelName.Text = Room.ThisRoom.HotelName;
             txtFloorNumber.Text = Room.ThisRoom.FloorNumber.ToString();
             FacilitiesCheckBoxList.SelectedValue = Room.ThisRoom.RoomFacilities;
             txtRoomNumber.Text = Room.ThisRoom.RoomNumber.ToString();

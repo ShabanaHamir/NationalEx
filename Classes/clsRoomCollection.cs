@@ -107,14 +107,15 @@ namespace Classes
             clsDataConnection DB = new clsDataConnection();
             //set parameters
             DB.AddParameter("@HotelID", mThisRoom.HotelID);
-            DB.AddParameter("@RoomNumber", mThisRoom.HotelID);
-            DB.AddParameter("@FloorNumber", mThisRoom.HotelID);
-            DB.AddParameter("@RoomType", mThisRoom.HotelID);
-            DB.AddParameter("@NumberOfBeds", mThisRoom.HotelID);
-            DB.AddParameter("@RoomPrice", mThisRoom.HotelID);
-            DB.AddParameter("@RoomDescription", mThisRoom.HotelID);
-            DB.AddParameter("@RoomFacilities", mThisRoom.HotelID);
-            DB.AddParameter("@Occupied", mThisRoom.HotelID);
+            DB.AddParameter("@HotelName", mThisRoom.HotelName);
+            DB.AddParameter("@RoomNumber", mThisRoom.RoomNumber);
+            DB.AddParameter("@FloorNumber", mThisRoom.FloorNumber);
+            DB.AddParameter("@RoomType", mThisRoom.RoomType);
+            DB.AddParameter("@NumberOfBeds", mThisRoom.NumberOfBeds);
+            DB.AddParameter("@RoomPrice", mThisRoom.RoomPrice);
+            DB.AddParameter("@RoomDescription", mThisRoom.RoomDescription);
+            DB.AddParameter("@RoomFacilities", mThisRoom.RoomFacilities);
+            DB.AddParameter("@Occupied", mThisRoom.Occupied);
             //execute
             return DB.Execute("sproc_tblRoom_Insert");
         }
@@ -134,6 +135,7 @@ namespace Classes
             //set params for sproc
             DB.AddParameter("@RoomID", mThisRoom.RoomID);
             DB.AddParameter("@HotelID", mThisRoom.HotelID);
+            DB.AddParameter("@HotelName", mThisRoom.HotelName);
             DB.AddParameter("@RoomNumber", mThisRoom.RoomNumber);
             DB.AddParameter("@FloorNumber", mThisRoom.FloorNumber);
             DB.AddParameter("@RoomType", mThisRoom.RoomType);
@@ -167,6 +169,7 @@ namespace Classes
                 clsRoom ARoom = new clsRoom();
                 ARoom.RoomID = Convert.ToInt32(DB.DataTable.Rows[Index]["RoomID"]);
                 ARoom.HotelID = Convert.ToInt32(DB.DataTable.Rows[Index]["HotelID"]);
+                ARoom.HotelName = Convert.ToString(DB.DataTable.Rows[Index]["HotelName"]);
                 ARoom.RoomNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["RoomNumber"]);
                 ARoom.FloorNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["FloorNumber"]);
                 ARoom.RoomType = Convert.ToString(DB.DataTable.Rows[Index]["RoomType"]);
@@ -189,14 +192,14 @@ namespace Classes
             }
         }
 
-        public void ReportByHotelID(string HotelID)
+        public void ReportByHotelName(string HotelName)
         {
             //CONNECT TO DB
             clsDataConnection DB = new clsDataConnection();
             //send hotelID parameter
-            DB.AddParameter("@HotelID", HotelID);
+            DB.AddParameter("@HotelName", HotelName);
             //execute
-            DB.Execute("sproc_tblRoom_FilterByHotelID");
+            DB.Execute("sproc_tblRoom_FilterByHotelName");
             //populate array 
             PopulateArray(DB);
         }

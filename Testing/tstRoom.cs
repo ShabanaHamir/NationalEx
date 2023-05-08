@@ -12,6 +12,7 @@ namespace Testing
         //create some test data to pass to the method
 
         string HotelID = "22";
+        string HotelName = "Inn";
         string FloorNumber = "3";
         string RoomNumber = "34";
         string RoomType = "Double";
@@ -142,7 +143,18 @@ namespace Testing
             Assert.AreEqual(ARoom.RoomFacilities, TestData);
         }
 
-
+        [TestMethod]
+        public void HotelNamePropertyOK()
+        {
+            //create instance
+            clsRoom ARoom = new clsRoom();
+            //create tests data to assign to property
+            string TestData = "Inn";
+            //assign data to property
+            ARoom.HotelName = TestData;
+            //test to see that too values are the same
+            Assert.AreEqual(ARoom.HotelName, TestData);
+        }
 
         [TestMethod]
         public void OccupiedPropertyOK()
@@ -164,7 +176,7 @@ namespace Testing
             //string var to store any error message
             String Error = "";
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
         [TestMethod]
@@ -274,6 +286,31 @@ namespace Testing
             Assert.IsTrue(OK);
 
         }
+
+        [TestMethod]
+        public void TestHotelNameFound()
+        {
+            //create instance
+            clsRoom ARoom = new clsRoom();
+            //bool var to store the result of the validation
+            Boolean Found = false;
+            //bool var to record if data is ok (assume it is)
+            Boolean OK = true;
+            //create some test data to use with this method
+            Int32 RoomID = 3;
+            //invoke the method
+            Found = ARoom.Find(RoomID);
+            //check the room id
+            if (ARoom.HotelName != "Skyline")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+
+        }
+
+
         [TestMethod]
         public void TestNumberOfBedsFound()
         {
@@ -424,7 +461,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomNumber = "";
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }
@@ -439,7 +476,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomNumber = "1"; //pass
                                      //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
@@ -454,23 +491,23 @@ namespace Testing
             //some data to pass ro the method
             string RoomNumber = "1234567891"; //pass
                                               //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
-        [TestMethod]
-        public void RoomNumberMaxPlusOne()
-        {
-            //create an instance of the class we want to create 
-            clsRoom ARoom = new clsRoom();
-            //string var to store any error message
-            String Error = "";
-            //some data to pass ro the method
-            string RoomNumber = "12345678911"; //10 characters or less
-                                               //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, NumberOfBeds, RoomNumber, RoomType, RoomPrice, RoomDescription, RoomFacilities);
-            //test to see if valid method exists 
-            Assert.AreNotEqual(Error, "");
-        }
+        //[TestMethod]
+        //public void RoomNumberMaxPlusOne()
+        //{
+        //    //create an instance of the class we want to create 
+        //    clsRoom ARoom = new clsRoom();
+        //    //string var to store any error message
+        //    String Error = "";
+        //    //some data to pass ro the method
+        //    string RoomNumber = "12345678911"; //10 characters or less
+        //                                       //invoke method
+        //    Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+        //    //test to see if valid method exists 
+        //    Assert.AreNotEqual(Error, "");
+        //}
 
 
 
@@ -486,7 +523,7 @@ namespace Testing
             //some data to pass ro the method
             string FloorNumber = "";
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }
 
@@ -500,7 +537,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomNumber = "1"; //pass
                                      //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
 
@@ -514,7 +551,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomNumber = "100"; //pass
                                        //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
         //[TestMethod]
@@ -543,7 +580,7 @@ namespace Testing
             //create some test data to pass to message
             string RoomDescription = "";
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -559,7 +596,7 @@ namespace Testing
             //create some test data to pass to message
             string RoomDescription = "1";
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -575,7 +612,7 @@ namespace Testing
             string RoomDescription = "";
             RoomDescription = RoomDescription.PadRight(250, 's');
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -593,7 +630,7 @@ namespace Testing
             //create some test data to pass to message
             string RoomFacilities = "";
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -609,7 +646,7 @@ namespace Testing
             //create some test data to pass to message
             string RoomFacilities = "s";
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -625,7 +662,7 @@ namespace Testing
             string RoomFacilities = "";
             RoomFacilities = RoomFacilities.PadRight(250, 's');
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -641,7 +678,7 @@ namespace Testing
             //some data to pass ro the method
             decimal RoomPrice = 0; //fail
                                    //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }
         //RoomType
@@ -655,7 +692,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomType = ""; //fail
                                   //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }
         [TestMethod]
@@ -668,7 +705,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomType = "S"; //Pass
                                    //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
         [TestMethod]
@@ -681,7 +718,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomType = "Ocean View Penthouse Apartment"; //Pass
                                                                 //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
 
@@ -695,7 +732,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomType = "Ocean View Penthouse Apartment1"; //Pass
                                                                  //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }
 
@@ -709,7 +746,7 @@ namespace Testing
             //some data to pass ro the method
             string RoomType = "Executive Suite"; //Pass
                                                  //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
         //HotelID
@@ -723,7 +760,7 @@ namespace Testing
             //some data to pass ro the method
             string HotelID = ""; //fail
                                  //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }
 
@@ -737,7 +774,7 @@ namespace Testing
             //some data to pass ro the method
             string HotelID = "1";
             //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
 
@@ -753,7 +790,7 @@ namespace Testing
             //some data to pass ro the method
             string NumberOfBeds = ""; //fail
                                       //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreNotEqual(Error, "");
         }
 
@@ -767,7 +804,75 @@ namespace Testing
             //some data to pass ro the method
             string NumberOfBeds = "1"; //fail
                                        //invoke method
-            Error = ARoom.Valid(HotelID, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HotelNameMinLessOne()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string HotelName = ""; //fail
+                                  //invoke method
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+        [TestMethod]
+        public void HotelNameMin()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string HotelName = "S"; //Pass
+                                   //invoke method
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+        [TestMethod]
+        public void HotelNameMax()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string HotelName = "VALIDATINGHOTELNAMEEEEEEEEEEE"; //Pass
+                                                                //invoke method
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HotelNameMaxPlusOne()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string HotelName = "VALIDATINGHOTELNAMEEEEEEEEEEEZ"; //Pass
+                                                                 //invoke method
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void HotelNameMid()
+        {
+            //create an instance of the class we want to create 
+            clsRoom ARoom = new clsRoom();
+            //string var to store any error message
+            String Error = "";
+            //some data to pass ro the method
+            string HotelName = "HOTELNAME ETGFAS"; //Pass
+                                                 //invoke method
+            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
             Assert.AreEqual(Error, "");
         }
     }

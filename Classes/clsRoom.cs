@@ -42,10 +42,27 @@ namespace Classes
             }
         }
 
-        public string Valid(string hotelID, string roomNumber, string roomType, string roomPrice)
+
+        //private data membber 
+        private string mHotelName;
+        //public property
+        public string HotelName
         {
-            throw new NotImplementedException();
+            get
+            {
+                //sends data out of the property
+                return mHotelName;
+            }
+            set
+            {
+                //allows data into the property
+                mHotelName = value;
+            }
         }
+        //public string Valid(string hotelID, string hotelName, string roomNumber, string roomType, string roomPrice)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         //public string Valid(string hotelID, string roomNumber, string roomType, string roomPrice)
         //{
@@ -191,6 +208,7 @@ namespace Classes
                 mRoomType = Convert.ToString(DB.DataTable.Rows[0]["RoomType"]);
                 mNumberOfBeds = Convert.ToInt32(DB.DataTable.Rows[0]["NumberOfBeds"]);
                 mHotelID = Convert.ToInt32(DB.DataTable.Rows[0]["HotelID"]);
+                mHotelName = Convert.ToString(DB.DataTable.Rows[0]["HotelName"]);
                 mRoomPrice = Convert.ToDecimal(DB.DataTable.Rows[0]["RoomPrice"]);
                 mRoomDescription = Convert.ToString(DB.DataTable.Rows[0]["RoomDescription"]);
                 mRoomFacilities = Convert.ToString(DB.DataTable.Rows[0]["RoomFacilities"]);
@@ -208,7 +226,7 @@ namespace Classes
 
         }
 
-        public string Valid(string hotelID, string floorNumber, string numberOfBeds, string roomNumber, string roomType, decimal roomPrice, string roomDescription, string roomFacilities)
+        public string Valid(string hotelID, string hotelName, string floorNumber, string numberOfBeds, string roomNumber, string roomType, decimal roomPrice, string roomDescription, string roomFacilities)
         {
             //variable to store error
             String Error = "";
@@ -274,8 +292,18 @@ namespace Classes
                 Error = Error + "Room Price cannot be more than 50 characters ! ";
             }
 
-
-
+            //if room type is blank 
+            if (hotelName.Length == 0)
+            {
+                //error
+                Error = Error + " Hotel Name cannot be left blank ! ";
+            }
+            //room type more than 10 characters
+            if (hotelName.Length > 30)
+            {
+                //error
+                Error = Error + "Hotel Name cannot be more than 50 characters ! ";
+            }
             //if price is less than or equal to zero
             if (roomPrice <= 0)
             {

@@ -38,7 +38,7 @@ namespace FrontOffice
             //set the name of pk
             lstRooms.DataValueField = "RoomID";
             //set data field to display
-            lstRooms.DataTextField = "HotelID";
+            lstRooms.DataTextField = "HotelName";
             //bind data to the list
             lstRooms.DataBind();
         }
@@ -93,11 +93,12 @@ namespace FrontOffice
             }
         }
 
-        Int32 DisplayRoom(string hotelID)
+        Int32 DisplayRoom(string hotelName)
         {
             //var 
             Int32 RoomID;
             Int32 HotelID;
+            string HotelName;
             string RoomFacilities;
             Int32 RoomNumber;
             string RoomDescription;
@@ -106,7 +107,7 @@ namespace FrontOffice
             decimal RoomPrice;
 
             clsRoomCollection Room = new clsRoomCollection();
-            Room.ReportByHotelID(hotelID);
+            Room.ReportByHotelName(hotelName);
             //var to store record count
             Int32 RecordCount;
             Int32 Index = 0;
@@ -115,14 +116,15 @@ namespace FrontOffice
             while (Index < RecordCount)
             {
                 RoomID = Room.RoomList[Index].RoomID;
-                HotelID = Room.RoomList[Index].RoomID;
+                HotelID = Room.RoomList[Index].HotelID;
+                HotelName = Room.RoomList[Index].HotelName;
                 RoomFacilities = Room.RoomList[Index].RoomFacilities;
                 RoomNumber = Room.RoomList[Index].RoomNumber;
                 RoomDescription = Room.RoomList[Index].RoomDescription;
                 NumberOfBeds = Room.RoomList[Index].NumberOfBeds;
                 RoomType = Room.RoomList[Index].RoomType;
                 RoomPrice = Room.RoomList[Index].RoomPrice;
-                ListItem NewEntry = new ListItem(HotelID + " " + RoomFacilities + " " + RoomNumber + " " + RoomDescription + " " + NumberOfBeds + " " + RoomType + " " + RoomPrice, RoomID.ToString());
+                ListItem NewEntry = new ListItem(HotelID + " " + HotelName +  " " + RoomFacilities + " " + RoomNumber + " " + RoomDescription + " " + NumberOfBeds + " " + RoomType + " " + RoomPrice, RoomID.ToString());
                 lstRooms.Items.Add(NewEntry);
                 Index++;
 
@@ -136,14 +138,14 @@ namespace FrontOffice
             Int32 RecordCount;
             RecordCount = DisplayRoom("");
             lblError.Text = RecordCount + "Records of Rooms in our Database";
-            txtHotelID.Text = "";
+            txtHotelName.Text = "";
 
         }
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
             Int32 RecordCount;
-            RecordCount = DisplayRoom(txtHotelID.Text);
+            RecordCount = DisplayRoom(txtHotelName.Text);
             lblError.Text = RecordCount + "Rooms are displayed";
         }
     }
