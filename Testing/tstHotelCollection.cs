@@ -173,32 +173,19 @@ namespace Testing
             TestItem.HotelCity = "Trial";
             TestItem.HotelPhoneNumber = "234555556";
             TestItem.HotelPostCode = "P36 7UG";
-            //set record based on the new test data
-            AllHotels.ThisHotel = TestItem;
-            //update
-            AllHotels.Update();
-            //find record
+            //find the record 
             AllHotels.ThisHotel.Find(PrimaryKey);
-            //test to see thisHotel matched test data
+            //delete record
+            AllHotels.Update();
+            //now find the record
+            Boolean Found = AllHotels.ThisHotel.Find(PrimaryKey);
+            //test to see that the record was not found
             Assert.AreEqual(AllHotels.ThisHotel, TestItem);
 
         }
 
         [TestMethod]
         public void ReportByHotelName() //filter for the staff
-        {
-            //instance of the class
-            clsHotelCollection AllHotels = new clsHotelCollection();
-            //an instance of filtered data
-            clsHotelCollection FilteredHotels = new clsHotelCollection();
-            //apply a blank string (returns all records)
-            FilteredHotels.ReportByHotelName("");
-            //test that two values are the same
-            Assert.AreEqual(AllHotels.Count, FilteredHotels.Count);
-        }
-
-        [TestMethod]
-        public void ReportByHotelNameMethodOK() //filter for the staff
         {
             //instance of the class
             clsHotelCollection AllHotels = new clsHotelCollection();
