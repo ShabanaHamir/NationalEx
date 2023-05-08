@@ -142,9 +142,9 @@ namespace Testing
             //boolean variable to store the results of the validation 
             Boolean Found = false;
             //test data to use with the method               
-            Int32 ActivityID = 1;
+            Int32 UserID = 1;
             //invoke the method
-            Found = AUser.Find(ActivityID);
+            Found = AUser.Find(UserID);
             //test to see if result is true
             Assert.IsTrue(Found);
         }
@@ -169,158 +169,159 @@ namespace Testing
             //test to see that the result is correct
             Assert.IsTrue(OK);
         }
-        //        [TestMethod]
-        //        public void Found()
-        //        {
-        //            //isntance of the class
-        //            clsUser AUser = new clsUser();
-        //            //boolean variable to store the result of the search
-        //            Boolean Found = false;
-        //            //boolean to record if data is OK
-        //            Boolean OK = true;
-        //            //test data
-        //            Int32 UserID = 1;
-        //            //invoke the method
-        //            Found = AnActivity.Find(UserID);
-        //            //check activity name
-        //            if (AnActivity.ActivityName != "Kayaking")
-        //            {
-        //                OK = false;
-        //            }
-        //            //test to see that the result is correct
-        //            Assert.IsTrue(OK);
-        //        }
+        [TestMethod]
+        public void TestFirstNameFound()
+        {
+            //isntance of the class
+            clsUser AUser = new clsUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 UserID = 1;
+            //invoke the method
+            Found = AUser.Find(UserID);
+            //check activity name
+            if (AUser.FirstName != "Sara")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
-        //        [TestMethod]
-        //        public void Found()
-        //        {
-        //            //isntance of the class
-        //            clsUser AUser = new clsUser();
-        //            //boolean variable to store the result of the search
-        //            Boolean Found = false;
-        //            //boolean to record if data is OK
-        //            Boolean OK = true;
-        //            //test data
-        //            Int32 UserID = 1;
-        //            //invoke the method
-        //            Found = AnActivity.Find(UserID);
-        //            //check activity name
-        //            if (AnActivity.ActivityName != "Kayaking")
-        //            {
-        //                OK = false;
-        //            }
-        //            //test to see that the result is correct
-        //            Assert.IsTrue(OK);
-        //        }
+        [TestMethod]
+        public void TestLastNameFound()
+        {
+            //isntance of the class
+            clsUser AUser = new clsUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 UserID = 1;
+            //invoke the method
+            Found = AUser.Find(UserID);
+            //check activity name
+            if (AUser.LastName != "Trial")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
-        //        [TestMethod]
-        //        public void Found()
-        //        {
-        //            //isntance of the class
-        //            clsUser AUser = new clsUser();
-        //            //boolean variable to store the result of the search
-        //            Boolean Found = false;
-        //            //boolean to record if data is OK
-        //            Boolean OK = true;
-        //            //test data
-        //            Int32 UserID = 1;
-        //            //invoke the method
-        //            Found = AnActivity.Find(UserID);
-        //            //check activity name
-        //            if (AnActivity.ActivityName != "Kayaking")
-        //            {
-        //                OK = false;
-        //            }
-        //            //test to see that the result is correct
-        //            Assert.IsTrue(OK);
-        //        }
+        [TestMethod]
+        public void TestEmailFound()
+        {
+            //isntance of the class
+            clsUser AUser = new clsUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 UserID = 1;
+            //invoke the method
+            Found = AUser.Find(UserID);
+            //check activity name
+            if (AUser.Email != "trial@gmail.com")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
-        //        [TestMethod]
-        //        public void Found()
-        //        {
-        //            //isntance of the class
-        //            clsUser AUser = new clsUser();
-        //            //boolean variable to store the result of the search
-        //            Boolean Found = false;
-        //            //boolean to record if data is OK
-        //            Boolean OK = true;
-        //            //test data
-        //            Int32 UserID = 1;
-        //            //invoke the method
-        //            Found = AnActivity.Find(UserID);
-        //            //check activity name
-        //            if (AnActivity.ActivityName != "Kayaking")
-        //            {
-        //                OK = false;
-        //            }
-        //            //test to see that the result is correct
-        //            Assert.IsTrue(OK);
-        //        }
+        [TestMethod]
+        public void TestPasswordFound()
+        {
+            //isntance of the class
+            clsUser AUser = new clsUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 UserID = 1;
+            //invoke the method
+            Found = AUser.Find(UserID);
+            //check activity name
+            if (AUser.Password != "Password55")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
-        //        [TestMethod]
-        //        public void Found()
-        //        {
-        //            //isntance of the class
-        //            clsUser AUser = new clsUser();
-        //            //boolean variable to store the result of the search
-        //            Boolean Found = false;
-        //            //boolean to record if data is OK
-        //            Boolean OK = true;
-        //            //test data
-        //            Int32 UserID = 1;
-        //            //invoke the method
-        //            Found = AnActivity.Find(UserID);
-        //            //check activity name
-        //            if (AnActivity.ActivityName != "Kayaking")
-        //            {
-        //                OK = false;
-        //            }
-        //            //test to see that the result is correct
-        //            Assert.IsTrue(OK);
-        //        }
+        [TestMethod]
+        public void TestAccountTypeFound()
+        {
+            //isntance of the class
+            clsUser AUser = new clsUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 UserID = 1;
+            //invoke the method
+            Found = AUser.Find(UserID);
+            //check activity name
+            if (AUser.AccountType != "customer")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
-        //        [TestMethod]
-        //        public void Found()
-        //        {
-        //            //isntance of the class
-        //            clsUser AUser = new clsUser();
-        //            //boolean variable to store the result of the search
-        //            Boolean Found = false;
-        //            //boolean to record if data is OK
-        //            Boolean OK = true;
-        //            //test data
-        //            Int32 UserID = 1;
-        //            //invoke the method
-        //            Found = AnActivity.Find(UserID);
-        //            //check activity name
-        //            if (AnActivity.ActivityName != "Kayaking")
-        //            {
-        //                OK = false;
-        //            }
-        //            //test to see that the result is correct
-        //            Assert.IsTrue(OK);
-        //        }
+        [TestMethod]
+        public void TestActiveFound()
+        {
+            //isntance of the class
+            clsUser AUser = new clsUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 UserID = 1;
+            //invoke the method
+            Found = AUser.Find(UserID);
+            //check activity name
+            if (AUser.Active != true)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
 
-        //        [TestMethod]
-        //        public void Found()
-        //        {
-        //            //isntance of the class
-        //            clsUser AUser = new clsUser();
-        //            //boolean variable to store the result of the search
-        //            Boolean Found = false;
-        //            //boolean to record if data is OK
-        //            Boolean OK = true;
-        //            //test data
-        //            Int32 UserID = 1;
-        //            //invoke the method
-        //            Found = AnActivity.Find(UserID);
-        //            //check activity name
-        //            if (AnActivity.ActivityName != "Kayaking")
-        //            {
-        //                OK = false;
-        //            }
-        //            //test to see that the result is correct
-        //            Assert.IsTrue(OK);
-        //        }
+        [TestMethod]
+        public void TestIsAdminFound()
+        {
+            //isntance of the class
+            clsUser AUser = new clsUser();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 UserID = 1;
+            //invoke the method
+            Found = AUser.Find(UserID);
+            //check activity name
+            if (AUser.IsAdmin != false)
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
     }
 }
