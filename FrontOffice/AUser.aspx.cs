@@ -24,5 +24,29 @@ namespace FrontOffice
             Session["AUser"] = AUser;
             Response.Redirect("UserViewer.aspx");
         }
+
+        protected void btnFind_Click(object sender, EventArgs e)
+        {
+            clsUser AUser = new clsUser();
+            //variable to store pk
+            Int32 UserID;
+            //variable to store result
+            Boolean Found = false;
+            //get pk
+            UserID = Convert.ToInt32(txtUserID.Text);
+            //find record
+            Found = AUser.Find(UserID);
+            //if found
+            if (Found == true)
+            {
+                //display the values of the properties
+                txtFirstName.Text = AUser.FirstName;
+                txtLastName.Text = AUser.LastName;
+                txtEmail.Text = AUser.Email;
+                txtPassword.Text = AUser.Password;
+                txtAccountType.Text = AUser.AccountType;
+                
+            }
+        }
     }
 }

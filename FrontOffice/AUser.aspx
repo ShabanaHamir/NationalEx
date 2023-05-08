@@ -7,6 +7,7 @@
 &nbsp;&nbsp;&nbsp;
         <asp:Label ID="lblUserID" runat="server" Text="UserID: "></asp:Label>
         <asp:TextBox ID="txtUserID" runat="server"></asp:TextBox>
+        <asp:Button ID="btnFind" runat="server" OnClick="btnFind_Click" Text="Find" />
         <br />
         <br />
 &nbsp;&nbsp;&nbsp;
