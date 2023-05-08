@@ -29,7 +29,7 @@ namespace FrontOffice
 
         }
 
-
+        //
         void DisplayRooms()
         {
             clsRoomCollection Rooms = new clsRoomCollection();
