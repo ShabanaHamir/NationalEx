@@ -15,7 +15,19 @@ namespace FrontOffice
         Int32 HotelID;
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HotelID = Convert.ToInt32(Session["HotelID"]);
+            //if this is the first time the page is displayed
+            if (IsPostBack == false)
+            {
+                //update list box
+                DisplayHotels();
+                //if this is not a new record
+                if (HotelID != -1)
+                {
+                    //display current data for thr record
+                    DisplayHotels();
+                }
+            }
         }
 
 
@@ -105,7 +117,7 @@ namespace FrontOffice
         void Add()
         {
             //create an instance
-            clsHotelCollection Hotels = new clsHotelCollection();
+            Classes.clsHotelCollection Hotels = new Classes.clsHotelCollection();
             String Error = Hotels.ThisHotel.Valid(txtHotelName.Text, txtHotelCity.Text, txtHotelPhoneNumber.Text, txtHotelPostCode.Text);
             //if data is OK then add it to the object
             if (Error == "")
@@ -123,7 +135,7 @@ namespace FrontOffice
             else
             {
                 //ERROR
-                lblError.Text = "Something went wring with the entered data" + Error;
+                lblError.Text = "Something went wrong with the entered data" + Error;
             }
         }
 
@@ -154,22 +166,23 @@ namespace FrontOffice
                 //error
                 lblError.Text = "A problem occured with the entered data" + Error;
             }
+        }
 
-            void DisplayHotels()
-            {
-                //intance
-                clsHotelCollection Hotel = new clsHotelCollection();
-                //find record to update
-                Hotel.ThisHotel.Find(HotelID);
-                //display data for this record
-                txtHotelName.Text = Hotel.ThisHotel.HotelName;
-                txtHotelCity.Text = Hotel.ThisHotel.HotelCity;
-                txtHotelPhoneNumber.Text = Hotel.ThisHotel.HotelPhoneNumber.ToString();
-                txtHotelPostCode.Text = Hotel.ThisHotel.HotelPostCode;
-
-            }
-
+        void DisplayHotels()
+        {
+            //intance
+            clsHotelCollection Hotel = new clsHotelCollection();
+            //find record to update
+            Hotel.ThisHotel.Find(HotelID);
+            //display data for this record
+            txtHotelName.Text = Hotel.ThisHotel.HotelName;
+            txtHotelCity.Text = Hotel.ThisHotel.HotelCity;
+            txtHotelPhoneNumber.Text = Hotel.ThisHotel.HotelPhoneNumber;
+            txtHotelPostCode.Text = Hotel.ThisHotel.HotelPostCode;
 
         }
+
+
+
     }
 }
