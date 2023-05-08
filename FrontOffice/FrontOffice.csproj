@@ -281,6 +281,13 @@
     <Compile Include="AnTripaspx.aspx.designer.cs">
       <DependentUpon>AnTripaspx.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ARoom.aspx.cs">
+      <DependentUpon>ARoom.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ARoom.aspx.designer.cs">
+      <DependentUpon>ARoom.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AUser.aspx.cs">
       <DependentUpon>AUser.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -388,13 +395,6 @@
     </Compile>
     <Content Include="App_Code\clsDataConnection.cs" />
     <Content Include="App_Code\clsSecurity.cs" />
-    <Compile Include="ARoom.aspx.cs">
-      <DependentUpon>ARoom.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ARoom.aspx.designer.cs">
-      <DependentUpon>ARoom.aspx</DependentUpon>
-    </Compile>
     <Compile Include="BookingViewer.aspx.cs">
       <DependentUpon>BookingViewer.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

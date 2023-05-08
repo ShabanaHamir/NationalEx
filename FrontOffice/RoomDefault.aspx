@@ -5,7 +5,7 @@
         <br />
         <asp:Label ID="Label1" runat="server" Text="Enter a Hotel ID"></asp:Label>
         <br />
-        <asp:TextBox ID="txtHotelID" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtHotelName" runat="server"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="btnApply" runat="server" Text="Apply" OnClick="btnApply_Click" />

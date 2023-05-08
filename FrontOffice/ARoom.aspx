@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ARoom.aspx.cs" Inherits="FrontOffice.ARoom" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
+     <form id="form1" runat="server">
         <table class="w-100">
             <tr>
                 <td>&nbsp;</td>
@@ -12,6 +12,9 @@
         Room ID:<asp:TextBox ID="txtRoomID" runat="server"></asp:TextBox>
         <br />
         Hotel ID:<asp:TextBox ID="txtHotelID" runat="server"></asp:TextBox>
+         <br />
+         <asp:Label ID="Label5" runat="server" Text="Hotel Name:"></asp:Label>
+         <asp:TextBox ID="txtHotelName" runat="server"></asp:TextBox>
         <br />
         <asp:Label ID="Label1" runat="server" Text="Floor Number"></asp:Label>
         <asp:TextBox ID="txtFloorNumber" runat="server"></asp:TextBox>

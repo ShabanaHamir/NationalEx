@@ -218,17 +218,17 @@ namespace Testing
             //var to store outcome
             Boolean OK = true;
             //apply a name that doesnt exist
-            FilteredHotels.ReportByHotelName("Buckingham");
+            FilteredHotels.ReportByHotelName(" Premiere Inn");
             //check that the correct no of records are found
             if (FilteredHotels.Count == 2)
             {
                 //check that the first record ID is 10
-                if (FilteredHotels.HotelList[0].HotelID != 10)
+                if (FilteredHotels.HotelList[0].HotelID != 26)
                 {
                     OK = false;
                 }
                 //check that the first record is 11
-                if (FilteredHotels.HotelList[1].HotelID != 11)
+                if (FilteredHotels.HotelList[1].HotelID != 40)
                 {
                     OK = false;
                 }

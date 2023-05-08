@@ -29,6 +29,7 @@ namespace Testing
             //set its properties
             TestItem.RoomID = 1;
             TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
             TestItem.RoomNumber = 47;
             TestItem.FloorNumber = 4;
             TestItem.RoomType = "Single";
@@ -64,6 +65,7 @@ namespace Testing
             //set properties of the test object
             TestRoom.RoomID = 1;
             TestRoom.HotelID = 1;
+            TestRoom.HotelName = "Holiday Inn";
             TestRoom.RoomNumber = 47;
             TestRoom.FloorNumber = 4;
             TestRoom.RoomType = "Single";
@@ -91,6 +93,7 @@ namespace Testing
             //set its properties
             TestItem.RoomID = 1;
             TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
             TestItem.RoomNumber = 47;
             TestItem.FloorNumber = 4;
             TestItem.RoomType = "Single";
@@ -124,6 +127,7 @@ namespace Testing
             //set properties
             TestItem.RoomID = 1;
             TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
             TestItem.RoomNumber = 47;
             TestItem.FloorNumber = 4;
             TestItem.RoomType = "Single";
@@ -150,6 +154,7 @@ namespace Testing
             //set properties
             TestItem.RoomID = 1;
             TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
             TestItem.RoomNumber = 47;
             TestItem.FloorNumber = 4;
             TestItem.RoomType = "Single";
@@ -176,6 +181,7 @@ namespace Testing
             //set properties
             TestItem.RoomID = 1;
             TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
             TestItem.RoomNumber = 47;
             TestItem.FloorNumber = 4;
             TestItem.RoomType = "Single";
@@ -193,6 +199,7 @@ namespace Testing
             //modify test data
             TestItem.RoomID = 2;
             TestItem.HotelID = 1;
+            TestItem.HotelName = "Holiday Inn";
             TestItem.RoomNumber = 21;
             TestItem.FloorNumber = 2;
             TestItem.RoomType = "Double";
@@ -216,26 +223,38 @@ namespace Testing
         }
 
 
+        [TestMethod]
+        public void ReportByHotelName() //filter for the staff
+        {
+            //instance of the class
+            clsRoomCollection AllRooms = new clsRoomCollection();
+            //an instance of filtered data
+            clsRoomCollection FilteredRooms = new clsRoomCollection();
+            //apply a blank string (returns all records)
+            FilteredRooms.ReportByHotelName("");
+            //test that two values are the same
+            Assert.AreEqual(AllRooms.Count, FilteredRooms.Count);
+        }
 
 
         [TestMethod]
-        public void ReportByHotelIDNoneFound() //filter for the staff
+        public void ReportByHotelNameNoneFound() //filter for the staff
         {
             //instance
             clsRoomCollection FilteredRooms = new clsRoomCollection();
             //apply a hotelID that doesn't exist
-            FilteredRooms.ReportByHotelID("39");
+            FilteredRooms.ReportByHotelName("Skyline");
             Assert.AreEqual(0, FilteredRooms.Count);
         }
 
 
 
         [TestMethod]
-        public void ReportByHotelIDTestDataFound() //filter for the staff
+        public void ReportByHotelNameTestDataFound() //filter for the staff
         {
             clsRoomCollection FilteredRooms = new clsRoomCollection();
             Boolean OK = true;
-            FilteredRooms.ReportByHotelID("1");
+            FilteredRooms.ReportByHotelName("Holiday Inn");
             //check that correct no of records are found
             if (FilteredRooms.Count == 2)
             {
