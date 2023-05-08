@@ -1,11 +1,11 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="HotelDefault.aspx.cs" Inherits="FrontOffice.HotelDefault" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="RoomDefault.aspx.cs" Inherits="FrontOffice.RoomDefault" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
-        <asp:ListBox ID="lstHotels" runat="server" Width="421px" OnSelectedIndexChanged="lstHotels_SelectedIndexChanged"></asp:ListBox>
+      <form id="form1" runat="server">
+        <asp:ListBox ID="lstRooms" runat="server" Width="421px"></asp:ListBox>
         <br />
-        <asp:Label ID="Label1" runat="server" Text="Enter a Hotel Name"></asp:Label>
+        <asp:Label ID="Label1" runat="server" Text="Enter a Hotel ID"></asp:Label>
         <br />
-        <asp:TextBox ID="txtHotelName" runat="server"></asp:TextBox>
+        <asp:TextBox ID="txtHotelID" runat="server"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="btnApply" runat="server" Text="Apply" OnClick="btnApply_Click" />

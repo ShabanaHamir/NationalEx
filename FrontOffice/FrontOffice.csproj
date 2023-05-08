@@ -159,6 +159,8 @@
     <Content Include="PaymentViewer.aspx" />
     <Content Include="ReSet.aspx" />
     <Content Include="RoomBooking.aspx" />
+    <Content Include="RoomDefault.aspx" />
+    <Content Include="RoomsDelete.aspx" />
     <Content Include="RoomViewer.aspx" />
     <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
@@ -334,6 +336,20 @@
     </Compile>
     <Compile Include="RoomBooking.aspx.designer.cs">
       <DependentUpon>RoomBooking.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoomDefault.aspx.cs">
+      <DependentUpon>RoomDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoomDefault.aspx.designer.cs">
+      <DependentUpon>RoomDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RoomsDelete.aspx.cs">
+      <DependentUpon>RoomsDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RoomsDelete.aspx.designer.cs">
+      <DependentUpon>RoomsDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="StaffDashboard.aspx.cs">
       <DependentUpon>StaffDashboard.aspx</DependentUpon>

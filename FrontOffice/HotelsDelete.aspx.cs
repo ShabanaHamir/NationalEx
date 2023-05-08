@@ -35,5 +35,18 @@ namespace FrontOffice
             //redirect
             Response.Redirect("StaffDashboard.aspx");
         }
+
+        protected void btnYes_Click1(object sender, EventArgs e)
+        {
+            //delete record
+            DeleteHotel();
+            //redirect
+            Response.Redirect("StaffDashboard.aspx");
+        }
+
+        protected void btnNo_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HotelDefault.aspx");
+        }
     }
 }

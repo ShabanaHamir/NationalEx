@@ -75,10 +75,7 @@ namespace FrontOffice
             return RecordCount;
         }
 
-        protected void TextBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
         protected void btnAdd_Click(object sender, EventArgs e)
         {
@@ -124,7 +121,7 @@ namespace FrontOffice
             else //if no record has been selected
             {
                 //error
-                lblError.Text = "Please select a record to delete from the list";
+                lblError.Text = "Please select a record to Edit from the list";
             }
 
 
@@ -144,5 +141,7 @@ namespace FrontOffice
             RecordCount = DisplayHotel(txtHotelName.Text);
             lblError.Text = RecordCount + "Hotel Name are displayed";
         }
+
+
     }
 }
