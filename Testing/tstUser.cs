@@ -5,8 +5,16 @@ using System;
 namespace Testing
 {
     [TestClass]
-    public class tstUsers
+    public class tstUser
     {
+        //good test data
+        int UserID = 1;
+        string FirstName = "Sara";
+        string LastName = "Trial";
+        string Email = "trial@gmail.com";
+        string Password = "Password55";
+        string AccountType = "customer";
+
         [TestMethod]
         public void InstanceOK()
         {
@@ -321,6 +329,19 @@ namespace Testing
             }
             //test to see that the result is correct
             Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
+        public void ValidMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsUser AUser = new clsUser();
+            //string variable to store any error message
+            String Error = "";
+            //invoke method
+            Error = AUser.Valid(FirstName, LastName, Email, Password, AccountType);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
         }
 
     }

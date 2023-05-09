@@ -58,6 +58,7 @@
     <Compile Include="clsSecurity.cs" />
     <Compile Include="clsTrip.cs" />
     <Compile Include="clsUser.cs" />
+    <Compile Include="clsUserCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

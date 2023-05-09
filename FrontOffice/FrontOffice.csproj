@@ -169,6 +169,9 @@
     <Content Include="StaffHome.aspx" />
     <Content Include="StaffLogIn.aspx" />
     <Content Include="TripViewer.aspx" />
+    <Content Include="UserDefault.aspx" />
+    <Content Include="UserDefault.html" />
+    <Content Include="UserDelete.aspx" />
     <Content Include="UserViewer.aspx" />
     <Content Include="Web.config" />
     <Content Include="LogIn.aspx" />
@@ -364,6 +367,20 @@
     </Compile>
     <Compile Include="StaffHome.aspx.designer.cs">
       <DependentUpon>StaffHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDefault.aspx.cs">
+      <DependentUpon>UserDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDefault.aspx.designer.cs">
+      <DependentUpon>UserDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserDelete.aspx.cs">
+      <DependentUpon>UserDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserDelete.aspx.designer.cs">
+      <DependentUpon>UserDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserViewer.aspx.cs">
       <DependentUpon>UserViewer.aspx</DependentUpon>

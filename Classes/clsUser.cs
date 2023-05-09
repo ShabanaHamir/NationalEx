@@ -14,6 +14,9 @@ namespace Classes
         private string mAccountType;
         private Boolean mActive;
         private Boolean mIsAdmin;
+        public clsUser()
+        {
+        }
         public int UserID
         {
             get
@@ -137,6 +140,67 @@ namespace Classes
             {
                 return false;
             }
+        }
+
+        public string Valid(string FirstName, string LastName, string Email, string Password, string AccountType)
+        {
+            String Error = "";
+            //if the AName is blank
+            if (FirstName.Length == 0)
+            {
+                //record error
+                Error = Error + "First name may not be blank: ";
+            }
+            //if AName is over max
+            if (FirstName.Length > 50)
+            {
+                Error = Error + "First name is too long: ";
+            }
+            if (LastName.Length == 0)
+            {
+                //record error
+                Error = Error + "Last name may not be blank: ";
+            }
+            //if AName is over max
+            if (LastName.Length > 50)
+            {
+                Error = Error + "Last name is too long: ";
+            }
+
+            if (Email.Length == 0)
+            {
+                //record error
+                Error = Error + "Email may not be blank: ";
+            }
+            //if AName is over max
+            if (Email.Length > 50)
+            {
+                Error = Error + "Email is too long: ";
+            }
+
+            if (Password.Length == 0)
+            {
+                //record error
+                Error = Error + "Password  may not be blank: ";
+            }
+            //if AName is over max
+            if (Password.Length > 50)
+            {
+                Error = Error + "Password  is too long: ";
+            }
+
+            //if AName is over max
+            if (AccountType.Length > 10)
+            {
+                Error = Error + "AccountType   is too long: ";
+            }
+
+            return Error;
+        }
+
+        public void Update()
+        {
+            throw new NotImplementedException();
         }
     }
 }

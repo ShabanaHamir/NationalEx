@@ -128,15 +128,14 @@ namespace Classes
                 // Record error
                 Error = Error + "Number of people cannot be null: ";
             }
-            else
+
+            // If noOfPeople is greater than the maximum allowed
+            if (noOfPeople > 100)
             {
-                // If noOfPeople is greater than the maximum allowed
-                if (noOfPeople > 100)
-                {
-                    // Record error
-                    Error = Error + "Number of people cannot be more than 100: ";
-                }
+                // Record error
+                Error = Error + "Number of people cannot be more than 100: ";
             }
+            
 
             return Error;
         }
