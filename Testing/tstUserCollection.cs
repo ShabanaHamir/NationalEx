@@ -196,7 +196,7 @@ namespace Testing
             TestItem.LastName = "Trials";
             TestItem.Email = "trials@gmail.com";
             TestItem.Password = "Password555";
-            TestItem.AccountType = "staff";
+            TestItem.AccountType = "admin";
             //     TestItem.TempPW = "";
             TestItem.Active = true;
             TestItem.IsAdmin = true;
@@ -233,11 +233,11 @@ namespace Testing
             //check that the correct number of records found
             if (FilteredUser.Count == 2)
             {
-                if (FilteredUser.UserList[0].UserID != 1)
+                if (FilteredUser.UserList[0].UserID != 5)
                 {
                     OK = false;
                 }
-                if (FilteredUser.UserList[1].UserID != 2)
+                if (FilteredUser.UserList[1].UserID != 26)
                 {
                     OK = false;
                 }
