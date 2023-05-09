@@ -2,7 +2,7 @@
 
 namespace Classes
 {
-    
+
     public class clsUser
     {
         //priv data member for the fields
@@ -12,8 +12,12 @@ namespace Classes
         private string mEmail;
         private string mPassword;
         private string mAccountType;
+        private string mTempPW;
         private Boolean mActive;
         private Boolean mIsAdmin;
+        public clsUser()
+        {
+        }
         public int UserID
         {
             get
@@ -84,11 +88,11 @@ namespace Classes
         {
             get
             {
-                return mFirstName;
+                return mTempPW;
             }
             set
             {
-                mFirstName = value;
+                mTempPW = value;
             }
         }
         public bool Active
@@ -129,6 +133,7 @@ namespace Classes
                 mEmail = Convert.ToString(db.DataTable.Rows[0]["Email"]);
                 mPassword = Convert.ToString(db.DataTable.Rows[0]["Password"]);
                 mAccountType = Convert.ToString(db.DataTable.Rows[0]["AccountType"]);
+                mTempPW = Convert.ToString(db.DataTable.Rows[0]["TempPW"]);
                 mActive = Convert.ToBoolean(db.DataTable.Rows[0]["Active"]);
                 mIsAdmin = Convert.ToBoolean(db.DataTable.Rows[0]["IsAdmin"]);
                 return true;
@@ -138,5 +143,66 @@ namespace Classes
                 return false;
             }
         }
+
+        public string Valid(string FirstName, string LastName, string Email, string Password, string AccountType)
+        {
+            String Error = "";
+            //if the AName is blank
+            if (FirstName.Length == 0)
+            {
+                //record error
+                Error = Error + "First name may not be blank: ";
+            }
+            //if AName is over max
+            if (FirstName.Length > 50)
+            {
+                Error = Error + "First name is too long: ";
+            }
+            if (LastName.Length == 0)
+            {
+                //record error
+                Error = Error + "Last name may not be blank: ";
+            }
+            //if AName is over max
+            if (LastName.Length > 50)
+            {
+                Error = Error + "Last name is too long: ";
+            }
+
+            if (Email.Length == 0)
+            {
+                //record error
+                Error = Error + "Email may not be blank: ";
+            }
+            //if AName is over max
+            if (Email.Length > 50)
+            {
+                Error = Error + "Email is too long: ";
+            }
+
+            if (Password.Length == 0)
+            {
+                //record error
+                Error = Error + "Password  may not be blank: ";
+            }
+            //if AName is over max
+            if (Password.Length > 50)
+            {
+                Error = Error + "Password  is too long: ";
+            }
+
+            //if AName is over max
+            if (AccountType.Length > 10)
+            {
+                Error = Error + "AccountType   is too long: ";
+            }
+
+            return Error;
+        }
+
+        //public void Update()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }
