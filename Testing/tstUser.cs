@@ -192,7 +192,7 @@ namespace Testing
             //invoke the method
             Found = AUser.Find(UserID);
             //check activity name
-            if (AUser.FirstName != "Sara")
+            if (AUser.FirstName != "UserName")
             {
                 OK = false;
             }

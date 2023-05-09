@@ -243,7 +243,7 @@ namespace Testing
             //instance
             clsRoomCollection FilteredRooms = new clsRoomCollection();
             //apply a hotelID that doesn't exist
-            FilteredRooms.ReportByHotelName("Skyline");
+            FilteredRooms.ReportByHotelName("xxxxxx");
             Assert.AreEqual(0, FilteredRooms.Count);
         }
 

@@ -212,13 +212,12 @@ namespace Testing
         [TestMethod]
         public void ReportByHotelNameTestDataFound() //filter for the staff
         {
-
             //an instance of filtered data
             clsHotelCollection FilteredHotels = new clsHotelCollection();
             //var to store outcome
             Boolean OK = true;
             //apply a name that doesnt exist
-            FilteredHotels.ReportByHotelName(" Premiere Inn");
+            FilteredHotels.ReportByHotelName("Premiere Inn");
             //check that the correct no of records are found
             if (FilteredHotels.Count == 2)
             {
