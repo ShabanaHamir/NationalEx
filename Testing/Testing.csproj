@@ -63,8 +63,9 @@
     <Compile Include="tstHotelCollection.cs" />
     <Compile Include="tstRoom.cs" />
     <Compile Include="tstTrip.cs" />
-    <Compile Include="tstUsers.cs" />
+    <Compile Include="tstUser.cs" />
     <Compile Include="tstActivitiesCollection.cs" />
+    <Compile Include="tstUserCollection.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
