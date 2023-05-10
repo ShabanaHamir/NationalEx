@@ -24,10 +24,10 @@ namespace Testing
             clsUser TestItem = new clsUser();
             //set its properties
 
-            TestItem.FirstName = "Sara";
+            TestItem.FirstName = "Shahd";
             TestItem.LastName = "Trial";
             TestItem.Email = "trial@gmail.com";
-            TestItem.Password = "Password55";
+            TestItem.Password = "Clementine7";
             TestItem.AccountType = "customer";
             TestItem.TempPW = "";
             TestItem.Active = true;
@@ -211,6 +211,19 @@ namespace Testing
         }
 
         [TestMethod]
+        public void ReportByUserNameMethodOK()
+        {
+            clsUserCollection AllUsers = new clsUserCollection();
+            //create an instance of the class we want to create
+            clsUserCollection FilteredUser = new clsUserCollection();
+            //apply blank string (should return all records)
+            FilteredUser.ReportByUserName("");
+            //test to see that 2 values are the same
+            Assert.AreEqual(AllUsers.Count, FilteredUser.Count);
+
+        }
+
+        [TestMethod]
         public void ReportByUserNameNoneFound()
         {
             //create an instance of the class we want to create
@@ -229,15 +242,15 @@ namespace Testing
             //var to store outcome
             Boolean OK = true;
             //apply a city that doesnt exist
-            FilteredUser.ReportByUserName("UserName");
+            FilteredUser.ReportByUserName("Platypus");
             //check that the correct number of records found
             if (FilteredUser.Count == 2)
             {
-                if (FilteredUser.UserList[0].UserID != 5)
+                if (FilteredUser.UserList[0].UserID != 3)
                 {
                     OK = false;
                 }
-                if (FilteredUser.UserList[1].UserID != 26)
+                if (FilteredUser.UserList[1].UserID != 18)
                 {
                     OK = false;
                 }

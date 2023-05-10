@@ -119,12 +119,23 @@ namespace FrontOffice
 
         protected void btnDisplayAll_Click(object sender, EventArgs e)
         {
+            // Create an instance of the ActivitiesCollection class
+            clsUserCollection userCollection = new clsUserCollection();
+            // Get all activities from the database
+            List<clsUser> activitiesList = userCollection.GetAllUsers();
 
+            // Bind the activities list to the ListBox control
+            lstUser.DataSource = activitiesList;
+            lstUser.DataTextField = "FirstName"; // You can change this to display other properties if needed
+            lstUser.DataValueField = "UserID"; // This will help you to identify the selected activity later
+            lstUser.DataBind();
         }
 
         protected void btnApply_Click(object sender, EventArgs e)
         {
-
+            Int32 RecordCount;
+            RecordCount = DisplayUser(txtUserName.Text);
+            lblError.Text = RecordCount + " users found";
         }
 
         protected void btnAdd_Click(object sender, EventArgs e)
