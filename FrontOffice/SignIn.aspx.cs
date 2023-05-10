@@ -25,24 +25,30 @@ namespace FrontOffice
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
-
-            //clsDataConnection dataConnection = new clsDataConnection();
-            //try to sign in and record any errors there are
             clsSecurity Sec = new clsSecurity();
             String Error = Sec.SignIn(txtEMail.Text, txtPassword.Text);
 
             if (Error == "")
             {
-                // Check if the user is an admin
-                if (Sec.Admin)
+                if (Sec.AccountType == "Admin" || Sec.IsAdmin)
                 {
                     // Redirect to the admin page
+                    Response.Redirect("AdminDashboard.aspx");
+                }
+                else if (Sec.AccountType == "Staff")
+                {
+                    // Redirect to the staff page
                     Response.Redirect("StaffDashboard.aspx");
+                }
+                else if (Sec.AccountType == "Customer")
+                {
+                    // Redirect to the customer page
+                    Response.Redirect("CustomerDashboard.aspx");
                 }
                 else
                 {
-                    // Redirect to the main page for non-admin users
-                    Response.Redirect("Default2.aspx");
+                    // Redirect to an error page or display a message for unknown account types
+                    lblError.Text = "Unknown account type.";
                 }
             }
             else
@@ -50,6 +56,31 @@ namespace FrontOffice
                 // Otherwise display any errors
                 lblError.Text = Error;
             }
+
+            ////clsDataConnection dataConnection = new clsDataConnection();
+            ////try to sign in and record any errors there are
+            //clsSecurity Sec = new clsSecurity();
+            //String Error = Sec.SignIn(txtEMail.Text, txtPassword.Text);
+
+            //if (Error == "")
+            //{
+            //    // Check if the user is an admin
+            //    if (Sec.Admin)
+            //    {
+            //        // Redirect to the admin page
+            //        Response.Redirect("StaffDashboard.aspx");
+            //    }
+            //    else
+            //    {
+            //        // Redirect to the main page for non-admin users
+            //        Response.Redirect("Default2.aspx");
+            //    }
+            //}
+            //else
+            //{
+            //    // Otherwise display any errors
+            //    lblError.Text = Error;
+            //}
         }
    
 

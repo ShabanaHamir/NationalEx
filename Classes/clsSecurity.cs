@@ -15,6 +15,21 @@ namespace Classes
     /// </summary>
     public class clsSecurity
     {
+        public bool IsAdmin
+        {
+            get { return mAdmin; }
+            private set { mAdmin = value; }
+        }
+        // Add an AccountType property
+        private string mAccountType;
+
+        // Your existing code here (other methods and properties)
+
+        public string AccountType
+        {
+            get { return mAccountType; }
+            set { mAccountType = value; }
+        }
         public class clsEMail
         {
             ///this class is internal to clsSecurity just to make it simpler to use
@@ -47,6 +62,7 @@ namespace Classes
         //stores the most recently sent email message by the security system
         private clsEMail mEMailMessage;
 
+
         //constructor
         public clsSecurity()
         {
@@ -57,6 +73,8 @@ namespace Classes
         public string SignUp(string EMail, string Password1, string Password2, Boolean Active)
         //public method allowing the user to sign up for an account
         {
+            //store the account type when signing up
+            mAccountType = "Customer";
             //var to store any errors
             string Message = "";
             //if the email address isn't taken
@@ -80,6 +98,8 @@ namespace Classes
                             DB.AddParameter("@EMail", EMail.ToLower());
                             DB.AddParameter("@Password", HashPassword);
                             DB.AddParameter("@Active", Active);
+                            //DB.AddParameter("@AccountType", mAccountType);
+                            DB.AddParameter("@IsAdmin", false);
                             DB.Execute("sproc_Users_Add");
                             //if active not set to true then request email activation
                             if (Active == false)
@@ -188,11 +208,13 @@ namespace Classes
                 //If there is only one record found then return true
                 if (UserAccount.Count >= 1)
                 {
-                 
+
                     //get the state of admin
-                   bool isAdmin = Convert.ToBoolean(UserAccount.DataTable.Rows[0]["IsAdmin"]);
+                    bool isAdmin = Convert.ToBoolean(UserAccount.DataTable.Rows[0]["IsAdmin"]);
                     //store the users email address in the data member
                     mEMail = EMail;
+                    //get the account type
+                    mAccountType = Convert.ToString(UserAccount.DataTable.Rows[0]["AccountType"]);
                     //set security state based on user type
                     if (isAdmin && EMail.EndsWith("@ne.uk"))
                     {
@@ -217,6 +239,7 @@ namespace Classes
                 //return a message
                 Error = "There have been too many failed attempts please exit the application.";
             }
+            
             //return any error messages
             return Error;
         }

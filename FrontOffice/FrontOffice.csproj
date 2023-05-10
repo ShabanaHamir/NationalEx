@@ -79,6 +79,7 @@
     <Content Include="ACustomer.aspx" />
     <Content Include="AddStaff.aspx" />
     <Content Include="AddToCart.aspx" />
+    <Content Include="AdminDashboard.aspx" />
     <Content Include="AnActivity.aspx" />
     <Content Include="AnHotel.aspx" />
     <Content Include="AnPassenger.aspx" />
@@ -136,6 +137,7 @@
     <Content Include="Checkout.aspx" />
     <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
+    <Content Include="CustomerDashboard.aspx" />
     <Content Include="CustomerSignIn.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default2.aspx" />
@@ -255,6 +257,13 @@
     <Compile Include="AddToCart.aspx.designer.cs">
       <DependentUpon>AddToCart.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AdminDashboard.aspx.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminDashboard.aspx.designer.cs">
+      <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AnActivity.aspx.cs">
       <DependentUpon>AnActivity.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -303,6 +312,13 @@
     </Compile>
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerDashboard.aspx.cs">
+      <DependentUpon>CustomerDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerDashboard.aspx.designer.cs">
+      <DependentUpon>CustomerDashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerSignIn.aspx.cs">
       <DependentUpon>CustomerSignIn.aspx</DependentUpon>
