@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="UserDefault.aspx.cs" Inherits="FrontOffice.UserDefault" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-        <asp:ListBox ID="lstUser" runat="server"></asp:ListBox>
+        <asp:ListBox ID="lstUser" runat="server" Height="281px" Width="529px"></asp:ListBox>
         <br />
         <asp:Label ID="lblEnterUser" runat="server" Text="Enter the Users Name"></asp:Label>
         <br />

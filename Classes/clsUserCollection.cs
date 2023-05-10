@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,6 +34,41 @@ namespace Classes
                 mUserList = value;
             }
         }
+        public List<clsUser> GetAllUsers()
+        {
+            // Create a new list to store the activities
+            List<clsUser> userList = new List<clsUser>();
+
+            // Create an instance of the data connection
+            clsDataConnection db = new clsDataConnection();
+
+            // Execute the stored procedure to get all activities
+            db.Execute("sproc_Users_SelectAll");
+
+            // Loop through each row in the returned data table
+            foreach (DataRow row in db.DataTable.Rows)
+            {
+                // Create a new instance of the clsActivities class
+                clsUser user = new clsUser();
+
+                // Copy the data from the row to the activity object
+                user.UserID = Convert.ToInt32(row["UserID"]);
+                user.FirstName = Convert.ToString(row["FirstName"]);
+                user.LastName = Convert.ToString(row["LastName"]);
+                user.Email = Convert.ToString(row["Email"]);
+                user.Password = Convert.ToString(row["Password"]);
+                user.AccountType = Convert.ToString(row["AccountType"]);
+                user.Active = Convert.ToBoolean(row["Active"]);
+                user.IsAdmin = Convert.ToBoolean(row["IsAdmin"]);
+
+                // Add the activity object to the activities list
+                userList.Add(user);
+            }
+
+            // Return the list of activities
+            return userList;
+        }
+
         public int Count
         {
             get
