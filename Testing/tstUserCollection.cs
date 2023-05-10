@@ -237,7 +237,7 @@ namespace Testing
         [TestMethod]
         public void ReportByUserNameTestDataFound()
         {
-            //create an instance of the class we want to create
+            //create an instance of the class we want to createh
             clsUserCollection FilteredUser = new clsUserCollection();
             //var to store outcome
             Boolean OK = true;
