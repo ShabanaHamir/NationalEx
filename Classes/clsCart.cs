@@ -1,52 +1,75 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace Classes
+/// <summary>
+/// Summary description for clsCart
+/// </summary>
+public class clsCart
 {
-    public class clsCart
+
+    /// <summary>
+    /// this class defines some tyical attributes of a shopping cart
+    /// 
+    /// clsCart
+    /// ___________________________________________________________________________________
+    /// Properties
+    /// public DateTime OrderDate (note that the value of this is set in the constructor)
+    /// public Int32 UserNo
+    /// public string CardNo
+    /// public List<clsCartItem> Products
+    /// ___________________________________________________________________________________
+    /// Methods
+    /// public void Checkout()
+    /// ___________________________________________________________________________________
+    /// </summary>
+
+    List<clsCartItem> mProducts = new List<clsCartItem>();
+    public clsCart()
     {
-        public List<clsCartItem> CartItems { get; set; }
 
-        public clsCart()
+    }
+
+    private Int32 mUserNo;
+    public Int32 UserNo
+    {
+        get
         {
-            CartItems = new List<clsCartItem>();
+            return mUserNo;
         }
-
-        public void AddItemToCart(int activityId, string activityName, decimal activityPrice, int quantity)
+        set
         {
-            var existingItem = CartItems.FirstOrDefault(item => item.ActivityId == activityId);
-
-            if (existingItem != null)
-            {
-                existingItem.Quantity += quantity;
-            }
-            else
-            {
-                CartItems.Add(new clsCartItem
-                {
-                    ActivityId = activityId,
-                    ActivityName = activityName,
-                    ActivityPrice = activityPrice,
-                    Quantity = quantity
-                });
-            }
-        }
-
-        public decimal GetTotalPrice()
-        {
-            return CartItems.Sum(item => item.ActivityPrice * item.Quantity);
+            mUserNo = value;
         }
     }
 
-    public class clsCartItem
+    private string mCardNo;
+    public string CardNo
     {
-        public int ActivityId { get; set; }
-        public string ActivityName { get; set; }
-        public decimal ActivityPrice { get; set; }
-        public int Quantity { get; set; }
+        get
+        {
+            return mCardNo;
+        }
+        set
+        {
+            mCardNo = value;
+        }
+    }
+
+    public List<clsCartItem> Products
+    {
+        get
+        {
+            return mProducts;
+        }
+    }
+
+    public void Checkout()
+    {
+        //create an instance of the order class
+        clsOrder Order = new clsOrder();
+        //invoke the ProcessCart method
+        Order.ProcessCart(this);
     }
 }
-

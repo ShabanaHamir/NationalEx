@@ -4,6 +4,7 @@
         <table class="w-100">
             <tr>
                 <td style="width: 683px">
+                    <a href="RoomBooking.aspx">
                     <img alt="" src="Images/Hotel1.jfif" style="width: 286px; height: 182px" /></td>
                 <td style="width: 357px">
                     <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/RoomBooking.aspx">Skyline Hotel</asp:HyperLink>
@@ -14,6 +15,7 @@
             </tr>
             <tr>
                 <td style="width: 683px">
+                    <a href="RoomBooking.aspx">
                     <img alt="" src="Images/Hotel2.jfif" style="width: 291px; height: 194px" /></td>
                 <td style="width: 357px">
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/RoomBooking.aspx">Royal Breeze Hotel</asp:HyperLink>
@@ -24,6 +26,7 @@
             </tr>
             <tr>
                 <td style="width: 683px">
+                    <a href="RoomBooking.aspx">
                     <img alt="" src="Images/Hotel3.jfif" style="width: 290px; height: 254px" /></td>
                 <td style="width: 357px">
                     <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/RoomBooking.aspx">Retreat Inn</asp:HyperLink>
@@ -34,6 +37,7 @@
             </tr>
             <tr>
                 <td style="width: 683px">
+                    <a href="RoomBooking.aspx">
                     <img alt="" src="Images/Hotel4.jfif" style="width: 287px; height: 178px" /></td>
                 <td style="width: 357px">
                     <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/RoomBooking.aspx">Buckingham Hotel</asp:HyperLink>
