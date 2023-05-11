@@ -35,6 +35,43 @@ namespace Classes
             }
         }
 
+        //public List<clsActivities> GetAllActivities()
+        //{
+        //    // Create a new list to store the activities
+        //    List<clsActivities> activitiesList = new List<clsActivities>();
+
+        //    // Create an instance of the data connection
+        //    clsDataConnection db = new clsDataConnection();
+
+        //    // Execute the stored procedure to get all activities
+        //    db.Execute("sproc_tblActivities_SelectAll");
+
+        //    // Loop through each row in the returned data table
+        //    foreach (DataRow row in db.DataTable.Rows)
+        //    {
+        //        // Create a new instance of the clsActivities class
+        //        clsActivities activity = new clsActivities();
+
+        //        // Copy the data from the row to the activity object
+        //        activity.ActivityID = Convert.ToInt32(row["ActivityID"]);
+        //        activity.ActivityName = Convert.ToString(row["ActivityName"]);
+        //        activity.ActivityCity = Convert.ToString(row["ActivityCity"]);
+        //        activity.ActivityAddress = Convert.ToString(row["ActivityAddress"]);
+        //        activity.ActivityPostCode = Convert.ToString(row["ActivityPostCode"]);
+        //        activity.ActivityDescription = Convert.ToString(row["ActivityDescription"]);
+        //        activity.NoOfPeople = Convert.ToInt32(row["NoOfPeople"]);
+        //        activity.ActivityPrice = Convert.ToDecimal(row["ActivityPrice"]);
+
+        //        // Add the activity object to the activities list
+        //        activitiesList.Add(activity);
+        //    }
+
+        //    // Return the list of activities
+        //    return activitiesList;
+
+
+        //}
+
         public List<clsActivities> GetAllActivities()
         {
             // Create a new list to store the activities
@@ -43,33 +80,41 @@ namespace Classes
             // Create an instance of the data connection
             clsDataConnection db = new clsDataConnection();
 
-            // Execute the stored procedure to get all activities
-            db.Execute("sproc_tblActivities_SelectAll");
-
-            // Loop through each row in the returned data table
-            foreach (DataRow row in db.DataTable.Rows)
+            try
             {
-                // Create a new instance of the clsActivities class
-                clsActivities activity = new clsActivities();
+                // Execute the stored procedure to get all activities
+                db.Execute("sproc_tblActivities_SelectAll");
 
-                // Copy the data from the row to the activity object
-                activity.ActivityID = Convert.ToInt32(row["ActivityID"]);
-                activity.ActivityName = Convert.ToString(row["ActivityName"]);
-                activity.ActivityCity = Convert.ToString(row["ActivityCity"]);
-                activity.ActivityAddress = Convert.ToString(row["ActivityAddress"]);
-                activity.ActivityPostCode = Convert.ToString(row["ActivityPostCode"]);
-                activity.ActivityDescription = Convert.ToString(row["ActivityDescription"]);
-                activity.NoOfPeople = Convert.ToInt32(row["NoOfPeople"]);
-                activity.ActivityPrice = Convert.ToDecimal(row["ActivityPrice"]);
+                // Loop through each row in the returned data table
+                foreach (DataRow row in db.DataTable.Rows)
+                {
+                    // Create a new instance of the clsActivities class
+                    clsActivities activity = new clsActivities();
 
-                // Add the activity object to the activities list
-                activitiesList.Add(activity);
+                    // Copy the data from the row to the activity object
+                    activity.ActivityID = Convert.ToInt32(row["ActivityID"]);
+                    activity.ActivityName = Convert.ToString(row["ActivityName"]);
+                    activity.ActivityCity = Convert.ToString(row["ActivityCity"]);
+                    activity.ActivityAddress = Convert.ToString(row["ActivityAddress"]);
+                    activity.ActivityPostCode = Convert.ToString(row["ActivityPostCode"]);
+                    activity.ActivityDescription = Convert.ToString(row["ActivityDescription"]);
+                    activity.NoOfPeople = Convert.ToInt32(row["NoOfPeople"]);
+                    activity.ActivityPrice = Convert.ToDecimal(row["ActivityPrice"]);
+
+                    // Add the activity object to the activities list
+                    activitiesList.Add(activity);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Log the error message (optional)
+                // Return an empty list if there is an exception
+                return new List<clsActivities>();
             }
 
             // Return the list of activities
             return activitiesList;
         }
-
 
 
         public int Count
@@ -167,7 +212,7 @@ namespace Classes
             db.Execute("sproc_tblActivities_Update");
         }
 
-        
+
         public void ReportByActivityName(string ActivityName)
         {
             //connect to db
