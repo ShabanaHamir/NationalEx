@@ -120,6 +120,18 @@ namespace Classes
             PopulateArray(db);
         }
 
+        public void ReportByFirstNameAndAccountType(string FirstName, string AccountType)
+        {
+            clsDataConnection db = new clsDataConnection();
+            //send postcode param to the db
+            db.AddParameter("@FirstName", FirstName);
+            db.AddParameter("@AccountType", AccountType);
+            //execute sproc
+            db.Execute("sproc_Users_FilterByFirstNameAndAccountType");
+            //populate array list
+            PopulateArray(db);
+        }
+
         public void Delete()
         {
             //delete activities pointed to by ThisActivity]

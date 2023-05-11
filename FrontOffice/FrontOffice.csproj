@@ -137,6 +137,7 @@
     <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
     <Content Include="CustomerDashboard.aspx" />
+    <Content Include="CustomerPersonalDetails.aspx" />
     <Content Include="CustomerSignIn.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default2.aspx" />
@@ -167,6 +168,7 @@
     <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
+    <Content Include="StaffCustomerList.aspx" />
     <Content Include="StaffDashboard.aspx" />
     <Content Include="StaffHome.aspx" />
     <Content Include="StaffLogIn.aspx" />
@@ -314,6 +316,13 @@
     <Compile Include="CustomerDashboard.aspx.designer.cs">
       <DependentUpon>CustomerDashboard.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerPersonalDetails.aspx.cs">
+      <DependentUpon>CustomerPersonalDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerPersonalDetails.aspx.designer.cs">
+      <DependentUpon>CustomerPersonalDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerSignIn.aspx.cs">
       <DependentUpon>CustomerSignIn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -376,6 +385,13 @@
     </Compile>
     <Compile Include="ShowQuantity.aspx.designer.cs">
       <DependentUpon>ShowQuantity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffCustomerList.aspx.cs">
+      <DependentUpon>StaffCustomerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffCustomerList.aspx.designer.cs">
+      <DependentUpon>StaffCustomerList.aspx</DependentUpon>
     </Compile>
     <Compile Include="StaffDashboard.aspx.cs">
       <DependentUpon>StaffDashboard.aspx</DependentUpon>
