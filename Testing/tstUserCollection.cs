@@ -262,5 +262,34 @@ namespace Testing
             //test to see there are no records
             Assert.IsTrue(OK);
         }
+
+        [TestMethod]
+        public void ReportByFirstNameAndAccountTypeTestDataFound()
+        {
+            //create an instance of the class we want to create
+            clsUserCollection FilteredUsers = new clsUserCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a name that exists in your database and account type
+            FilteredUsers.ReportByFirstNameAndAccountType("Tarte", "Customer"); // Here, add the second parameter, which is the account type
+                                                                               //check that the correct number of records are found
+            if (FilteredUsers.Count == 2)
+            {
+                if (FilteredUsers.UserList[0].UserID != 10)
+                {
+                    OK = false;
+                }
+                if (FilteredUsers.UserList[1].UserID != 86)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see if the users are correctly filtered
+            Assert.IsTrue(OK);
+        }
     }
 }

@@ -98,7 +98,7 @@ namespace Classes
                             DB.AddParameter("@EMail", EMail.ToLower());
                             DB.AddParameter("@Password", HashPassword);
                             DB.AddParameter("@Active", Active);
-                            //DB.AddParameter("@AccountType", mAccountType);
+                            DB.AddParameter("@AccountType", mAccountType);
                             DB.AddParameter("@IsAdmin", false);
                             DB.Execute("sproc_Users_Add");
                             //if active not set to true then request email activation
