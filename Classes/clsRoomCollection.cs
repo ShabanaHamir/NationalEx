@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
-using System;
-
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
 
 namespace Classes
 {
@@ -149,7 +149,49 @@ namespace Classes
 
         }
 
+        public List<clsRoom> GetAllRooms()
+        {
+            List<clsRoom> RoomList = new List<clsRoom>();
 
+            //instance of db
+            clsDataConnection DB = new clsDataConnection();
+
+            try
+            {
+                //gett all rooms
+                DB.Execute("sproc_tblRooms_SelectAll");
+
+                //loop through each row in the returned data table
+                foreach (DataRow row in DB.DataTable.Rows)
+                {
+                    clsRoom Room = new clsRoom();
+
+                    //copy data from row 
+                    Room.RoomID = Convert.ToInt32(row["RoomID"]);
+                    Room.HotelID = Convert.ToInt32(row["HotelID"]);
+                    Room.RoomNumber = Convert.ToInt32(row["RoomNumber"]);
+                    Room.FloorNumber = Convert.ToInt32(row["FloorNumber"]);
+                    Room.RoomType = Convert.ToString(row["RoomType"]);
+                    Room.NumberOfBeds = Convert.ToInt32(row["NumberOfBeds"]);
+                    Room.RoomPrice = Convert.ToDecimal(row["RoomPrice"]);
+                    Room.RoomDescription = Convert.ToString(row["RoomDescription"]);
+                    Room.RoomFacilities = Convert.ToString(row["RoomFacilities"]);
+                    Room.Occupied = Convert.ToBoolean(row["Occupied"]);
+
+                    //add to room list
+                    RoomList.Add(Room);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //return empty list if there is an exception
+                return new List<clsRoom>();
+            }
+
+            return RoomList;
+
+        }
 
         void PopulateArray(clsDataConnection DB)
         {
@@ -203,6 +245,7 @@ namespace Classes
             //populate array 
             PopulateArray(DB);
         }
+
     }
 
 }

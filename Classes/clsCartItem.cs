@@ -72,12 +72,67 @@ public class clsCartItem
         }
     }
 
+    //public decimal Total
+    //{
+    //    get
+    //    {
+    //        return mQTY * mActivityPrice;
+    //    }
+    //}
+
+    private string mRoomName;
+    public string RoomName
+    {
+        get
+        {
+            return mRoomName;
+        }
+
+        set
+        {
+            mRoomName = value;
+        }
+    }
+
+    private decimal mRoomPrice;
+    public decimal RoomPrice
+    {
+        get
+        {
+            return mRoomPrice;
+        }
+
+        set
+        {
+            mRoomPrice = value;
+        }
+    }
+
+    private string mItemType; // "Room" or "Activity"
+    public string ItemType
+    {
+        get
+        {
+            return mItemType;
+        }
+
+        set
+        {
+            mItemType = value;
+        }
+    }
+
     public decimal Total
     {
         get
         {
-            return mQTY * mActivityPrice;
+            // Calculate total based on item type
+            if (ItemType == "Room")
+                return mQTY * mRoomPrice;
+            else // Assume "Activity"
+                return mQTY * mActivityPrice;
         }
     }
+
 
 }

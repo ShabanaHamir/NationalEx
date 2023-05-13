@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+
 
 namespace Classes
 {
@@ -15,6 +17,8 @@ namespace Classes
 
             //object for data connection
             clsDataConnection db = new clsDataConnection();
+            // Use the instance to get the connection string
+            string connectionString = db.GetConnectionString();
             //execute sproc
             db.Execute("sproc_tblActivities_SelectAll");
             //populate array
@@ -266,5 +270,52 @@ namespace Classes
             //populate array list
             PopulateArray(db);
         }
+
+        public clsActivities GetActivityByID(int activityID)
+        {
+            clsDataConnection dataConnection = new clsDataConnection();
+            // Retrieve the connection string from your clsDataConnection object
+            string connectionString = dataConnection.GetConnectionString();
+
+            // Set up the SQL command text
+            string sql = "SELECT * FROM tblActivities WHERE ActivityID = @ActivityID";
+
+            // Set up the SQL command and connection
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    // Add the parameter to the command
+                    cmd.Parameters.AddWithValue("@ActivityID", activityID);
+
+                    // Open the connection
+                    conn.Open();
+
+                    // Execute the command and get the results
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Create a new activity and populate it with the data from the reader
+                            clsActivities activity = new clsActivities();
+                            activity.ActivityID = (int)reader["ActivityID"];
+                            activity.ActivityName = (string)reader["ActivityName"];
+                            activity.ActivityPrice = (decimal)reader["ActivityPrice"];
+                            // ... populate the rest of the activity fields ...
+
+                            // Return the activity
+                            return activity;
+                        }
+                        else
+                        {
+                            // If no activity was found with the provided ID, return null
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 }
