@@ -24,14 +24,14 @@ public class clsDataConnection
     //data table used to store the results of the stored procedure
     DataTable dataTable = new DataTable();
     //string variable used to store the connection string
-    private string connectionString;
+    public string connectionString;                     //private
 
     public clsDataConnection()
     {
         connectionString = GetConnectionString();
     }
 
-    private string GetConnectionString()
+    public string GetConnectionString()
     {
         System.Net.WebClient client = new System.Net.WebClient();
         string downloadString = client.DownloadString("http://localhost:5000/");
