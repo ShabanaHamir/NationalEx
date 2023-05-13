@@ -33,8 +33,9 @@ namespace FrontOffice
 
         private void BindCartItems()
         {
-            gvCartItems.DataSource = Cart.Products;
+            gvCartItems.DataSource = Cart.Products; // Should be List<clsCartItem>
             gvCartItems.DataBind();
         }
+
     }
 }
