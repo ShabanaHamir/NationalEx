@@ -105,6 +105,7 @@ namespace FrontOffice
             }
         }
 
+
         //protected void rptActivities_ItemCommand(object source, RepeaterCommandEventArgs e)
         //{
         //    if (e.CommandName == "AddToCart")
@@ -142,6 +143,61 @@ namespace FrontOffice
         //        }
         //    }
         //}
+        //protected void rptActivities_ItemCommand(object source, RepeaterCommandEventArgs e)
+        //{
+        //    if (e.CommandName == "AddToCart")
+        //    {
+        //        TextBox txtQTY = (TextBox)e.Item.FindControl("txtQTY");
+
+        //        if (txtQTY == null)
+        //        {
+        //            Response.Write("Unable to find the quantity textbox.");
+        //            return;
+        //        }
+
+        //        if (string.IsNullOrEmpty(txtQTY.Text))
+        //        {
+        //            Response.Write("Please enter a quantity.");
+        //            return;
+        //        }
+
+        //        if (!int.TryParse(txtQTY.Text, out int quantity))
+        //        {
+        //            Response.Write("Invalid quantity entered. Please enter a valid number.");
+        //            return;
+        //        }
+
+        //        if (quantity <= 0)
+        //        {
+        //            Response.Write("Quantity must be greater than 0.");
+        //            return;
+        //        }
+
+
+        //        // Get the activity ID from the CommandArgument property
+        //        int activityId = Convert.ToInt32(e.CommandArgument);
+
+        //        // Retrieve the cart from session or create a new one if it doesn't exist
+        //        clsCart cart = Session["Cart"] as clsCart;
+        //        if (cart == null)
+        //        {
+        //            cart = new clsCart();
+        //            Session["Cart"] = cart;
+        //        }
+
+        //        // Add the selected activity and quantity to the cart
+        //        clsCartItem cartItem = new clsCartItem
+        //        {
+        //            ProductID = activityId,
+        //            QTY = quantity
+        //        };
+        //        cart.Products.Add(cartItem);
+
+        //        // Redirect to the ShowQuantity page
+        //        Response.Redirect("ShowQuantity.aspx");
+        //    }
+        //}
+
         protected void rptActivities_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             if (e.CommandName == "AddToCart")
@@ -173,7 +229,12 @@ namespace FrontOffice
                 }
 
                 // Get the activity ID from the CommandArgument property
-                int activityId = Convert.ToInt32(e.CommandArgument);
+                int activityID = Convert.ToInt32(e.CommandArgument);
+
+                // Get the activity details (name and price)
+                // You should replace these lines with your actual logic for getting the activity name and price
+                string activityName = ""; // Placeholder value, use the actual activity name
+                decimal activityPrice = 0m; // Placeholder value, use the actual activity price
 
                 // Retrieve the cart from session or create a new one if it doesn't exist
                 clsCart cart = Session["Cart"] as clsCart;
@@ -186,7 +247,9 @@ namespace FrontOffice
                 // Add the selected activity and quantity to the cart
                 clsCartItem cartItem = new clsCartItem
                 {
-                    ProductID = activityId,
+                    ProductID = activityID,
+                    ActivityName = activityName,
+                    ActivityPrice = activityPrice,
                     QTY = quantity
                 };
                 cart.Products.Add(cartItem);
@@ -195,7 +258,6 @@ namespace FrontOffice
                 Response.Redirect("ShowQuantity.aspx");
             }
         }
-
 
 
 
