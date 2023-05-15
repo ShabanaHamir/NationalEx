@@ -13,5 +13,16 @@ namespace FrontOffice
         {
 
         }
+
+
+        protected void btnActivities_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ActivityDefault.aspx");
+        }
+
+        protected void btnCustomers_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("StaffCustomerList.aspx");
+        }
     }
 }

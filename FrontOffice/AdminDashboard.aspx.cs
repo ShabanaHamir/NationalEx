@@ -11,7 +11,37 @@ namespace FrontOffice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response.Redirect("UserDefault.aspx");
+        }
 
+        protected void btnUsers_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        protected void btnHotels_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnActivities_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ActivityDefault.aspx");
+        }
+
+        protected void btnTrips_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnReports_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void btnCustomerFeedback_Click(object sender, EventArgs e)
+        {
+           
         }
     }
 }
