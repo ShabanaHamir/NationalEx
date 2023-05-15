@@ -13,5 +13,11 @@ namespace FrontOffice
         {
 
         }
+
+      
+        protected void btnMyDetails_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerPersonalDetails.aspx");
+        }
     }
 }

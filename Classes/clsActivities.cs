@@ -141,6 +141,19 @@ namespace Classes
             return Error;
         }
 
+        private string mActivityImage; // Add this line
+
+        public string ActivityImage
+        {
+            get
+            {
+                return mActivityImage;
+            }
+            set
+            {
+                mActivityImage = value;
+            }
+        }
 
         public string ActivityName
         {
@@ -244,7 +257,9 @@ namespace Classes
                 mActivityDescription = Convert.ToString(db.DataTable.Rows[0]["ActivityDescription"]);
                 mNoOfPeople = Convert.ToInt32(db.DataTable.Rows[0]["NoOfPeople"]);
                 mActivityPrice = Convert.ToDecimal(db.DataTable.Rows[0]["ActivityPrice"]);
-    
+                mActivityImage = Convert.ToString(db.DataTable.Rows[0]["ActivityImage"]); 
+
+
                 //return true
                 return true;
             }
