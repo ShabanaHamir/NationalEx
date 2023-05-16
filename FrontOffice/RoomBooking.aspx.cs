@@ -111,7 +111,7 @@ namespace FrontOffice
                 clsCartItem cartItem = new clsCartItem
                 {
                     ProductID = roomID,
-                    RoomName = roomName,
+                    RoomType = roomName,
                     RoomPrice = roomPrice,
                     QTY = quantity,
                     //  ItemType = "Room"

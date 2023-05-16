@@ -165,13 +165,13 @@
     <Content Include="Payment.aspx" />
     <Content Include="PaymentViewer.aspx" />
     <Content Include="ReSet.aspx" />
-    <Content Include="RoomBooking.aspx" />
     <Content Include="roomCustomer.js" />
     <Content Include="RoomDefault.aspx" />
     <Content Include="RoomListing.aspx" />
     <Content Include="RoomsDelete.aspx" />
     <Content Include="RoomViewer.aspx" />
     <Content Include="ShowQuantity.aspx" />
+    <Content Include="ShowRoomQuantity.aspx" />
     <Content Include="SignIn.aspx" />
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
@@ -372,13 +372,6 @@
     <Compile Include="ReSet.aspx.designer.cs">
       <DependentUpon>ReSet.aspx</DependentUpon>
     </Compile>
-    <Compile Include="RoomBooking.aspx.cs">
-      <DependentUpon>RoomBooking.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="RoomBooking.aspx.designer.cs">
-      <DependentUpon>RoomBooking.aspx</DependentUpon>
-    </Compile>
     <Compile Include="RoomDefault.aspx.cs">
       <DependentUpon>RoomDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -406,6 +399,13 @@
     </Compile>
     <Compile Include="ShowQuantity.aspx.designer.cs">
       <DependentUpon>ShowQuantity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShowRoomQuantity.aspx.cs">
+      <DependentUpon>ShowRoomQuantity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShowRoomQuantity.aspx.designer.cs">
+      <DependentUpon>ShowRoomQuantity.aspx</DependentUpon>
     </Compile>
     <Compile Include="StaffCustomerList.aspx.cs">
       <DependentUpon>StaffCustomerList.aspx</DependentUpon>

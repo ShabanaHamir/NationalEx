@@ -30,7 +30,10 @@ public class clsCart
     {
 
     }
-
+    public void AddItem(clsCartItem item)
+    {
+        Products.Add(item);
+    }
     private Int32 mUserNo;
     public Int32 UserNo
     {
