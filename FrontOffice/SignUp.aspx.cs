@@ -13,15 +13,15 @@ public partial class SignUp : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
-       // string connectionString = GetConnectionString();
+        // string connectionString = GetConnectionString();
         // Use the connectionString variable to connect to the database
 
 
 
     }
-   // private string GetConnectionString()
+    // private string GetConnectionString()
     //{
-       // return ConfigurationManager.ConnectionStrings["IMAT3903ConnectionString"].ConnectionString;
+    // return ConfigurationManager.ConnectionStrings["IMAT3903ConnectionString"].ConnectionString;
     //}
 
 
@@ -45,7 +45,7 @@ public partial class SignUp : System.Web.UI.Page
         //create a new instance of the security class
         clsSecurity Sec = new clsSecurity();
         //try to sign up using the supplied credentials
-        string Outcome = Sec.SignUp(txtEMail.Text, txtPassword1.Text, txtPassword2.Text, false);
+        string Outcome = Sec.SignUp(txtFirstName.Text, txtLastName.Text, txtEMail.Text, txtPassword1.Text, txtPassword2.Text, false);
         //report the outcome of the operation
         lblError.Text = Outcome;
 
@@ -56,7 +56,7 @@ public partial class SignUp : System.Web.UI.Page
             //pass the connection string to the data connection class
             //    dataConnection.ConnectionString = GetConnectionString();
             //use the data connection class to insert a new user into the database
-            dataConnection.Execute("INSERT INTO Users (Email, Password) VALUES ('" + txtEMail.Text + "', '" + txtPassword1.Text + "')");
+            dataConnection.Execute("INSERT INTO Users (Email, Password) VALUES ('" + txtFirstName.Text + "','" + txtLastName.Text + "', '" + txtEMail.Text + "', '" + txtPassword1.Text + "')");
         }
 
         //store the object in the session object for other pages to access
