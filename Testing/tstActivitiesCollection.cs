@@ -44,18 +44,6 @@ namespace Testing
             //
         }
 
-        //[TestMethod]
-        //public void CountPropertyOK()
-        //{
-        //    clsActivitiesCollection AllActivities = new clsActivitiesCollection();
-        //    //create some test data to assign to the property
-        //    Int32 SomeCount = 2;
-        //    //assign data to the property
-        //    AllActivities.Count = SomeCount;
-        //    //test to see tjay yje two values are the same
-        //    Assert.AreEqual(AllActivities.Count, SomeCount);
-        //}
-
         [TestMethod]
         public void ThisActivityPropertyOK()
         {
