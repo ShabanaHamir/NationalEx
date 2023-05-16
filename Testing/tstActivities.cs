@@ -246,7 +246,7 @@ namespace Testing
             //invoke method
             Found = AnActivity.Find(ActivityID);
             //check city
-            if (AnActivity.ActivityCity != "London, Birmingham, Leeds")
+            if (AnActivity.ActivityCity != "London")
             {
                 OK = false;
             }
