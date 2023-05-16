@@ -164,6 +164,7 @@
     <Content Include="PaymentViewer.aspx" />
     <Content Include="ReSet.aspx" />
     <Content Include="RoomBooking.aspx" />
+    <Content Include="roomCustomer.js" />
     <Content Include="RoomDefault.aspx" />
     <Content Include="RoomsDelete.aspx" />
     <Content Include="RoomViewer.aspx" />

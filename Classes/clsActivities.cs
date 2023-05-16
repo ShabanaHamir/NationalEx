@@ -236,7 +236,6 @@ namespace Classes
             }
         }
 
-        public int Count { get; set; }
 
         public bool Find(int ActivityID)
         {

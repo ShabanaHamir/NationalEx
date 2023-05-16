@@ -58,8 +58,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tstCustomer.cs" />
     <Compile Include="tstRoomCollection.cs" />
-    <Compile Include="tstSystemBooking.cs" />
-    <Compile Include="tstSystemBookingCollection.cs" />
+    <Compile Include="tstBooking.cs" />
+    <Compile Include="tstBookingCollection.cs" />
     <Compile Include="tstHotelCollection.cs" />
     <Compile Include="tstRoom.cs" />
     <Compile Include="tstTrip.cs" />

@@ -112,7 +112,10 @@ namespace FrontOffice
                     QTY = quantity,
                     ItemType = "Room"
                 };
-                cart.Products.Add(cartItem);
+                MyCart.Products.Add(cartItem);
+
+                // Save the cart to the session
+                Session["MyCart"] = MyCart;
 
                 // Redirect to the same page or another page to show cart items
                 Response.Redirect("RoomBooking.aspx");
