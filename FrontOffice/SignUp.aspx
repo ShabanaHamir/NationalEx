@@ -4,7 +4,7 @@
 
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <script runat="server">
 
   
@@ -21,6 +21,22 @@
             <br />
             <h1>Account Sign Up</h1>
                 <table style="width: 100%;">
+                    <tr>
+                        <td style="width: 182px">
+                            <asp:Label ID="Label1" runat="server" Text="Fist Name"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtFirstName" runat="server" Width="318px"></asp:TextBox>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 182px">
+                            <asp:Label ID="Label2" runat="server" Text="Last Name"></asp:Label>
+                        </td>
+                        <td>
+                            <asp:TextBox ID="txtLastName" runat="server" Width="315px"></asp:TextBox>
+                        </td>
+                    </tr>
                     <tr>
                         <td style="width: 182px">
             <asp:Label ID="lblEMail" runat="server" Text="E Mail Address"></asp:Label>

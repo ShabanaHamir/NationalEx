@@ -70,7 +70,7 @@ namespace Classes
             mAttempts = 0;
         }
 
-        public string SignUp(string EMail, string Password1, string Password2, Boolean Active)
+        public string SignUp(string FirstName, string LastName, string EMail, string Password1, string Password2, Boolean Active)
         //public method allowing the user to sign up for an account
         {
             //store the account type when signing up
@@ -95,6 +95,8 @@ namespace Classes
                             string HashPassword = GetHashString(Password1 + EMail);
                             //add the record to the database
                             clsDataConnection DB = new clsDataConnection();
+                            DB.AddParameter("@FirstName", FirstName);
+                            DB.AddParameter("@LastName", LastName);
                             DB.AddParameter("@EMail", EMail.ToLower());
                             DB.AddParameter("@Password", HashPassword);
                             DB.AddParameter("@Active", Active);
@@ -188,7 +190,7 @@ namespace Classes
 
         public string SignIn(string EMail, string Password)
         {
-            
+
             //clsDataConnection dataConnection = new clsDataConnection();
             //signs in a user based on their email and password
             //ver to store any error messages
@@ -239,7 +241,7 @@ namespace Classes
                 //return a message
                 Error = "There have been too many failed attempts please exit the application.";
             }
-            
+
             //return any error messages
             return Error;
         }
