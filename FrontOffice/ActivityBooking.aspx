@@ -25,6 +25,8 @@
             <div class="card-body">
                 <h5 class="card-title"><%# Eval("ActivityName") %></h5>
                 <h6 class="card-subtitle mb-2 text-muted"><%# Eval("ActivityCity") %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%# Eval("ActivityDescription") %></h6>
+                <h6 class="card-subtitle mb-2 text-muted"><%# Eval("ActivityAddress") %></h6>
                 <p class="card-text">Price: <%# Eval("ActivityPrice") %></p>
                 <label for="txtQTY">Quantity:</label>
                 <asp:TextBox ID="txtQTY" runat="server" CssClass="form-control" />

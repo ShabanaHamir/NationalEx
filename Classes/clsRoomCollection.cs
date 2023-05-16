@@ -105,46 +105,42 @@ namespace Classes
         {
             List<clsRoom> RoomList = new List<clsRoom>();
 
-            //instance of db
+            // Create a new instance of clsDataConnection
             clsDataConnection DB = new clsDataConnection();
-
             try
             {
-                //gett all rooms
-                DB.Execute("sproc_tblRooms_SelectAll");
+                DB.Execute("sproc_tblRoom_SelectAll");
 
-                //loop through each row in the returned data table
+                mRoomList.Clear();
+
                 foreach (DataRow row in DB.DataTable.Rows)
                 {
-                    clsRoom Room = new clsRoom();
+                    clsRoom room = new clsRoom();
 
-                    //copy data from row 
-                    Room.RoomID = Convert.ToInt32(row["RoomID"]);
-                    Room.HotelID = Convert.ToInt32(row["HotelID"]);
-                    Room.RoomNumber = Convert.ToInt32(row["RoomNumber"]);
-                    Room.FloorNumber = Convert.ToInt32(row["FloorNumber"]);
-                    Room.RoomType = Convert.ToString(row["RoomType"]);
-                    Room.NumberOfBeds = Convert.ToInt32(row["NumberOfBeds"]);
-                    Room.RoomPrice = Convert.ToDecimal(row["RoomPrice"]);
-                    Room.RoomDescription = Convert.ToString(row["RoomDescription"]);
-                    Room.RoomFacilities = Convert.ToString(row["RoomFacilities"]);
-                    Room.Occupied = Convert.ToBoolean(row["Occupied"]);
+                    room.RoomID = Convert.ToInt32(row["RoomId"]);
+                    room.HotelID = Convert.ToInt32(row["HotelId"]);
+                    room.HotelName = Convert.ToString(row["HotelName"]);
+                    room.RoomNumber = Convert.ToInt32(row["RoomNumber"]);
+                    room.FloorNumber = Convert.ToInt32(row["FloorNumber"]);
+                    room.RoomType = Convert.ToString(row["RoomType"]);
+                    room.NumberOfBeds = Convert.ToInt32(row["NumberOfBeds"]);
+                    room.RoomPrice = Convert.ToDecimal(row["RoomPrice"]);
+                    room.RoomDescription = Convert.ToString(row["RoomDescription"]);
+                    room.RoomFacilities = Convert.ToString(row["RoomFacilities"]);
+                    room.Occupied = Convert.IsDBNull(row["Occupied"]) ? false : Convert.ToBoolean(row["Occupied"]);
 
-                    //add to room list
-                    RoomList.Add(Room);
+                    mRoomList.Add(room);
                 }
-
             }
             catch (Exception ex)
             {
-                //return empty list if there is an exception
-                return new List<clsRoom>();
+                // Handle any exceptions here or log the error
+                // You may want to throw the exception to the calling code for handling
+                throw ex;
             }
 
-            return RoomList;
-
+            return mRoomList;
         }
-
         void PopulateArray(clsDataConnection DB)
         {
             // populates the array list based on the data table in the param DB
