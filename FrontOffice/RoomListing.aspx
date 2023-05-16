@@ -13,7 +13,7 @@
                         <p><strong>Price:</strong> <%# Eval("RoomPrice") %></p>
                         <p><strong>Description:</strong> <%# Eval("RoomDescription") %></p>
                         <p><strong>Facilities:</strong> <%# Eval("RoomFacilities") %></p>
-                        <asp:TextBox ID="txtQTY" runat="server" Text="1"></asp:TextBox>
+                        <asp:TextBox ID="txtQTY" runat="server" Text=""></asp:TextBox>
                         <asp:Button ID="addToCartButton" runat="server" Text="Add to Cart" CommandArgument='<%# Eval("RoomId") %>' OnClick="addToCartButton_Click" />
                         <hr />
                     </ItemTemplate>

@@ -71,9 +71,10 @@ namespace FrontOffice
                     // Create a new clsCartItem object with the room details
                     clsCartItem cartItem = new clsCartItem
                     {
+                        ProductID = roomID, //shows the qty
                         RoomType = room.RoomType,
                         RoomPrice = room.RoomPrice,
-                        Quantity = quantity
+                        QTY = quantity
                     };
 
                     // Add the cart item to the cart
