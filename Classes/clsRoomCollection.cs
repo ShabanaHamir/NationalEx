@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
+
 
 namespace Classes
 {
@@ -14,57 +16,7 @@ namespace Classes
             clsDataConnection DB = new clsDataConnection();
             DB.Execute("sproc_tblRoom_SelectAll");
             PopulateArray(DB);
-            //clsRoom TestItem = new clsRoom();
-            //TestItem.RoomID = 1;
-            //TestItem.HotelID = 1;
-            //TestItem.RoomNumber = 47;
-            //TestItem.FloorNumber = 4;
-            //TestItem.RoomType = "Single";
-            //TestItem.NumberOfBeds = 1;
-            //TestItem.RoomPrice = 120;
-            //TestItem.RoomDescription = "Modern Single Room with a Garden View";
-            //TestItem.RoomFacilities = "TV, Wifi, Fridge, Coffe Machine";
-            //TestItem.Occupied = false;
-            //mThisRoom.Add(TestItem);
-            ////add item to the list
-            //TestItem = new clsRoom();
-            //TestItem.RoomID = 2;
-            //TestItem.HotelID = 1;
-            //TestItem.RoomNumber = 21;
-            //TestItem.FloorNumber = 2;
-            //TestItem.RoomType = "Double";
-            //TestItem.NumberOfBeds = 2;
-            //TestItem.RoomPrice = 141;
-            //TestItem.RoomDescription = "Modern";
-            //TestItem.RoomFacilities = "TV, Free Wifi, Pets";
-            //TestItem.Occupied = true;
-            ////add item to test list
-            //mThisRoom.Add(TestItem);
 
-            //Int32 Index = 0;
-            //Int32 RecordCount = 0;
-            //clsDataConnection DB = new clsDataConnection();
-            //DB.Execute("sproc_tblRoom_SelectAll");
-            //RecordCount = DB.Count;
-            //while (Index < RecordCount)
-            //{
-            //    clsRoom ARoom = new clsRoom();
-            //    //read in the fields from the current record
-            //    ARoom.RoomID= Convert.ToInt32(DB.DataTable.Rows[Index]["RoomID"]);
-            //    ARoom.HotelID = Convert.ToInt32(DB.DataTable.Rows[Index]["HotelID"]);
-            //    ARoom.RoomNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["RoomNumber"]);
-            //    ARoom.FloorNumber = Convert.ToInt32(DB.DataTable.Rows[Index]["FloorNumber"]);
-            //    ARoom.RoomType = Convert.ToString(DB.DataTable.Rows[Index]["RoomType"]);
-            //    ARoom.NumberOfBeds = Convert.ToInt32(DB.DataTable.Rows[Index]["NumberOfBeds"]);
-            //    ARoom.RoomPrice = Convert.ToDecimal(DB.DataTable.Rows[Index]["RoomPrice"]);
-            //    ARoom.RoomDescription = Convert.ToString(DB.DataTable.Rows[Index]["RoomDescription"]);
-            //    ARoom.RoomFacilities = Convert.ToString(DB.DataTable.Rows[Index]["RoomFacilities"]);
-            //    ARoom.Occupied = Convert.ToBoolean(DB.DataTable.Rows[Index]["Occupied"]);
-            //    //add record to private data member
-            //    mRoomList.Add(ARoom);
-            //    //point at the next record
-            //    Index++;
-            //}
 
         }
 
@@ -246,6 +198,51 @@ namespace Classes
             PopulateArray(DB);
         }
 
+
+        public clsRoom GetRoomByID(int roomID)
+        {
+            clsDataConnection dataConnection = new clsDataConnection();
+            // Retrieve the connection string from your clsDataConnection object
+            string connectionString = dataConnection.GetConnectionString();
+
+            // Set up the SQL command text
+            string sql = "SELECT * FROM tblRoom WHERE RoomID = @RoomID";
+
+            // Set up the SQL command and connection
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    // Add the parameter to the command
+                    cmd.Parameters.AddWithValue("@RoomID", roomID);
+
+                    // Open the connection
+                    conn.Open();
+
+                    // Execute the command and get the results
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Create a new activity and populate it with the data from the reader
+                            clsRoom room = new clsRoom();
+                            room.RoomID = (int)reader["RoomID"];
+                            room.RoomType = (string)reader["RoomType"];
+                            room.RoomPrice = (decimal)reader["RoomPrice"];
+                            // ... populate the rest of the activity fields ...
+
+                            // Return the room
+                            return room;
+                        }
+                        else
+                        {
+                            // If no room was found with the provided ID, return null
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }

@@ -81,17 +81,21 @@ namespace FrontOffice
                     return;
                 }
 
+
+                //// Get the room details (name and price)
+                //clsRoom room = RoomList.FirstOrDefault(r => r.RoomID == roomID);
+                //if (room == null)
+                //{
+                //    Response.Write("Invalid Room ID. Room not found.");
+                //    return;
+                //}
+
                 // Get the room ID from the CommandArgument property
                 int roomID = Convert.ToInt32(e.CommandArgument);
+                clsRoomCollection roomCollection = new clsRoomCollection();
 
-                // Get the room details (name and price)
-                clsRoom room = RoomList.FirstOrDefault(r => r.RoomID == roomID);
-                if (room == null)
-                {
-                    Response.Write("Invalid Room ID. Room not found.");
-                    return;
-                }
-
+                // Get the activity details
+                clsRoom room = roomCollection.GetRoomByID(roomID);
                 string roomName = room.RoomType;
                 decimal roomPrice = room.RoomPrice;
 
@@ -110,15 +114,12 @@ namespace FrontOffice
                     RoomName = roomName,
                     RoomPrice = roomPrice,
                     QTY = quantity,
-                    ItemType = "Room"
+                    //  ItemType = "Room"
                 };
-                MyCart.Products.Add(cartItem);
-
-                // Save the cart to the session
-                Session["MyCart"] = MyCart;
+                cart.Products.Add(cartItem);
 
                 // Redirect to the same page or another page to show cart items
-                Response.Redirect("RoomBooking.aspx");
+                Response.Redirect("ShowQuantity.aspx");
             }
         }
 

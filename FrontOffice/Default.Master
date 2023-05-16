@@ -11,17 +11,16 @@
         .nav-item {
             color: #000066;
         }
-        .auto-style1 {
-            margin-left: 800px;
-        }
-    </style>
+        </style>
 </head>
 <body>
  <%--   <form id="form1" runat="server">--%>
   <header class="header">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">National Experience</a>
+        <a class="navbar-brand" href="#">
+             <img src="Images\National ExperienceLogo  (6).png" alt="Logo" height="100">
+            National Experience</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -37,10 +36,10 @@
               <a class="nav-link" href="About.aspx">Contact</a>
             </li>
                <li class="nav-item">
-              <a class="nav-link" href="CustomerSignIn.aspx">Sign in</a>
+              <a class="nav-link" href="SignIn.aspx">Sign in</a>
             </li>
                <li class="nav-item">
-              &nbsp;<a class="nav-link" href="SignUp.aspx">Create an account</a>
+             &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;<a class="nav-link" href="SignUp.aspx">Create an account</a>
             </li>
                <li class="nav-item">
               <a class="nav-link" href="SignIn.aspx">Portal</a>

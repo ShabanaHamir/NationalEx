@@ -22,10 +22,13 @@ a {
     .header .navbar-brand {
         font-size: 24px;
         font-weight: bold;
+        margin-right: auto;
+        margin-left: 10px;
     }
 
     .header .navbar-nav li {
-        margin-right: 10px;
+        margin-right: 0px;
+        width: 85px;
     }
 
         .header .navbar-nav li a {
@@ -40,7 +43,7 @@ a {
 /* Navigation styles */
 
 nav {
-    background-color: #eee;
+    background-color: #0B012F;
     padding: 10px;
 }
 
@@ -53,10 +56,11 @@ nav {
     nav li {
         display: inline-block;
         margin-right: 10px;
+        /* vertical-align: middle*/
     }
 
     nav a {
-        color: #333;
+        color: floralwhite;
     }
 
 /* Main content styles */
