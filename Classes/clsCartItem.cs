@@ -11,7 +11,7 @@ public class clsCartItem
     public clsCartItem()
     {
         //
-        // TODO: Add constructor logic here
+        // TODO:  constructor logic 
         //
     }
 
@@ -93,6 +93,19 @@ public class clsCartItem
             mRoomType = value;
         }
     }
+    private decimal mRoomPrice;
+    public decimal RoomPrice
+    {
+        get
+        {
+            return mRoomPrice;
+        }
+
+        set
+        {
+            mRoomPrice = value;
+        }
+    }
 
     private string mRoomDescription;
     public string RoomDescription
@@ -120,19 +133,7 @@ public class clsCartItem
             mRoomFacilities = value;
         }
     }
-    private decimal mRoomPrice;
-    public decimal RoomPrice
-    {
-        get
-        {
-            return mRoomPrice;
-        }
-
-        set
-        {
-            mRoomPrice = value;
-        }
-    }
+  
     private int mRoomID;
     public int RoomID
     {
@@ -140,13 +141,25 @@ public class clsCartItem
         set { mRoomID = value; }
     }
 
+    //private int mQuantity;
+    //public int Quantity
+    //{
+    //    get { return mQuantity; }
+    //    set { mQuantity = value; }
+    //}
+
     private int mQuantity;
     public int Quantity
     {
-        get { return mQuantity; }
-        set { mQuantity = value; }
+        get
+        {
+            return mQuantity;
+        }
+        set
+        {
+            mQuantity = value;
+        }
     }
-
 
     private string mItemType; // "Room" or "Activity"
     public string ItemType

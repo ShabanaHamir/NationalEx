@@ -73,11 +73,11 @@ namespace FrontOffice
                 }
 
                 // Get the activity ID
-                // Replace this line with your actual logic for getting the activity ID from the RepeaterItem
+         
                 int activityId = 0; // Placeholder value, use the actual activity ID
 
                 // Add the selected activity and quantity to the cart
-                // Replace the following lines with your actual logic for adding the item to the cart
+               
                 clsCartItem cartItem = new clsCartItem
                 {
                     ProductID = activityId,
