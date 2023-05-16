@@ -1,7 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="HotelDetails.aspx.cs" Inherits="FrontOffice.Hotels" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="HotelDetails.aspx.cs" Inherits="FrontOffice.HotelDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-        <table class="w-100">
+        <div>
+            <asp:TextBox ID="txtSearch" runat="server" Width="474px"></asp:TextBox>
+            <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" Width="179px" />
+        </div>
+        <br />
+        <table class="w-100" id="hotelTable" runat="server">
             <tr>
                 <td style="width: 683px">
                     <a href="RoomBooking.aspx">
@@ -35,42 +40,18 @@
                     <asp:Button ID="Button3" runat="server" BackColor="#009999" BorderStyle="None" Font-Bold="True" ForeColor="White" OnClick="Button3_Click" Text="Select Hotel" />
                 </td>
             </tr>
-            <tr>
-                <td style="width: 683px">
-                    <a href="RoomBooking.aspx">
-                    <img alt="" src="Images/Hotel4.jfif" style="width: 287px; height: 178px" /></td>
-                <td style="width: 357px">
-                    <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/RoomBooking.aspx">Buckingham Hotel</asp:HyperLink>
-                </td>
-                <td>
-                    <asp:Button ID="Button4" runat="server" BackColor="#009999" BorderStyle="None" Font-Bold="True" ForeColor="White" OnClick="Button4_Click" Text="Select Hotel" />
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 683px">&nbsp;</td>
-                <td style="width: 357px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 683px">&nbsp;</td>
-                <td style="width: 357px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 683px">&nbsp;</td>
-                <td style="width: 357px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 683px">&nbsp;</td>
-                <td style="width: 357px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-            <tr>
-                <td style="width: 683px">&nbsp;</td>
-                <td style="width: 357px">&nbsp;</td>
-                <td>&nbsp;</td>
-            </tr>
-        </table>
-    </form>
+         <tr>
+    <td style="width: 683px">
+        <a href="RoomBooking.aspx">
+        <img alt="" src="Images/Hotel4.jfif" style="width: 287px; height: 178px" /></a>
+    </td>
+    <td style="width: 357px">
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/RoomBooking.aspx">Your Fourth Hotel Name</asp:HyperLink>
+    </td>
+    <td>
+        <asp:Button ID="Button4" runat="server" BackColor="#009999" BorderStyle="None" Font-Bold="True" ForeColor="White" OnClick="Button4_Click" Text="Select Hotel" />
+    </td>
+</tr>
+</table>
+</form>
 </asp:Content>

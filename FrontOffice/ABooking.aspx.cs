@@ -44,7 +44,7 @@ namespace FrontOffice
             {
                 //display values of the properties in the form
                 txtBookingDate.Text = ABooking.BookingDate.ToString();
-                txtUserFName.Text = ABooking.UserFName;
+                txtUserFName.Text = ABooking.FirstName;
                 txtBookingDetails.Text = ABooking.BookingDetails;
                 txtTotalCost.Text = ABooking.TotalCost.ToString();
                 txtPaymentType.Text = ABooking.PaymentType;
