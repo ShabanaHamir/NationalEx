@@ -80,20 +80,46 @@ public class clsCartItem
     //    }
     //}
 
-    private string mRoomName;
-    public string RoomName
+    private string mRoomType;
+    public string RoomType
     {
         get
         {
-            return mRoomName;
+            return mRoomType;
         }
 
         set
         {
-            mRoomName = value;
+            mRoomType = value;
         }
     }
 
+    private string mRoomDescription;
+    public string RoomDescription
+    {
+        get
+        {
+            return mRoomDescription;
+        }
+
+        set
+        {
+            mRoomDescription = value;
+        }
+    }
+    private string mRoomFacilities;
+    public string RoomFacilities
+    {
+        get
+        {
+            return mRoomFacilities;
+        }
+
+        set
+        {
+            mRoomFacilities = value;
+        }
+    }
     private decimal mRoomPrice;
     public decimal RoomPrice
     {
@@ -107,6 +133,20 @@ public class clsCartItem
             mRoomPrice = value;
         }
     }
+    private int mRoomID;
+    public int RoomID
+    {
+        get { return mRoomID; }
+        set { mRoomID = value; }
+    }
+
+    private int mQuantity;
+    public int Quantity
+    {
+        get { return mQuantity; }
+        set { mQuantity = value; }
+    }
+
 
     private string mItemType; // "Room" or "Activity"
     public string ItemType
