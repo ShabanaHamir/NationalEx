@@ -11,13 +11,16 @@ namespace FrontOffice
     public partial class ShowRoomQuantity : System.Web.UI.Page
     {
         clsCart Cart;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["Cart"] == null)
             {
                 Session["Cart"] = new clsCart();
             }
+
             Cart = (clsCart)Session["Cart"];
+
             if (!IsPostBack)
             {
                 if (Request.QueryString["quantity"] != null)
@@ -27,6 +30,7 @@ namespace FrontOffice
                 }
 
                 BindCartItems();
+                CalculateTotalPrice(); // Calculate and display the total price
             }
         }
 
@@ -41,7 +45,6 @@ namespace FrontOffice
                 gvCartItems.DataBind();
             }
         }
-
 
         private void CalculateTotalPrice()
         {

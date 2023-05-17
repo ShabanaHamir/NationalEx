@@ -34,6 +34,16 @@ public class clsCart
     {
         Products.Add(item);
     }
+
+
+    public void CalculateTotalPrice()
+    {
+        decimal totalPrice = 0;
+        foreach (clsCartItem item in Products)
+        {
+            totalPrice += item.Total;
+        }
+    }
     private Int32 mUserNo;
     public Int32 UserNo
     {
@@ -66,18 +76,6 @@ public class clsCart
         {
             return mProducts;
         }
-    }
-
-    public decimal GetTotalPrice()
-    {
-        decimal total = 0;
-
-        foreach (clsCartItem item in Products)
-        {
-            total += item.ActivityPrice * item.QTY;
-        }
-
-        return total;
     }
 
     public void Checkout()
