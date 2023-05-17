@@ -5,6 +5,9 @@
         <title>Room Listing</title>
     </head>
     <body>
+        <li class="nav-item">
+                        <a class="nav-link" href="Checkout.aspx">Checkout</a>
+                    </li>
         <form id="form1" runat="server">
             <div>
                 <asp:Repeater ID="roomRepeater" runat="server">

@@ -9,7 +9,7 @@
             <div class="row">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="ActivitiesCustomer.aspx">Activities</a>
+                        <a class="nav-link" href="ShowQuantity.aspx">View Cart</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Checkout.aspx">Checkout</a>

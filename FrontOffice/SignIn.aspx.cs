@@ -30,6 +30,7 @@ namespace FrontOffice
 
             if (Error == "")
             {
+
                 if (Sec.AccountType == "Admin" || Sec.IsAdmin)
                 {
                     // Redirect to the admin page

@@ -3,12 +3,13 @@
     <form id="form1" runat="server">
     <table class="table">
         <thead>
-            <tr>
+           <%-- <tr>
                 <th>Activity Name</th>
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Total</th>
-            </tr>
+            </tr>--%>
+            <a class="nav-link" href="Checkout.aspx">Checkout</a>
         </thead>
         <tbody>
            <asp:GridView ID="gvCartItems" runat="server" AutoGenerateColumns="False">
