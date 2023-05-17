@@ -604,5 +604,20 @@ namespace Classes
             //return the error message (if there is one)
             return Message;
         }
+
+        public bool UpdateUserDetails(string firstName, string lastName, string email)
+        {
+            clsDataConnection Db = new clsDataConnection();
+            // Add parameters
+            Db.AddParameter("@UserID", UserID);
+            Db.AddParameter("@FirstName", firstName);
+            Db.AddParameter("@LastName", lastName);
+            Db.AddParameter("@Email", email);
+            // Execute the stored procedure
+            int rowsAffected = Db.Execute("sproc_Users_UpdateUserDetails");
+            return rowsAffected > 0;
+        }
+
+
     }
 }

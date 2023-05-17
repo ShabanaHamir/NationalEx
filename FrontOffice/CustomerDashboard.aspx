@@ -2,16 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div style="margin-left: 80px">
-            <asp:Button ID="btnMyDetails" runat="server" Height="49px" OnClick="btnMyDetails_Click" Text="My Details" Width="110px" />
+            <asp:Button ID="btnMyDetails" runat="server" Height="49px" OnClick="btnMyDetails_Click" Text="My Details" Width="156px" />
         </div>
         <div style="margin-left: 80px">
-            <asp:Button ID="btnBookings" runat="server" Height="54px" Text="My Bookings" Width="111px" />
+            <asp:Button ID="btnBookings" runat="server" Height="54px" Text="My Bookings" Width="156px" />
         </div>
         <div style="margin-left: 80px">
-            <asp:Button ID="btnAccountSettings" runat="server" Height="63px" Text="Account Settings" Width="111px" />
+            <asp:Button ID="btnAccountSettings" runat="server" Height="63px" Text="Account Settings" Width="156px" />
         </div>
         <div style="margin-left: 80px">
-            <asp:Button ID="btnChangePassword" runat="server" Height="53px" Text="Change Password" Width="111px" />
+            <asp:Button ID="btnChangePassword" runat="server" Height="53px" Text="Change Password" Width="156px" />
             <br />
             <br />
             <br />
