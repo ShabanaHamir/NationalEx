@@ -9,6 +9,7 @@ namespace Classes
         private Int32 mUserID;
         private DateTime mBookingDate;
         private string mFirstName;
+        private string mEMail;
         private string mBookingDetails;
         private string mPaymentType;
         private decimal mTotalCost;
@@ -93,6 +94,18 @@ namespace Classes
             }
         }
 
+        public string EMail
+        {
+            get
+            {
+                return mEMail;
+            }
+            set
+            {
+                mEMail = value;
+            }
+        }
+
         public bool Find(int BookingID)
         {
             //create an instance of the data connection
@@ -109,6 +122,7 @@ namespace Classes
                 mPaymentType = Convert.ToString(db.DataTable.Rows[0]["PaymentType"]);
                 mBookingDetails = Convert.ToString(db.DataTable.Rows[0]["BookingDetails"]);
                 mFirstName = Convert.ToString(db.DataTable.Rows[0]["FirstName"]);
+                mEMail = Convert.ToString(db.DataTable.Rows[0]["mEMail"]);
                 mUserID = Convert.ToInt32(db.DataTable.Rows[0]["UserID"]);
                 mTotalCost = Convert.ToDecimal(db.DataTable.Rows[0]["TotalCost"]);
                 //always return true
@@ -121,7 +135,7 @@ namespace Classes
             }
         }
 
-        public string Valid(string bookingDate, string paymentType, string bookingDetails, string firstName, decimal totalCost)
+        public string Valid(string bookingDate, string paymentType, string bookingDetails, string eMail, string firstName, decimal totalCost)
         {
             String Error = "";
             //create a temporary variable to store date values
@@ -186,15 +200,26 @@ namespace Classes
                 Error = Error + "First name is too long: ";
             }
 
+            if (eMail.Length == 0)
+            {
+                //record error
+                Error = Error + "Email may not be blank: ";
+            }
+            //if AName is over max
+            if (eMail.Length > 50)
+            {
+                Error = Error + "Email is too long: ";
+            }
 
             if (totalCost <= 0)
             {
                 //error
                 Error = Error + " Total cost cannot be less than or equal to zero... We aren't free!";
             }
-            
+
             return Error;
         }
+
     }
 
 }

@@ -66,6 +66,7 @@ namespace Classes
                     booking.PaymentType = Convert.ToString(row["PaymentType"]);
                     booking.BookingDetails = Convert.ToString(row["BookingDetails"]);
                     booking.FirstName = Convert.ToString(row["FirstName"]);
+                    booking.EMail = Convert.ToString(row["EMail"]);
                     booking.UserID = Convert.ToInt32(row["UserID"]);
                     booking.TotalCost = Convert.ToInt32(row["TotalCost"]);
                     // Add the activity object to the activities list
@@ -112,16 +113,17 @@ namespace Classes
         public int Add()
         {
             clsDataConnection db = new clsDataConnection();
-            //set thee parameters for sproc
+            //set the parameters for sproc
             db.AddParameter("@BookingDate", mThisBooking.BookingDate);
             db.AddParameter("@PaymentType", mThisBooking.PaymentType);
             db.AddParameter("@BookingDetails", mThisBooking.BookingDetails);
             db.AddParameter("@FirstName", mThisBooking.FirstName);
-            db.AddParameter("@UserID", mThisBooking.UserID);
-            db.AddParameter("@TotalCost", mThisBooking.TotalCost); 
+            db.AddParameter("@EMail", mThisBooking.EMail);  // Pass EMail instead of UserID
+            db.AddParameter("@TotalCost", mThisBooking.TotalCost);
             //execute sproc returning the pk value
             return db.Execute("sproc_tblBooking_Insert");
         }
+
 
         public void Delete()
         {
@@ -136,19 +138,29 @@ namespace Classes
 
         public void Update()
         {
-            //update exisiting records
+            //update existing records
             clsDataConnection db = new clsDataConnection();
             //set parameters
-            db.AddParameter("@BookingID", mThisBooking.BookingID);
-            db.AddParameter("@BookingDate", mThisBooking.BookingDate);
+            db.AddParameter("@BookingID", mThisBooking.BookingID);  //still needed to identify which record to update
             db.AddParameter("@PaymentType", mThisBooking.PaymentType);
             db.AddParameter("@BookingDetails", mThisBooking.BookingDetails);
-            db.AddParameter("@FirstName", mThisBooking.FirstName);
-            db.AddParameter("@UserID", mThisBooking.UserID);
             db.AddParameter("@TotalCost", mThisBooking.TotalCost);
             //execute sproc
             db.Execute("sproc_tblBooking_Update");
         }
+
+        //        CREATE PROCEDURE sproc_tblBooking_Update
+        //	 @BookingID int,
+        //    @PaymentType varchar(50),
+        //    @BookingDetails varchar(500),
+        //    @TotalCost decimal(18,2)
+        //AS
+        //	update tblBooking
+        //	set PaymentType = @PaymentType, 
+        //        BookingDetails = @BookingDetails,
+        //        TotalCost = @TotalCost
+        //	where BookingID = @BookingID
+
 
         void PopulateArray(clsDataConnection db)
         {
@@ -171,14 +183,27 @@ namespace Classes
                 ABooking.PaymentType = Convert.ToString(db.DataTable.Rows[Index]["PaymentType"]);
                 ABooking.BookingDetails = Convert.ToString(db.DataTable.Rows[Index]["BookingDetails"]);
                 ABooking.FirstName = Convert.ToString(db.DataTable.Rows[Index]["FirstName"]);
+                ABooking.EMail = Convert.ToString(db.DataTable.Rows[Index]["EMail"]);
                 ABooking.UserID = Convert.ToInt32(db.DataTable.Rows[Index]["UserID"]);
-                ABooking.TotalCost = Convert.ToInt32(db.DataTable.Rows[Index]["TotalCost"]);                  
+                ABooking.TotalCost = Convert.ToInt32(db.DataTable.Rows[Index]["TotalCost"]);
                 //add the record to the private member
                 mBookingList.Add(ABooking);
                 //point to next record
                 Index++;
             }
 
+        }
+
+        public void ReportByEMail(string EMail)
+        {
+            //connect to db
+            clsDataConnection db = new clsDataConnection();
+            //send first name parameter
+            db.AddParameter("@EMail", EMail);
+            //execute sproc
+            db.Execute("sproc_tblBooking_FilterByEMail");
+            //populate array list
+            PopulateArray(db);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Classes;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Testing
 {
@@ -32,6 +33,7 @@ namespace Testing
             TestItem.PaymentType = "Mastercard";
             TestItem.BookingDetails = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
             TestItem.FirstName = "Sara";
+            TestItem.EMail = "trial@gmail.com";
             TestItem.UserID = 1;
             TestItem.TotalCost = 80.00m;
             //add item to the test list
@@ -56,6 +58,7 @@ namespace Testing
             TestBooking.PaymentType = "Mastercard";
             TestBooking.BookingDetails = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
             TestBooking.FirstName = "Sara";
+            TestBooking.EMail = "trial@gmail.com";
             TestBooking.UserID = 1;
             TestBooking.TotalCost = 80.00m;
             //assign the data to the property
@@ -80,6 +83,7 @@ namespace Testing
             TestItem.PaymentType = "Mastercard";
             TestItem.BookingDetails = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
             TestItem.FirstName = "Sara";
+            TestItem.EMail = "trial@gmail.com";
             TestItem.UserID = 1;
             TestItem.TotalCost = 80.00m;
             //add item to the test list
@@ -105,7 +109,7 @@ namespace Testing
             TestItem.PaymentType = "Mastercard";
             TestItem.BookingDetails = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
             TestItem.FirstName = "Sara";
-            TestItem.UserID = 1;
+            TestItem.EMail = "trial@gmail.com";
             TestItem.TotalCost = 80.00m;
             //set ThisActivity to test data
             AllBookings.ThisBooking = TestItem;
@@ -117,8 +121,9 @@ namespace Testing
             AllBookings.ThisBooking.Find(PrimaryKey);
             //test to see that the two values are the same
             Assert.AreEqual(AllBookings.ThisBooking, TestItem);
-
         }
+
+
 
         [TestMethod]
         public void DeleteMethodOK()
@@ -135,6 +140,7 @@ namespace Testing
             TestItem.PaymentType = "Mastercard";
             TestItem.BookingDetails = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
             TestItem.FirstName = "Sara";
+            TestItem.EMail = "trial@gmail.com";
             TestItem.UserID = 1;
             TestItem.TotalCost = 80.00m;
             //set ThisActivity to test data
@@ -166,6 +172,7 @@ namespace Testing
             TestItem.PaymentType = "Visa Debit";
             TestItem.BookingDetails = "2x Kayaking London ";
             TestItem.FirstName = "Jake";
+            TestItem.EMail = "hello@bbb.co.uk";
             TestItem.UserID = 4;
             TestItem.TotalCost = 35.00m;
             //set ThisActivity to test data
@@ -189,11 +196,72 @@ namespace Testing
             Assert.AreEqual(AllBookings.ThisBooking, TestItem);
         }
 
+        //[TestMethod]
+        //public void ReportByEMailMethodOK()
+        //{
+        //    //create an instance of the class we want to create
+        //    clsBookingCollection AllBookings = new clsBookingCollection();
+        //    //create an instance of filtered data
+        //    clsBookingCollection FilteredBooking = new clsBookingCollection();
+        //    //apply blank string (should return all records)
+        //    FilteredBooking.ReportByEMail("hello@bbb.co.uk");
+        //    //test to see that 2 values are the same
+        //    Assert.AreEqual(AllBookings.Count, FilteredBooking.Count);
 
+        //}
 
+        [TestMethod]
+        public void ReportByEMailMethodOK()
+        {
+            //create an instance of the class we want to create
+            clsBookingCollection AllBookings = new clsBookingCollection();
+            //create an instance of filtered data
+            clsBookingCollection FilteredBooking = new clsBookingCollection();
+            //apply an existing email (should return only records with that email)
+            FilteredBooking.ReportByEMail("hello@bbb.co.uk");
+            //test to see that 2 values are the same
+            Assert.AreEqual(AllBookings.BookingList.Count(b => b.EMail == "hello@bbb.co.uk"), FilteredBooking.Count);
+        }
 
+        [TestMethod]
+        public void ReportByEMailNoneFound()
+        {
+            //create an instance of the class we want to create
+            clsBookingCollection FilteredBooking = new clsBookingCollection();
+            //apply blank string that doesnt exist
+            FilteredBooking.ReportByEMail("xxxxxxxxxx");
+            //test to see that there are no records
+            Assert.AreEqual(0, FilteredBooking.Count);
+        }
 
-
+        [TestMethod]
+        public void ReportByEMailTestDataFound()
+        {
+            //create an instance of the class we want to create
+            clsBookingCollection FilteredBooking = new clsBookingCollection();
+            //var to store outcome
+            Boolean OK = true;
+            //apply a city that doesnt exist
+            FilteredBooking.ReportByEMail("hello@bbb.co.uk");
+            //check that the correct number of records found
+            if (FilteredBooking.Count == 2)
+            {
+                if (FilteredBooking.BookingList[0].BookingID != 2)
+                {
+                    OK = false;
+                }
+                if (FilteredBooking.BookingList[1].BookingID != 9)
+                {
+                    OK = false;
+                }
+            }
+            else
+            {
+                OK = false;
+            }
+            //test to see there are no records
+            Assert.IsTrue(OK);
+        }
     }
 
 }
