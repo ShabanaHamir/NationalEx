@@ -11,7 +11,7 @@
 </asp:GridView>
 
 
-        <asp:Label ID="lblTotalPrice" runat="server"></asp:Label>
+        <asp:Label ID="lblTotalPrice" runat="server"></asp:Label> 
     </form>
 
 </asp:Content>

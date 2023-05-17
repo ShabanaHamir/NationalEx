@@ -15,7 +15,8 @@ namespace FrontOffice
         protected void Page_Load(object sender, EventArgs e)
         {
             //get the current security state from the session
-            Sec = (clsSecurity)Session["Sec"];
+            //Sec = (clsSecurity)Session["Sec"];
+            Sec = Session["Sec"] as clsSecurity ?? new clsSecurity();
         }
         protected void Page_UnLoad(object sender, EventArgs e)
         {
@@ -25,12 +26,13 @@ namespace FrontOffice
 
         protected void btnSignIn_Click(object sender, EventArgs e)
         {
-            clsSecurity Sec = new clsSecurity();
+            //clsSecurity Sec = new clsSecurity();
+            Sec = new clsSecurity();
             String Error = Sec.SignIn(txtEMail.Text, txtPassword.Text);
 
             if (Error == "")
             {
-
+                Session["UserID"] = Sec.UserID;  // Store UserID into session.
                 if (Sec.AccountType == "Admin" || Sec.IsAdmin)
                 {
                     // Redirect to the admin page
@@ -83,7 +85,7 @@ namespace FrontOffice
             //    lblError.Text = Error;
             //}
         }
-   
+
 
         protected void btnReSend_Click(object sender, EventArgs e)
         {

@@ -15,6 +15,8 @@ namespace Classes
     /// </summary>
     public class clsSecurity
     {
+        // Add a UserID property.
+        public int UserID { get; private set; }
         public bool IsAdmin
         {
             get { return mAdmin; }
@@ -210,7 +212,7 @@ namespace Classes
                 //If there is only one record found then return true
                 if (UserAccount.Count >= 1)
                 {
-
+                    UserID = Convert.ToInt32(UserAccount.DataTable.Rows[0]["UserID"]);
                     //get the state of admin
                     bool isAdmin = Convert.ToBoolean(UserAccount.DataTable.Rows[0]["IsAdmin"]);
                     //store the users email address in the data member
