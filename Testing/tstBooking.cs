@@ -13,8 +13,9 @@ namespace Testing       //sql changes
         string PaymentType = "MasterCard";
         string BookingDetails = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
         string FirstName = "Sara";
+        string EMail = "trial@gmail.com";
         int UserID = 1;
-        decimal TotalCost = 80.00m;                                                                          
+        decimal TotalCost = 80.00m;
 
         [TestMethod]
         public void InstanceOK()
@@ -86,6 +87,19 @@ namespace Testing       //sql changes
             string TestData = "Shannon";
             //assign data to the property
             ABooking.FirstName = TestData;
+            //test to see that it exists
+            Assert.AreEqual(ABooking.FirstName, TestData);
+        }
+
+        [TestMethod]
+        public void EMailPropertyOK()                                     //can be taken out
+        {
+            //create an instance of the class we want to create 
+            clsBooking ABooking = new clsBooking();
+            //create some test data to assign to the property 
+            string TestData = "trial@gmail.com";
+            //assign data to the property
+            ABooking.EMail = TestData;
             //test to see that it exists
             Assert.AreEqual(ABooking.FirstName, TestData);
         }
@@ -198,6 +212,28 @@ namespace Testing       //sql changes
         }
 
         [TestMethod]
+        public void TestEMailFound()
+        {
+            //isntance of the class
+            clsBooking ABooking = new clsBooking();
+            //boolean variable to store the result of the search
+            Boolean Found = false;
+            //boolean to record if data is OK
+            Boolean OK = true;
+            //test data
+            Int32 BookingID = 1;
+            //invoke the method
+            Found = ABooking.Find(BookingID);
+            //check the property
+            if (ABooking.EMail != "trial@gmail.com")
+            {
+                OK = false;
+            }
+            //test to see that the result is correct
+            Assert.IsTrue(OK);
+        }
+
+        [TestMethod]
         public void TestBookingDetailsFound()
         {
             //isntance of the class
@@ -292,7 +328,7 @@ namespace Testing       //sql changes
             //string variable to store error message
             String Error = "";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -313,7 +349,7 @@ namespace Testing       //sql changes
             //convert the date variable to a string variable
             string BookingDate = TestDate.ToString();
             //invoke the method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -334,7 +370,7 @@ namespace Testing       //sql changes
             //convert the date variable to a string variable
             string BookingDate = TestDate.ToString();
             //invoke the method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -347,7 +383,7 @@ namespace Testing       //sql changes
             //string variable to store any error message
             String Error = "";
             string BookingDate = "This is not a date.";
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see that the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -356,7 +392,7 @@ namespace Testing       //sql changes
         public void BookingDateMin()
         {
             //create an instance of the class we want to create
-            clsBooking ABooking = new clsBooking(); 
+            clsBooking ABooking = new clsBooking();
             //string variable to store any error message
             String Error = "";
             //create a variable to store the test date data
@@ -366,7 +402,7 @@ namespace Testing       //sql changes
             //convert the date variable to a string variable
             string BookingDate = TestDate.ToString();
             //invoke the method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see that the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -381,7 +417,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string PaymentType = "";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -396,7 +432,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string PaymentType = "a";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -411,7 +447,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string PaymentType = "pppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -426,7 +462,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string PaymentType = "ppppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
 
@@ -442,7 +478,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string BookingDetails = "";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -457,7 +493,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string BookingDetails = "a";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -473,7 +509,7 @@ namespace Testing       //sql changes
             string BookingDetails = "";
             BookingDetails = BookingDetails.PadRight(500, 'p');
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -489,12 +525,72 @@ namespace Testing       //sql changes
             string BookingDetails = "";
             BookingDetails = BookingDetails.PadRight(501, 'p');
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
 
         }
 
+        [TestMethod]
+        public void EMailMinusOne()
+        {
+            //instance of class
+            clsBooking ABooking = new clsBooking();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string EMail = "";
+            //invoke method
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EMailMin()
+        {
+            //instance of class
+            clsBooking ABooking = new clsBooking();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string EMail = "a";
+            //invoke method
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EMailMax()
+        {
+            //instance of class
+            clsBooking ABooking = new clsBooking();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string EMail = "pppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
+            //test to see the result is correct
+            Assert.AreEqual(Error, "");
+        }
+
+        [TestMethod]
+        public void EMailPlusOne()
+        {
+            //instance of class
+            clsBooking ABooking = new clsBooking();
+            //string variable for error message
+            String Error = "";
+            //create some test data to pass to message
+            string EMail = "ppppppppppppppppppppppppppppppppppppppppppppppppppp";
+            //invoke method
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
+            //test to see the result is correct
+            Assert.AreNotEqual(Error, "");
+
+        }
 
         [TestMethod]
         public void FirstNameMinusOne()
@@ -506,7 +602,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string FirstName = "";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
@@ -521,7 +617,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string FirstName = "a";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -536,7 +632,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string FirstName = "pppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreEqual(Error, "");
         }
@@ -551,7 +647,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             string FirstName = "ppppppppppppppppppppppppppppppppppppppppppppppppppp";
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
 
@@ -567,7 +663,7 @@ namespace Testing       //sql changes
             //create some test data to pass to message
             decimal TotalCost = 0;
             //invoke method
-            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, FirstName, TotalCost);
+            Error = ABooking.Valid(BookingDate, PaymentType, BookingDetails, EMail, FirstName, TotalCost);
             //test to see the result is correct
             Assert.AreNotEqual(Error, "");
         }
