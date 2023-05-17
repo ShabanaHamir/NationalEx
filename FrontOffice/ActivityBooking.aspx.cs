@@ -29,6 +29,15 @@ namespace FrontOffice
                 {
                     MyCart = new clsCart();
                 }
+                // Check if an item has been added to the cart
+                if (Session["ItemAdded"] != null && (bool)Session["ItemAdded"])
+                {
+                    // Display the "Activity Added to Cart" message
+                    ScriptManager.RegisterStartupScript(this, GetType(), "ActivityAddedScript", "alert('Activity Added to Cart');", true);
+
+                    // Clear the flag
+                    Session["ItemAdded"] = null;
+                }
             }
         }
 
@@ -86,7 +95,8 @@ namespace FrontOffice
                 cart.Products.Add(cartItem);
 
                 // Redirect to the ShowQuantity page
-                Response.Redirect("ShowQuantity.aspx");
+                //Response.Redirect("ShowQuantity.aspx");
+               
             }
             else
             {
@@ -155,8 +165,16 @@ namespace FrontOffice
                 };
                 cart.Products.Add(cartItem);
 
+
+                Session["ItemAdded"] = true;
+
                 // Redirect to the ShowQuantity page
-                Response.Redirect("ShowQuantity.aspx");
+                //Response.Redirect("ShowQuantity.aspx");
+                // Refresh the current page instead of redirecting to the ShowQuantity page
+                Response.Redirect(Request.RawUrl);
+
+                // Display the "Activity Added to Cart" message
+                ScriptManager.RegisterStartupScript(this, GetType(), "ActivityAddedScript", "alert('Activity Added to Cart');", true);
             }
         }
 

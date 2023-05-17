@@ -177,19 +177,32 @@ namespace Classes
             //WHILE THERE ARE RECORDS TO PROCESS
             while (Index < RecordCount)
             {
-                //create a blank staff
-                clsBooking ABooking = new clsBooking();
-                //read in the fields from the cyurrent record
-                ABooking.BookingID = Convert.ToInt32(db.DataTable.Rows[Index]["BookingID"]);
-                ABooking.BookingDate = Convert.ToDateTime(db.DataTable.Rows[Index]["BookingDate"]);
-                ABooking.PaymentType = Convert.ToString(db.DataTable.Rows[Index]["PaymentType"]);
-                ABooking.BookingDetails = Convert.ToString(db.DataTable.Rows[Index]["BookingDetails"]);
-                ABooking.EMail = Convert.ToString(db.DataTable.Rows[Index]["EMail"]);
-                ABooking.FirstName = Convert.ToString(db.DataTable.Rows[Index]["FirstName"]);
-                ABooking.UserID = Convert.ToInt32(db.DataTable.Rows[Index]["UserID"]);
-                ABooking.TotalCost = Convert.ToDecimal(db.DataTable.Rows[Index]["TotalCost"]);
-                //add the record to the private member
-                mBookingList.Add(ABooking);
+                try
+                {
+                    //create a blank staff
+                    clsBooking ABooking = new clsBooking();
+                    //read in the fields from the cyurrent record
+                    ABooking.BookingID = Convert.ToInt32(db.DataTable.Rows[Index]["BookingID"]);
+                    ABooking.BookingDate = Convert.ToDateTime(db.DataTable.Rows[Index]["BookingDate"]);
+                    ABooking.PaymentType = Convert.ToString(db.DataTable.Rows[Index]["PaymentType"]);
+                    ABooking.BookingDetails = Convert.ToString(db.DataTable.Rows[Index]["BookingDetails"]);
+                    ABooking.EMail = Convert.ToString(db.DataTable.Rows[Index]["EMail"]);
+                    ABooking.FirstName = Convert.ToString(db.DataTable.Rows[Index]["FirstName"]);
+                    ABooking.UserID = Convert.ToInt32(db.DataTable.Rows[Index]["UserID"]);
+                    ABooking.TotalCost = Convert.ToDecimal(db.DataTable.Rows[Index]["TotalCost"]);
+                    //add the record to the private member
+                    mBookingList.Add(ABooking);
+                }
+                catch (InvalidCastException ex)
+                {
+                    // Log the exception along with the current index and row data
+                    Console.WriteLine($"Error at index {Index}: {ex.Message}");
+                    foreach (DataColumn column in db.DataTable.Columns)
+                    {
+                        Console.WriteLine($"Column {column.ColumnName}: {db.DataTable.Rows[Index][column.ColumnName]}");
+                    }
+                }
+                
                 //point to next record
                 Index++;
             }

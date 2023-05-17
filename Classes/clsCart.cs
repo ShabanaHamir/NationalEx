@@ -68,6 +68,18 @@ public class clsCart
         }
     }
 
+    public decimal GetTotalPrice()
+    {
+        decimal total = 0;
+
+        foreach (clsCartItem item in Products)
+        {
+            total += item.ActivityPrice * item.QTY;
+        }
+
+        return total;
+    }
+
     public void Checkout()
     {
         //create an instance of the order class
