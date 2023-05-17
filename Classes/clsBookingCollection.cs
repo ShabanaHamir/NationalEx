@@ -141,7 +141,7 @@ namespace Classes
             //update existing records
             clsDataConnection db = new clsDataConnection();
             //set parameters
-            db.AddParameter("@BookingID", mThisBooking.BookingID);  //still needed to identify the record to update
+            db.AddParameter("@BookingID", mThisBooking.BookingID);  //still needed to identify which record to update
             db.AddParameter("@PaymentType", mThisBooking.PaymentType);
             db.AddParameter("@BookingDetails", mThisBooking.BookingDetails);
             db.AddParameter("@TotalCost", mThisBooking.TotalCost);
