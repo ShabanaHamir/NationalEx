@@ -11,7 +11,7 @@ public class clsCart
 
     /// <summary>
     /// this class defines some tyical attributes of a shopping cart
-    /// 
+    ///
     /// clsCart
     /// ___________________________________________________________________________________
     /// Properties
@@ -33,16 +33,6 @@ public class clsCart
     public void AddItem(clsCartItem item)
     {
         Products.Add(item);
-    }
-
-
-    public void CalculateTotalPrice()
-    {
-        decimal totalPrice = 0;
-        foreach (clsCartItem item in Products)
-        {
-            totalPrice += item.Total;
-        }
     }
     private Int32 mUserNo;
     public Int32 UserNo
@@ -76,6 +66,18 @@ public class clsCart
         {
             return mProducts;
         }
+    }
+
+    public decimal GetTotalPrice()
+    {
+        decimal total = 0;
+
+        foreach (clsCartItem item in Products)
+        {
+            total += item.ActivityPrice * item.QTY;
+        }
+
+        return total;
     }
 
     public void Checkout()
