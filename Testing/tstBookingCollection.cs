@@ -82,8 +82,8 @@ namespace Testing
             TestItem.BookingDate = DateTime.Now.Date;
             TestItem.PaymentType = "Mastercard";
             TestItem.BookingDetails = "21/09/2018 1x double bed. Room 89. 2x Kayaking London 21/09/2018 12:30";
-            TestItem.FirstName = "Sara";
             TestItem.EMail = "trial@gmail.com";
+            TestItem.FirstName = "Sara";
             TestItem.UserID = 1;
             TestItem.TotalCost = 80.00m;
             //add item to the test list

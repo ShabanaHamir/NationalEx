@@ -53,6 +53,7 @@ namespace Classes
             {
                 // Execute the stored procedure to get all activities
                 db.Execute("sproc_tblBooking_SelectAll");
+                mBookingList.Clear();
 
                 // Loop through each row in the returned data table
                 foreach (DataRow row in db.DataTable.Rows)
@@ -65,10 +66,10 @@ namespace Classes
                     booking.BookingDate = Convert.ToDateTime(row["BookingDate"]);
                     booking.PaymentType = Convert.ToString(row["PaymentType"]);
                     booking.BookingDetails = Convert.ToString(row["BookingDetails"]);
-                    booking.FirstName = Convert.ToString(row["FirstName"]);
                     booking.EMail = Convert.ToString(row["EMail"]);
+                    booking.FirstName = Convert.ToString(row["FirstName"]);
                     booking.UserID = Convert.ToInt32(row["UserID"]);
-                    booking.TotalCost = Convert.ToInt32(row["TotalCost"]);
+                    booking.TotalCost = Convert.ToDecimal(row["TotalCost"]);
                     // Add the activity object to the activities list
                     bookingList.Add(booking);
                 }
@@ -77,7 +78,8 @@ namespace Classes
             {
                 // Log the error message (optional)
                 // Return an empty list if there is an exception
-                return new List<clsBooking>();
+                // return new List<clsBooking>();
+                throw ex;
             }
 
             // Return the list of activities
@@ -182,10 +184,10 @@ namespace Classes
                 ABooking.BookingDate = Convert.ToDateTime(db.DataTable.Rows[Index]["BookingDate"]);
                 ABooking.PaymentType = Convert.ToString(db.DataTable.Rows[Index]["PaymentType"]);
                 ABooking.BookingDetails = Convert.ToString(db.DataTable.Rows[Index]["BookingDetails"]);
-                ABooking.FirstName = Convert.ToString(db.DataTable.Rows[Index]["FirstName"]);
                 ABooking.EMail = Convert.ToString(db.DataTable.Rows[Index]["EMail"]);
+                ABooking.FirstName = Convert.ToString(db.DataTable.Rows[Index]["FirstName"]);
                 ABooking.UserID = Convert.ToInt32(db.DataTable.Rows[Index]["UserID"]);
-                ABooking.TotalCost = Convert.ToInt32(db.DataTable.Rows[Index]["TotalCost"]);
+                ABooking.TotalCost = Convert.ToDecimal(db.DataTable.Rows[Index]["TotalCost"]);
                 //add the record to the private member
                 mBookingList.Add(ABooking);
                 //point to next record
