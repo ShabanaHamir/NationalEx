@@ -132,6 +132,7 @@
     <Content Include="bin\roslyn\vbc.exe" />
     <Content Include="bin\roslyn\VBCSCompiler.exe" />
     <Content Include="BookingDefault.aspx" />
+    <Content Include="BookingDelete.aspx" />
     <Content Include="BookingViewer.aspx" />
     <Content Include="CardViewer.aspx" />
     <Content Include="ChangePassword.aspx" />
@@ -322,6 +323,13 @@
     </Compile>
     <Compile Include="BookingDefault.aspx.designer.cs">
       <DependentUpon>BookingDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookingDelete.aspx.cs">
+      <DependentUpon>BookingDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BookingDelete.aspx.designer.cs">
+      <DependentUpon>BookingDelete.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerDashboard.aspx.cs">
       <DependentUpon>CustomerDashboard.aspx</DependentUpon>

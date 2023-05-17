@@ -17,6 +17,7 @@
             <br />
             <br />
             <asp:Button ID="btnYes" runat="server" OnClick="btnYes_Click" Text="Delete" />
+            &nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnCancel" runat="server" OnClick="btnCancel_Click" Text="Cancel" />
             <br />
             <br />
