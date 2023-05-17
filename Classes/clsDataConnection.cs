@@ -251,4 +251,20 @@ public class clsDataConnection
             dataTable = value;
         }
     }
+
+    public DataRow GetUserDetailsById(int userId)
+    {
+        clsDataConnection db = new clsDataConnection();
+        db.AddParameter("@UserID", userId);
+        db.Execute("sproc_Users_GetUserDetailsById");
+        if (db.Count == 1)
+        {
+            return db.DataTable.Rows[0];
+        }
+        else
+        {
+            return null;
+        }
+    }
+
 }
