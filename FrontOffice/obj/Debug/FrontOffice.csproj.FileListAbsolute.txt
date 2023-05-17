@@ -1996,3 +1996,7 @@ H:\17th\FrontOffice\obj\Debug\FrontOffice.csproj.CoreCompileInputs.cache
 H:\17th\FrontOffice\obj\Debug\FrontOffice.csproj.CopyComplete
 H:\17th\FrontOffice\obj\Debug\FrontOffice.dll
 H:\17th\FrontOffice\obj\Debug\FrontOffice.pdb
+H:\ShabsClone\FrontOffice\obj\Debug\FrontOffice.csproj.AssemblyReference.cache
+H:\ShabsClone\FrontOffice\obj\Debug\FrontOffice.csproj.CoreCompileInputs.cache
+H:\ShabsClone\FrontOffice\obj\Debug\FrontOffice.dll
+H:\ShabsClone\FrontOffice\obj\Debug\FrontOffice.pdb

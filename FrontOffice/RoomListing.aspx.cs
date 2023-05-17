@@ -108,7 +108,7 @@ namespace FrontOffice
                     cart.AddItem(cartItem);
 
                     // Calculate the total price of the cart
-                    cart.CalculateTotalPrice();
+                   // cart.CalculateTotalPrice();
 
                     // Redirect to the ShowRoomQuantity page with the quantity parameter
                     Response.Redirect("ShowRoomQuantity.aspx?quantity=" + quantity.ToString());
