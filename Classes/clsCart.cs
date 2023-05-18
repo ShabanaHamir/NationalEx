@@ -70,15 +70,31 @@ public class clsCart
 
     public decimal GetTotalPrice()
     {
-        decimal total = 0;
+        decimal totalPrice = 0;
 
-        foreach (clsCartItem item in Products)
+        foreach (var item in this.Products)
         {
-            total += item.ActivityPrice * item.QTY;
-            total += item.RoomPrice * item.QTY;
+            if (item.ItemType == "Room")
+            {
+                totalPrice += item.QTY * item.RoomPrice;
+            }
+            else if (item.ItemType == "Activity")
+            {
+                // replace with correct properties for the activity type
+                totalPrice += item.QTY * item.ActivityPrice;
+            }
         }
 
-        return total;
+        return totalPrice;
+        //decimal total = 0;
+
+        //foreach (clsCartItem item in Products)
+        //{
+        //    total += item.ActivityPrice * item.QTY;
+        //    total += item.RoomPrice * item.QTY;
+        //}
+
+        //return total;
     }
 
     public void Checkout()
