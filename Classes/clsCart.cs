@@ -75,6 +75,7 @@ public class clsCart
         foreach (clsCartItem item in Products)
         {
             total += item.ActivityPrice * item.QTY;
+            total += item.RoomPrice * item.QTY;
         }
 
         return total;

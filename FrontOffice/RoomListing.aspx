@@ -7,6 +7,7 @@
     <body>
         <form id="form1" runat="server">
             <div>
+                 <a class="nav-link" href="ShowRoomQuantity.aspx">View Cart</a>
                <%-- <asp:Repeater ID="roomRepeater" runat="server">--%>
                     <asp:Repeater ID="rptRoom" runat="server" OnItemCommand="rptRooms_ItemCommand">
                     <ItemTemplate>
