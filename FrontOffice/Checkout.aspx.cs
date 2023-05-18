@@ -61,7 +61,15 @@ namespace FrontOffice
 
             foreach (var item in cart.Products)
             {
-                details.Append($"{item.QTY} x {item.ActivityName} ({item.ActivityPrice:C}), ");
+                if (item.ItemType == "Room")
+                {
+                    details.Append($"{item.QTY} x {item.RoomType} ({item.RoomPrice:C}), ");
+                }
+                else if (item.ItemType == "Activity")
+                {
+                    // replace with correct properties for the activity type
+                    details.Append($"{item.QTY} x {item.ActivityName} ({item.ActivityPrice:C}), ");
+                }
             }
 
             // Remove the trailing comma and space
@@ -71,6 +79,20 @@ namespace FrontOffice
             }
 
             return details.ToString();
+            //var details = new StringBuilder();
+
+            //foreach (var item in cart.Products)
+            //{
+            //    details.Append($"{item.QTY} x {item.ActivityName} ({item.ActivityPrice:C}), ");
+            //}
+
+            //// Remove the trailing comma and space
+            //if (details.Length > 2)
+            //{
+            //    details.Length -= 2;
+            //}
+
+            //return details.ToString();
         }
 
         protected void btnSubmit_Click(object sender, EventArgs e)
