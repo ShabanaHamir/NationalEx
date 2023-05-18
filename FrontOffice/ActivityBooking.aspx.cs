@@ -178,8 +178,23 @@ namespace FrontOffice
             }
         }
 
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text.Trim();
 
+            // Create an instance of the ActivitiesCollection class
+            clsActivitiesCollection activityCollection = new clsActivitiesCollection();
 
+            // Get all activities from the database
+            List<clsActivities> allActivities = activityCollection.GetAllActivities();
+
+            // Filter the ActivityList based on the search term
+            ActivitiesList = allActivities.Where(a => a.ActivityCity.ToLower().Contains(searchTerm.ToLower())).ToList();
+
+            // Bind the data to the Repeater control
+            rptActivities.DataSource = ActivitiesList;
+            rptActivities.DataBind();
+        }
     }
 
 

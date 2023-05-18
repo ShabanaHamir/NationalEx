@@ -140,7 +140,7 @@ namespace Testing
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
-            if (AnHotel.HotelName != "TestHotelName")
+            if (AnHotel.HotelName != "Bristol Treat")
             {
                 OK = false;
             }
@@ -163,7 +163,7 @@ namespace Testing
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
-            if (AnHotel.HotelCity != "TestHotelCity")
+            if (AnHotel.HotelCity != "Bristol")
             {
                 OK = false;
             }
@@ -187,7 +187,7 @@ namespace Testing
             //invoke the method
             Found = AnHotel.Find(HotelID);
             //check the hotel name 
-            if (AnHotel.HotelPostCode != "XXX XXX")
+            if (AnHotel.HotelPostCode != "BS1 1AD")
             {
                 OK = false;
             }

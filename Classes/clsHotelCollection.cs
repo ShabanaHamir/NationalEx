@@ -1,5 +1,9 @@
 ﻿using System.Collections.Generic;
 using System;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace Classes
 {
@@ -47,6 +51,41 @@ namespace Classes
             //    Index++;
             //}
 
+        }
+
+        public List<clsHotel> GetAllHotels()
+        {
+            List<clsHotel> HotelList = new List<clsHotel>();
+
+            // Create a new instance of clsDataConnection
+            clsDataConnection DB = new clsDataConnection();
+            try
+            {
+                DB.Execute("sporc_tblHotel_SelectAll");
+
+                HotelList.Clear();
+
+                foreach (DataRow row in DB.DataTable.Rows)
+                {
+                    clsHotel hotel = new clsHotel();
+
+                    hotel.HotelID = Convert.ToInt32(row["HotelID"]);
+                    hotel.HotelName = Convert.ToString(row["HotelName"]);
+                    hotel.HotelCity = Convert.ToString(row["HotelCity"]);
+                    hotel.HotelPostCode = Convert.ToString(row["HotelPostcode"]);
+                    hotel.HotelPhoneNumber = Convert.ToString(row["HotelPhoneNumber"]);
+
+                    mHotelList.Add(hotel);
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any exceptions here or log the error
+                // You may want to throw the exception to the calling code for handling
+                throw ex;
+            }
+
+            return mHotelList;
         }
 
 
