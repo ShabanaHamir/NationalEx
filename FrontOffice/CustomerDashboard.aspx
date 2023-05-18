@@ -8,7 +8,7 @@
             <asp:Button ID="btnBookings" runat="server" Height="54px" Text="My Bookings" Width="156px" OnClick="btnBookings_Click" />
         </div>
         <div style="margin-left: 80px">
-            <asp:Button ID="btnAccountSettings" runat="server" Height="63px" Text="Account Settings" Width="156px" />
+            <asp:Button ID="btnAccountSettings" runat="server" Height="63px" Text="Account Settings" Width="156px" OnClick="btnAccountSettings_Click" />
         </div>
         <div style="margin-left: 80px">
             <asp:Button ID="btnChangePassword" runat="server" Height="53px" Text="Change Password" Width="156px" />

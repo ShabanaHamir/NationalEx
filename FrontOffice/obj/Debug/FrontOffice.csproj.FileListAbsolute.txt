@@ -2120,3 +2120,7 @@ H:\Final year\IMAT3903 Team Development Project\1MoreColne\FrontOffice\obj\Debug
 H:\Final year\IMAT3903 Team Development Project\1MoreColne\FrontOffice\obj\Debug\FrontOffice.csproj.CopyComplete
 H:\Final year\IMAT3903 Team Development Project\1MoreColne\FrontOffice\obj\Debug\FrontOffice.dll
 H:\Final year\IMAT3903 Team Development Project\1MoreColne\FrontOffice\obj\Debug\FrontOffice.pdb
+H:\18th\FrontOffice\obj\Debug\FrontOffice.csproj.AssemblyReference.cache
+H:\18th\FrontOffice\obj\Debug\FrontOffice.csproj.CoreCompileInputs.cache
+H:\18th\FrontOffice\obj\Debug\FrontOffice.dll
+H:\18th\FrontOffice\obj\Debug\FrontOffice.pdb

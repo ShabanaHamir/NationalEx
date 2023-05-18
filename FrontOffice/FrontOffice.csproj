@@ -139,9 +139,11 @@
     <Content Include="Checkout.aspx" />
     <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
+    <Content Include="CustomerAccountSettings.aspx" />
     <Content Include="CustomerBookings.aspx" />
     <Content Include="CustomerDashboard.aspx" />
     <Content Include="CustomerPersonalDetails.aspx" />
+    <Content Include="CustomerRequestDeletion.aspx" />
     <Content Include="CustomerSignIn.aspx" />
     <Content Include="CustomerViewer.aspx" />
     <Content Include="Default2.aspx" />
@@ -179,9 +181,11 @@
     <Content Include="SignOut.aspx" />
     <Content Include="SignUp.aspx" />
     <Content Include="StaffCustomerList.aspx" />
+    <Content Include="StaffCustomers.aspx" />
     <Content Include="StaffDashboard.aspx" />
     <Content Include="StaffHome.aspx" />
     <Content Include="StaffLogIn.aspx" />
+    <Content Include="StaffViewDeletionRequests.aspx" />
     <Content Include="ThankYou.aspx" />
     <Content Include="TripViewer.aspx" />
     <Content Include="UserDefault.aspx" />
@@ -341,6 +345,13 @@
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
     </Compile>
+    <Compile Include="CustomerAccountSettings.aspx.cs">
+      <DependentUpon>CustomerAccountSettings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerAccountSettings.aspx.designer.cs">
+      <DependentUpon>CustomerAccountSettings.aspx</DependentUpon>
+    </Compile>
     <Compile Include="CustomerBookings.aspx.cs">
       <DependentUpon>CustomerBookings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -361,6 +372,13 @@
     </Compile>
     <Compile Include="CustomerPersonalDetails.aspx.designer.cs">
       <DependentUpon>CustomerPersonalDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerRequestDeletion.aspx.cs">
+      <DependentUpon>CustomerRequestDeletion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerRequestDeletion.aspx.designer.cs">
+      <DependentUpon>CustomerRequestDeletion.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerSignIn.aspx.cs">
       <DependentUpon>CustomerSignIn.aspx</DependentUpon>
@@ -439,6 +457,13 @@
     <Compile Include="StaffCustomerList.aspx.designer.cs">
       <DependentUpon>StaffCustomerList.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StaffCustomers.aspx.cs">
+      <DependentUpon>StaffCustomers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffCustomers.aspx.designer.cs">
+      <DependentUpon>StaffCustomers.aspx</DependentUpon>
+    </Compile>
     <Compile Include="StaffDashboard.aspx.cs">
       <DependentUpon>StaffDashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -452,6 +477,13 @@
     </Compile>
     <Compile Include="StaffHome.aspx.designer.cs">
       <DependentUpon>StaffHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StaffViewDeletionRequests.aspx.cs">
+      <DependentUpon>StaffViewDeletionRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffViewDeletionRequests.aspx.designer.cs">
+      <DependentUpon>StaffViewDeletionRequests.aspx</DependentUpon>
     </Compile>
     <Compile Include="ThankYou.aspx.cs">
       <DependentUpon>ThankYou.aspx</DependentUpon>
