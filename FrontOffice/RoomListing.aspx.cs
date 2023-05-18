@@ -31,7 +31,15 @@ namespace FrontOffice
                 {
                     MyCart = new clsCart();
                 }
+                // Check if an item has been added to the cart
+                if (Session["ItemAdded"] != null && (bool)Session["ItemAdded"])
+                {
+                    // Display the "Activity Added to Cart" message
+                    ScriptManager.RegisterStartupScript(this, GetType(), "RoomAddedScript", "alert('Room has been Added to Cart');", true);
 
+                    // Clear the flag
+                    Session["ItemAdded"] = null;
+                }
 
             }
         }
@@ -82,6 +90,7 @@ namespace FrontOffice
                     cart = new clsCart();
                     Session["Cart"] = cart;
                 }
+               
 
                 // Get the RoomID
                 int roomID = Convert.ToInt32(btn.CommandArgument);
@@ -101,7 +110,8 @@ namespace FrontOffice
                         ProductID = roomID,
                         RoomType = room.RoomType,
                         RoomPrice = room.RoomPrice,
-                        QTY = quantity
+                        QTY = quantity,
+                        ItemType = "Room"
                     };
 
                     // Add the cart item to the cart

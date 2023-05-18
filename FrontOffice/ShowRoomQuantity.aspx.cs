@@ -41,7 +41,8 @@ namespace FrontOffice
             if (cart != null)
             {
                 // Bind the cart items to the GridView
-                gvCartItems.DataSource = cart.Products;
+                //gvCartItems.DataSource = cart.Products;
+                gvCartItems.DataSource = Cart.Products;
                 gvCartItems.DataBind();
             }
         }
@@ -57,5 +58,6 @@ namespace FrontOffice
                 lblTotalPrice.Text = "Total Price: " + totalPrice.ToString("C");
             }
         }
+
     }
 }

@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="ShowRoomQuantity.aspx.cs" Inherits="FrontOffice.ShowRoomQuantity" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
+                         <a class="nav-link" href="Checkout.aspx">Checkout</a>
+
    <asp:GridView ID="gvCartItems" runat="server" AutoGenerateColumns="False">
     <Columns>
         <asp:BoundField DataField="RoomType" HeaderText="Room Type" />
