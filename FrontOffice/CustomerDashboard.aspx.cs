@@ -30,5 +30,10 @@ namespace FrontOffice
         {
             Response.Redirect("CustomerPersonalDetails.aspx");
         }
+
+        protected void btnBookings_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("CustomerBookings.aspx");
+        }
     }
 }

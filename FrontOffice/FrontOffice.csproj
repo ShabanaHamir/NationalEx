@@ -139,6 +139,7 @@
     <Content Include="Checkout.aspx" />
     <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
+    <Content Include="CustomerBookings.aspx" />
     <Content Include="CustomerDashboard.aspx" />
     <Content Include="CustomerPersonalDetails.aspx" />
     <Content Include="CustomerSignIn.aspx" />
@@ -338,6 +339,13 @@
     </Compile>
     <Compile Include="Checkout.aspx.designer.cs">
       <DependentUpon>Checkout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerBookings.aspx.cs">
+      <DependentUpon>CustomerBookings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CustomerBookings.aspx.designer.cs">
+      <DependentUpon>CustomerBookings.aspx</DependentUpon>
     </Compile>
     <Compile Include="CustomerDashboard.aspx.cs">
       <DependentUpon>CustomerDashboard.aspx</DependentUpon>
