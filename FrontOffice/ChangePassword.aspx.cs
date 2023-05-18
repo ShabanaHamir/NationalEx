@@ -97,5 +97,21 @@ namespace FrontOffice
             //display any errors
             lblError.Text = Error;
         }
+        protected void btnCancel_Click(object sender, EventArgs e)
+        {
+            // Implement your logic here. This is a placeholder example.
+            // This could be a redirection to another page or any other appropriate action.
+            Response.Redirect("Default2.aspx");
+        }
+
+        protected void txtCurrentPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void txtPassword1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
