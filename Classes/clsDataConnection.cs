@@ -287,5 +287,20 @@ public class clsDataConnection
         }
     }
 
+    public void RequestAccountDeletion(int userId)
+    {
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            using (SqlCommand cmd = new SqlCommand("sproc_RequestAccountDeletion", conn))
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@UserID", userId);
+                cmd.ExecuteNonQuery();
+            }
+        }
+    }
+
+
 
 }

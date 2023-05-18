@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +12,16 @@ namespace FrontOffice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            clsSecurity Sec;
+            if (Session["Sec"] != null)
+            {
+                Sec = (clsSecurity)Session["Sec"];
+                int UserID = Sec.UserID;
+            }
+            else
+            {
+                Response.Redirect("SignIn.aspx");
+            }
         }
 
 
@@ -22,7 +32,7 @@ namespace FrontOffice
 
         protected void btnCustomers_Click(object sender, EventArgs e)
         {
-            Response.Redirect("StaffCustomerList.aspx");
+            Response.Redirect("StaffCustomers.aspx");
         }
     }
 }

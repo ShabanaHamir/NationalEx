@@ -1,5 +1,5 @@
-﻿using System;
-using Classes;
+﻿using Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace FrontOffice
 {
-    public partial class CustomerDashboard : System.Web.UI.Page
+    public partial class CustomerAccountSettings : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -22,23 +22,11 @@ namespace FrontOffice
             {
                 Response.Redirect("SignIn.aspx");
             }
-
         }
 
-
-        protected void btnMyDetails_Click(object sender, EventArgs e)
+        protected void btnAccountDelete_Click(object sender, EventArgs e)
         {
-            Response.Redirect("CustomerPersonalDetails.aspx");
-        }
-
-        protected void btnBookings_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("CustomerBookings.aspx");
-        }
-
-        protected void btnAccountSettings_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("CustomerAccountSettings.aspx");
+            Response.Redirect("CustomerRequestDeletion.aspx");
         }
     }
 }
