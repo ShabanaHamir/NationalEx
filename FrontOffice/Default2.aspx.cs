@@ -26,12 +26,12 @@ namespace FrontOffice
 
         protected void btnHotels_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AnHotel.aspx");
+            Response.Redirect("HotelDetails.aspx");
         }
 
         protected void btnActivities_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AnActivity.aspx");
+            Response.Redirect("ActivityBooking.aspx");
         }
     }
 }

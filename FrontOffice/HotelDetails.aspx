@@ -1,57 +1,27 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="HotelDetails.aspx.cs" Inherits="FrontOffice.HotelDetails" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
-        <div>
-            <asp:TextBox ID="txtSearch" runat="server" Width="474px"></asp:TextBox>
-            <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" Width="179px" />
-        </div>
-        <br />
-        <table class="w-100" id="hotelTable" runat="server">
-            <tr>
-                <td style="width: 683px">
-                    <a href="RoomBooking.aspx">
-                    <img alt="" src="Images/Hotel1.jfif" style="width: 286px; height: 182px" /></td>
-                <td style="width: 357px">
-                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/RoomBooking.aspx">Skyline Hotel</asp:HyperLink>
-                </td>
-                <td>
-                    <asp:Button ID="Button1" runat="server" BackColor="#009999" BorderStyle="None" Font-Bold="True" ForeColor="White" OnClick="Button1_Click" Text="Select Hotel" />
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 683px">
-                    <a href="RoomBooking.aspx">
-                    <img alt="" src="Images/Hotel2.jfif" style="width: 291px; height: 194px" /></td>
-                <td style="width: 357px">
-                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/RoomBooking.aspx">Royal Breeze Hotel</asp:HyperLink>
-                </td>
-                <td>
-                    <asp:Button ID="Button2" runat="server" BackColor="#009999" BorderStyle="None" Font-Bold="True" ForeColor="White" OnClick="Button2_Click" Text="Select Hotel" />
-                </td>
-            </tr>
-            <tr>
-                <td style="width: 683px">
-                    <a href="RoomBooking.aspx">
-                    <img alt="" src="Images/Hotel3.jfif" style="width: 290px; height: 254px" /></td>
-                <td style="width: 357px">
-                    <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="~/RoomBooking.aspx">Retreat Inn</asp:HyperLink>
-                </td>
-                <td>
-                    <asp:Button ID="Button3" runat="server" BackColor="#009999" BorderStyle="None" Font-Bold="True" ForeColor="White" OnClick="Button3_Click" Text="Select Hotel" />
-                </td>
-            </tr>
-         <tr>
-    <td style="width: 683px">
-        <a href="RoomBooking.aspx">
-        <img alt="" src="Images/Hotel4.jfif" style="width: 287px; height: 178px" /></a>
-    </td>
-    <td style="width: 357px">
-        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="~/RoomBooking.aspx">Your Fourth Hotel Name</asp:HyperLink>
-    </td>
-    <td>
-        <asp:Button ID="Button4" runat="server" BackColor="#009999" BorderStyle="None" Font-Bold="True" ForeColor="White" OnClick="Button4_Click" Text="Select Hotel" />
-    </td>
-</tr>
-</table>
+    <html>
+    <head>
+        <title>Hotel Details</title>
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <div>
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" />
+                <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
+
+                <asp:Repeater ID="rptHotel" runat="server" OnItemCommand="rptHotels_ItemCommand">
+                    <ItemTemplate>
+                        <h2><%# Eval("HotelName") %></h2>
+                        <p><strong>City:</strong> <%# Eval("HotelCity") %></p>
+                        <p><strong>Postcode:</strong> <%# Eval("HotelPostcode") %></p>
+                        <p><strong>Phone Number:</strong> <%# Eval("HotelPhoneNumber") %></p>
+                        <hr />
+                    </ItemTemplate>
+                </asp:Repeater>
+            </div>
+        </form>
+    </body>
+    </html>
 </form>
 </asp:Content>

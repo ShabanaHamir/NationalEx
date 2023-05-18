@@ -4,6 +4,8 @@
         <head>
             <script src="activitiesCustomer.js"></script>
         </head>
+           <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" />
+<asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
         <div class="container">
             <h1>Activities</h1>
             <div class="row">

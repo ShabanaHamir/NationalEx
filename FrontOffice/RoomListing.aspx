@@ -7,6 +7,9 @@
     <body>
         <form id="form1" runat="server">
             <div>
+                <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" />
+<asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
+
                  <a class="nav-link" href="ShowRoomQuantity.aspx">View Cart</a>
                <%-- <asp:Repeater ID="roomRepeater" runat="server">--%>
                     <asp:Repeater ID="rptRoom" runat="server" OnItemCommand="rptRooms_ItemCommand">

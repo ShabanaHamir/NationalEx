@@ -24,7 +24,7 @@ namespace FrontOffice
             System.Web.Security.FormsAuthentication.SignOut();
 
 
-            // Redirect to your login page (modify this to the actual path of your login page)
+            // Redirect
             Response.Redirect("CustomerPersonalDetails.aspx");
         }
 

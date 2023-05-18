@@ -40,5 +40,20 @@ namespace FrontOffice
         {
             Response.Redirect("CustomerAccountSettings.aspx");
         }
+
+        protected void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("ReSet.aspx");
+        }
+
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            // Logout from the session or authentication
+            Session.Clear();
+            Session.Abandon();
+            // If you're using Forms Authentication
+            System.Web.Security.FormsAuthentication.SignOut();
+            Response.Redirect("Default2.aspx");
+        }
     }
 }

@@ -203,5 +203,23 @@ namespace FrontOffice
             }
 
         }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            string searchTerm = txtSearch.Text.Trim();
+
+            // Create an instance of the RoomCollection class
+            clsRoomCollection roomCollection = new clsRoomCollection();
+
+            // Get all rooms from the database
+            RoomList = roomCollection.GetAllRooms();
+
+            // Filter the RoomList based on the search term
+            RoomList = RoomList.Where(r => r.RoomType.ToLower().Contains(searchTerm.ToLower())).ToList();
+
+            // Bind the data to the Repeater control
+            rptRoom.DataSource = RoomList;
+            rptRoom.DataBind();
+        }
     }
 }

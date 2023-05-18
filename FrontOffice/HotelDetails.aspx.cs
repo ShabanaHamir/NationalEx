@@ -1,73 +1,60 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Classes;
 using System.Web;
 using System.Web.UI;
-using Classes;
-using System.Web.UI.HtmlControls;
-
 using System.Web.UI.WebControls;
 
 namespace FrontOffice
 {
     public partial class HotelDetails : System.Web.UI.Page
-
     {
-        //list to store hyperlinks
-        List<HyperLink> hotelLinks = new List<HyperLink>();
+        //property to store the list of hotels 
+        public List<clsHotel> HotelList { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Add the HyperLinks to the List
-            hotelLinks.Add(HyperLink1);
-            hotelLinks.Add(HyperLink2);
-            hotelLinks.Add(HyperLink3);
+            if (!IsPostBack)
+            {
+                LoadHotels();
+            }
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        private void LoadHotels()
         {
-            Response.Redirect("RoomBooking.aspx");
-        }
+            // Create an instance of the HotelCollection class
+            clsHotelCollection hotelCollection = new clsHotelCollection();
 
-        protected void Button2_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("RoomBooking.aspx");
-        }
-
-        protected void Button3_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("RoomBooking.aspx");
-        }
-
-        protected void Button4_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("RoomBooking.aspx");
+            // Get all hotels from the database
+            HotelList = hotelCollection.GetAllHotels();
+            // Bind the data to the Repeater control
+            rptHotel.DataSource = HotelList;
+            rptHotel.DataBind();
         }
 
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-            string searchQuery = txtSearch.Text.Trim().ToLower();
+            string searchTerm = txtSearch.Text.Trim();
 
-            // Loop through the HyperLinks
-            foreach (HyperLink hotelLink in hotelLinks)
-            {
-                string hotelName = hotelLink.Text.Trim().ToLower();
+            // Create an instance of the HotelCollection class
+            clsHotelCollection hotelCollection = new clsHotelCollection();
 
-                // Find the parent cell of the HyperLink
-                HtmlTableCell cell = (HtmlTableCell)hotelLink.Parent;
-                // Find the parent row of the cell
-                TableRow row = (TableRow)cell.Parent;
+            // Get all hotels from the database
+            HotelList = hotelCollection.GetAllHotels();
 
-                if (hotelName.Contains(searchQuery))
-                {
-                    row.Visible = true;
-                }
-                else
-                {
-                    row.Visible = false;
-                }
-            }
+            // Filter the HotelList based on the search term
+            HotelList = HotelList.Where(h => h.HotelName.ToLower().Contains(searchTerm.ToLower())).ToList();
+
+            // Bind the data to the Repeater control
+            rptHotel.DataSource = HotelList;
+            rptHotel.DataBind();
+        }
+
+        protected void rptHotels_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            // Your code here...
         }
 
     }
-
 }
