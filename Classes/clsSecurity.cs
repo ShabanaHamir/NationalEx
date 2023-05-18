@@ -25,7 +25,7 @@ namespace Classes
         // Add an AccountType property
         private string mAccountType;
 
-        // Your existing code here (other methods and properties)
+    
 
         public string AccountType
         {

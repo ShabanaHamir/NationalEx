@@ -182,6 +182,7 @@
     <Content Include="StaffDashboard.aspx" />
     <Content Include="StaffHome.aspx" />
     <Content Include="StaffLogIn.aspx" />
+    <Content Include="ThankYou.aspx" />
     <Content Include="TripViewer.aspx" />
     <Content Include="UserDefault.aspx" />
     <Content Include="UserDelete.aspx" />
@@ -451,6 +452,13 @@
     </Compile>
     <Compile Include="StaffHome.aspx.designer.cs">
       <DependentUpon>StaffHome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ThankYou.aspx.cs">
+      <DependentUpon>ThankYou.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ThankYou.aspx.designer.cs">
+      <DependentUpon>ThankYou.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserDefault.aspx.cs">
       <DependentUpon>UserDefault.aspx</DependentUpon>

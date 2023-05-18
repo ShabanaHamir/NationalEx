@@ -22,7 +22,7 @@
                             <td style="width: 185px">
             <asp:Label ID="lblPassword" runat="server" Text="Password:"></asp:Label>
                             </td>
-                            <td><asp:TextBox ID="txtPassword1" runat="server" TextMode="Password" width="283px"></asp:TextBox>
+                            <td><asp:TextBox ID="txtPassword1" runat="server" TextMode="Password" width="283px" OnTextChanged="txtPassword1_TextChanged"></asp:TextBox>
                             </td>
                         </tr>
                         <tr>
@@ -38,6 +38,8 @@
                     <br />
                     <br />
         </div>
+        <%--<asp:Button ID="Button1" runat="server" Text="Done" OnClick="btnCancel_Click" />--%>
+
         <asp:Button ID="btnChange" runat="server" Text="Change Password" OnClick="btnChange_Click" />
 &nbsp;<asp:Button ID="btnDone" runat="server" Text="Done" OnClick="btnCancel_Click" />
     </form>

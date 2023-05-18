@@ -121,7 +121,11 @@ namespace FrontOffice
                    // cart.CalculateTotalPrice();
 
                     // Redirect to the ShowRoomQuantity page with the quantity parameter
-                    Response.Redirect("ShowRoomQuantity.aspx?quantity=" + quantity.ToString());
+                //    Response.Redirect("ShowRoomQuantity.aspx?quantity=" + quantity.ToString());
+                    Response.Redirect(Request.RawUrl);
+
+                    // Display the "Activity Added to Cart" message
+                    ScriptManager.RegisterStartupScript(this, GetType(), "RoomAddedScript", "alert('Room has been Added to Cart');", true);
                 }
             }
             else
@@ -189,7 +193,11 @@ namespace FrontOffice
                     cart.Products.Add(cartItem);
 
                     // Redirect to the ShowQuantity page
-                    Response.Redirect("ShowRoomQuantity.aspx");
+                   // Response.Redirect("ShowRoomQuantity.aspx");
+                    Response.Redirect(Request.RawUrl);
+
+                    // Display the "Activity Added to Cart" message
+                    ScriptManager.RegisterStartupScript(this, GetType(), "RoomAddedScript", "alert('Room has been Added to Cart');", true);
                 }
 
             }
