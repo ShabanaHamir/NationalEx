@@ -46,7 +46,7 @@ namespace FrontOffice
                 else if (Sec.AccountType == "Customer")
                 {
                     // Redirect to the customer page
-                    Response.Redirect("CustomerDashboard.aspx");
+                    Response.Redirect("Default2.aspx");
                 }
                 else
                 {
