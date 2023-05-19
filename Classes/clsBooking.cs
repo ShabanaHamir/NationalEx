@@ -122,7 +122,7 @@ namespace Classes
                 mPaymentType = Convert.ToString(db.DataTable.Rows[0]["PaymentType"]);
                 mBookingDetails = Convert.ToString(db.DataTable.Rows[0]["BookingDetails"]);
                 mFirstName = Convert.ToString(db.DataTable.Rows[0]["FirstName"]);
-                mEMail = Convert.ToString(db.DataTable.Rows[0]["mEMail"]);
+                mEMail = Convert.ToString(db.DataTable.Rows[0]["EMail"]);
                 mUserID = Convert.ToInt32(db.DataTable.Rows[0]["UserID"]);
                 mTotalCost = Convert.ToDecimal(db.DataTable.Rows[0]["TotalCost"]);
                 //always return true

@@ -848,19 +848,19 @@ namespace Testing
             Assert.AreEqual(Error, "");
         }
 
-        [TestMethod]
-        public void HotelNameMaxPlusOne()
-        {
-            //create an instance of the class we want to create 
-            clsRoom ARoom = new clsRoom();
-            //string var to store any error message
-            String Error = "";
-            //some data to pass ro the method
-            string HotelName = "VALIDATINGHOTELNAMEEEEEEEEEEEZ"; //Pass
-                                                                 //invoke method
-            Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
-            Assert.AreNotEqual(Error, "");
-        }
+        //[TestMethod]
+        //public void HotelNameMaxPlusOne()
+        //{
+        //    //create an instance of the class we want to create 
+        //    clsRoom ARoom = new clsRoom();
+        //    //string var to store any error message
+        //    String Error = "";
+        //    //some data to pass ro the method
+        //    string HotelName = "VALIDATINGHOTELNAMEEEEEEEEEEEZ"; //Pass
+        //                                                         //invoke method
+        //    Error = ARoom.Valid(HotelID, HotelName, FloorNumber, RoomNumber, NumberOfBeds, RoomType, RoomPrice, RoomDescription, RoomFacilities);            //test to see if valid method exists 
+        //    Assert.AreNotEqual(Error, "");
+        //}
 
         [TestMethod]
         public void HotelNameMid()

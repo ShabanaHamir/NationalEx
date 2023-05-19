@@ -9,6 +9,12 @@
             <div>
                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" />
                 <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
+                             <li class="nav-item">
+                         <a class="nav-link" href="ActivityBooking.aspx">Book Activities</a>
+    </li>
+    <li class="nav-item">
+       <a class="nav-link" href="TripBooking.aspx">Book a Trip</a>
+    </li>
 
                 <asp:Repeater ID="rptHotel" runat="server" OnItemCommand="rptHotels_ItemCommand">
                     <ItemTemplate>

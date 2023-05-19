@@ -9,8 +9,17 @@
             <div>
                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" />
 <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
+                     <li class="nav-item">
+                         <a class="nav-link" href="ActivityBooking.aspx">Book Activities</a>
+    </li>
+    <li class="nav-item">
+       <a class="nav-link" href="TripBooking.aspx">Book a Trip</a>
+    </li>
 
-                 <a class="nav-link" href="ShowRoomQuantity.aspx">View Cart</a>
+                <div class="container">
+            <h1 class="text-center">Avaialable Hotel Rooms</h1>
+
+             <a class="nav-link" href="ShowRoomQuantity.aspx">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View Cart</a>
                <%-- <asp:Repeater ID="roomRepeater" runat="server">--%>
                     <asp:Repeater ID="rptRoom" runat="server" OnItemCommand="rptRooms_ItemCommand">
                     <ItemTemplate>
