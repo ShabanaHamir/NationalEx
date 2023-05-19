@@ -4,12 +4,21 @@
         <head>
             <script src="activitiesCustomer.js"></script>
         </head>
-           <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" />
-<asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
+           <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" Width="180px" />      
+<asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" /> 
+        <li class="nav-item">
+     <a class="nav-link" href="HotelDetails.aspx">Book a Hotel</a>
+    </li>
+    <li class="nav-item">
+       <a class="nav-link" href="TripBooking.aspx">Book a Trip</a>
+    </li>
+     
         <div class="container">
             <h1>Activities</h1>
             <div class="row">
+
                 <ul class="navbar-nav mr-auto">
+
                     <li class="nav-item">
                         <a class="nav-link" href="ShowQuantity.aspx">View Cart</a>
                     </li>

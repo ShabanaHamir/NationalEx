@@ -92,7 +92,7 @@ namespace Testing       //sql changes
         }
 
         [TestMethod]
-        public void EMailPropertyOK()                                     //can be taken out
+        public void EMailPropertyOK()                                  
         {
             //create an instance of the class we want to create 
             clsBooking ABooking = new clsBooking();
@@ -101,7 +101,7 @@ namespace Testing       //sql changes
             //assign data to the property
             ABooking.EMail = TestData;
             //test to see that it exists
-            Assert.AreEqual(ABooking.FirstName, TestData);
+            Assert.AreEqual(ABooking.EMail, TestData);
         }
 
         [TestMethod]

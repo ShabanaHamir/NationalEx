@@ -194,7 +194,7 @@ namespace Testing
             //modify test data
             TestItem.FirstName = "Sarah";
             TestItem.LastName = "Trials";
-            TestItem.Email = "trials@gmail.com";
+            TestItem.Email = "trials@ne.uk";
             TestItem.Password = "Password555";
             TestItem.AccountType = "admin";
             //     TestItem.TempPW = "";
