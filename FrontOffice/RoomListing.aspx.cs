@@ -40,7 +40,7 @@ namespace FrontOffice
                     // Clear the flag
                     Session["ItemAdded"] = null;
                 }
-
+                lblRoomAdded.Visible = false;
             }
         }
 
@@ -116,16 +116,19 @@ namespace FrontOffice
 
                     // Add the cart item to the cart
                     cart.AddItem(cartItem);
+                    lblRoomAdded.Visible = true;
 
                     // Calculate the total price of the cart
-                   // cart.CalculateTotalPrice();
+                    // cart.CalculateTotalPrice();
 
-                    // Redirect to the ShowRoomQuantity page with the quantity parameter
-                //    Response.Redirect("ShowRoomQuantity.aspx?quantity=" + quantity.ToString());
+                    // Display the "Room has been Added to Cart" message using JavaScript alert
+                    string alertScript = "alert('Room has been Added to Cart');";
+                    ClientScript.RegisterStartupScript(this.GetType(), "RoomAddedScript", alertScript, true);
+
+                    // Redirect to the current page to refresh the page
                     Response.Redirect(Request.RawUrl);
 
-                    // Display the "Activity Added to Cart" message
-                    ScriptManager.RegisterStartupScript(this, GetType(), "RoomAddedScript", "alert('Room has been Added to Cart');", true);
+
                 }
             }
             else
@@ -193,7 +196,12 @@ namespace FrontOffice
                     cart.Products.Add(cartItem);
 
                     // Redirect to the ShowQuantity page
-                   // Response.Redirect("ShowRoomQuantity.aspx");
+                    // Response.Redirect("ShowRoomQuantity.aspx");
+                    Session["ItemAdded"] = true;
+
+                    // Redirect to the ShowQuantity page
+                    //Response.Redirect("ShowQuantity.aspx");
+                    // Refresh the current page instead of redirecting to the ShowQuantity page
                     Response.Redirect(Request.RawUrl);
 
                     // Display the "Activity Added to Cart" message

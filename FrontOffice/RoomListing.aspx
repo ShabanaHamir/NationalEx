@@ -6,6 +6,10 @@
     </head>
     <body>
         <form id="form1" runat="server">
+              <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+            <asp:Label ID="lblRoomAdded" runat="server" Text="Room added to cart" Visible="false"></asp:Label>
+
+
             <div>
                 <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control" />
 <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="btn btn-primary" />
