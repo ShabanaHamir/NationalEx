@@ -108,13 +108,7 @@ namespace Classes
                 Error = Error + "Activity description is too long: ";
             }
 
-            ////if AName is over max
-            //if (activityPrice == 0)
-            //{
-            //    throw new ArgumentException("Price cannot be zero! We aren't free: ", nameof(activityPrice));
-            //    //Error = Error + "Activity price cant be empty! We aren't free: ";
-            //}
-
+     
             //if price is less than or equal to zero
             if (activityPrice <= 0)
             {
