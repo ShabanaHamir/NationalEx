@@ -57,6 +57,7 @@
     <Compile Include="clsRoomCollection.cs" />
     <Compile Include="clsSecurity.cs" />
     <Compile Include="clsTrip.cs" />
+    <Compile Include="clsTripCollection.cs" />
     <Compile Include="clsUser.cs" />
     <Compile Include="clsUserCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -62,6 +62,7 @@
     <Compile Include="tstHotelCollection.cs" />
     <Compile Include="tstRoom.cs" />
     <Compile Include="tstTrip.cs" />
+    <Compile Include="tstTripCollection.cs" />
     <Compile Include="tstUser.cs" />
     <Compile Include="tstActivitiesCollection.cs" />
     <Compile Include="tstUserCollection.cs" />
