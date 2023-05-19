@@ -44,15 +44,7 @@ namespace FrontOffice
             }
         }
 
-        //private void BindRoomData()
-        //{
-        //    clsRoomCollection roomCollection = new clsRoomCollection();
-        //    List<clsRoom> rooms = roomCollection.GetAllRooms();
-
-        //    roomRepeater.DataSource = rooms;
-        //    roomRepeater.DataBind();
-        //}
-
+     
         private void LoadRooms()
         {
             // Create an instance of the ActivitiesCollection class

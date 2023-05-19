@@ -194,6 +194,7 @@
     <Content Include="ThankYou.aspx" />
     <Content Include="TripBooking.aspx" />
     <Content Include="TripDefault.aspx" />
+    <Content Include="Trips.aspx" />
     <Content Include="TripViewer.aspx" />
     <Content Include="UserDefault.aspx" />
     <Content Include="UserDelete.aspx" />
@@ -496,6 +497,13 @@
     </Compile>
     <Compile Include="TripDefault.aspx.designer.cs">
       <DependentUpon>TripDefault.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Trips.aspx.cs">
+      <DependentUpon>Trips.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Trips.aspx.designer.cs">
+      <DependentUpon>Trips.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserDefault.aspx.cs">
       <DependentUpon>UserDefault.aspx</DependentUpon>

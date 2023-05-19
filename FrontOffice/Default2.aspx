@@ -2,7 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-    <h1 class="auto-style1">Let the journey begin!</h1>
+    <h1 class="nav-item" style="text-align: center">Let the journey begin!</h1>
     <p>
        <asp:Button ID="btnTrips" CssClass="btn" runat="server" OnClick="btnTrips_Click" Text="Book your Trip NOW!" style="background-color: #E6CDAE; color: #000;" Width="1470px" Height="108px" />
 &nbsp;<img alt="" src="Images/trip1.jfif" style="width: 468px; height: 326px" /><img alt="" src="Images/trip2.jfif" style="width: 474px; height: 315px" /><img alt="" src="Images/trip3.jfif" style="width: 529px; height: 316px" /></p>
