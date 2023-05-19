@@ -69,7 +69,6 @@
   <ItemGroup>
     <Content Include="ABooking.aspx" />
     <Content Include="About.aspx" />
-    <Content Include="ACard.aspx" />
     <Content Include="ActivateAccount.aspx" />
     <Content Include="ActivitiesCustomer.js" />
     <Content Include="ActivityBooking.aspx" />
@@ -77,7 +76,6 @@
     <Content Include="ActivityDefault.aspx" />
     <Content Include="ActivityDelete.aspx" />
     <Content Include="ActivityViewer.aspx" />
-    <Content Include="ACustomer.aspx" />
     <Content Include="AddStaff.aspx" />
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AnActivity.aspx" />
@@ -134,10 +132,8 @@
     <Content Include="BookingDefault.aspx" />
     <Content Include="BookingDelete.aspx" />
     <Content Include="BookingViewer.aspx" />
-    <Content Include="CardViewer.aspx" />
     <Content Include="ChangePassword.aspx" />
     <Content Include="Checkout.aspx" />
-    <Content Include="Confirmation.aspx" />
     <Content Include="ConfirmationViewer.aspx" />
     <Content Include="CustomerAccountSettings.aspx" />
     <Content Include="CustomerBookings.aspx" />
@@ -197,6 +193,7 @@
     <Content Include="StaffViewDeletionRequests.aspx" />
     <Content Include="ThankYou.aspx" />
     <Content Include="TripBooking.aspx" />
+    <Content Include="TripDefault.aspx" />
     <Content Include="TripViewer.aspx" />
     <Content Include="UserDefault.aspx" />
     <Content Include="UserDelete.aspx" />
@@ -219,13 +216,6 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ACard.aspx.cs">
-      <DependentUpon>ACard.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ACard.aspx.designer.cs">
-      <DependentUpon>ACard.aspx</DependentUpon>
     </Compile>
     <Compile Include="ActivateAccount.aspx.cs">
       <DependentUpon>ActivateAccount.aspx</DependentUpon>
@@ -268,13 +258,6 @@
     </Compile>
     <Compile Include="ActivityViewer.aspx.designer.cs">
       <DependentUpon>ActivityViewer.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="ACustomer.aspx.cs">
-      <DependentUpon>ACustomer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ACustomer.aspx.designer.cs">
-      <DependentUpon>ACustomer.aspx</DependentUpon>
     </Compile>
     <Compile Include="AddStaff.aspx.cs">
       <DependentUpon>AddStaff.aspx</DependentUpon>
@@ -507,6 +490,13 @@
     <Compile Include="TripBooking.aspx.designer.cs">
       <DependentUpon>TripBooking.aspx</DependentUpon>
     </Compile>
+    <Compile Include="TripDefault.aspx.cs">
+      <DependentUpon>TripDefault.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TripDefault.aspx.designer.cs">
+      <DependentUpon>TripDefault.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UserDefault.aspx.cs">
       <DependentUpon>UserDefault.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -544,26 +534,12 @@
     <Compile Include="BookingViewer.aspx.designer.cs">
       <DependentUpon>BookingViewer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="CardViewer.aspx.cs">
-      <DependentUpon>CardViewer.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="CardViewer.aspx.designer.cs">
-      <DependentUpon>CardViewer.aspx</DependentUpon>
-    </Compile>
     <Compile Include="ChangePassword.aspx.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="ChangePassword.aspx.designer.cs">
       <DependentUpon>ChangePassword.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Confirmation.aspx.cs">
-      <DependentUpon>Confirmation.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Confirmation.aspx.designer.cs">
-      <DependentUpon>Confirmation.aspx</DependentUpon>
     </Compile>
     <Compile Include="ConfirmationViewer.aspx.cs">
       <DependentUpon>ConfirmationViewer.aspx</DependentUpon>
