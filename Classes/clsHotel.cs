@@ -89,19 +89,7 @@ namespace Classes
             }
         }
 
-        //public Boolean Valid(string Hotel)
-        //{
-        //    //var to record any errors found in Hotel name assuming all is OK
-        //    Boolean OK = true;
-        //    //test to see if the hotel has zero characters
-        //    if (Hotel.Length == 0)
-        //    {
-        //        //set OK to false
-        //        OK = false;
-        //    }
-        //    //retur results of all tests
-        //    return true;
-        //}
+   
 
         public bool Find(int HotelID)
         {
@@ -133,14 +121,7 @@ namespace Classes
                 return false;
             }
 
-            ////set private data memebers to the test data value
-            //mHotelID = 3;
-            //mHotelName = "TestHotelName";
-            //mHotelCity = "TestHotelCity";
-            //mHotelPostCode = "XXX XXX";
-            //mHotelPhoneNumber = 1234567891;
-            ////always true
-            //return true;
+         
 
 
 

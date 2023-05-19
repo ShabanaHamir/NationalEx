@@ -47,8 +47,6 @@
     <Compile Include="clsBookingCollection.cs" />
     <Compile Include="clsCart.cs" />
     <Compile Include="clsCartItem.cs" />
-    <Compile Include="clsConfirmation.cs" />
-    <Compile Include="clsCustomer.cs" />
     <Compile Include="clsDataConnection.cs" />
     <Compile Include="clsDeleteRequests.cs" />
     <Compile Include="clsHotel.cs" />

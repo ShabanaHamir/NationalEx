@@ -59,15 +59,7 @@ namespace Classes
                 mHotelName = value;
             }
         }
-        //public string Valid(string hotelID, string hotelName, string roomNumber, string roomType, string roomPrice)
-        //{
-        //    throw new NotImplementedException();
-        //}
-
-        //public string Valid(string hotelID, string roomNumber, string roomType, string roomPrice)
-        //{
-        //    throw new NotImplementedException();
-        //}
+  
 
 
         //private data membber 

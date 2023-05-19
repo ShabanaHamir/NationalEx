@@ -151,17 +151,7 @@ namespace Classes
             db.Execute("sproc_tblBooking_Update");
         }
 
-        //        CREATE PROCEDURE sproc_tblBooking_Update
-        //	 @BookingID int,
-        //    @PaymentType varchar(50),
-        //    @BookingDetails varchar(500),
-        //    @TotalCost decimal(18,2)
-        //AS
-        //	update tblBooking
-        //	set PaymentType = @PaymentType, 
-        //        BookingDetails = @BookingDetails,
-        //        TotalCost = @TotalCost
-        //	where BookingID = @BookingID
+     
 
 
         void PopulateArray(clsDataConnection db)

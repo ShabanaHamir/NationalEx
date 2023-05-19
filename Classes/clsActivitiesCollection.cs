@@ -39,42 +39,6 @@ namespace Classes
             }
         }
 
-        //public List<clsActivities> GetAllActivities()
-        //{
-        //    // Create a new list to store the activities
-        //    List<clsActivities> activitiesList = new List<clsActivities>();
-
-        //    // Create an instance of the data connection
-        //    clsDataConnection db = new clsDataConnection();
-
-        //    // Execute the stored procedure to get all activities
-        //    db.Execute("sproc_tblActivities_SelectAll");
-
-        //    // Loop through each row in the returned data table
-        //    foreach (DataRow row in db.DataTable.Rows)
-        //    {
-        //        // Create a new instance of the clsActivities class
-        //        clsActivities activity = new clsActivities();
-
-        //        // Copy the data from the row to the activity object
-        //        activity.ActivityID = Convert.ToInt32(row["ActivityID"]);
-        //        activity.ActivityName = Convert.ToString(row["ActivityName"]);
-        //        activity.ActivityCity = Convert.ToString(row["ActivityCity"]);
-        //        activity.ActivityAddress = Convert.ToString(row["ActivityAddress"]);
-        //        activity.ActivityPostCode = Convert.ToString(row["ActivityPostCode"]);
-        //        activity.ActivityDescription = Convert.ToString(row["ActivityDescription"]);
-        //        activity.NoOfPeople = Convert.ToInt32(row["NoOfPeople"]);
-        //        activity.ActivityPrice = Convert.ToDecimal(row["ActivityPrice"]);
-
-        //        // Add the activity object to the activities list
-        //        activitiesList.Add(activity);
-        //    }
-
-        //    // Return the list of activities
-        //    return activitiesList;
-
-
-        //}
 
         public List<clsActivities> GetAllActivities()
         {
@@ -163,30 +127,7 @@ namespace Classes
         }
 
 
-        //public int Add()
-        //{
-        //    clsDataConnection db = new clsDataConnection();
-        //    //set the parameters for sproc
-        //    db.AddParameter("@ActivityName", mThisActivity.ActivityName);
-        //    db.AddParameter("@ActivityCity", mThisActivity.ActivityCity);
-        //    db.AddParameter("@ActivityAddress", mThisActivity.ActivityAddress);
-        //    db.AddParameter("@ActivityPostCode", mThisActivity.ActivityPostCode);
-        //    db.AddParameter("@ActivityDescription", mThisActivity.ActivityDescription);
-        //    db.AddParameter("@ActivityPrice", mThisActivity.ActivityPrice);
-        //    //execute sproc
-        //    DataTable dt = db.Execute("sproc_tblActivities_Insert");
-
-        //    // If the returned DataTable has rows, extract the first row's first column value as the primary key (assuming it's an int)
-        //    if (dt.Rows.Count > 0)
-        //    {
-        //        return Convert.ToInt32(dt.Rows[0][0]);
-        //    }
-        //    else
-        //    {
-        //        // Return an appropriate value (e.g., -1) to indicate that something went wrong
-        //        return -1;
-        //    }
-        //}
+        
 
         public void Delete()
         {
