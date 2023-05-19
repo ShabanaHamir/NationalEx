@@ -142,6 +142,9 @@ namespace FrontOffice
             lblError.Text = RecordCount + "Hotel Name are displayed";
         }
 
+        protected void lstHotels_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

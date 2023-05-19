@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="BookingDefault.aspx.cs" Inherits="FrontOffice.BookingDefault" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/StaffDashboard.aspx">Dashboard</asp:HyperLink>
         <div style="margin-left: 435px">
             <br />
             <asp:ListBox ID="lstBookings" runat="server" Height="355px" Width="635px"></asp:ListBox>

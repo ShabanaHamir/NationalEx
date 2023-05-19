@@ -34,5 +34,32 @@ namespace FrontOffice
         {
             Response.Redirect("StaffCustomers.aspx");
         }
+
+        protected void btnHotels_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("HotelDefault.aspx");
+        }
+
+        protected void btnBookings_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("BookingDefault.aspx");
+
+        }
+
+        protected void btnTrips_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("TripsDefault.aspx");
+
+        }
+        protected void btnSignOut_Click(object sender, EventArgs e)
+        {
+            // Logout from the session or authentication
+            Session.Clear();
+            Session.Abandon();
+            // If you're using Forms Authentication
+            System.Web.Security.FormsAuthentication.SignOut();
+            Response.Redirect("SignIn.aspx");
+        }
+
     }
 }

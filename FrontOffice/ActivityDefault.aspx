@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server" style="height: 596px; width: 1557px">
         <div style="margin-left: 480px">
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/StaffDashboard.aspx">Dashboard</asp:HyperLink>
+            <br />
             <asp:ListBox ID="lstActivities" runat="server" Height="351px" Width="495px"></asp:ListBox>
         </div>
         <br />

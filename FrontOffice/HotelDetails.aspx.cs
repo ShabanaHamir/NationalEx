@@ -44,7 +44,7 @@ namespace FrontOffice
             HotelList = hotelCollection.GetAllHotels();
 
             // Filter the HotelList based on the search term
-            HotelList = HotelList.Where(h => h.HotelName.ToLower().Contains(searchTerm.ToLower())).ToList();
+            HotelList = HotelList.Where(h => h.HotelCity.ToLower().Contains(searchTerm.ToLower())).ToList();
 
             // Bind the data to the Repeater control
             rptHotel.DataSource = HotelList;
@@ -53,8 +53,11 @@ namespace FrontOffice
 
         protected void rptHotels_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-            // Your code here...
+            //
         }
-
+        protected void bookNowButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RoomListing.aspx");
+        }
     }
 }

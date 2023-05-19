@@ -2,6 +2,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
         <div style="margin-left: 80px">
+            <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/StaffDashboard.aspx">Dashboard</asp:HyperLink>
+            <br />
             <asp:Button ID="btnCustomers" runat="server" Height="96px" OnClick="btnCustomers_Click" Text="Customers" Width="194px" />
         </div>
         <br />
