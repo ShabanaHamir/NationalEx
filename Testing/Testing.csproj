@@ -50,12 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="tstCardCollection.cs" />
-    <Compile Include="tstConfirmation.cs" />
     <Compile Include="tstHotel.cs" />
     <Compile Include="tstPayment.cs" />
     <Compile Include="tstActivities.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tstCustomer.cs" />
     <Compile Include="tstRoomCollection.cs" />
     <Compile Include="tstBooking.cs" />
     <Compile Include="tstBookingCollection.cs" />
