@@ -11,17 +11,17 @@ namespace FrontOffice
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response.Redirect("UserDefault.aspx");
+            
         }
 
         protected void btnUsers_Click(object sender, EventArgs e)
         {
-            
+            Response.Redirect("UserDefault.aspx");
         }
 
         protected void btnHotels_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("HotelDefault.aspx");
         }
 
         protected void btnActivities_Click(object sender, EventArgs e)
@@ -31,17 +31,19 @@ namespace FrontOffice
 
         protected void btnTrips_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("TripsDefault.aspx");
         }
 
-        protected void btnReports_Click(object sender, EventArgs e)
+        protected void btnSignOut_Click(object sender, EventArgs e)
         {
-
+            // Logout from the session or authentication
+            Session.Clear();
+            Session.Abandon();
+            // If you're using Forms Authentication
+            System.Web.Security.FormsAuthentication.SignOut();
+            Response.Redirect("SignIn.aspx");
         }
 
-        protected void btnCustomerFeedback_Click(object sender, EventArgs e)
-        {
-           
-        }
+
     }
 }

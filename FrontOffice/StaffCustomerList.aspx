@@ -10,7 +10,6 @@
             <br />
             <asp:Label ID="lblError" runat="server"></asp:Label>
             <br />
-            <asp:Button ID="btnAdd" runat="server" OnClick="btnAdd_Click" Text="Add" />
 &nbsp;&nbsp;&nbsp;
             <asp:Button ID="btnEdit" runat="server" OnClick="btnEdit_Click" Text="Edit" />
 &nbsp;&nbsp;&nbsp;

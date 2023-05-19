@@ -1,7 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Default.Master" AutoEventWireup="true" CodeBehind="HotelDefault.aspx.cs" Inherits="FrontOffice.HotelDefault" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <form id="form1" runat="server">
-        <asp:ListBox ID="lstHotels" runat="server" Width="421px" OnSelectedIndexChanged="lstHotels_SelectedIndexChanged"></asp:ListBox>
+        <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/StaffDashboard.aspx">Dashboard</asp:HyperLink>
+        <br />
+        <br />
+        <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/RoomDefault.aspx">Manage Rooms</asp:HyperLink>
+        <br />
+        <br />
+        <asp:ListBox ID="lstHotels" runat="server" Width="900px" OnSelectedIndexChanged="lstHotels_SelectedIndexChanged" Height="232px"></asp:ListBox>
         <br />
         <asp:Label ID="Label1" runat="server" Text="Enter a Hotel Name"></asp:Label>
         <br />

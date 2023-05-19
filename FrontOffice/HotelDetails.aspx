@@ -16,6 +16,7 @@
                         <p><strong>City:</strong> <%# Eval("HotelCity") %></p>
                         <p><strong>Postcode:</strong> <%# Eval("HotelPostcode") %></p>
                         <p><strong>Phone Number:</strong> <%# Eval("HotelPhoneNumber") %></p>
+                        <asp:Button ID="bookNowButton" runat="server" Text="Book Now" CommandArgument='<%# Eval("HotelId") %>' OnClick="bookNowButton_Click" CssClass="btn btn-primary" />
                         <hr />
                     </ItemTemplate>
                 </asp:Repeater>

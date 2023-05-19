@@ -68,13 +68,13 @@ namespace FrontOffice
             return RecordCount;
         }
 
-        protected void btnAdd_Click(object sender, EventArgs e)
-        {
-            //store -1 into the session object to indicate it is a new record
-            Session["UserID"] = -1;
-            //redirect to the data entry page
-            Response.Redirect("AUser.aspx");
-        }
+        //protected void btnAdd_Click(object sender, EventArgs e)
+        //{
+        //    //store -1 into the session object to indicate it is a new record
+        //    Session["UserID"] = -1;
+        //    //redirect to the data entry page
+        //    Response.Redirect("AUser.aspx");
+        //}
 
         protected void btnEdit_Click(object sender, EventArgs e)
         {
