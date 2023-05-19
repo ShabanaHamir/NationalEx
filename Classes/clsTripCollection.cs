@@ -255,19 +255,50 @@ namespace Classes
                 Index++;
             }
         }
+        public clsTrip GetTripByID(int tripID)
+        {
+            clsDataConnection dataConnection = new clsDataConnection();
+            // Retrieve the connection string from your clsDataConnection object
+            string connectionString = dataConnection.GetConnectionString();
 
+            // Set up the SQL command text
+            string sql = "SELECT * FROM tblTrip WHERE TripID = @TripID";
 
-        //public List<clsTrip> TripList
-        //{
-        //    get
-        //    {
-        //        return mTripList;
-        //    }
-        //    set
-        //    {
-        //        mTripList = value;
-        //    }
-        //}
+            // Set up the SQL command and connection
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    // Add the parameter to the command
+                    cmd.Parameters.AddWithValue("@TripID", tripID);
+
+                    // Open the connection
+                    conn.Open();
+
+                    // Execute the command and get the results
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Create a new activity and populate it with the data from the reader
+                            clsTrip trip = new clsTrip();
+                            trip.TripID = (int)reader["TripID"];
+                            trip.TripDestination = (string)reader["TripDestination"];
+                            trip.TicketCost = (decimal)reader["TicketCost"];
+                            // ... populate the rest of the activity fields ...
+
+                            // Return the room
+                            return trip;
+                        }
+                        else
+                        {
+                            // If no room was found with the provided ID, return null
+                            return null;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 

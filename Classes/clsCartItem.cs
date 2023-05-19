@@ -141,13 +141,26 @@ public class clsCartItem
         set { mRoomID = value; }
     }
 
-    //private int mQuantity;
-    //public int Quantity
-    //{
-    //    get { return mQuantity; }
-    //    set { mQuantity = value; }
-    //}
+    private int mTripID;
+    public int TripID
+    {
+        get { return mTripID; }
+        set { mTripID = value; }
+    }
 
+    private int mTripDestination;
+    public int TripDestination
+    {
+        get { return mTripDestination; }
+        set { mTripDestination = value; }
+    }
+
+    private decimal mTicketCost;
+    public Decimal TicketCost
+    {
+        get { return mTicketCost; }
+        set { mTicketCost = value; }
+    }
     private int mQuantity;
     public int Quantity
     {
