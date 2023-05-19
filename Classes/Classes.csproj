@@ -45,7 +45,6 @@
     <Compile Include="clsActivitiesCollection.cs" />
     <Compile Include="clsBooking.cs" />
     <Compile Include="clsBookingCollection.cs" />
-    <Compile Include="clsCard.cs" />
     <Compile Include="clsCart.cs" />
     <Compile Include="clsCartItem.cs" />
     <Compile Include="clsConfirmation.cs" />
