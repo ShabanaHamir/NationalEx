@@ -18,6 +18,12 @@ namespace FrontOffice
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            clsSecurity Sec = (clsSecurity)Session["Sec"];
+
+            if (Sec == null || Sec.UserID == 0)
+            {
+                Response.Redirect("SignIn.aspx");
+            }
             if (!IsPostBack)
             {
                 LoadActivities();

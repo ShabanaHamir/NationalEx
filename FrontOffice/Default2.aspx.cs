@@ -21,7 +21,7 @@ namespace FrontOffice
 
         protected void btnTrips_Click(object sender, EventArgs e)
         {
-            Response.Redirect("AnTripaspx.aspx");
+            Response.Redirect("TripBooking.aspx");
         }
 
         protected void btnHotels_Click(object sender, EventArgs e)
